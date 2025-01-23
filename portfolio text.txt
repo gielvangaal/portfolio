@@ -1,0 +1,35 @@
+Koptekst
+H1: Giel van Gaal. Junior programmeur. 
+P: Hoi, mijn naam is Giel. Ik sta voor gebruiksvriendelijke digitale dienstverlening en volg momenteel de deeltijdopleiding Informatica aan de Avans Hogeschool. Ik los graag problemen op met code. Mijn kracht ligt in front-end ontwikkeling, maar ik heb ook ervaring met back-end. In de toekomst wil ik, samen met een team, webapplicaties bouwen die de wereld vooruit helpen. Ik woon samen met Nadia en Eddie. We spelen graag spelletjes, wandelen en sporten. In mijn vrije tijd maak ik muziek of werk ik aan een nieuwe website. Scroll naar beneden voor een overzicht van mijn werk.
+
+Mijn skillset
+Naast mijn studie Informatica ben ik in mijn vrije tijd veel bezig met leren en ontwikkelen. Ik heb meerdere cursussen (klik en scroll) afgerond op Codecademy, en momenteel volg ik de Front-End Developer Course. Ik ben nieuwsgierig van aard en altijd op zoek naar boeken over softwareontwikkeling, design en technologie. Neem gerust een kijkje in mijn boekenkast (klik en scroll) voor wat ik zoal lees. Door mijn achtergrond in muziek en theater heb ik ervaring in projectmatig werken en het toepassen van creativiteit. Ik werk graag grondig en secuur, met oog voor detail. Dit zorgt voor robuuste en goed gedocumenteerde code. Een overzicht van mijn skillset vind je hieronder.
+
+- Stack
+- Opleidingen/ cursussen
+- Boekenkast
+
+Project tekst Nijntje
+
+**Projectdoel**
+
+Het project 'Nijntje' begon door een combinatie aan factoren. Onze pleegkitten Nijntje was super schattig maar moest bijna ingeslapen worden (uiteindelijk niet gebeurt!). En ik zocht naar een project om nieuwe technieken te testen zoals CCS Grid en het opzetten van een messageboard met Django. Ook wilde ik meer ervaring opdoen in het opzetten van een website, inclusief documentatie. De website moest niet per se functioneel zijn voor dagelijks gebruik, maar meer een belevenis die het verhaal van Nijntje vertelt in de vorm van interactieve mini-posters.
+
+**Webstack**
+
+Voor dit project heb ik gebruik gemaakt van zowel bekende als nieuwe technieken. De hosting draait op een VPS met Nginx als reverse proxy. De front-end is handgeschreven met HTML en CSS, met technieken als root-variabelen en CSS grid. Het messageboard is opgezet met Django en draait op Gunicorn als WSGI-server. De berichten worden opgehaald via een API-endpoint met fetch. De e-mailfunctionaliteit wordt geregeld met Nodemailer. Dat draait op Node.js en maakt gebruik van de SMTP-server van Gmail. SSL-certificaten komen van Certbot. Ik log met een SSH-verbinding van mijn lokale terminal in op de Ubuntu van de VPS. De website is (grotendeels) gebouwd naar het functioneel ontwerp, het design komt volledig van mijn hand.
+
+
+**Problemen en Oplossingen**
+
+Het opzetten van het messageboard met Django was een flinke uitdaging. Omdat ik nog geen VPS had, moest ik dat eerst onderzoeken, aanschaffen en instellen. Vervolgens heb ik Gunicorn geconfigureerd als WSGI-server voor Python en Nginx ingesteld als reverse proxy om al het verkeer te regelen.
+
+Ik wilde `fetch` een keer proberen dus haal de berichten nu op bij een zelfgebouwd API-endpoint. Geen raketwetenschap, maar voor een junior toch een flinke puzzel. Met een beetje rust en doorzettingsvermogen kom je een heel eind. 
+
+In Nginx heb ik ook aardig wat uurtjes lopen pielen met poorten en serverblokken. Dat concept was mij nog niet helemaal duidelijk, maar gaandeweg ben ik er toch uitgekomen. 
+
+Daarnaast heb ik gewerkt op basis van een functioneel ontwerp en het design zelf gedaan. Ik ben geen designer maar ben niet verlegen om dingen te proberen. Omdat de doelgroep niet helemaal duidelijk was, miste het ontwerp richting. Uiteindelijk, door contemplatie en experimenteren werd het duidelijk waar het naartoe moest: interactieve mini-posters met een speels karakter, simpelweg omdat ik het leuk vond om te maken.
+
+**Wat ik heb geleerd**
+
+Dit project heeft me veel geleerd over webontwikkeling en de volledige stack die daarvoor nodig is. Ik heb niet alleen nieuwe technische vaardigheden opgedaan, zoals het instellen van een VPS, het configureren van een server en het werken met Nginx, maar ook het belang van gedetailleerde documentatie en grondig werken. Het project heeft me zelfvertrouwen gegeven in het oplossen van complexe problemen, en ik ben nu beter voorbereid op toekomstige uitdagingen in full-stack webontwikkeling.
