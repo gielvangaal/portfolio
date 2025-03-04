@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --yellow: #fff562;
+            --black: #0d0d0d;
+            --lilac: #bdadd0;
+            --grey: #d9d9d9;
+            --lightgrey: #fafafa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: var(--zwart);
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background-color: var(--lightgrey);
+
+        }
+
+        section {
+            background-color: rgb(255, 255, 255, 0.8);
+            width: 70vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            margin: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--grey);
+        }
+
+        @media screen and (max-width: 768px) {
+            section {
+                width: 98vw;
+            }
+        }
+
+        /* Typografie schaal (Perfect Fourth - 1.333) */
+        h1 {
+            font-size: 3rem;
+            /* 48px */
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            /* 36px */
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.6875rem;
+            /* 27px */
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            /* 20px */
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        h5 {
+            font-size: 1rem;
+            /* 16px */
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        h6 {
+            font-size: 0.875rem;
+            /* 14px */
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            /* 16px */
+            line-height: 1.6;
+        }
+
+        /* Responsieve aanpassingen voor kleinere schermen */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1.125rem;
+            }
+        }
+
+        h3 {
+            padding: 1rem;
+        }
+
+        figure {
+            padding: 1rem;
+            border: 1px dotted var(--grey);
+            margin: 0;
+        }
+
+        figcaption {
+            font-size: 0.8rem;
+            /* text-align: left; */
+            padding: 0.2rem;
+        }
+
+        /* KLEURENSCHEMA */
+
+        #section-colors div {
+            width: 100px;
+            height: 100px;
+            border: 1px dotted var(--grey);
+        }
+
+        #section-colors figure {
+            margin: 1rem;
+        }
+
+        #color-yellow {
+            background-color: var(--yellow);
+        }
+
+        #color-black {
+            background-color: var(--black);
+        }
+
+        #color-lilac {
+            background-color: var(--lilac);
+        }
+
+        #color-grey {
+            background-color: var(--grey);
+        }
+
+        #color-lightgrey {
+            background-color: var(--lightgrey);
+        }
+
+        #greyscales ul {
+            display: flex;
+            gap: 1rem;
+            
+            background-color: blue;
+        }
+
+        #greyscales li {
+            width: 100px;
+            height: 100px;
+            list-style: none;
+            border: 1px dotted var(--grey);
+        }
+
+        #greyscales li:nth-child(1) {
+            background-color: rgb(217, 217, 217);
+        }
+
+        #greyscales li:nth-child(2) {
+            background-color: rgb(217, 217, 217, 0.2);
+        }
+
+        #greyscales li:nth-child(3) {
+            background-color: rgb(217, 217, 217, 0.4);
+        }
+
+        #greyscales li:nth-child(4) {
+            background-color: rgb(217, 217, 217, 0.6);
+        }
+
+        #greyscales li:nth-child(5) {
+            background-color: rgb(217, 217, 217, 0.8);
+        }
+
+        /* TYPOGRAFIE */
+        #section-typography {
+            flex-direction: column;
+            display: flex;
+            overflow: scroll;
+        }
+
+        #section-typography figure {
+            margin: 1rem;
+            text-align: left;
+        }
+
+        #section-typography figcaption {
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        #section-typography p {
+            text-align: left;
+        }
+
+        .H-frontpage {
+            font-size: 8rem;
+            letter-spacing: 2rem;
+        }
+
+        .H-container {
+            position: relative;
+            padding: 0 10px;
+            display: inline-block;
+            width: fit-content;
+            z-index: 1;
+        }
+
+        .H-visual {
+            background-color: var(--yellow);
+            bottom: 6px;
+            left: 0;
+            height: 61%;
+            width: calc(100% - 3px);
+            position: absolute;
+            z-index: -1;
+        }
+
+        @media screen and (max-width: 430px) {
+            .H-visual-mobile {
+                bottom: 1.5rem;
+                left: 0;
+                height: 46%;
+                width: 75%;
+                
+            }
+
+        }
+
+        #section-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-meer {
+            background-color: var(--lilac);
+            font-weight: 700;
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border: none;
+            width: fit-content;
+            /* transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+                border-radius 0.15s ease; */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(189, 173, 208, 0.8);
+        }
+
+        button:active {
+            background-color: var(--yellow);
+
+        }
+
+        .btn-hover {
+            background-color: rgb(189, 173, 208, 0.8);
+        }
+
+        .btn-active {
+            background-color: var(--yellow);
+        }
+
+        #section-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            /* margin: auto; */
+        }
+
+        .card-container {
+            /* margin: 1rem; */
+            padding: 0 2rem;
+            /* min-height: 30rem; */
+            /* min-width: 30rem; */
+            background-color: rgb(217, 217, 217, 0.2);
+            border-radius: 25px;
+            gap: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            width: 30vw;
+            text-align: left;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .card-container {
+                width: 90vw;
+            }
+        }
+
+        .media-card-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            margin: 2rem 0 1rem;
+
+        }
+
+        .card-img,
+        .card-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            /* opacity: 1;
+            transition: opacity 3s ease; */
+        }
+
+        .card-img {
+            display: block;
+        }
+
+        .card-video {
+            display: none;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .card-ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-ul li {
+            font-size: 0.8rem;
+            padding: 0.2rem;
+            border: 1px solid var(--black);
+            margin: 1rem 0.5rem 1rem 0;
+        }
+
+        .card-container .btn-meer {
+            margin: 2rem 0 1rem auto;
+        }
+
+        .card-container p {
+            margin: auto 0;
+        }
+
+        .accordion {
+            width: 100%;
+            margin: 1rem auto;
+        }
+
+        .accordion section {
+            width: auto;
+            border: none !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Accordion-knop */
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px dotted var(--grey) !important;
+            border-radius: 25px !important;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button {
+            border-radius: 25px !important;
+            background-color: var(--grey);
+            border: none !important;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--black);
+            padding-left: auto;
+        }
+
+        .accordion-button:hover {
+            background-color: var(--lightgrey);
+        }
+
+        .accordion-button:focus {
+            background-color: var(--grey);
+            box-shadow: none;
+
+        }
+
+        .accordion-button:active {
+            background-color: var(--yellow);
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--grey);
+            color: var(--black);
+        }
+
+        .accordion img {
+            height: 50px;
+            filter: contrast(100%) grayscale(100%);
+            margin-left: 1rem;
+        }
+
+        .accordion-body {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .accordion-body {
+                flex-direction: column;
+            }
+
+            .accordion img {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        #boekenplank {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .boekenplank-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            width: 90%;
+        }
+
+        #boekenplank figure {
+            width: auto;
+            border: 1px dotted var(--grey);
+            display: flex;
+            flex: 1 1 250px;
+            min-width: 250px;
+        }
+
+        #boekenplank img {
+            min-width: 100px;
+            height: auto;
+            max-height: 130px;
+        }
+
+        #boekenplank figcaption {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #boekenplank figcaption ul {
+            list-style: none;
+            text-align: left;
+            padding-left: 1rem;
+            word-break: break-word;
+            font-size: 0.8rem;
+        }
+
+        #boekenplank figcaption li:nth-child(1) {
+            font-weight: bold;
+        }
+
+        #boekenplank figcaption li:nth-child(2) {
+            font-style: oblique;
+        }
+
+        #boekenplank figcaption span {
+            border: 1px solid var(--black);
+            padding: 0.2rem;
+            display: inline-flex;
+            width: fit-content;
+            margin-top: auto;
+            margin-left: 1rem;
+            word-break: break-all;
+        }
+
+
+        #webstack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #webstack ul {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 1 100px;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        #webstack li {
+            list-style: none;
+        }
+
+        #webstack figure {
+            border: none;
+            padding: 0;
+        }
+
+        #webstack img {
+            width: 2.25rem;
+            height: 2.25rem;
+            margin: 1rem;
+        }
+
+        #webstack figcaption {
+            font-size: 0.8rem;
+            /* border-top: 1px dotted var(--grey); */
+            /* padding-top: 1rem; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Styleguide</h1>
+
+    <h3>Kleurenschema</h3>
+    <section id="section-colors">
+
+        <figure>
+            <div id="color-yellow"></div>
+            <figcaption>#FFF562</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-lilac"></div>
+            <figcaption>#BDADD0</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-black"></div>
+            <figcaption>#0D0D0D</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-grey"></div>
+            <figcaption>#D9D9D9</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-lightgrey"></div>
+            <figcaption>#FAFAFA</figcaption>
+        </figure>
+
+            <ul id="greyscales">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+    </section>
+
+    <h3>Typografie</h3>
+    <section id="section-typography">
+
+        <figure>
+            <div class="H-container">
+                <h1>Over mij</h1>
+                <div class="H-visual"></div>
+            </div>
+            <figcaption>H1 - Be Vietnam Pro | 48px font-size | 1.2 line-height</figcaption>
+        </figure>
+
+        <figure>
+            <div class="H-container">
+                <h2>Problemen en oplossingen</h2>
+                <div class="H-visual H-visual-mobile"></div>
+            </div>
+            <figcaption>H2 - Be Vietnam Pro | 36px font-size | 1.3 line-height</figcaption>
+        </figure>
+
+        <figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. In metus vulputate eu scelerisque felis imperdiet. Accumsan tortor posuere ac ut
+                consequat semper viverra nam libero. Tincidunt praesent semper feugiat nibh sed. Lorem dolor sed viverra
+                ipsum. Sed euismod nisi porta lorem mollis. Tincidunt tortor aliquam nulla facilisi cras fermentum odio.
+
+                Consequat id porta nibh venenatis cras sed. Ut tristique et egestas quis. Sit amet massa vitae tortor
+                condimentum lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. In hendrerit gravida rutrum quisque.
+                Et egestas quis ipsum suspendisse. Et malesuada fames ac turpis. Et magnis dis parturient montes
+                nascetur ridiculus mus. Leo a diam sollicitudin tempor. Hac habitasse platea dictumst vestibulum.</p>
+            <figcaption>P - Be Vietnam Pro | 16px font-size | 1.6 line-height</figcaption>
+        </figure>
+
+    </section>
+
+    <h3>Buttons</h3>
+    <section id="section-btn">
+
+        <figure>
+            <figcaption>Button</figcaption>
+            <button class="btn-meer">Meer</button>
+        </figure>
+        <figure>
+            <figcaption>Button hover</figcaption>
+            <button class="btn-meer btn-hover">Meer</button>
+        </figure>
+        <figure>
+            <figcaption>Button active</figcaption>
+            <button class="btn-meer btn-active">Meer</button>
+        </figure>
+
+    </section>
+
+    <h3>Cards & accordion</h3>
+    <section id="section-cards">
+
+        <div class="card-container">
+            <div class="media-card-container">
+                <img class="card-img" src="./assets/images/nijntje-groot.png" alt="screenshot van website Nijntje">
+                <video class="card-video" muted loop autoplay>
+                    <source src="./assets/video/test.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="H-container">
+                <h2>Nijntje</h2>
+                <div class="H-visual"></div>
+            </div>
+            <ul class="card-ul">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <p>Hobbyproject over pleegkitten Nijntje.</p>
+            <button class="btn-meer">Meer</button>
+        </div>
+
+        <div class="accordion">
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Avans Hogeschool | Informatica
+                    </button>
+                </header>
+                <section id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/avans.webp">
+                        <div>
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Codecademy | Web Development
+                    </button>
+                </header>
+                <section id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/codecademy.webp">
+                        <div>
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                            the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Albeda Collega | Muzikant/ Producer
+                    </button>
+                </header>
+                <section id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/albeda.webp">
+                        <div>
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+        </div>
+    </section>
+    </article>
+
+
+    <section id="boekenplank">
+
+        <div class="boekenplank-container">
+            <figure>
+                <img src="./assets/images/boekenplank/htmlencss-doolaard.jpg">
+                <figcaption>
+                    <ul>
+                        <li>HTML 5 en CSS</li>
+                        <li>Peter Doolaard</li>
+                        <!-- <li>Van Duuren</li> -->
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/informatiemanagement-grit.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Grit, R. (2024)</li>
+                        <li>Informatiemanagement (7e ed.)</li>
+                        <li>Noordhoff</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Groenendijk, B. (2024)</li>
+                        <li>Inleiding databases</li>
+                        <li>Boom</li>
+                    </ul>
+                    <span>Database</span>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="collapse boekenplank-container" id="collapseExample">
+
+            <figure>
+                <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Kassenaar, P. (2024)</li>
+                        <li>JavaScript & jQuery (5e ed.)</li>
+                        <li>Van Duuren</li>
+
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Warmer, J. en Kleppe, A.(2024)</li>
+                        <li>Praktisch UML (5e ed.)</li>
+                        <li>Pearson</li>
+                    </ul>
+                    <span>OOP</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Matthes, E. (2024)</li>
+                        <li>Python Crash Course (3e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>Back-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/subliemwebdesign.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Beaird, J., George, J. & Walker, A. (2021)</li>
+                        <li>Principes van subiem webdesign</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/linuxcommandline.png">
+                <figcaption>
+                    <ul>
+                        <li>Shotts, W. (2019)</li>
+                        <li>The Linux Command Line (2e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>DevOps</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/grafischontwerpen.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Dabner, D., Stewart, S. & Vickress, A. (2018)</li>
+                        <li>Grafisch Ontwerpen</li>
+                        <li>Librero</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/thisisit.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Peters, V. (2021)</li>
+                        <li>This is IT!</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/wordpress6.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Ittersum, D. (2023)</li>
+                        <li>Handboek Wordpress 6</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidinguml.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Randen, H. J. (2019)</li>
+                        <li>Inleiding UML (3e ed.)</li>
+                        <li>AmoixA</li>
+                    </ul>
+                    <span>Softwareontwikkeling</span>
+                </figcaption>
+            </figure>
+
+        </div>
+        <button class="btn-meer" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Meer
+        </button>
+
+    </section>
+
+    <section id="webstack">
+
+
+        <ul>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/html5.webp">
+                    <figcaption>HTML5</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/css3.webp">
+                    <figcaption>CCS3</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/certbot.webp">
+                    <figcaption>Certbot</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/django.webp">
+                    <figcaption>Django</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/github.webp">
+                    <figcaption>Github</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/gunicorn.webp">
+                    <figcaption>Gunicorn</figcaption>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/javascript.webp">
+                    <figcaption>JavaScript</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/nginx.webp">
+                    <figcaption>Nginx</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/node-js.webp">
+                    <figcaption>Node JS</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/python.webp">
+                    <figcaption>Python</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/rest-api.webp">
+                    <figcaption>Rest API</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/figma.webp">
+                    <figcaption>Figma</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/php.webp">
+                    <figcaption>PHP 8.4</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/mysql.webp">
+                    <figcaption>MySQL</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/terminal.webp">
+                    <figcaption>Bash</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/bootstrap.webp">
+                    <figcaption>Bootstrap</figcaption>
+                </figure>
+            </li>
+        </ul>
+
+    </section>
+
+    </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.querySelectorAll(".card-container").forEach(card => {
+            const container = card.querySelector(".media-card-container");
+            const video = card.querySelector(".card-video");
+            const img = card.querySelector(".card-img");
+
+            container.addEventListener("mouseenter", () => {
+                video.style.display = "block"; // Video tonen
+                video.play();
+                img.style.opacity = "0"; // Afbeelding verbergen (fade-out effect)
+                // video.style.transition = "opacity 3s ease";
+            });
+
+            container.addEventListener("mouseleave", () => {
+                video.pause();
+                video.style.display = "none"; // Video verbergen
+                img.style.opacity = "1"; // Afbeelding tonen (fade-in effect)
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
