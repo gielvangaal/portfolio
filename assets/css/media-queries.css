@@ -56,6 +56,11 @@
     #hero svg {
         font-size: 3vw;
     }
+
+    #article-overmij {
+        grid-template-rows: 10vh 1fr 1fr;
+    }
+    
 }
 
 /* XL: desktops, greater then 991.99 and less than 1199.98px */
