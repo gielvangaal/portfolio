@@ -1,0 +1,71 @@
+/* SM: portrait phones, less than 576.98px */
+@media (max-width: 575.98px) {
+    #hero {
+        width: 90vw;
+        height: 70vh;
+        transform: rotate(0deg);
+    }
+
+    #hero img {
+        grid-column: 4 / 6;
+        grid-row: 4 / 6;
+        width: 100%;
+        height: 100%;
+    }
+
+    #hero h1 {
+        grid-column: 1 / 5;
+        grid-row: 1 / 1;
+        font-size: 10vw;
+    }
+
+    #hero h2 {
+        grid-column: 3 / 4;
+        grid-row: 2 / -1;
+        font-size: 5vw;
+        padding: 0;
+    }
+
+    #hero p {
+        font-size: 2vw;
+        align-self: flex-end;
+        padding: 0.2rem;
+    }
+
+    #hero svg {
+        font-size: 6vw;
+    }
+
+    #cards-wrapper {
+        width: 95vw;
+    }
+
+    
+}
+
+/* MD: landscape phones, greater then 575.99 and less than 767.98px */
+@media screen and (min-width: 575.99px) and (max-width: 767.98px) {}
+
+/* LG: tablets, greater then 767.99 and less than 991.98px */
+@media screen and (min-width: 767.99px) and (max-width: 991.98px) {
+    #hero {
+        width: 90vw;
+        height: calc(90vw * 9 / 16);
+    }
+
+    #hero svg {
+        font-size: 3vw;
+    }
+}
+
+/* XL: desktops, greater then 991.99 and less than 1199.98px */
+@media screen and (min-width: 991.99px) and (max-width: 1199.98px) {}
+
+/* XXL: large desktops, greater than 1199.99px */
+@media screen and (min-width:1199.99) {}
+
+/* MOBILE LANDSCAPE: mobile phones, less then 1000px and in landscape orientation */
+@media only screen and (max-width: 1000px) and (orientation: landscape) {}
+
+/* IPHONE SE: very small smartphones, less than 378px */
+@media screen and (max-width:378px) {}
