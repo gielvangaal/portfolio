@@ -1,5 +1,6 @@
 /* SM: portrait phones, less than 576.98px */
 @media (max-width: 575.98px) {
+    /* HERO */
     #hero {
         width: 90vw;
         height: 70vh;
@@ -40,6 +41,33 @@
         width: 95vw;
     }
 
+#article-overmij {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0;
+}
+
+#article-overmij img {
+    width: 50vw;
+    margin: 1rem;
+}
+
+#article-overmij p {
+    margin: 1rem;
+}
+
+#webstack {
+    width: 90vw;
+}
+
+.accordion {
+    width: 90vw;
+}
+
     
 }
 
@@ -58,7 +86,20 @@
     }
 
     #article-overmij {
-        grid-template-rows: 10vh 1fr 1fr;
+        grid-template-rows: 10vh 10vh auto;
+        width: 95vw;
+    }
+
+    #article-overmij img {
+        width: 30vw;
+    }
+
+    #webstack {
+        width: 80vw;
+    }
+
+    .accordion {
+        width: 80vw;
     }
     
 }
