@@ -19,7 +19,7 @@ document.querySelectorAll(".card-container").forEach(card => {
 });
 
 // wordcloud
-const svg = d3.select("#wordcloud");
+const wordcloud = d3.select("#wordcloud");
 const groot = ["Organiseren", "Uitdagen", "Leergierig", "Humor"];
 const middel = ["Relaxt", "Komt goed", "Etc.", "Node.js", "Flask", "Express", "TypeScript", "Svelte"];
 const klein = ["AI", "NLP", "Data", "API", "GraphQL", "Docker", "Linux", "GIT", "Redux", "MongoDB", "SQL", "NoSQL"];
@@ -34,8 +34,8 @@ function generateWordCloud() {
     middel.forEach(word => words.push({ text: word, size: 40 }));
     klein.forEach(word => words.push({ text: word, size: 20 }));
 
-    d3.select("svg").selectAll("*").remove(); // Verwijder oude woorden
-    d3.select("svg").style("background-color", "#FAFAFA"); // Achtergrondkleur
+    d3.select("#wordcloud").selectAll("*").remove(); // Verwijder oude woorden
+    d3.select("#wordcloud").style("background-color", "#FAFAFA"); // Achtergrondkleur
 
     const layout = d3.layout.cloud()
         .size([width, height])
@@ -48,7 +48,7 @@ function generateWordCloud() {
     layout.start();
 
     function draw(words) {
-        d3.select("svg")
+        d3.select("#wordcloud")
             .append("g")
             .attr("transform", `translate(${width / 2},${height / 2})`)
             .selectAll("text")
