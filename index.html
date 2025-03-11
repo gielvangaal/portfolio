@@ -364,8 +364,170 @@
                 <div class="H-visual" aria-hidden="true"></div>
             </div>
 
-            <svg id="wordcloud-container"></svg>
-            <button onclick="generateWordCloud()">Shuffle</button>
+<p>(tabel met softskills)</p>
+
+        <!-- softskills -->
+        <div class="H-container">
+            <h2>boekenplank</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+
+        <div class="boekenplank-container">
+            <figure>
+                <img src="./assets/images/boekenplank/htmlencss-doolaard.jpg">
+                <figcaption>
+                    <ul>
+                        <li>HTML 5 en CSS</li>
+                        <li>Peter Doolaard</li>
+                        <!-- <li>Van Duuren</li> -->
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/informatiemanagement-grit.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Grit, R. (2024)</li>
+                        <li>Informatiemanagement (7e ed.)</li>
+                        <li>Noordhoff</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Groenendijk, B. (2024)</li>
+                        <li>Inleiding databases</li>
+                        <li>Boom</li>
+                    </ul>
+                    <span>Database</span>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="collapse boekenplank-container" id="collapseExample">
+
+            <figure>
+                <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Kassenaar, P. (2024)</li>
+                        <li>JavaScript & jQuery (5e ed.)</li>
+                        <li>Van Duuren</li>
+
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Warmer, J. en Kleppe, A.(2024)</li>
+                        <li>Praktisch UML (5e ed.)</li>
+                        <li>Pearson</li>
+                    </ul>
+                    <span>OOP</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Matthes, E. (2024)</li>
+                        <li>Python Crash Course (3e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>Back-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/subliemwebdesign.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Beaird, J., George, J. & Walker, A. (2021)</li>
+                        <li>Principes van subiem webdesign</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/linuxcommandline.png">
+                <figcaption>
+                    <ul>
+                        <li>Shotts, W. (2019)</li>
+                        <li>The Linux Command Line (2e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>DevOps</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/grafischontwerpen.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Dabner, D., Stewart, S. & Vickress, A. (2018)</li>
+                        <li>Grafisch Ontwerpen</li>
+                        <li>Librero</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/thisisit.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Peters, V. (2021)</li>
+                        <li>This is IT!</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/wordpress6.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Ittersum, D. (2023)</li>
+                        <li>Handboek Wordpress 6</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidinguml.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Randen, H. J. (2019)</li>
+                        <li>Inleiding UML (3e ed.)</li>
+                        <li>AmoixA</li>
+                    </ul>
+                    <span>Softwareontwikkeling</span>
+                </figcaption>
+            </figure>
+
+        </div>
+        <button class="btn-meer" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Meer
+        </button>
 
 
     </section>
@@ -375,10 +537,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
-    <!-- D3.js -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-cloud"></script>
 
     <script src="./assets/js/script.js"></script>
 </body>

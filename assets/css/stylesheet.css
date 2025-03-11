@@ -579,12 +579,15 @@ button:active {
     }
 }
 
-#boekenplank {
+/* softskills */
+
+
+/* #boekenplank {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-}
+} */
 
 .boekenplank-container {
     display: flex;
@@ -594,26 +597,27 @@ button:active {
     width: 90%;
 }
 
-#boekenplank figure {
+.boekenplank-container figure {
     width: auto;
-    border: 1px dotted var(--grey);
+    /* border: 1px dotted var(--grey); */
+    background-color: var(--lightgrey);
     display: flex;
-    flex: 1 1 250px;
-    min-width: 250px;
+    flex: 1 1 300px;
+    /* min-width: 300px; */
 }
 
-#boekenplank img {
+.boekenplank-container img {
     min-width: 100px;
     height: auto;
     max-height: 130px;
 }
 
-#boekenplank figcaption {
+.boekenplank-container figcaption {
     display: flex;
     flex-direction: column;
 }
 
-#boekenplank figcaption ul {
+.boekenplank-container figcaption ul {
     list-style: none;
     text-align: left;
     padding-left: 1rem;
@@ -621,15 +625,15 @@ button:active {
     font-size: 0.8rem;
 }
 
-#boekenplank figcaption li:nth-child(1) {
+.boekenplank-container figcaption li:nth-child(1) {
     font-weight: bold;
 }
 
-#boekenplank figcaption li:nth-child(2) {
+.boekenplank-container figcaption li:nth-child(2) {
     font-style: oblique;
 }
 
-#boekenplank figcaption span {
+.boekenplank-container figcaption span {
     border: 1px solid var(--black);
     padding: 0.2rem;
     display: inline-flex;
