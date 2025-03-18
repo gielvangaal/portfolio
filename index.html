@@ -531,7 +531,7 @@
             </div>
 
             <!-- hobbies -->
-            <div class="H-container">
+            <!-- <div class="H-container">
                 <h2>hobbies en meer</h2>
                 <div class="H-visual" aria-hidden="true"></div>
             </div>
@@ -656,17 +656,34 @@
                 <img src="./assets/images/fotoalbum/skaten.webp">
                 <img src="./assets/images/fotoalbum/wandelen.webp">
                 <img src="./assets/images/fotoalbum/caravan.webp">
-            </div>
+            </div> -->
 
     </section>
 
-    <section>
-        <footer>
-            <div class="H-container">
-                <h1 id="portfolio-heading">Contact</h1>
-                <div class="H-visual" aria-hidden="true"></div>
-            </div>
+    <section id="section-contact">
 
+            <form id="contact-wrapper">
+
+                <div class="H-container">
+                    <h1 id="portfolio-heading">Contact</h1>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+
+                <label for="name">Naam</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Bericht</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+        
+                <button class="btn-meer" type="submit">Verstuur</button>
+
+            </form>
+
+
+            
             
     </section>
 

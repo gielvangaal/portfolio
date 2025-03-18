@@ -129,11 +129,6 @@ figcaption {
 }
 
 /* TYPOGRAFIE */
-.H-frontpage {
-    font-size: 8rem;
-    letter-spacing: 2rem;
-}
-
 .H-container {
     position: relative;
     padding: 0 10px;
@@ -711,6 +706,7 @@ button:active {
     object-fit: cover;
     margin: 0;
     
+    
 }
 
 #fotoalbum img:hover {
@@ -718,4 +714,51 @@ button:active {
     transition: transform 0.3s ease;
     cursor: crosshair;
 }
+
+/* CONTACT */
+#section-contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+/* contactformulier */
+#contact-wrapper {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--grey);
+    width: 80%;
+    margin: 0 auto 2rem;
+    padding: 4rem;
+}
+
+#section-contact .H-container {
+    margin: 4rem auto 2rem;
+}
+
+#section-contact label {
+    text-align: left;
+    padding: 0.5rem;
+}
+
+#section-contact input, textarea {
+    border-radius: 25px;
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    background-color: var(--grey);
+}
+
+#section-contact textarea {
+    height: 40vh;
+}
+
+#section-contact button {
+    margin: 1rem auto;
+}
+
+/* contactgegevens */
+
     
