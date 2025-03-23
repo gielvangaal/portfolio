@@ -72,6 +72,18 @@
     width: 90vw;
 }
 
+#section-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+}
+
+#section-contact footer {
+    margin: 8rem 0 0;
+}
+
     
 }
 

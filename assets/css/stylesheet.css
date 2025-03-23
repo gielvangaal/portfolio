@@ -26,6 +26,17 @@ body {
     background-color: var(--lightgrey);
 }
 
+a, a:visited, a:active, a:hover, a:focus, a:link, a:visited {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a:hover {
+    text-decoration: underline;
+    
+}
+
+
 section {
     /* background-color: rgb(255, 255, 255, 0.8); */
     width: 100vw;
@@ -489,6 +500,7 @@ button:active {
     width: 2.25rem;
     height: 2.25rem;
     margin: 0.5rem;
+    filter: grayscale(100%);
 }
 
 #webstack-container figcaption {
@@ -575,6 +587,7 @@ button:active {
 }
 
 /* softskills */
+
 #softskills-container {
     display: flex;
     flex-wrap: wrap;
@@ -606,12 +619,20 @@ button:active {
 }
 
 /* boekenplank */
+#boekenplank-superwrap {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .boekenplank-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    width: 90%;
+    width: 80vw;
     margin: 1rem;   
 }
 
@@ -662,85 +683,8 @@ button:active {
     word-break: break-all;
 }
 
-/* hobbies */
-#afspeellijsten {
-    display: flex;
-    flex: 1 1 200px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-#afspeellijsten iframe {
-    /* width: 100%; */
-    height: 100px;
-    border: none;
-}
-
-#eigen-werk {
-    display: flex;
-    flex: 1 1 200px;
-    
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-#eigen-werk figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 300px;
-    background-color: rgb(250, 250, 250, 0.2);
-}
-
-#eigen-werk img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin: 0;
-}
-
-#eigen-werk ul {
-    list-style: none;
-    padding: 0.2rem;
-    margin: 0;
-}
-
-#eigen-werk li {
-    font-size: 0.8rem;
-}
-
-#eigen-werk li:nth-child(2) {
-    font-weight: bold;
-}
-    
-#fotoalbum {
-    display: flex;
-    flex: 1 1 200px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 10rem;
-}
-
-#fotoalbum img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 0;
-    
-    
-}
-
-#fotoalbum img:hover {
-    transform: scale(2);
-    transition: transform 0.3s ease;
-    cursor: crosshair;
+#boekenplank-superwrap {
+    margin: 1rem auto 4rem;
 }
 
 /* CONTACT */
@@ -760,32 +704,68 @@ button:active {
     background-color: var(--grey);
     width: 80%;
     margin: 0 auto 2rem;
-    padding: 4rem;
+    padding: 0 0 2rem;
 }
 
 #section-contact .H-container {
-    margin: 4rem auto 2rem;
+    margin: 4rem auto;
+    
 }
 
-#section-contact label {
+adress {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    grid-auto-rows: auto;
+    /* width: 80%; */
+    margin: 0 auto;
     text-align: left;
-    padding: 0.5rem;
+    align-items: center;
+    
 }
 
-#section-contact input, textarea {
-    border-radius: 25px;
-    border: 1px solid var(--black);
-    padding: 0.5rem;
-    background-color: var(--grey);
+adress p {
+    margin: 0;
 }
 
-#section-contact textarea {
-    height: 40vh;
+adress img {
+    width: 2rem;
+    padding: 0.2rem;
+    border: 1px dotted var(--black);
+    border-radius: 50%;
+    margin: 0.2rem;
 }
 
-#section-contact button {
-    margin: 1rem auto;
+footer {
+    grid-column: 2 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-end;
+    height: calc(100% - 4rem);
 }
+
+footer #footer-wrap {
+    margin: 0 4rem;
+}
+
+footer #socials-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.2rem;
+}
+
+footer #socials-wrapper img {
+    width: 2rem;
+    padding: 0.2rem;
+}
+
+footer p, a {
+    font-size: smaller;
+
+}
+
+
 
 
     
