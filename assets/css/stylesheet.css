@@ -454,6 +454,10 @@ button:active {
     justify-self: end;
 }
 
+#article-overmij img:hover {
+    opacity: 0.1;
+}
+
 #article-overmij p {
     grid-column: 2 / 4;
     grid-row: 2 / -1;
