@@ -591,17 +591,43 @@ nav li {
     color: var(--black);
 }
 
-.accordion img {
-    height: 50px;
-    /* filter: contrast(100%) grayscale(100%); */
-    margin-left: 1rem;
+.accordion-body {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 1rem;
+    align-items: center;
 }
 
-.accordion-body {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.accordion img {
+    margin-left: 1rem;
+    width: 100%;
+    grid-column: 1 / 2;
+    padding: 1rem;
 }
+
+.accordion-body div {
+    grid-column: 2 / -1;
+}
+
+.accordion-body h3 {
+    font-size: 1.25rem;
+}
+
+.accordion-body ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-body li {
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    margin: 0.5rem;
+}
+    
 
 @media screen and (max-width: 768px) {
     .accordion-body {
@@ -802,6 +828,15 @@ footer p, a {
     width: 80vw;
 }
 
+#portfolio-wrap > .H-container:first-of-type {
+    margin: 4rem 0 0;
+}
+
+#header-extension {
+    width: 70vw;
+    margin: 1rem;
+}
+
 #portfolio-header {
     display: grid;
     grid-template-columns: 60% 1fr;
@@ -832,11 +867,12 @@ footer p, a {
 #portfolio-card ul {
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1 1rem;
+    /* flex: 1 1 100px; */
     justify-content: center;
     gap: 1rem;
     padding: 0;
     margin: 0.5rem;
+    
 }
 
 #portfolio-card li {
@@ -867,6 +903,39 @@ footer p, a {
     margin: 1rem 0.5rem;
 }
 
+#main-portfolio-img {
+    width: 70vw;
+    margin: 4rem;
+}
+
+#problemen-en-oplossingen, #wat-ik-heb-geleerd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70vw;
+    background-color: rgb(217, 217, 217, 0.2);
+    padding: 2rem;
+    margin: 0 0 4rem;
+}
+
+#problemen-en-oplossingen > *, #wat-ik-heb-geleerd > * {
+    margin: 1rem;
+}
+
+#sub-portfolio-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    margin: 0 0 4rem;
+}
+
+#sub-portfolio-img > * {
+    width: 50%;
+    margin: 0 1rem;
+}
 
 
     

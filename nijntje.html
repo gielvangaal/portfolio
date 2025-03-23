@@ -26,10 +26,10 @@
 <body>
     <nav>
         <ul>
-            <li>Home</li>
-            <li>Portfolio</li>
-            <li>Over mij</li>
-            <li>Contact</li>
+            <li><a id="btn-terug" class="btn-meer">
+                    < Terug</a>
+            </li>
+            <li><a href="index.html">Home</a></li>
         </ul>
     </nav>
 
@@ -43,18 +43,19 @@
         <article id="portfolio-header">
 
             <div id="portfolio-header-left">
-            <div class="H-container">
-                <h2>Project details</h2>
-                <div class="H-visual" aria-hidden="true"></div>
+                <div class="H-container">
+                    <h2>Project details</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <p>
+                    Het project 'Nijntje' ontstond uit verschillende factoren. Onze pleegkitten Nijntje was ontzettend
+                    schattig, maar stond op het punt in te slapen (wat gelukkig niet is gebeurd!). Tegelijkertijd zocht
+                    ik naar een project om nieuwe technieken te testen, zoals <strong>CSS Grid</strong> en het opzetten van een
+                    messageboard met <strong>Django</strong>. Ik wilde ook meer ervaring opdoen met het bouwen van een website, inclusief
+                    documentatie. De website hoefde niet per se dagelijks gebruikt te worden, maar moest vooral een
+                    belevenis zijn die het verhaal van Nijntje vertelt in de vorm van interactieve mini-posters.
+                </p>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita cupiditate nesciunt animi saepe
-                adipisci vero corporis sint dolorem, repellendus tempora? Voluptate, asperiores, distinctio atque
-                nesciunt neque non delectus excepturi laborum labore voluptatem aperiam, iste dolor. Maiores mollitia
-                ullam magni tempora expedita quos tenetur reprehenderit necessitatibus distinctio repudiandae, totam sit
-                ex!
-            </p>
-        </div>
 
             <div id="portfolio-card">
                 <ul>
@@ -84,12 +85,6 @@
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/github.webp">
-                            <figcaption>Github</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
                             <img src="./assets/images/webstack/gunicorn.webp">
                             <figcaption>Gunicorn</figcaption>
                         </figure>
@@ -114,7 +109,60 @@
 
         </article>
 
+        <img id="main-portfolio-img" src="./assets/images/portfolio/nijntje-1-klein.webp">
+
+        <article id="problemen-en-oplossingen">
+            <div class="H-container">
+                <h2>Problemen en oplossingen</h2>
+                <div class="H-visual" aria-hidden="true"></div>
+            </div>
+            <p>
+                Het opzetten van het messageboard met <strong>Django</strong> was een behoorlijke uitdaging. Aangezien ik nog geen <strong>VPS</strong>
+                had, moest ik dat eerst onderzoeken, aanschaffen en instellen. Daarna heb ik <strong>Gunicorn</strong> geconfigureerd als
+            <strong>WSGI-server</strong> voor <strong>Python</strong> en <strong>Nginx</strong> als <strong>reverse proxy</strong> ingesteld om al het verkeer te regelen. Ik wilde
+                <code>fetch</code> een keer proberen, dus haal ik de berichten nu op via een zelfgebouwd API-endpoint. Geen
+                raketwetenschap, maar voor een junior toch een flinke puzzel. Met wat geduld en doorzettingsvermogen kom
+                je een heel eind. In Nginx heb ik ook veel tijd besteed aan het werken met poorten en serverblokken, een
+                concept dat me eerst niet helemaal duidelijk was, maar gaandeweg ben ik er toch achter gekomen.
+                <br><br>
+                Daarnaast heb ik gewerkt op basis van een <strong>functioneel ontwerp</strong> en het <strong>design</strong> zelf gedaan. Ik ben geen
+                designer, maar ik ben niet bang om dingen uit te proberen. Omdat de doelgroep niet helemaal duidelijk
+                was, miste het ontwerp richting. Uiteindelijk, na wat contemplatie en experimenteren, werd het
+                duidelijk: interactieve mini-posters met een speels karakter, simpelweg omdat ik het leuk vond om te
+                doen.
+            </p>
+        </article>
+
+        <div id="sub-portfolio-img">
+            <img src="./assets/images/portfolio/nijntje-2-klein.webp">
+            <img src="./assets/images/portfolio/nijntje-3-klein.webp">
+        </div>
+
+        <article id="wat-ik-heb-geleerd">
+            <div class="H-container">
+                <h2>Wat ik heb geleerd</h2>
+                <div class="H-visual" aria-hidden="true"></div>
+            </div>
+            <p>
+                Het belang van een <strong>duidelijk omschreven doel</strong> is essentieel, zodat je weet welk probleem je wilt oplossen
+                en wat de beste manier is om dat te doen. Daarnaast heb ik nieuwe technische vaardigheden toegepast om
+                te realiseren wat ik voor ogen had. Ik weet nu hoe een VPS werkt en hoe je ermee kunt werken. Ik begrijp
+                nu de basis van hoe servers functioneren, hoe poorten geconfigureerd moeten worden, hoe je een
+                messageboard opzet en hoe je een eenvoudige <strong>e-mailfunctionaliteit</strong> realiseert. Het besef dat ik, zonder
+                veel voorkennis, relatief ingewikkelde stof aan de praat krijg, is ook een motiverende gedachte. Tot
+                slot, en ik wist het al maar heb het opnieuw bevestigd gekregen: <strong>samen sta je sterker</strong>. Ik wil in een
+                team werken waarin je elkaar kunt aanvullen om zo tot betere resultaten te komen.
+            </p>
+        </article>
+
     </main>
+
+    <!-- Bootstrap JavaScript  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
 
 </body>
 

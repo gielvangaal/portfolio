@@ -25,6 +25,15 @@
 
 <body>
 
+    <nav>
+        <ul>
+            <li><a href="#section-hero">Home</a></li>
+            <li><a href="#section-portfolio">Portfolio</a></li>
+            <li><a href="#section-overmij">Over mij</a></li>
+            <li><a href="#section-contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <section id="section-hero" aria-labelledby="hero-heading">
         <header id="hero">
             <h1 id="hero-heading">Giel van Gaal</h1>
@@ -34,8 +43,8 @@
             <div id="hero-purple" aria-hidden="true"></div>
             <div id="hero-yellow" aria-hidden="true"></div>
 
-            <h2>Junior programmeur & software ontwikkeling</h2>
-            <p>Front-end developer | UI/UX | Systeemontwerp met basiskennis van back-end en databases</p>
+            <h2>Junior programmeur & softwareontwikkelaar</h2>
+            <p>Front-end | UI/UX | Systeemontwerp met basiskennis van back-end en databases</p>
 
             <div id="hero-svg-container" role="img" aria-label="Tekst in cirkel: de wereld vooruit helpen">
                 <svg width="200" height="200" viewBox="0 0 200 200">
@@ -62,9 +71,9 @@
             <!-- card 1 -->
             <article class="card-container" role="listitem" aria-labelledby="card1-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/nijntje-groot.png" alt="Screenshot van website Nijntje">
+                    <img class="card-img" src="./assets/images/portfolio/nijntje-1-klein.webp" alt="Screenshot van website Nijntje">
                     <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
-                        <source src="./assets/video/test.mp4" type="video/mp4">
+                        <source src="./assets/video/nijntje.mp4" type="video/mp4">
                     </video>
                 </figure>
                 <div class="H-container">
@@ -72,12 +81,12 @@
                     <div class="H-visual" aria-hidden="true"></div>
                 </div>
                 <ul class="card-ul">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
+                    <li>Django</li>
+                    <li>Node.js</li>
+                    <li>Nginx</li>
                 </ul>
                 <p>Hobbyproject over pleegkitten Nijntje.</p>
-                <button class="btn-meer" aria-controls="card1-details" aria-expanded="false">Meer</button>
+                <a href="nijntje.html" class="btn-meer" aria-controls="card1-details" aria-expanded="false">Meer</a>
                 <div id="card1-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
@@ -86,13 +95,13 @@
             <!-- card 2 -->
             <article class="card-container" role="listitem" aria-labelledby="card2-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/nijntje-groot.png" alt="Screenshot van website Nijntje">
+                    <img class="card-img" src="./assets/images/portfolio/gvg-1-klein.webp" alt="Screenshot van website Nijntje">
                     <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
-                        <source src="./assets/video/test.mp4" type="video/mp4">
+                        <source src="./assets/video/gvg.mp4" type="video/mp4">
                     </video>
                 </figure>
                 <div class="H-container">
-                    <h2 id="card2-title">Nijntje</h2>
+                    <h2 id="card2-title">Giel van Gaal</h2>
                     <div class="H-visual" aria-hidden="true"></div>
                 </div>
                 <ul class="card-ul">
@@ -100,8 +109,8 @@
                     <li>CSS</li>
                     <li>JavaScript</li>
                 </ul>
-                <p>Hobbyproject over pleegkitten Nijntje.</p>
-                <button class="btn-meer" aria-controls="card2-details" aria-expanded="false">Meer</button>
+                <p>Portfolio voor muzikant</p>
+                <a href="gielvangaal.html" class="btn-meer" aria-controls="card2-details" aria-expanded="false">Meer</a>
                 <div id="card2-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
@@ -110,13 +119,13 @@
             <!-- card 3 -->
             <article class="card-container" role="listitem" aria-labelledby="card3-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/nijntje-groot.png" alt="Screenshot van website Nijntje">
+                    <img class="card-img" src="./assets/images/portfolio/carebots-1-klein.webp" alt="Screenshot van website Nijntje">
                     <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
-                        <source src="./assets/video/test.mp4" type="video/mp4">
+                        <source src="./assets/video/carebots.mp4" type="video/mp4">
                     </video>
                 </figure>
                 <div class="H-container">
-                    <h2 id="card3-title">Nijntje</h2>
+                    <h2 id="card3-title">CareBots</h2>
                     <div class="H-visual" aria-hidden="true"></div>
                 </div>
                 <ul class="card-ul">
@@ -124,8 +133,8 @@
                     <li>CSS</li>
                     <li>JavaScript</li>
                 </ul>
-                <p>Hobbyproject over pleegkitten Nijntje.</p>
-                <button class="btn-meer" aria-controls="card3-details" aria-expanded="false">Meer</button>
+                <p>Front-end voor een schoolproject.</p>
+                <a href="carebots.html" class="btn-meer" aria-controls="card3-details" aria-expanded="false">Meer</a>
                 <div id="card3-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
@@ -152,7 +161,7 @@
             periode heb ik me breed verdiept in verschillende technologieën, waaronder <strong>front-end</strong> en <strong>back-end</strong>
             ontwikkeling, <strong>softwarearchitectuur</strong>, <strong>databaseontwerp</strong> en <strong>DevOps</strong>-principes zoals <strong>CI/CD-pipelines</strong>.
             Ik heb nog geen vaste specialisatie, maar ik ben <strong>leergierig</strong>, werk <strong>methodisch</strong> en ben <strong>gedreven</strong>. Mijn kracht ligt in
-            <strong>samenwerken</strong>, snel de <strong>kern</strong> van een probleem doorgronden en <strong>doelgericht</strong> tot een oplossing komen. Ik zoek een
+            <strong>samenwerken</strong>, snel de <strong>kern van de zaak</strong> doorgronden en <strong>doelgericht</strong> tot een oplossing komen. Ik zoek een
             omgeving waar ik kan groeien, bijdragen aan concrete projecten en samenwerken met mensen om <strong>de wereld
             vooruit te helpen.</strong></p>
         </article>
@@ -217,7 +226,7 @@
                 <li>
                     <figure>
                         <img src="./assets/images/webstack/node-js.webp">
-                        <figcaption>Node JS</figcaption>
+                        <figcaption>Node.js</figcaption>
                     </figure>
                 </li>
                 <li>
@@ -304,20 +313,24 @@
                         Avans Hogeschool | Informatica
                     </button>
                 </header>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionOpleiding&Cursussen">
                     <div class="accordion-body">
                         <img src="./assets/images/opleiding/avans.webp">
                         <div>
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                            <h3>Deeltijdopleiding Informatica | Avans Hogeschool | 2024 - heden</h3>
+                            <ul>
+                                <li>Projectmatig werken</li>
+                                <li>Systeemontwerp</li>
+                                <li>Softwarearchitectuur</li>
+                                <li>Databaseontwerp</li>
+                                <li>DevOps</li>
+                                <li>CI/CD-pipelines</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>UML</li>
+                                <li>Object georienteerd programmeren</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -330,21 +343,19 @@
                         Codecademy | Web Development
                     </button>
                 </header>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
                     <div class="accordion-body">
                         <img src="./assets/images/opleiding/codecademy.webp">
                         <div>
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                            the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                            <h3>Codecadamy | codecademy.com | 2023 - heden</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>UI/UX</li>
+                                <li>Javascript</li>
+                                <li>SQL</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -357,20 +368,42 @@
                         Albeda Collega | Muzikant/ Producer
                     </button>
                 </header>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/albeda.webp">
+                        <img src="./assets/images/opleiding/albeda.png">
                         <div>
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                            <h3>Muzikant/ Producer | Albeda College | 2012 - 2015</h3>
+                            <ul>
+                                <li>Projectmatig werken</li>
+                                <li>Creatief ondernemen</li>
+                                <li>Samenwerken</li>
+                                <li>Presentatievaardigheden</li>
+                                <li>Marketing en communicatie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                         Koning Willem 1 College | Sociaal Cultureel Werk
+                    </button>
+                </header>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/kw1c.png">
+                        <div>
+                            <h3>Sociaal Cultureel Werk | Koning Willem 1 College | 2004 - 2009</h3>
+                            <ul>
+                                <li>Methodisch werken</li>
+                                <li>Sociale vaardigheden</li>
+                                <li>Projectmatig werken</li>
+                                <li>Samenwerken</li>
+                                <li>Presentatievaardigheden</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
