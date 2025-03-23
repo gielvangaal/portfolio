@@ -456,7 +456,7 @@ button:active {
 }
 
 /* webstack */
-#webstack {
+#webstack-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -466,7 +466,7 @@ button:active {
     margin: 1rem;
 }
 
-#webstack ul {
+#webstack-container ul {
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 100px;
@@ -476,22 +476,22 @@ button:active {
     margin: 0;
 }
 
-#webstack li {
+#webstack-container li {
     list-style: none;
 }
 
-#webstack figure {
+#webstack-container figure {
     border: none;
     padding: 0;
 }
 
-#webstack img {
+#webstack-container img {
     width: 2.25rem;
     height: 2.25rem;
     margin: 0.5rem;
 }
 
-#webstack figcaption {
+#webstack-container figcaption {
     font-size: 0.8rem;
 }
 
@@ -575,7 +575,35 @@ button:active {
 }
 
 /* softskills */
+#softskills-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 50vw;
+    margin: 1rem;
+}
 
+#softskills-container h3 {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#softskills-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+#softskills-container li {
+    list-style: none;
+    padding: 0.5rem;
+    background-color: rgb(250, 250, 250, 0.2);
+}
 
 /* boekenplank */
 .boekenplank-container {

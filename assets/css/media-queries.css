@@ -60,11 +60,15 @@
     margin: 1rem;
 }
 
-#webstack {
+#webstack-container {
     width: 90vw;
 }
 
 .accordion {
+    width: 90vw;
+}
+
+#softskills-container {
     width: 90vw;
 }
 
@@ -94,11 +98,15 @@
         width: 30vw;
     }
 
-    #webstack {
+    #webstack-container {
         width: 80vw;
     }
 
     .accordion {
+        width: 80vw;
+    }
+
+    #softskills-container {
         width: 80vw;
     }
     
