@@ -17,3 +17,7 @@ document.querySelectorAll(".card-container").forEach(card => {
         img.style.opacity = "1"; // Afbeelding tonen (fade-in effect)
     });
 });
+
+document.querySelector("#btn-terug").addEventListener("click", function() {
+    window.history.back();
+});

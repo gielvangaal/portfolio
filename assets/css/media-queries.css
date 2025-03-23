@@ -1,5 +1,6 @@
 /* SM: portrait phones, less than 576.98px */
 @media (max-width: 575.98px) {
+
     /* HERO */
     #hero {
         width: 90vw;
@@ -41,50 +42,82 @@
         width: 95vw;
     }
 
-#article-overmij {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 90vw;
-    margin: 0;
-}
+    #article-overmij {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90vw;
+        margin: 0;
+    }
 
-#article-overmij img {
-    width: 50vw;
-    margin: 1rem;
-}
+    #article-overmij img {
+        width: 50vw;
+        margin: 1rem;
+    }
 
-#article-overmij p {
-    margin: 1rem;
-}
+    #article-overmij p {
+        margin: 1rem;
+    }
 
-#webstack-container {
-    width: 90vw;
-}
+    #webstack-container {
+        width: 90vw;
+    }
 
-.accordion {
-    width: 90vw;
-}
+    .accordion {
+        width: 90vw;
+    }
 
-#softskills-container {
-    width: 90vw;
-}
+    #softskills-container {
+        width: 90vw;
+    }
 
-#section-contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
-}
+    #section-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+    }
 
-#section-contact footer {
-    margin: 8rem 0 0;
-}
+    #section-contact footer {
+        margin: 8rem 0 0;
+    }
 
-    
+    #portfolio-wrap > * {
+        width: 90vw;
+    }
+
+    #portfolio-wrap .H-container {
+        width: initial;
+    }
+
+    #portfolio-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #portfolio-card {
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    #sub-portfolio-img {
+        flex-direction: column;
+    }
+
+    #sub-portfolio-img > * {
+        width: 90%;
+        margin: 1rem;
+    }
+
+
 }
 
 /* MD: landscape phones, greater then 575.99 and less than 767.98px */
@@ -121,7 +154,29 @@
     #softskills-container {
         width: 80vw;
     }
-    
+
+    #portfolio-wrap > * {
+        width: 90vw;
+    }
+
+    #portfolio-wrap .H-container {
+        width: initial;
+    }
+
+    #portfolio-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #portfolio-card {
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
 }
 
 /* XL: desktops, greater then 991.99 and less than 1199.98px */
