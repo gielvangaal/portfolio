@@ -899,7 +899,7 @@ footer p, a {
     font-size: smaller;
 }
 
-#portfolio-card button {
+#portfolio-card .btn-meer {
     margin: 1rem 0.5rem;
 }
 

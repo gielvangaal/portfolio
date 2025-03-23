@@ -22,10 +22,13 @@
     }
 
     #hero h2 {
-        grid-column: 3 / 4;
-        grid-row: 2 / -1;
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
         font-size: 5vw;
         padding: 0;
+        display: flex;
+        margin-left: 1rem;
+        /* padding-right: rem; */
     }
 
     #hero p {
@@ -35,8 +38,15 @@
     }
 
     #hero svg {
-        font-size: 6vw;
+        font-size: 8vw;
     }
+
+    #hero-svg-container {
+        grid-column: 1 / 4;
+        grid-row: 4 / 6;
+        /* margin-right: vw; */
+        /* padding-right: 1rem; */
+    }    
 
     #cards-wrapper {
         width: 95vw;
