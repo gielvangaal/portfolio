@@ -55,7 +55,7 @@ nav {
     }
 
     #cards-wrapper {
-        width: 95vw;
+        width: 85vw;
     }
 
     #article-overmij {
@@ -114,6 +114,10 @@ nav {
 
     #section-contact footer {
         margin: 8rem 0 0;
+    }
+
+    footer #footer-wrap {
+        margin: 0 2rem;
     }
 
     #portfolio-wrap>* {

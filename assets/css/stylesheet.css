@@ -182,9 +182,6 @@ figcaption {
     padding: 0.3rem 2rem;
     border: none;
     width: fit-content;
-    /* transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
-                border-radius 0.15s ease; */
     transition: background-color 0.3s ease;
 }
 
@@ -360,21 +357,25 @@ nav li {
     /* margin: auto; */
 }
 
+#section-portfolio h2 {
+    font-size: 1.6875rem;
+}
+
 #cards-wrapper {
     display: flex;
     flex-wrap: wrap;
     width: 70vw;
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 6rem;
+    margin: 2rem 0 4rem;
 }
 
 .card-container {
     /* margin: 0 4rem; */
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     /* min-height: 30rem; */
     /* min-width: 30rem; */
     background-color: rgb(217, 217, 217, 0.2);
-    border-radius: 25px;
+    /* border-radius: 25px; */
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -382,10 +383,8 @@ nav li {
     /* width: 30vw; */
     /* max-height: 500px; */
     text-align: left;
-    flex: 1 1 350px;
+    flex: 1 1 250px;
     /* min-width: 250px; */
-    
-
 }
 
 .media-card-container {
@@ -631,6 +630,7 @@ video {
     padding: 0.5rem;
     border: 1px solid var(--black);
     margin: 0.5rem;
+    font-size: 0.8rem;
 }
     
 
@@ -692,8 +692,10 @@ video {
     justify-content: center;
     gap: 1rem;
     width: 80vw;
-    margin: 1rem;   
+    margin: 1rem auto 0;   
 }
+
+
 
 .boekenplank-container figure {
     width: auto;
@@ -744,6 +746,10 @@ video {
 
 #boekenplank-superwrap {
     margin: 1rem auto 4rem;
+}
+
+#boekenplank-superwrap button {
+    margin: 1rem;
 }
 
 /* CONTACT */
