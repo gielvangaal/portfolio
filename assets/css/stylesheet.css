@@ -294,7 +294,7 @@ nav li {
     transform: rotate(180deg);
     margin: auto;
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 2vw;
     z-index: 2;
     padding: 1rem;
 }
@@ -332,7 +332,8 @@ nav li {
     margin: auto;
     z-index: 1;
     font-family: Besley, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.6vw;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
     color: var(--black);
     animation: rotate 25s linear infinite; 
     /* border: 1px solid var(--black); */
@@ -419,6 +420,9 @@ nav li {
     display: none;
     opacity: 1;
     transition: opacity 1s ease-in-out;
+}
+
+video {
     pointer-events: none;
 }
 
