@@ -29,6 +29,7 @@ body {
 a, a:visited, a:active, a:hover, a:focus, a:link, a:visited {
     text-decoration: none;
     color: var(--black);
+    font-size: smaller;
 }
 
 a:hover {
@@ -483,10 +484,12 @@ video {
     object-fit: cover;
     filter: grayscale(100%);
     justify-self: end;
+    opacity: 1;
 }
 
 #article-overmij img:hover {
     opacity: 0.1;
+    transition: opacity 0.3s ease;
 }
 
 #article-overmij p {
@@ -751,7 +754,7 @@ video {
     margin: 1rem auto 4rem;
 }
 
-#boekenplank-superwrap button {
+#boekenplank-superwrap a {
     margin: 1rem;
 }
 
