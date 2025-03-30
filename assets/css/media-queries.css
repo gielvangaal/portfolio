@@ -197,6 +197,11 @@ nav {
         gap: 3rem;
         width: 90vw;
     }
+/* 
+    .card-container {
+        flex: 1 1 70vw;
+    max-width: 70vw;
+} */
 
     #article-overmij {
         grid-template-rows: 10vh 10vh auto;
@@ -213,6 +218,17 @@ nav {
 
     .accordion {
         width: 80vw;
+    }
+
+    .accordion-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accordion img {
+        width: 33%;
     }
 
     #softskills-container {
