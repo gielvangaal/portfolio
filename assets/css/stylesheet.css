@@ -49,31 +49,19 @@ a:hover {
 }
 
 a img:hover {
-    
     background-color: var(--grey);
     border-radius: 10px;
-    
     transition: background-color 1s ease;
 }
 
 
 
 section {
-    /* background-color: rgb(255, 255, 255, 0.8); */
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    /* margin: 1rem; */
-    /* padding: 1rem; */
-    /* border: 1px solid var(--grey); */
-}
-
-@media screen and (max-width: 768px) {
-    section {
-        width: 98vw;
-    }
 }
 
 /* Typografie schaal (Perfect Fourth - 1.333) */
@@ -125,25 +113,6 @@ p {
     line-height: 1.6;
 }
 
-/* Responsieve aanpassingen voor kleinere schermen */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    h4 {
-        font-size: 1.125rem;
-    }
-}
-
 h3 {
     padding: 1rem;
 }
@@ -160,7 +129,7 @@ figcaption {
     padding: 0.2rem;
 }
 
-/* TYPOGRAFIE */
+/* headers */
 .H-container {
     position: relative;
     padding: 0 10px;
@@ -179,7 +148,7 @@ figcaption {
     z-index: -1;
 }
 
-@media screen and (max-width: 430px) {
+/* @media screen and (max-width: 430px) {
     .H-visual-mobile {
         bottom: 1.5rem;
         left: 0;
@@ -187,7 +156,7 @@ figcaption {
         width: 75%;
 
     }
-}
+} */
 
 #section-btn {
     display: flex;
@@ -231,9 +200,6 @@ nav {
     align-items: center;
     width: 100vw;
     height: auto;
-    /* position: fixed; */
-    /* top: 0; */
-    /* z-index: 100; */
 }
 
 nav ul {
@@ -251,7 +217,6 @@ nav li {
 
 /* HERO SECTION */
 #section-hero {
-    /* height: 90vh; */
     margin: 5rem 0;
     align-items: center;
 }
@@ -265,7 +230,6 @@ nav li {
     width: 60vw;
     height: calc(60vw * 9 / 16);
     gap: 1rem;
-    /* margin-top: 7rem; */
     transform: rotate(-2deg);
     cursor: default;
 }
@@ -310,8 +274,6 @@ nav li {
     grid-column: 3 / 4;
     grid-row: 2 / -1;
     writing-mode: vertical-rl;
-    /* transform: rotate(180deg); */
-    /* background-color: aqua;  */
     display: flex;
     align-items: center;
     text-align: left;
@@ -340,27 +302,19 @@ nav li {
     grid-row: 3 / 5;
     margin-right: 3vw;
     display: flex;
-    /* border: 1px solid var(--black); */
-    
 }
 
 #hero svg {
     width: 55%;
     height: 100%;
     object-fit: cover;
-    /* align-items: center;
-    justify-content: center; */
-    /* padding: 1rem; */
     margin: auto;
     z-index: 1;
     font-family: Besley, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    /* font-weight: bold; */
     color: var(--black);
     animation: rotate 25s linear infinite; 
-    /* border: 1px solid var(--black); */
     border-radius: 50%;
-    /* cursor: default; */
 }
 
 @keyframes rotate {
@@ -373,13 +327,10 @@ nav li {
 }
 
 /* PORTFOLIO (CARDS) SECTION */
-
 #section-portfolio {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-    /* margin: auto; */
 }
 
 #section-portfolio h2 {
@@ -397,34 +348,23 @@ nav li {
 }
 
 .card-container {
-    /* margin: 0 4rem; */
     padding: 1rem 2rem;
-    /* margin: auto; */
-    /* min-height: 30rem; */
-    /* min-width: 30rem; */
     background-color: rgb(217, 217, 217, 0.2);
-    /* border-radius: 25px; */
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    /* width: 30vw; */
-    /* max-height: 500px; */
     text-align: left;
     flex: 1 1 450px;
     max-width: 450px;
-    /* min-width: 250px; */
 }
 
 .media-card-container {
     position: relative;
     width: 100%;
-    
     height: auto;
-    /* max-height: 250px; */
     aspect-ratio: 16/9;
     margin: 2rem 0 1rem;
-
 }
 
 .card-img,
@@ -434,10 +374,6 @@ nav li {
     left: 0;
     width: 100%;
     height: auto;
-    
-    /* max-height: 250px; */
-    /* opacity: 1;
-            transition: opacity 3s ease; */
 }
 
 .card-img {
@@ -477,7 +413,6 @@ video {
 }
 
 /* OVER MIJ SECTION */
-
 #section-overmij {
     background-color: var(--grey);
     width: 100vw;
@@ -521,7 +456,6 @@ video {
     grid-column: 2 / 4;
     grid-row: 2 / -1;
     text-align: center;
-    /* justify-content: center; */
     align-self: end;
     margin: 0;
     z-index: 1;
@@ -570,7 +504,7 @@ video {
     font-size: 0.8rem;
 }
 
-/* opleidingen & cursussen */
+/* onderwijs */
 .accordion {
     width: 70vw;
     margin: 1rem auto;
@@ -664,20 +598,7 @@ video {
     font-size: 0.8rem;
 }
     
-
-@media screen and (max-width: 768px) {
-    .accordion-body {
-        flex-direction: column;
-    }
-
-    .accordion img {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-}
-
 /* softskills */
-
 #softskills-container {
     display: flex;
     flex-wrap: wrap;
@@ -733,12 +654,9 @@ video {
 
 .boekenplank-container figure {
     width: auto;
-    /* border: 1px dotted var(--grey); */
     background-color: rgb(250, 250, 250, 0.2);
     display: flex;
     flex: 1 1 300px;
-    /* min-width: 300px; */
-    /* justify-content: center; */
 }
 
 .boekenplank-container img {
@@ -794,7 +712,6 @@ video {
     align-items: center;
 }
 
-/* contactformulier */
 #contact-wrapper {
     grid-column: 1 / 2;
     display: flex;
@@ -913,7 +830,6 @@ footer p, a {
 #portfolio-card ul {
     display: flex;
     flex-wrap: wrap;
-    /* flex: 1 1 100px; */
     justify-content: center;
     gap: 1rem;
     padding: 0;
