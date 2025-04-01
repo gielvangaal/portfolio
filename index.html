@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giel van Gaal Portfolio</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Portfolio van Giel van Gaal - Junior programmeur en softwareontwikkelaar. Bekijk mijn projecten en vaardigheden.">
+
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords"
+        content="Giel van Gaal, portfolio, softwareontwikkeling, front-end, back-end, webdesign, developer, UX/UI design">
+
+    <!-- Meta Author -->
+    <meta name="author" content="Giel van Gaal">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +36,7 @@
 
 <body>
 
-    <nav>
+    <nav aria-label="Hoofdnavigatie">
         <ul>
             <li><a href="#section-hero">Home</a></li>
             <li><a href="#section-portfolio">Portfolio</a></li>
@@ -36,28 +47,36 @@
 
     <section id="section-hero" aria-labelledby="hero-heading">
         <header id="hero">
-            <h1 id="hero-heading">Giel van Gaal</h1>
 
-            <img src="./assets/images/giel.png" alt="Portret van Giel van Gaal">
-
+            <!-- visuals -->
             <div id="hero-purple" aria-hidden="true"></div>
             <div id="hero-yellow" aria-hidden="true"></div>
 
-            <div id="hero-h2">
-            <h2>Junior programmeur & softwareontwikkelaar</h2>
-            </div>
-            <p>Front-end | Basiskennis Back-end, databases en OOP | Projectmatig werken | UI/UX</p>
+            <!-- content -->
+            <h1 id="hero-heading">Giel van Gaal</h1>
 
+            <div id="hero-h2">
+                <h2>Junior programmeur & softwareontwikkelaar</h2>
+            </div>
+
+            <img src="./assets/images/giel.webp" alt="Giel kijkt alsof ie er zin in heeft">
+            <p>Front-end | Basiskennis Back-end, databases en OOP | Projectmatig werken | UX/UI</p>
+
+            <!-- svg -->
             <div id="hero-svg-container" role="img" aria-label="Tekst in cirkel: de wereld vooruit helpen">
                 <svg width="200" height="200" viewBox="0 0 200 200">
                     <defs>
                         <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
                     </defs>
                     <text>
-                        <textPath href="#circlePath" textLength="500">de wereld vooruit helpen >>>&nbsp;</textPath>
+                        <textPath href="#circlePath" textLength="500" lang="nl">de wereld vooruit helpen >>>&nbsp;
+                        </textPath>
                     </text>
                 </svg>
             </div>
+
+
+
         </header>
     </section>
 
@@ -69,11 +88,12 @@
             <div class="H-visual" aria-hidden="true"></div>
         </div>
 
-        <div id="cards-wrapper" role="list">
+        <div id="cards-wrapper">
             <!-- card 1 -->
-            <article class="card-container" role="listitem" aria-labelledby="card1-title">
+            <article class="card-container" aria-labelledby="card1-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/portfolio/nijntje-1-klein.webp" alt="Screenshot van website Nijntje">
+                    <img class="card-img" src="./assets/images/portfolio/nijntje-1-klein.webp"
+                        alt="Screenshot van de Nijntje website">
                     <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
                         <source src="./assets/video/nijntje.mp4" type="video/mp4">
                     </video> -->
@@ -87,20 +107,21 @@
                     <li>Node.js</li>
                     <li>Nginx</li>
                 </ul>
-                <p>Hobbyproject over pleegkitten Nijntje.</p>
-                <a href="nijntje.html" class="btn-meer" aria-controls="card1-details" aria-expanded="false">Meer</a>
+                <p>Fullstack hobbyproject over pleegkitten Nijntje.</p>
+                <a href="nijntje.html" class="btn-meer" aria-controls="card1-details">Meer</a>
                 <div id="card1-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
             </article>
 
             <!-- card 2 -->
-            <article class="card-container" role="listitem" aria-labelledby="card2-title">
+            <article class="card-container" aria-labelledby="card2-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/portfolio/gvg-1-klein.webp" alt="Screenshot van website Nijntje">
-                    <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
-                        <source src="./assets/video/gvg.mp4" type="video/mp4">
-                    </video> -->
+                    <img class="card-img" src="./assets/images/portfolio/gvg-1-klein.webp"
+                        alt="Screenshot van de Giel van Gaal website">
+                    <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
+                        <source src="./assets/video/gvg.webm" type="video/webm">
+                    </video>
                 </figure>
                 <div class="H-container">
                     <h2 id="card2-title">Giel van Gaal</h2>
@@ -111,17 +132,18 @@
                     <li>CSS</li>
                     <li>JavaScript</li>
                 </ul>
-                <p>Portfolio voor muzikant</p>
-                <a href="gielvangaal.html" class="btn-meer" aria-controls="card2-details" aria-expanded="false">Meer</a>
+                <p>Front-end portfolio voor m'n muzikantschap.</p>
+                <a href="gielvangaal.html" class="btn-meer" aria-controls="card2-details">Meer</a>
                 <div id="card2-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
             </article>
 
             <!-- card 3 -->
-            <article class="card-container" role="listitem" aria-labelledby="card3-title">
+            <article class="card-container" aria-labelledby="card3-title">
                 <figure class="media-card-container">
-                    <img class="card-img" src="./assets/images/portfolio/carebots-1-klein.webp" alt="Screenshot van website Nijntje">
+                    <img class="card-img" src="./assets/images/portfolio/carebots-1-klein.webp"
+                        alt="Screenshot van de CareBots frond-end website">
                     <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
                         <source src="./assets/video/carebots.mp4" type="video/mp4">
                     </video> -->
@@ -135,8 +157,8 @@
                     <li>CSS</li>
                     <li>JavaScript</li>
                 </ul>
-                <p>Front-end voor een schoolproject.</p>
-                <a href="carebots.html" class="btn-meer" aria-controls="card3-details" aria-expanded="false">Meer</a>
+                <p>Front-end voor de 'Carebots' website, een schoolproject uit het eerste leerjaar.</p>
+                <a href="carebots.html" class="btn-meer" aria-controls="card3-details">Meer</a>
                 <div id="card3-details" hidden>
                     <p>Extra informatie over dit project.</p>
                 </div>
@@ -149,23 +171,31 @@
 
         <!-- header -->
         <div class="H-container">
-            <h1 id="portfolio-heading">Over mij</h1>
+            <h1>Over mij</h1>
             <div class="H-visual" aria-hidden="true"></div>
         </div>
 
         <article id="article-overmij">
-            <img src="./assets/images/giel2.png">
+            <img src="./assets/images/giel2.webp" alt="Giel kijkt lachend in de camera">
             <p>Mijn naam is Giel en ik ben op zoek naar een baan in de IT. Na jaren met plezier in de culturele sector
-            te hebben gewerkt, maak ik nu de overstap naar de informatica. Programmeren heb ik altijd al gedaan omdat ik
-            het leuk vond, en inmiddels volg ik de <strong>deeltijdopleiding Informatica</strong> aan Avans Hogeschool. 
-            <br><br>
-            De afgelopen
-            periode heb ik me breed verdiept in verschillende technologieën, waaronder <strong>front-end</strong> en <strong>back-end</strong>
-            ontwikkeling, <strong>softwarearchitectuur</strong>, <strong>databaseontwerp</strong> en <strong>DevOps</strong>-principes zoals <strong>CI/CD-pipelines</strong>.
-            Ik heb nog geen vaste specialisatie, maar ik ben <strong>leergierig</strong>, werk <strong>methodisch</strong> en ben <strong>gedreven</strong>. Mijn kracht ligt in
-            <strong>samenwerken</strong>, snel de <strong>kern van de zaak</strong> doorgronden en <strong>doelgericht</strong> tot een oplossing komen. Ik zoek een
-            omgeving waar ik kan groeien, bijdragen aan concrete projecten en samenwerken met mensen om <strong>de wereld
-            vooruit te helpen.</strong></p>
+                te hebben gewerkt, maak ik nu de overstap naar de informatica. Programmeren heb ik altijd al gedaan
+                omdat ik
+                het leuk vond, en inmiddels volg ik de <strong>deeltijdopleiding Informatica</strong> aan Avans
+                Hogeschool.
+                <br><br>
+                De afgelopen
+                periode heb ik me breed verdiept in verschillende technologieën, waaronder <strong>front-end</strong> en
+                <strong>back-end</strong>
+                ontwikkeling, <strong>softwarearchitectuur</strong>, <strong>databaseontwerp</strong> en
+                <strong>DevOps</strong>-principes zoals <strong>CI/CD-pipelines</strong>.
+                Mijn specialisatie zit 'm in Front-end en, in mindere mate de Back-end. Ik ben <strong>leergierig</strong>, werk
+                <strong>methodisch</strong> en ben <strong>gedreven</strong>. Mijn kracht ligt in
+                <strong>samenwerken</strong>, snel de <strong>kern van de zaak</strong> doorgronden en
+                <strong>doelgericht</strong> tot een oplossing komen. Ik zoek een
+                omgeving waar ik kan groeien, bijdragen aan concrete projecten en samenwerken met mensen om <strong>de
+                    wereld
+                    vooruit te helpen.</strong>
+            </p>
         </article>
 
         <!-- webstack -->
@@ -175,125 +205,124 @@
         </div>
 
         <div id="webstack-container">
-            <ul>
+            <ul aria-label="Webstack">
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/html5.webp">
+                        <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo">
                         <figcaption>HTML5</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/css3.webp">
-                        <figcaption>CCS3</figcaption>
+                        <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo">
+                        <figcaption>CSS3</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/certbot.webp">
+                        <img src="./assets/images/webstack/certbot.webp" alt="Certbot logo">
                         <figcaption>Certbot</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/django.webp">
+                        <img src="./assets/images/webstack/django.webp" alt="Django logo">
                         <figcaption>Django</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/github.webp">
+                        <img src="./assets/images/webstack/github.webp" alt="Github logo">
                         <figcaption>Github</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/gunicorn.webp">
+                        <img src="./assets/images/webstack/gunicorn.webp" alt="Gunicorn logo">
                         <figcaption>Gunicorn</figcaption>
                     </figure>
                 </li>
-
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/javascript.webp">
+                        <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo">
                         <figcaption>JavaScript</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/nginx.webp">
+                        <img src="./assets/images/webstack/nginx.webp" alt="Nginx logo">
                         <figcaption>Nginx</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/node-js.webp">
+                        <img src="./assets/images/webstack/node-js.webp" alt="Node.js logo">
                         <figcaption>Node.js</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/python.webp">
+                        <img src="./assets/images/webstack/python.webp" alt="Python logo">
                         <figcaption>Python</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/rest-api.webp">
+                        <img src="./assets/images/webstack/rest-api.webp" alt="Rest API logo">
                         <figcaption>Rest API</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/figma.webp">
+                        <img src="./assets/images/webstack/figma.webp" alt="Figma logo">
                         <figcaption>Figma</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/php.webp">
+                        <img src="./assets/images/webstack/php.webp" alt="PHP logo">
                         <figcaption>PHP</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/mysql.webp">
+                        <img src="./assets/images/webstack/mysql.webp" alt="MySQL logo">
                         <figcaption>MySQL</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/terminal.webp">
+                        <img src="./assets/images/webstack/terminal.webp" alt="Terminal logo">
                         <figcaption>BASH</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/bootstrap.webp">
+                        <img src="./assets/images/webstack/bootstrap.webp" alt="Bootstrap logo">
                         <figcaption>Bootstrap</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/jira.webp">
+                        <img src="./assets/images/webstack/jira.webp" alt="Jira logo">
                         <figcaption>Jira</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/gimp.webp">
+                        <img src="./assets/images/webstack/gimp.webp" alt="Gimp logo">
                         <figcaption>Gimp</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/docker.webp">
+                        <img src="./assets/images/webstack/docker.webp" alt="Docker logo">
                         <figcaption>Docker</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/uml.webp">
+                        <img src="./assets/images/webstack/uml.webp" alt="UML logo">
                         <figcaption>UML</figcaption>
                     </figure>
                 </li>
@@ -302,25 +331,28 @@
 
         <!-- opleidingen & cursussen -->
         <div class="H-container">
-            <h2>Opleidingen & cursussen</h2>
+            <h2>Onderwijs</h2>
             <div class="H-visual" aria-hidden="true"></div>
         </div>
 
-        <div class="accordion">
+        <div class="accordion" role="tablist" aria-multiselectable="true">
 
-            <article class="accordion-item">
+            <article class="accordion-item" role="tab">
                 <header class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Avans Hogeschool | Informatica
                     </button>
                 </header>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionOpleiding&Cursussen">
+                <div id="collapseOne" class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/avans.webp">
+                        <img src="./assets/images/opleiding/avans.webp" alt="Avans Hogeschool logo">
                         <div>
                             <h3>Deeltijdopleiding Informatica | Avans Hogeschool | 2024 - heden</h3>
                             <ul>
+                                <li>PHP</li>
+                                <li>MySQL</li>
                                 <li>Projectmatig werken</li>
                                 <li>Systeemontwerp</li>
                                 <li>Softwarearchitectuur</li>
@@ -331,25 +363,28 @@
                                 <li>HTML</li>
                                 <li>CSS</li>
                                 <li>UML</li>
-                                <li>Object georienteerd programmeren</li>
+                                <li>Object georiënteerd programmeren</li>
+                                <li>Git</li>
+                                <li>Jira</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </article>
 
-            <article class="accordion-item">
+            <article class="accordion-item" role="tab">
                 <header class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Codecademy | Web Development
                     </button>
                 </header>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen"
+                    role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/codecademy.webp">
+                        <img src="./assets/images/opleiding/codecademy.webp" alt="Codecademy logo">
                         <div>
-                            <h3>Codecadamy | codecademy.com | 2023 - heden</h3>
+                            <h3>Codecademy | codecademy.com | 2023 - heden</h3>
                             <ul>
                                 <li>Python</li>
                                 <li>UI/UX</li>
@@ -363,16 +398,17 @@
                 </div>
             </article>
 
-            <article class="accordion-item">
+            <article class="accordion-item" role="tab">
                 <header class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Albeda Collega | Muzikant/ Producer
+                        Albeda College | Muzikant/ Producer
                     </button>
                 </header>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
+                <div id="collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/albeda.png">
+                        <img src="./assets/images/opleiding/albeda.png" alt="Albeda College logo">
                         <div>
                             <h3>Muzikant/ Producer | Albeda College | 2012 - 2015</h3>
                             <ul>
@@ -387,16 +423,17 @@
                 </div>
             </article>
 
-            <article class="accordion-item">
+            <article class="accordion-item" role="tab">
                 <header class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                         Koning Willem 1 College | Sociaal Cultureel Werk
+                        Koning Willem 1 College | Sociaal Cultureel Werk
                     </button>
                 </header>
-                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen">
+                <div id="collapseFour" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/kw1c.png">
+                        <img src="./assets/images/opleiding/kw1c.png" alt="Koning Willem 1 College logo">
                         <div>
                             <h3>Sociaal Cultureel Werk | Koning Willem 1 College | 2004 - 2009</h3>
                             <ul>
@@ -422,7 +459,7 @@
         <div id="softskills-container">
 
             <h3>Vaardigheden</h3>
-            <ul>
+            <ul aria-label="Vaardigheden">
                 <li>Praktische instelling</li>
                 <li>Sociale vaardigheden</li>
                 <li>Zelfstandigheid</li>
@@ -434,7 +471,7 @@
             </ul>
 
             <h3>Competenties</h3>
-            <ul>
+            <ul aria-label="Competenties">
                 <li>Oplossingsgericht denken</li>
                 <li>Energie</li>
                 <li>Empathie</li>
@@ -447,17 +484,17 @@
             </ul>
 
             <h3>Karaktereigenschappen</h3>
-            <ul>
-                <li>Nieuwsgierig</li>
-                <li>Realistisch</li>
-                <li>Klantgericht</li>
-                <li>Evenwichtig</li>
-                <li>Spontaan</li>
-                <li>Integer</li>
-                <li>Creatief</li>
-                <li>Betrokken</li>
-                <li>Doortastend</li>
-            </ul>
+                <ul aria-labelledby="Karaktereigenschappen">
+                    <li>Nieuwsgierig</li>
+                    <li>Realistisch</li>
+                    <li>Klantgericht</li>
+                    <li>Evenwichtig</li>
+                    <li>Spontaan</li>
+                    <li>Integer</li>
+                    <li>Creatief</li>
+                    <li>Betrokken</li>
+                    <li>Doortastend</li>
+                </ul>
 
         </div>
 
@@ -467,11 +504,11 @@
             <div class="H-visual" aria-hidden="true"></div>
         </div>
 
-
         <div id="boekenplank-superwrap">
             <div class="boekenplank-container">
                 <figure>
-                    <img src="./assets/images/boekenplank/htmlencss-doolaard.jpg">
+                    <img src="./assets/images/boekenplank/htmlencss-doolaard.jpg"
+                        alt="Boekcover HTML 5 en CSS van Peter Doolaard">
                     <figcaption>
                         <ul>
                             <li>HTML 5 en CSS</li>
@@ -482,7 +519,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/informatiemanagement-grit.jpg">
+                    <img src="./assets/images/boekenplank/informatiemanagement-grit.jpg"
+                        alt="Boekcover Informatiemanagement van Roel Grit">
                     <figcaption>
                         <ul>
                             <li>Informatiemanagement</li>
@@ -493,7 +531,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.jpg">
+                    <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.jpg"
+                        alt="Boekcover Inleiding databases van Ben Groenendijk">
                     <figcaption>
                         <ul>
                             <li>Inleiding databases</li>
@@ -507,7 +546,8 @@
             <div class="collapse boekenplank-container" id="boekenplank">
 
                 <figure>
-                    <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.jpeg">
+                    <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.jpeg"
+                        alt="Boekcover JavaScript & jQuery van Peter Kassenaar">
                     <figcaption>
                         <ul>
                             <li>JavaScript & jQuery</li>
@@ -518,7 +558,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.jpeg">
+                    <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.jpeg"
+                        alt="Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe">
                     <figcaption>
                         <ul>
                             <li>Praktisch UML</li>
@@ -529,7 +570,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.jpeg">
+                    <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.jpeg"
+                        alt="Boekcover Python Crash Course van Eric Matthes">
                     <figcaption>
                         <ul>
                             <li>Python Crash Course</li>
@@ -540,7 +582,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/subliemwebdesign.jpeg">
+                    <img src="./assets/images/boekenplank/subliemwebdesign.jpeg"
+                        alt="Boekcover Subliem webdesign van Jason Beaird & James George">
                     <figcaption>
                         <ul>
                             <li>Principes van subliem webdesign</li>
@@ -551,7 +594,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/linuxcommandline.png">
+                    <img src="./assets/images/boekenplank/linuxcommandline.png"
+                        alt="Boekcover The Linux Command Line van William Shotts">
                     <figcaption>
                         <ul>
                             <li>The Linux Command Line</li>
@@ -562,7 +606,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/grafischontwerpen.jpeg">
+                    <img src="./assets/images/boekenplank/grafischontwerpen.jpeg"
+                        alt="Boekcover Grafisch ontwerpen van David Dabner & Sandra Stewart">
                     <figcaption>
                         <ul>
                             <li>Grafisch Ontwerpen</li>
@@ -573,7 +618,7 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/thisisit.jpeg">
+                    <img src="./assets/images/boekenplank/thisisit.jpeg" alt="Boekcover This is IT! van Victor Peters">
                     <figcaption>
                         <ul>
                             <li>This is IT!</li>
@@ -584,7 +629,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/wordpress6.jpeg">
+                    <img src="./assets/images/boekenplank/wordpress6.jpeg"
+                        alt="Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum">
                     <figcaption>
                         <ul>
                             <li>Handboek Wordpress 6</li>
@@ -595,7 +641,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/inleidinguml.jpeg">
+                    <img src="./assets/images/boekenplank/inleidinguml.jpeg"
+                        alt="Boekcover Inleiding UML van Hendrik Jan van Randen">
                     <figcaption>
                         <ul>
                             <li>Inleiding UML</li>
@@ -607,10 +654,10 @@
 
             </div>
 
-            <a class="btn-meer" data-bs-toggle="collapse" href="#boekenplank" role="button"
-                aria-expanded="false" aria-controls="boekenplank">
+            <a class="btn-meer" data-bs-toggle="collapse" href="#boekenplank" role="button" aria-expanded="false"
+                aria-controls="boekenplank">
                 Meer
-        </a>
+            </a>
         </div>
 
     </section>
@@ -624,13 +671,13 @@
             </div>
 
             <adress>
-                <img src="./assets/images/contact/smiley.png">
+                <img src="./assets/images/contact/smiley.png" alt="Smiley emoji">
                 <p>Giel van Gaal</p>
-                <img src="./assets/images/contact/telephone.png">
+                <img src="./assets/images/contact/telephone.png" alt="Telefoon icoon">
                 <p>06-13383313</p>
-                <img src="./assets/images/contact/email.png">
+                <img src="./assets/images/contact/email.png" alt="E-mail icoon">
                 <p>gielvangaal@gmail.com</p>
-                <img src="./assets/images/contact/location.png">
+                <img src="./assets/images/contact/location.png" alt="Locatie icoon">
                 <p>'s-Hertogenbosch</p>
             </adress>
 
@@ -644,13 +691,16 @@
                     <a href="https://github.com/gielvangaal" target="_blank" aria-label="Github" title="Github">
                         <img src="./assets/images/webstack/github.webp" alt="Github logo">
                     </a>
-                    <a href="www.linkedin.com/in/gielvangaal" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/gielvangaal" target="_blank" aria-label="LinkedIn"
+                        title="LinkedIn">
                         <img src="./assets/images/socials/linkedin.png" alt="LinkedIn logo">
                     </a>
-                    <a href="https://www.instagram.com/gielvangaal/" target="_blank" aria-label="Instagram" title="Instagram">
+                    <a href="https://www.instagram.com/gielvangaal/" target="_blank" aria-label="Instagram"
+                        title="Instagram">
                         <img src="./assets/images/socials/instagram.png" alt="Instagram logo">
                     </a>
-                    <a href="https://open.spotify.com/artist/4OjaWwgsmjy7CBL0wrL8NI?si=PRJ5CwCATiedy6tLM2g7UQ" target="_blank" aria-label="Spotify" title="Spotify">
+                    <a href="https://open.spotify.com/artist/4OjaWwgsmjy7CBL0wrL8NI?si=PRJ5CwCATiedy6tLM2g7UQ"
+                        target="_blank" aria-label="Spotify" title="Spotify">
                         <img src="./assets/images/socials/spotify.png" alt="Spotify logo">
                     </a>
                 </div>
@@ -659,8 +709,6 @@
 
             </div>
         </footer>
-
-
 
     </section>
 

@@ -14,11 +14,23 @@
 
 html {
     font-size: 16px;
+    animation: fade-in 1s ease forwards;
+
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    color: var(--zwart);
+    color: var(--black);
     font-size: 1rem;
     display: flex;
     flex-direction: column;
@@ -192,6 +204,7 @@ figcaption {
     border: none;
     width: fit-content;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 button:hover {
@@ -670,9 +683,12 @@ video {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    
     gap: 1rem;
-    width: 50vw;
+    width: 60vw;
     margin: 1rem;
+    border: 1px solid var(--yellow);
+    padding: 4rem;
 }
 
 #softskills-container h3 {
@@ -803,6 +819,7 @@ adress {
     margin: 0 auto;
     text-align: left;
     align-items: center;
+    font-size: 1rem;
     
 }
 

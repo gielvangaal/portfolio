@@ -6,8 +6,12 @@ nav {
 }
 
     /* HERO */
+#section-hero {
+    margin: 2rem 0;
+}
+
     #hero {
-        width: 90vw;
+        width: 85vw;
         height: 70vh;
         transform: rotate(0deg);
         gap: 0.2rem;
@@ -107,6 +111,7 @@ nav {
 
     #softskills-container {
         width: 90vw;
+        padding: 1rem;
     }
 
     #section-contact {
@@ -197,11 +202,6 @@ nav {
         gap: 3rem;
         width: 90vw;
     }
-/* 
-    .card-container {
-        flex: 1 1 70vw;
-    max-width: 70vw;
-} */
 
     #article-overmij {
         grid-template-rows: 10vh 10vh auto;
