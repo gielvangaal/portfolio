@@ -522,7 +522,7 @@ video {
     border: 1px dotted var(--grey) !important;
     border-radius: 25px !important;
     overflow: hidden;
-    background-color: #fff;
+    background-color: rgb(250, 250, 250, 0.8);
 }
 
 .accordion-header {
@@ -604,17 +604,19 @@ video {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    
     gap: 1rem;
-    width: 60vw;
+    width: 60%;
     margin: 1rem;
     border: 1px solid var(--yellow);
     padding: 4rem;
+    background-color: rgb(250, 250, 250, 0.8);
+    
 }
 
 #softskills-container h3 {
     text-align: center;
     padding: 0.5rem;
+    /* margin-top: 2rem; */
 }
 
 #softskills-container ul {
@@ -629,12 +631,12 @@ video {
 #softskills-container li {
     list-style: none;
     padding: 0.5rem;
-    background-color: rgb(250, 250, 250, 0.2);
+    background-color: rgb(217, 217, 217, 0.5);
 }
 
 /* boekenplank */
 #boekenplank-superwrap {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
