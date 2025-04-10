@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHEKEJNW73"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WHEKEJNW73');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nijntje</title>
+    <title>Giel van Gaal | Portfolio | Giel van Gaal (muziek)</title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +30,8 @@
     <!-- Stylesheet -->
     <link href="./assets/css/stylesheet.css" rel="stylesheet">
     <link href="./assets/css/media-queries.css" rel="stylesheet">
+
+    <link preload href="./assets/images/portfolio/gvg-1-klein.webp" as="image">
 
 </head>
 
@@ -60,25 +72,25 @@
                 <ul>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/html5.webp">
+                            <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo" fetchpriority="high">
                             <figcaption>HTML5</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/css3.webp">
+                            <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo" fetchpriority="high">
                             <figcaption>CCS3</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/bootstrap.webp">
+                            <img src="./assets/images/webstack/bootstrap.webp" alt="Bootstrap logo" fetchpriority="high">
                             <figcaption>Bootstrap</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/javascript.webp">
+                            <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo" fetchpriority="high">
                             <figcaption>JavaScript</figcaption>
                         </figure>
                     </li>
@@ -88,7 +100,7 @@
 
             </div>
 
-           
+
         </article>
 
         <!-- <p id="header-extension">
@@ -102,7 +114,7 @@
             heb ik verwijderd, omdat ik dat toen niet nodig vond (nu zou ik dat anders doen).</p> -->
 
 
-        <img id="main-portfolio-img" src="./assets/images/portfolio/gvg-1-klein.webp">
+        <img id="main-portfolio-img" src="./assets/images/portfolio/gvg-1-klein.webp" alt="Screenshot, hoofdpagina gielvangaal.nl">
 
         <article id="problemen-en-oplossingen">
             <div class="H-container">
@@ -124,8 +136,8 @@
         </article>
 
         <div id="sub-portfolio-img">
-            <img src="./assets/images/portfolio/gvg-2-klein.webp">
-            <img src="./assets/images/portfolio/gvg-3-klein.webp">
+            <img src="./assets/images/portfolio/gvg-2-klein.webp" alt="Screenshot, portfolio pagina gielvangaal.nl" loading="lazy">
+            <img src="./assets/images/portfolio/gvg-3-klein.webp" alt="Screenshot, nieuws pagina gielvangaal.nl"loading="lazy">
         </div>
 
         <article id="wat-ik-heb-geleerd">

@@ -44,6 +44,13 @@ a, a:visited, a:active, a:hover, a:focus, a:link, a:visited {
     font-size: smaller;
 }
 
+a:focus {
+    border: none; 
+    outline: none;
+    /* text-decoration: underline; */
+    background-color: #fff562;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -547,6 +554,7 @@ video {
 .accordion-button:focus {
     background-color: var(--grey);
     box-shadow: none;
+    border: 1px solid var(--yellow) !important;
 
 }
 
@@ -601,7 +609,6 @@ video {
 /* softskills */
 #softskills-container {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
@@ -615,8 +622,6 @@ video {
 
 #softskills-container h3 {
     text-align: center;
-    padding: 0.5rem;
-    /* margin-top: 2rem; */
 }
 
 #softskills-container ul {

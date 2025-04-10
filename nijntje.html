@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHEKEJNW73"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WHEKEJNW73');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nijntje</title>
+    <title>Giel van Gaal | Portfolio | Nijntje</title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +30,8 @@
     <!-- Stylesheet -->
     <link href="./assets/css/stylesheet.css" rel="stylesheet">
     <link href="./assets/css/media-queries.css" rel="stylesheet">
+
+    <link preload href="./assets/images/portfolio/nijntje-1-klein.webp" as="image">
 
 </head>
 
@@ -48,11 +60,15 @@
                     <div class="H-visual" aria-hidden="true"></div>
                 </div>
                 <p>
-                    Hobbyproject Nijntje ontstond vanuit de behoefte om een website van de grond af te bouwen en te
-                    experimenteren met verschillende technieken. Ik wilde eens testen hoe het is om met <strong>CCS Grid</strong> te
-                    werken, hoe het is om met <strong>Django</strong> aan de slag te gaan en nog meer, voor mij nieuwe technieken. Een
-                    beetje experimenteren houdt je jong! De website is niet zozeer voor dagelijks gebruik, maar meer om
-                    eens eenmaal te bewonderen.
+                    Hobbyproject Nijntje ontstond uit de behoefte om een website helemaal zelf op te zetten en te
+                    experimenteren met verschillende technieken. Ik wilde eens testen hoe het is om met <strong>CSS
+                        Grid</strong> te werken (vandaar de ongewone lay-out) en hoe het is om met
+                    <strong>Django</strong> aan de slag te gaan. In mijn missie om een breed inzetbare programmeur te
+                    worden, wil ik natuurlijk kennismaken met zoveel mogelijk verschillende technologieën. Daar moet je
+                    meters voor maken — en dat heb ik met dit project dan ook gedaan. De website is niet zozeer bedoeld
+                    voor dagelijks gebruik, maar was eerder een <strong>speeltuin</strong> voor mijzelf om te ontdekken
+                    — en hopelijk ook
+                    voor de bezoeker.
                 </p>
             </div>
 
@@ -60,43 +76,43 @@
                 <ul>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/html5.webp">
+                            <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo" fetchpriority="high">
                             <figcaption>HTML5</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/css3.webp">
+                            <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo" fetchpriority="high">
                             <figcaption>CCS3</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/certbot.webp">
+                            <img src="./assets/images/webstack/certbot.webp" alt="Certbot logo" fetchpriority="high">
                             <figcaption>Certbot</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/django.webp">
+                            <img src="./assets/images/webstack/django.webp" alt="Django logo" fetchpriority="high">
                             <figcaption>Django</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/gunicorn.webp">
+                            <img src="./assets/images/webstack/gunicorn.webp" alt="Gunicorn logo" fetchpriority="high">
                             <figcaption>Gunicorn</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/javascript.webp">
+                            <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo" fetchpriority="high">
                             <figcaption>JavaScript</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <img src="./assets/images/webstack/nginx.webp">
+                            <img src="./assets/images/webstack/nginx.webp" alt="Nginx logo" fetchpriority="high">
                             <figcaption>Nginx</figcaption>
                         </figure>
                     </li>
@@ -108,7 +124,8 @@
 
         </article>
 
-        <img id="main-portfolio-img" src="./assets/images/portfolio/nijntje-1-klein.webp">
+        <img id="main-portfolio-img" src="./assets/images/portfolio/nijntje-1-klein.webp" alt="Screenshot, hoofdpagina Nijntje"
+            fetchpriority="high">
 
         <article id="problemen-en-oplossingen">
             <div class="H-container">
@@ -116,19 +133,27 @@
                 <div class="H-visual" aria-hidden="true"></div>
             </div>
             <p>
-                Het opzetten van het messageboard met <strong>Django</strong> was een flinke klus. Hiervoor moest ik een <strong>VPS</strong> hebben
-                maar deze had ik nog niet. Dat dus uitgezocht, aangeschaft en ingesteld. Het instellen van <strong>Gunicorn</strong> als <strong>WSGI-server</strong>
-                voor <strong>Python</strong> en <strong>Nginx</strong> als reverse proxy was ook even puzzelen maar uiteindelijk gelukt. Ik haal de berichten op met
-                <strong>Javascript fetch</strong>. In <strong>Nginx</strong> heb ik aardig wat tijd besteed aan het werken met poorten en serverblokken, een
-                concept dat me eerst niet helemaal duidelijk was, maar nu wel. Daarnaast heb ik gewerkt op basis van een <strong>
-                functioneel ontwerp</strong> en het <strong>design</strong> zelf gedaan. Ik ben geen designer natuurlijk, maar ik ben 
-                niet verlegen om dingen uit te proberen. 
+                Het opzetten van het messageboard met <strong>Django</strong> was een flinke klus. Hiervoor moest ik een
+                <strong>VPS</strong> hebben
+                maar deze had ik nog niet. Dat dus uitgezocht, aangeschaft en ingesteld. Het instellen van
+                <strong>Gunicorn</strong> als <strong>WSGI-server</strong>
+                voor <strong>Python</strong> en <strong>Nginx</strong> als reverse proxy was ook even puzzelen maar
+                uiteindelijk gelukt. Ik haal de berichten op met
+                <strong>Javascript fetch</strong>. In <strong>Nginx</strong> heb ik aardig wat tijd besteed aan het
+                werken met poorten en serverblokken, een
+                concept dat me eerst niet helemaal duidelijk was, maar nu wel. Daarnaast heb ik gewerkt op basis van een
+                <strong>
+                    functioneel ontwerp</strong> en het <strong>design</strong> zelf gedaan. Ik ben geen designer
+                natuurlijk, maar ik ben
+                niet verlegen om dingen uit te proberen.
             </p>
         </article>
 
         <div id="sub-portfolio-img">
-            <img src="./assets/images/portfolio/nijntje-2-klein.webp">
-            <img src="./assets/images/portfolio/nijntje-3-klein.webp">
+            <img src="./assets/images/portfolio/nijntje-2-klein.webp" alt="Screenshot, messageboard Nijntje"
+                fetchpriority="high">
+            <img src="./assets/images/portfolio/nijntje-3-klein.webp" alt="Screenshot, 'over Nijntje' pagina"
+                fetchpriority="high">
         </div>
 
         <article id="wat-ik-heb-geleerd">
@@ -138,11 +163,16 @@
             </div>
             <p>
                 Het belang van een <strong>duidelijk omschreven doel</strong> is essentieel, zodat je weet welk probleem
-                je wilt oplossen, en wat de beste manier is om dat te doen. Verder, ik weet nu hoe een <strong>VPS</strong> werkt 
-                en hoe je ermee kunt werken. Ook met <strong>SSH-sleutels</strong> en <strong>Certbot</strong> gewerkt met oog op 
-                beveiliging. Ik begrijp de basis van hoe servers functioneren, hoe poorten geconfigureerd moeten worden, hoe je een
-                messageboard opzet met Django en hoe je een eenvoudige <strong>e-mailfunctionaliteit</strong> opzet. Het besef
-                dat ik, zonder veel voorkennis, relatief ingewikkelde stof aan de praat krijg, is een motiverende gedachte.
+                je wilt oplossen, en wat de beste manier is om dat te doen. Verder, ik weet nu hoe een
+                <strong>VPS</strong> werkt
+                en hoe je ermee kunt werken. Ook met <strong>SSH-sleutels</strong> en <strong>Certbot</strong> gewerkt
+                met oog op
+                beveiliging. Ik begrijp de basis van hoe servers functioneren, hoe poorten geconfigureerd moeten worden,
+                hoe je een
+                messageboard opzet met Django en hoe je een eenvoudige <strong>e-mailfunctionaliteit</strong> opzet. Het
+                besef
+                dat ik, zonder veel voorkennis, relatief ingewikkelde stof aan de praat krijg, is een motiverende
+                gedachte.
             </p>
         </article>
 

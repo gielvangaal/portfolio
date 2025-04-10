@@ -2,9 +2,21 @@
 <html lang="nl">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHEKEJNW73"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WHEKEJNW73');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giel van Gaal Portfolio</title>
+    <title>Giel van Gaal | Homepage | Junior programmeur en softwareontwikkelaar</title>
+
+    <link rel="preload" as="image" href="./assets/images/giel.webp" fetchpriority="high">
 
     <!-- Meta Description for SEO -->
     <meta name="description"
@@ -59,12 +71,13 @@
                 <h2>Junior programmeur & softwareontwikkelaar</h2>
             </div>
 
-            <img src="./assets/images/giel.webp" alt="Giel kijkt alsof ie er zin in heeft">
+            <img src="./assets/images/giel.webp" alt="Giel kijkt alsof ie er zin in heeft" loading="eager"
+                fetchpriority="high">
             <p>Front-end | Basiskennis Back-end, databases en OOP | Projectmatig werken | UX/UI</p>
 
             <!-- svg -->
             <div id="hero-svg-container" role="img" aria-label="Tekst in cirkel: de wereld vooruit helpen">
-                <svg width="200" height="200" viewBox="0 0 200 200">
+                <svg width="200" height="200" viewBox="0 0 200 200" loading="eager">
                     <defs>
                         <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
                     </defs>
@@ -93,7 +106,7 @@
             <article class="card-container" aria-labelledby="card1-title">
                 <figure class="media-card-container">
                     <img class="card-img" src="./assets/images/portfolio/nijntje-1-klein.webp"
-                        alt="Screenshot van de Nijntje website">
+                        alt="Screenshot van de Nijntje website" loading="lazy">
                     <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
                         <source src="./assets/video/nijntje.mp4" type="video/mp4">
                     </video> -->
@@ -118,10 +131,10 @@
             <article class="card-container" aria-labelledby="card2-title">
                 <figure class="media-card-container">
                     <img class="card-img" src="./assets/images/portfolio/gvg-1-klein.webp"
-                        alt="Screenshot van de Giel van Gaal website">
-                    <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
+                        alt="Screenshot van de Giel van Gaal website" loading="lazy">
+                    <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
                         <source src="./assets/video/gvg.webm" type="video/webm">
-                    </video>
+                    </video> -->
                 </figure>
                 <div class="H-container">
                     <h2 id="card2-title">Giel van Gaal</h2>
@@ -143,7 +156,7 @@
             <article class="card-container" aria-labelledby="card3-title">
                 <figure class="media-card-container">
                     <img class="card-img" src="./assets/images/portfolio/carebots-1-klein.webp"
-                        alt="Screenshot van de CareBots frond-end website">
+                        alt="Screenshot van de CareBots frond-end website" loading="lazy">
                     <!-- <video class="card-video" muted loop autoplay aria-label="Voorvertoning van website Nijntje">
                         <source src="./assets/video/carebots.mp4" type="video/mp4">
                     </video> -->
@@ -176,7 +189,7 @@
         </div>
 
         <article id="article-overmij">
-            <img src="./assets/images/giel2.webp" alt="Giel kijkt lachend in de camera">
+            <img src="./assets/images/giel2.webp" alt="Giel kijkt lachend in de camera" loading="lazy">
             <p>Mijn naam is Giel en ik ben op zoek naar een baan in de IT. Na jaren met plezier in de culturele sector
                 te hebben gewerkt, maak ik nu de overstap naar de informatica. Programmeren heb ik altijd al gedaan
                 omdat ik
@@ -188,7 +201,7 @@
                 <strong>back-end</strong>
                 ontwikkeling, <strong>softwarearchitectuur</strong>, <strong>databaseontwerp</strong> en
                 <strong>DevOps</strong>-principes zoals <strong>CI/CD-pipelines</strong>.
-                Mijn specialisatie zit 'm in Front-end en, in mindere mate de Back-end. Ik ben <strong>leergierig</strong>, werk
+                Mijn specialisatie zit 'm in front-end ontwikkeling. Ik ben <strong>leergierig</strong>, werk
                 <strong>methodisch</strong> en ben <strong>gedreven</strong>. Mijn kracht ligt in
                 <strong>samenwerken</strong>, snel de <strong>kern van de zaak</strong> doorgronden en
                 <strong>doelgericht</strong> tot een oplossing komen. Ik zoek een
@@ -208,121 +221,121 @@
             <ul aria-label="Webstack">
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo">
+                        <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo" loading="lazy">
                         <figcaption>HTML5</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo">
+                        <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo" loading="lazy">
                         <figcaption>CSS3</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/certbot.webp" alt="Certbot logo">
+                        <img src="./assets/images/webstack/certbot.webp" alt="Certbot logo" loading="lazy">
                         <figcaption>Certbot</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/django.webp" alt="Django logo">
+                        <img src="./assets/images/webstack/django.webp" alt="Django logo" loading="lazy">
                         <figcaption>Django</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/github.webp" alt="Github logo">
+                        <img src="./assets/images/webstack/github.webp" alt="Github logo" loading="lazy">
                         <figcaption>Github</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/gunicorn.webp" alt="Gunicorn logo">
+                        <img src="./assets/images/webstack/gunicorn.webp" alt="Gunicorn logo" loading="lazy">
                         <figcaption>Gunicorn</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo">
+                        <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo" loading="lazy">
                         <figcaption>JavaScript</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/nginx.webp" alt="Nginx logo">
+                        <img src="./assets/images/webstack/nginx.webp" alt="Nginx logo" loading="lazy">
                         <figcaption>Nginx</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/node-js.webp" alt="Node.js logo">
+                        <img src="./assets/images/webstack/node-js.webp" alt="Node.js logo" loading="lazy">
                         <figcaption>Node.js</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/python.webp" alt="Python logo">
+                        <img src="./assets/images/webstack/python.webp" alt="Python logo" loading="lazy">
                         <figcaption>Python</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/rest-api.webp" alt="Rest API logo">
+                        <img src="./assets/images/webstack/rest-api.webp" alt="Rest API logo" loading="lazy">
                         <figcaption>Rest API</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/figma.webp" alt="Figma logo">
+                        <img src="./assets/images/webstack/figma.webp" alt="Figma logo" loading="lazy">
                         <figcaption>Figma</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/php.webp" alt="PHP logo">
+                        <img src="./assets/images/webstack/php.webp" alt="PHP logo" loading="lazy">
                         <figcaption>PHP</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/mysql.webp" alt="MySQL logo">
+                        <img src="./assets/images/webstack/mysql.webp" alt="MySQL logo" loading="lazy">
                         <figcaption>MySQL</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/terminal.webp" alt="Terminal logo">
+                        <img src="./assets/images/webstack/terminal.webp" alt="Terminal logo" loading="lazy">
                         <figcaption>BASH</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/bootstrap.webp" alt="Bootstrap logo">
+                        <img src="./assets/images/webstack/bootstrap.webp" alt="Bootstrap logo" loading="lazy">
                         <figcaption>Bootstrap</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/jira.webp" alt="Jira logo">
+                        <img src="./assets/images/webstack/jira.webp" alt="Jira logo" loading="lazy">
                         <figcaption>Jira</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/gimp.webp" alt="Gimp logo">
+                        <img src="./assets/images/webstack/gimp.webp" alt="Gimp logo" loading="lazy">
                         <figcaption>Gimp</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/docker.webp" alt="Docker logo">
+                        <img src="./assets/images/webstack/docker.webp" alt="Docker logo" loading="lazy">
                         <figcaption>Docker</figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
-                        <img src="./assets/images/webstack/uml.webp" alt="UML logo">
+                        <img src="./assets/images/webstack/uml.webp" alt="UML logo" loading="lazy">
                         <figcaption>UML</figcaption>
                     </figure>
                 </li>
@@ -347,7 +360,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse show"
                     data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/avans.webp" alt="Avans Hogeschool logo">
+                        <img src="./assets/images/opleiding/avans.webp" alt="Avans Hogeschool logo" loading="lazy">
                         <div>
                             <h3>Deeltijdopleiding Informatica | Avans Hogeschool | 2024 - heden</h3>
                             <ul>
@@ -382,7 +395,7 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen"
                     role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/codecademy.webp" alt="Codecademy logo">
+                        <img src="./assets/images/opleiding/codecademy.webp" alt="Codecademy logo" loading="lazy">
                         <div>
                             <h3>Codecademy | codecademy.com | 2023 - heden</h3>
                             <ul>
@@ -408,7 +421,7 @@
                 <div id="collapseThree" class="accordion-collapse collapse"
                     data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/albeda.png" alt="Albeda College logo">
+                        <img src="./assets/images/opleiding/albeda.png" alt="Albeda College logo" loading="lazy">
                         <div>
                             <h3>Muzikant/ Producer | Albeda College | 2012 - 2015</h3>
                             <ul>
@@ -433,7 +446,7 @@
                 <div id="collapseFour" class="accordion-collapse collapse"
                     data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
                     <div class="accordion-body">
-                        <img src="./assets/images/opleiding/kw1c.png" alt="Koning Willem 1 College logo">
+                        <img src="./assets/images/opleiding/kw1c.png" alt="Koning Willem 1 College logo" loading="lazy">
                         <div>
                             <h3>Sociaal Cultureel Werk | Koning Willem 1 College | 2004 - 2009</h3>
                             <ul>
@@ -483,18 +496,18 @@
                 <li>Samenwerken</li>
             </ul>
 
-            <h3>Karaktereigenschappen</h3>
-                <ul aria-labelledby="Karaktereigenschappen">
-                    <li>Nieuwsgierig</li>
-                    <li>Realistisch</li>
-                    <li>Klantgericht</li>
-                    <li>Evenwichtig</li>
-                    <li>Spontaan</li>
-                    <li>Integer</li>
-                    <li>Creatief</li>
-                    <li>Betrokken</li>
-                    <li>Doortastend</li>
-                </ul>
+            <h3>Karakter</h3>
+            <ul aria-label="Karakter">
+                <li>Nieuwsgierig</li>
+                <li>Realistisch</li>
+                <li>Klantgericht</li>
+                <li>Evenwichtig</li>
+                <li>Spontaan</li>
+                <li>Integer</li>
+                <li>Creatief</li>
+                <li>Betrokken</li>
+                <li>Doortastend</li>
+            </ul>
 
         </div>
 
@@ -508,7 +521,7 @@
             <div class="boekenplank-container">
                 <figure>
                     <img src="./assets/images/boekenplank/htmlencss-doolaard.webp"
-                        alt="Boekcover HTML 5 en CSS van Peter Doolaard">
+                        alt="Boekcover HTML 5 en CSS van Peter Doolaard" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>HTML 5 en CSS</li>
@@ -520,7 +533,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/informatiemanagement-grit.webp"
-                        alt="Boekcover Informatiemanagement van Roel Grit">
+                        alt="Boekcover Informatiemanagement van Roel Grit" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Informatiemanagement</li>
@@ -532,7 +545,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.webp"
-                        alt="Boekcover Inleiding databases van Ben Groenendijk">
+                        alt="Boekcover Inleiding databases van Ben Groenendijk" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Inleiding databases</li>
@@ -547,7 +560,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.webp"
-                        alt="Boekcover JavaScript & jQuery van Peter Kassenaar">
+                        alt="Boekcover JavaScript & jQuery van Peter Kassenaar" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>JavaScript & jQuery</li>
@@ -559,7 +572,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.webp"
-                        alt="Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe">
+                        alt="Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Praktisch UML</li>
@@ -571,7 +584,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.webp"
-                        alt="Boekcover Python Crash Course van Eric Matthes">
+                        alt="Boekcover Python Crash Course van Eric Matthes" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Python Crash Course</li>
@@ -583,7 +596,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/subliemwebdesign.webp"
-                        alt="Boekcover Subliem webdesign van Jason Beaird & James George">
+                        alt="Boekcover Subliem webdesign van Jason Beaird & James George" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Principes van subliem webdesign</li>
@@ -595,7 +608,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/linuxcommandline.webp"
-                        alt="Boekcover The Linux Command Line van William Shotts">
+                        alt="Boekcover The Linux Command Line van William Shotts" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>The Linux Command Line</li>
@@ -607,7 +620,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/grafischontwerpen.webp"
-                        alt="Boekcover Grafisch ontwerpen van David Dabner & Sandra Stewart">
+                        alt="Boekcover Grafisch ontwerpen van David Dabner & Sandra Stewart" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Grafisch Ontwerpen</li>
@@ -618,7 +631,8 @@
                 </figure>
 
                 <figure>
-                    <img src="./assets/images/boekenplank/thisisit.webp" alt="Boekcover This is IT! van Victor Peters">
+                    <img src="./assets/images/boekenplank/thisisit.webp" alt="Boekcover This is IT! van Victor Peters"
+                        loading="lazy">
                     <figcaption>
                         <ul>
                             <li>This is IT!</li>
@@ -630,7 +644,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/wordpress6.webp"
-                        alt="Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum">
+                        alt="Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Handboek Wordpress 6</li>
@@ -642,7 +656,7 @@
 
                 <figure>
                     <img src="./assets/images/boekenplank/inleidinguml.webp"
-                        alt="Boekcover Inleiding UML van Hendrik Jan van Randen">
+                        alt="Boekcover Inleiding UML van Hendrik Jan van Randen" loading="lazy">
                     <figcaption>
                         <ul>
                             <li>Inleiding UML</li>
@@ -671,13 +685,13 @@
             </div>
 
             <adress>
-                <img src="./assets/images/contact/smiley.png" alt="Smiley emoji">
+                <img src="./assets/images/contact/smiley.png" alt="Smiley emoji" loading="lazy">
                 <p>Giel van Gaal</p>
-                <img src="./assets/images/contact/telephone.png" alt="Telefoon icoon">
+                <img src="./assets/images/contact/telephone.png" alt="Telefoon icoon" loading="lazy">
                 <p>06-13383313</p>
-                <img src="./assets/images/contact/email.png" alt="E-mail icoon">
+                <img src="./assets/images/contact/email.png" alt="E-mail icoon" loading="lazy">
                 <p>gielvangaal@gmail.com</p>
-                <img src="./assets/images/contact/location.png" alt="Locatie icoon">
+                <img src="./assets/images/contact/location.png" alt="Locatie icoon" loading="lazy">
                 <p>'s-Hertogenbosch</p>
             </adress>
 
@@ -689,19 +703,19 @@
 
                 <div id="socials-wrapper">
                     <a href="https://github.com/gielvangaal" target="_blank" aria-label="Github" title="Github">
-                        <img src="./assets/images/webstack/github.webp" alt="Github logo">
+                        <img src="./assets/images/webstack/github.webp" alt="Github logo" loading="lazy">
                     </a>
                     <a href="https://www.linkedin.com/in/gielvangaal" target="_blank" aria-label="LinkedIn"
                         title="LinkedIn">
-                        <img src="./assets/images/socials/linkedin.png" alt="LinkedIn logo">
+                        <img src="./assets/images/socials/linkedin.png" alt="LinkedIn logo" loading="lazy">
                     </a>
                     <a href="https://www.instagram.com/gielvangaal/" target="_blank" aria-label="Instagram"
                         title="Instagram">
-                        <img src="./assets/images/socials/instagram.png" alt="Instagram logo">
+                        <img src="./assets/images/socials/instagram.png" alt="Instagram logo" loading="lazy">
                     </a>
                     <a href="https://open.spotify.com/artist/4OjaWwgsmjy7CBL0wrL8NI?si=PRJ5CwCATiedy6tLM2g7UQ"
                         target="_blank" aria-label="Spotify" title="Spotify">
-                        <img src="./assets/images/socials/spotify.png" alt="Spotify logo">
+                        <img src="./assets/images/socials/spotify.png" alt="Spotify logo" loading="lazy">
                     </a>
                 </div>
 
