@@ -1,0 +1,138 @@
+# =========================================================
+# JetBrains / Rider
+# =========================================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Rider-specific
+*.sln.iml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries/
+.idea/**/shelf/
+
+# =========================================================
+# .NET / C#
+# =========================================================
+**/bin/
+**/obj/
+**/out/
+**/publish/
+
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# Test / coverage
+TestResults/
+**/TestResults/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# =========================================================
+# Node / React
+# =========================================================
+**/node_modules/
+**/dist/
+**/build/
+**/.next/
+**/.vite/
+**/.parcel-cache/
+**/.turbo/
+**/.cache/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================================================
+# Secrets / environment
+# =========================================================
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+
+# Local config / secrets
+*.secret
+*.secrets
+secrets/
+**/secrets/
+
+# Certificates / private keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# SSH keys
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# =========================================================
+# Docker / local runtime
+# =========================================================
+docker-compose.override.yml
+compose.override.yml
+
+# Local volumes / data
+data/
+volumes/
+
+# =========================================================
+# Logs / temp
+# =========================================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =========================================================
+# OS junk
+# =========================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Thumbs.db
+Desktop.ini
+
+# =========================================================
+# Misc local files
+# =========================================================
+*.local
+*.bak
+*.backup
+
+# Keep documentation and source
+!README.md
+!LICENSE

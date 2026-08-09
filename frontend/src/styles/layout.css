@@ -1,0 +1,12 @@
+.page-layout {
+    min-height: 100vh;
+}
+
+.page-main {
+    width: 100%;
+}
+
+.container {
+    width: min(100% - 2 * var(--page-padding), var(--content-width));
+    margin-inline: auto;
+}

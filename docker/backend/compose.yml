@@ -1,0 +1,62 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: portfolio-mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: portfolio
+      MYSQL_PASSWORD: portfolio
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    container_name: portfolio-api
+
+    build:
+      context: ../..
+      dockerfile: docker/backend/api/Dockerfile
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Server=mysql;Port=3306;Database=portfolio;User=portfolio;Password=portfolio;
+
+    ports:
+      - "5000:8080"
+
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: portfolio-phpmyadmin
+    restart: unless-stopped
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+
+    ports:
+      - "8080:80"
+
+volumes:
+  mysql-data:
