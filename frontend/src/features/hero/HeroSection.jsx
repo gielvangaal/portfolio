@@ -69,7 +69,7 @@ export default function HeroSection({ lang }) {
 
                 <img
                     className="hero__image"
-                    src="/giel.webp"
+                    src={hero.mediaUrl}
                     alt={hero.description}
                 />
 
