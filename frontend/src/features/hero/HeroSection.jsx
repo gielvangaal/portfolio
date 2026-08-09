@@ -1,6 +1,30 @@
 import "./hero.css";
+import {useHero} from "./useHero.js";
 
-export default function HeroSection() {
+// --------------------------------------------------
+// HERO SECTION
+// --------------------------------------------------
+export default function HeroSection({ lang }) {
+    const {
+        data: hero,
+        isLoading,
+        isError,
+    } = useHero(lang);
+
+    // --------------------------------------------------
+    // QUERY STATE
+    // --------------------------------------------------
+    if (isLoading) {
+        return <p>Hero laden...</p>;
+    }
+
+    if (isError) {
+        return <p>Hero kon niet geladen worden.</p>;
+    }
+
+    // --------------------------------------------------
+    // VIEW
+    // --------------------------------------------------
     return (
         <section
             id="home"
@@ -12,17 +36,17 @@ export default function HeroSection() {
                 <div className="hero__yellow" aria-hidden="true" />
 
                 <h1 id="hero-title" className="hero__title">
-                    Giel van Gaal
+                    {hero.name}
                 </h1>
 
                 <div className="hero__role">
-                    <h2>Linux Engineer &amp; Software Developer</h2>
+                    <h2>{hero.jobTitle}</h2>
                 </div>
 
                 <div
                     className="hero__circle"
                     role="img"
-                    aria-label="De wereld vooruit helpen"
+                    aria-label={hero.description}
                 >
                     <svg viewBox="0 0 200 200">
                         <defs>
@@ -37,7 +61,7 @@ export default function HeroSection() {
                                 href="#hero-circle-path"
                                 textLength="500"
                             >
-                                de wereld vooruit helpen &gt;&gt;&gt;&nbsp;
+                                {hero.description} &gt;&gt;&gt;&nbsp;
                             </textPath>
                         </text>
                     </svg>
@@ -46,11 +70,11 @@ export default function HeroSection() {
                 <img
                     className="hero__image"
                     src="/giel.webp"
-                    alt="Giel van Gaal"
+                    alt={hero.description}
                 />
 
                 <p className="hero__tagline">
-                    Backend &amp; DevOps · Software Engineering · Getting things done
+                    {hero.catchPhrase}
                 </p>
             </div>
         </section>
