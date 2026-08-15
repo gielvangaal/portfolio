@@ -1,0 +1,33 @@
+.portfolio-section {
+    width: 60vw;
+    margin: 4rem auto 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-heading {
+    position: relative;
+
+    display: inline-block;
+    width: fit-content;
+
+    padding: 0 10px;
+
+    z-index: 1;
+}
+
+.section-heading__highlight {
+    position: absolute;
+
+    left: 0;
+    bottom: 26px;
+
+    width: calc(100% - 3px);
+    height: 41%;
+
+    background-color: var(--color-yellow);
+
+    z-index: -1;
+}
