@@ -15,11 +15,11 @@ export default function HeroSection({ lang }) {
     // QUERY STATE
     // --------------------------------------------------
     if (isLoading) {
-        return <p>Hero laden...</p>;
+        return <p>Hero loading 1-2-3...</p>;
     }
 
     if (isError) {
-        return <p>Hero kon niet geladen worden.</p>;
+        return <p>Whoops, something went wrong I'm afraid.</p>;
     }
 
     // --------------------------------------------------
@@ -29,24 +29,24 @@ export default function HeroSection({ lang }) {
         <section
             id="home"
             className="hero-section"
-            aria-labelledby="hero-title"
+            aria-labelledby="hero-name"
         >
             <div className="hero">
                 <div className="hero__purple" aria-hidden="true" />
                 <div className="hero__yellow" aria-hidden="true" />
 
-                <h1 id="hero-title" className="hero__title">
+                <h1 id="hero-name" className="hero__name">
                     {hero.name}
                 </h1>
 
-                <div className="hero__role">
+                <div className="hero__jobTitle">
                     <h2>{hero.jobTitle}</h2>
                 </div>
 
                 <div
                     className="hero__circle"
                     role="img"
-                    aria-label={hero.description}
+                    aria-label={hero.catchPhrase}
                 >
                     <svg viewBox="0 0 200 200">
                         <defs>
@@ -61,7 +61,7 @@ export default function HeroSection({ lang }) {
                                 href="#hero-circle-path"
                                 textLength="500"
                             >
-                                {hero.description} &gt;&gt;&gt;&nbsp;
+                                {hero.catchPhrase} &gt;&gt;&gt;&nbsp;
                             </textPath>
                         </text>
                     </svg>
@@ -70,11 +70,11 @@ export default function HeroSection({ lang }) {
                 <img
                     className="hero__image"
                     src={hero.mediaUrl}
-                    alt={hero.description}
+                    alt={hero.catchPhrase}
                 />
 
-                <p className="hero__tagline">
-                    {hero.catchPhrase}
+                <p className="hero__description">
+                    {hero.description}
                 </p>
             </div>
         </section>

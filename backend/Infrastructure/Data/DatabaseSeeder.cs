@@ -35,8 +35,8 @@ public static class DatabaseSeeder
                 Language = "en",
                 Name = "Giel van Gaal",
                 JobTitle = "Junior Programmer & Software Developer",
-                CatchPhrase = "Frontend • Backend • DevOps | Strong in project management, UX and getting-it-done.",
-                Description = "Welcome to my portfolio.",
+                CatchPhrase = "Helping the world move forward",
+                Description = "Frontend • Backend • DevOps | Strong in project management, UX and getting-it-done.",
                 MediaId = heroMedia.Id
             },
 
@@ -45,8 +45,8 @@ public static class DatabaseSeeder
                 Language = "nl",
                 Name = "Giel van Gaal",
                 JobTitle = "Junior programmeur & softwareontwikkelaar",
-                CatchPhrase = "Frontend • Backend • DevOps | Sterk in projectmanagement, UX en getting-it-done.",
-                Description = "De wereld vooruit helpen",
+                CatchPhrase = "De wereld vooruit helpen",
+                Description = "Frontend • Backend • DevOps | Sterk in projectmanagement, UX en getting-it-done.",
                 MediaId = heroMedia.Id
             });
 

@@ -1,5 +1,5 @@
 .hero {
-    margin: 1rem;
+    margin: 1rem auto;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -31,9 +31,9 @@
     filter: grayscale(100%);
 }
 
-/* TITLE */
+/* NAME */
 
-.hero__title {
+.hero__name {
     grid-column: 1 / 4;
     grid-row: 1 / 1;
 
@@ -73,9 +73,9 @@
     grid-row: 4 / -1;
 }
 
-/* ROLE */
+/* JOBTITLE */
 
-.hero__role {
+.hero__jobTitle {
     grid-column: 3 / 4;
     grid-row: 2 / -1;
 
@@ -87,13 +87,13 @@
     text-align: left;
 }
 
-.hero__role h2 {
+.hero__jobTitle h2 {
     font-size: 2vw;
 }
 
-/* TAGLINE */
+/* DESCRIPTION */
 
-.hero__tagline {
+.hero__description {
     grid-column: 4 / -1;
     grid-row: 5 / -1;
 
@@ -190,7 +190,7 @@
         width: 50%;
     }
 
-    .hero__title {
+    .hero__name {
         grid-column: 1 / -1;
         grid-row: 1 / 1;
 
@@ -203,16 +203,16 @@
         font-size: 10vw;
     }
 
-    .hero__role {
+    .hero__jobTitle {
         grid-column: 3 / 5;
         grid-row: 2 / -1;
     }
 
-    .hero__role h2 {
+    .hero__jobTitle h2 {
         font-size: 3vh;
     }
 
-    .hero__tagline {
+    .hero__description {
         display: none;
     }
 

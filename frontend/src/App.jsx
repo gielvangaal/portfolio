@@ -2,7 +2,7 @@ import PageLayout from "./components/layout/PageLayout";
 import HeroSection from "./features/hero/HeroSection";
 
 export default function App() {
-    const lang = "nl"
+    const lang = "en"
     return (
         <PageLayout>
             <HeroSection lang={lang} />

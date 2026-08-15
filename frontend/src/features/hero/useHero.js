@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { heroClient } from "../../api/heroClient";
+import { heroService } from "../../services/heroService.js";
 
 export function useHero(lang) {
     return useQuery({
         queryKey: ["hero", lang],
-        queryFn: () => heroClient.get(lang),
+        queryFn: () => heroService.get(lang),
         enabled: Boolean(lang),
     });
 }
