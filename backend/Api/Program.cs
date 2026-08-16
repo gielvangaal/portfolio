@@ -29,7 +29,8 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<PortfolioDbContext>();
 
-    await db.Database.MigrateAsync();
+    await db.Database.EnsureDeletedAsync();
+    await db.Database.EnsureCreatedAsync();
     await DatabaseSeeder.SeedAsync(db);
 }
 
