@@ -6,6 +6,7 @@ public class Technology
 
     public required string Name { get; set; }
 
-    public ICollection<PortfolioItem> PortfolioItems { get; set; } = [];
+    public ICollection<PortfolioItemTechnology> PortfolioItems { get; set; } = [];
+
     public ICollection<Category> Categories { get; set; } = [];
 }
