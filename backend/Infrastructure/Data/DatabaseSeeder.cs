@@ -8,336 +8,194 @@ public static class DatabaseSeeder
 {
     public static async Task SeedAsync(PortfolioDbContext context)
     {
-        // Seed alle onderdelen van de database.
-        // Nieuwe seed-methodes kun je hier later simpel onder toevoegen.
-        await SeedHeroAsync(context);
-        await SeedPortfolioAsync(context);
-    }
+        await context.Database.MigrateAsync();
 
-    private static async Task SeedHeroAsync(PortfolioDbContext context)
-    {
-        // Als er al Hero-data bestaat, niets opnieuw toevoegen.
-        if (await context.Heroes.AnyAsync())
-            return;
-
-        // -------------------------
-        // MEDIA
-        // -------------------------
-        // Media staat los in een eigen tabel.
-        // De Hero verwijst daarna via MediaId naar deze afbeelding.
-        var heroMedia = new Media
+        if (!context.Heroes.Any())
         {
-            Path = "/media/giel.webp",
-            AltText = "Giel van Gaal",
-            Type = MediaType.Image
-        };
+            context.Heroes.AddRange(
+                new Hero
+                {
+                    Language = "nl",
+                    Name = "Giel van Gaal",
+                    JobTitle = "Linux Engineer & Software Developer",
+                    CatchPhrase = "Van infrastructuur tot applicatie.",
+                    Description =
+                        "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin."
+                },
+                new Hero
+                {
+                    Language = "en",
+                    Name = "Giel van Gaal",
+                    JobTitle = "Linux Engineer & Software Developer",
+                    CatchPhrase = "From infrastructure to application.",
+                    Description =
+                        "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin."
+                }
+            );
+        }
 
-        context.Media.Add(heroMedia);
-
-        // Eerst opslaan zodat heroMedia.Id beschikbaar is.
-        await context.SaveChangesAsync();
-
-        // -------------------------
-        // HERO
-        // -------------------------
-        // Eén record per taal.
-        context.Heroes.AddRange(
-            new Hero
+        if (!context.PortfolioItems.Any())
+        {
+            var backendCategory = new Category
             {
-                Language = "en",
-                Name = "Giel van Gaal",
-                JobTitle = "Junior Programmer & Software Developer",
-                CatchPhrase = "Helping the world move forward",
-                Description =
-                    "Frontend • Backend • DevOps | Strong in project management, UX and getting-it-done.",
-                MediaId = heroMedia.Id
-            },
+                Name = "Backend"
+            };
 
-            new Hero
+            var frontendCategory = new Category
+            {
+                Name = "Frontend"
+            };
+
+            var csharp = new Technology
+            {
+                Name = "C#",
+                Categories = [backendCategory]
+            };
+
+            var dotnet = new Technology
+            {
+                Name = ".NET",
+                Categories = [backendCategory]
+            };
+
+            var react = new Technology
+            {
+                Name = "React",
+                Categories = [frontendCategory]
+            };
+
+            var joyRideBackendMedia = new Media
+            {
+                Path = "/media/portfolio/joyride-backend-1.webp",
+                AltText = "JoyRide backend",
+                Type = MediaType.Image
+            };
+
+            var joyRideFrontendMedia = new Media
+            {
+                Path = "/media/portfolio/joyride-frontend-1.webp",
+                AltText = "JoyRide frontend",
+                Type = MediaType.Image
+            };
+
+            var joyRideNl = new PortfolioItem
             {
                 Language = "nl",
-                Name = "Giel van Gaal",
-                JobTitle = "Junior programmeur & softwareontwikkelaar",
-                CatchPhrase = "De wereld vooruit helpen",
+                Slug = "joyride",
+                Title = "JoyRide",
+
+                CardDescription =
+                    "Een full-stack applicatie ontwikkeld met C# en React.",
+
                 Description =
-                    "Frontend • Backend • DevOps | Sterk in projectmanagement, UX en getting-it-done.",
-                MediaId = heroMedia.Id
-            }
-        );
+                    "JoyRide is een full-stack applicatie met een C#/.NET backend en een React frontend.",
 
-        await context.SaveChangesAsync();
-    }
+                GitHubUrl = "https://github.com/example/joyride",
+                LiveSiteUrl = null,
 
-    private static async Task SeedPortfolioAsync(PortfolioDbContext context)
-    {
-        // Als er al portfolio-items bestaan, niets opnieuw toevoegen.
-        if (await context.PortfolioItems.AnyAsync())
-            return;
+                Categories =
+                [
+                    new PortfolioItemCategory
+                    {
+                        Category = backendCategory
+                    },
+                    new PortfolioItemCategory
+                    {
+                        Category = frontendCategory
+                    }
+                ],
 
-        // =========================================================
-        // CATEGORIES
-        // =========================================================
-        // Categories worden zowel aan PortfolioItems als aan
-        // Technologies gekoppeld.
-        //
-        // Voorbeeld:
-        // JoyRide -> Backend
-        // Kotlin  -> Backend
+                Technologies =
+                [
+                    new PortfolioItemTechnology
+                    {
+                        Technology = csharp
+                    },
+                    new PortfolioItemTechnology
+                    {
+                        Technology = dotnet
+                    },
+                    new PortfolioItemTechnology
+                    {
+                        Technology = react
+                    }
+                ],
 
-        var backend = new Category
-        {
-            Name = "Backend"
-        };
+                Media =
+                [
+                    new PortfolioItemMedia
+                    {
+                        Media = joyRideBackendMedia
+                    },
+                    new PortfolioItemMedia
+                    {
+                        Media = joyRideFrontendMedia
+                    }
+                ]
+            };
 
-        var devOps = new Category
-        {
-            Name = "DevOps"
-        };
+            var joyRideEn = new PortfolioItem
+            {
+                Language = "en",
+                Slug = "joyride",
+                Title = "JoyRide",
 
-        // Later bijvoorbeeld:
-        //
-        // var frontend = new Category
-        // {
-        //     Name = "Frontend"
-        // };
-        //
-        // var mobile = new Category
-        // {
-        //     Name = "Mobile"
-        // };
+                CardDescription =
+                    "A full-stack application developed with C# and React.",
 
+                Description =
+                    "JoyRide is a full-stack application with a C#/.NET backend and a React frontend.",
 
-        // =========================================================
-        // TECHNOLOGIES
-        // =========================================================
-        // Technologies zijn losse entities.
-        //
-        // Iedere Technology kan weer aan één of meerdere
-        // Categories gekoppeld worden.
+                GitHubUrl = "https://github.com/example/joyride",
+                LiveSiteUrl = null,
 
-        var kotlin = new Technology
-        {
-            Name = "Kotlin",
-            Categories = [backend]
-        };
+                Categories =
+                [
+                    new PortfolioItemCategory
+                    {
+                        Category = backendCategory
+                    },
+                    new PortfolioItemCategory
+                    {
+                        Category = frontendCategory
+                    }
+                ],
 
-        var ktor = new Technology
-        {
-            Name = "Ktor",
-            Categories = [backend]
-        };
+                Technologies =
+                [
+                    new PortfolioItemTechnology
+                    {
+                        Technology = csharp
+                    },
+                    new PortfolioItemTechnology
+                    {
+                        Technology = dotnet
+                    },
+                    new PortfolioItemTechnology
+                    {
+                        Technology = react
+                    }
+                ],
 
-        var mysql = new Technology
-        {
-            Name = "MySQL",
-            Categories = [backend]
-        };
+                Media =
+                [
+                    new PortfolioItemMedia
+                    {
+                        Media = joyRideBackendMedia
+                    },
+                    new PortfolioItemMedia
+                    {
+                        Media = joyRideFrontendMedia
+                    }
+                ]
+            };
 
-        var docker = new Technology
-        {
-            Name = "Docker",
-            Categories = [devOps]
-        };
-
-        var github = new Technology
-        {
-            Name = "GitHub",
-            Categories = [devOps]
-        };
-
-
-        // =========================================================
-        // MEDIA
-        // =========================================================
-        // Media zelf weet niet bij welk PortfolioItem het hoort.
-        //
-        // Die relatie wordt hieronder gemaakt via
-        // PortfolioItemMedia.
-        //
-        // Hierdoor kan dezelfde Media in theorie later
-        // aan meerdere PortfolioItems gekoppeld worden.
-
-        var dashboard = new Media
-        {
-            Path = "/media/portfolio/joyride-backend-1.webp",
-            AltText = "Screenshot van het JoyRide dashboard",
-            Type = MediaType.Image
-        };
-
-        var classDiagram = new Media
-        {
-            Path = "/media/portfolio/joyride-backend-2.webp",
-            AltText = "Klassendiagram van JoyRide",
-            Type = MediaType.Image
-        };
-
-        var sequenceDiagram = new Media
-        {
-            Path = "/media/portfolio/joyride-backend-3.webp",
-            AltText = "Sequencediagram van JoyRide",
-            Type = MediaType.Image
-        };
-
-
-        // =========================================================
-        // PORTFOLIO ITEM
-        // =========================================================
-        // Hier komt alles samen:
-        //
-        // PortfolioItem
-        // ├── Categories
-        // ├── Technologies
-        // ├── GitHubLinks
-        // └── Media via PortfolioItemMedia
-
-        var joyRide = new PortfolioItem
-        {
-            // Titel van het project.
-            Title = "JoyRide",
-
-            // Korte zin voor de portfolio-card.
-            CardDescription =
-                "Backend-API voor een autoverhuurplatform, gebouwd met Kotlin en Ktor.",
-
-            // Langere tekst voor de detailweergave.
-            // Voor nu lorem ipsum zodat we eerst de datastroom kunnen bouwen.
-            Description =
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
-                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
-                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-
-            // Optioneel.
-            // null betekent: er bestaat geen live site voor dit project.
-            LiveSiteUrl = null,
-
-
-            // -----------------------------------------------------
-            // CATEGORIES VAN DIT PROJECT
-            // -----------------------------------------------------
-            Categories =
-            [
-                backend,
-                devOps
-            ],
-
-
-            // -----------------------------------------------------
-            // TECHNOLOGIES VAN DIT PROJECT
-            // -----------------------------------------------------
-            Technologies =
-            [
-                kotlin,
-                ktor,
-                mysql,
-                docker,
-                github
-            ],
-
-
-            // -----------------------------------------------------
-            // GITHUB LINKS
-            // -----------------------------------------------------
-            // Een project kan meerdere repositories hebben.
-            //
-            // Bijvoorbeeld:
-            // - Backend
-            // - Frontend
-            // - Infrastructure
-            //
-            // SortOrder bepaalt later de volgorde in de frontend.
-
-            GitHubLinks =
-            [
-                new GitHubLink
-                {
-                    Label = "Backend repository",
-
-                    // TODO: vervangen door echte repository.
-                    Url = "https://github.com/example/joyride-backend",
-
-                    SortOrder = 1
-                }
-            ],
-
-
-            // -----------------------------------------------------
-            // MEDIA KOPPELINGEN
-            // -----------------------------------------------------
-            // PortfolioItemMedia is de koppeltabel tussen
-            // PortfolioItem en Media.
-            //
-            // IsDefault:
-            // bepaalt welke afbeelding bijvoorbeeld op de card komt.
-            //
-            // SortOrder:
-            // bepaalt de volgorde in een gallery/detailpagina.
-
-            Media =
-            [
-                new PortfolioItemMedia
-                {
-                    Media = dashboard,
-                    Role = MediaRole.Primary,
-                    SortOrder = 1
-                },
-
-                new PortfolioItemMedia
-                {
-                    Media = classDiagram,
-                    Role = MediaRole.Secondary,
-                    SortOrder = 2
-                },
-
-                new PortfolioItemMedia
-                {
-                    Media = sequenceDiagram,
-                    Role = MediaRole.Secondary,
-                    SortOrder = 3
-                }
-            ]
-        };
-
-
-        // =========================================================
-        // OPSLAAN
-        // =========================================================
-        // Omdat alle gekoppelde objecten aan joyRide hangen,
-        // kan EF Core de hele objectgraph in één keer opslaan:
-        //
-        // - PortfolioItem
-        // - Categories
-        // - Technologies
-        // - koppeltabellen
-        // - GitHubLinks
-        // - Media
-        // - PortfolioItemMedia
-
-        context.PortfolioItems.Add(joyRide);
+            context.PortfolioItems.AddRange(
+                joyRideNl,
+                joyRideEn
+            );
+        }
 
         await context.SaveChangesAsync();
     }
 }
-
-// eerst losse bouwstenen maken
-//
-// Category
-//     Technology
-// Media
-//
-//     ↓
-//
-// PortfolioItem maken
-//
-//     ↓
-//
-// bouwstenen eraan koppelen
-//
-//     ↓
-//
-// context.PortfolioItems.Add(joyRide)
-//
-//     ↓
-//
-// EF Core slaat de hele gekoppelde objectgraph op
