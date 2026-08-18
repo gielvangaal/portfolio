@@ -178,29 +178,16 @@ public static class DatabaseSeeder
             Type = MediaType.Image
         };
 
-
-        // =========================================================
-        // PORTFOLIO ITEM
-        // =========================================================
-        // Hier komt alles samen:
-        //
-        // PortfolioItem
-        // ├── Categories
-        // ├── Technologies
-        // ├── GitHubLinks
-        // └── Media via PortfolioItemMedia
-
         var joyRide = new PortfolioItem
         {
-            // Titel van het project.
+            Language = "nl",
+            Slug = "joyride",
+
             Title = "JoyRide",
 
-            // Korte zin voor de portfolio-card.
             CardDescription =
                 "Backend-API voor een autoverhuurplatform, gebouwd met Kotlin en Ktor.",
 
-            // Langere tekst voor de detailweergave.
-            // Voor nu lorem ipsum zodat we eerst de datastroom kunnen bouwen.
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
                 "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -208,24 +195,15 @@ public static class DatabaseSeeder
                 "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
                 "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 
-            // Optioneel.
-            // null betekent: er bestaat geen live site voor dit project.
+            GitHubUrl = "https://github.com/...",
             LiveSiteUrl = null,
 
-
-            // -----------------------------------------------------
-            // CATEGORIES VAN DIT PROJECT
-            // -----------------------------------------------------
             Categories =
             [
                 backend,
                 devOps
             ],
 
-
-            // -----------------------------------------------------
-            // TECHNOLOGIES VAN DIT PROJECT
-            // -----------------------------------------------------
             Technologies =
             [
                 kotlin,
@@ -234,45 +212,6 @@ public static class DatabaseSeeder
                 docker,
                 github
             ],
-
-
-            // -----------------------------------------------------
-            // GITHUB LINKS
-            // -----------------------------------------------------
-            // Een project kan meerdere repositories hebben.
-            //
-            // Bijvoorbeeld:
-            // - Backend
-            // - Frontend
-            // - Infrastructure
-            //
-            // SortOrder bepaalt later de volgorde in de frontend.
-
-            GitHubLinks =
-            [
-                new GitHubLink
-                {
-                    Label = "Backend repository",
-
-                    // TODO: vervangen door echte repository.
-                    Url = "https://github.com/example/joyride-backend",
-
-                    SortOrder = 1
-                }
-            ],
-
-
-            // -----------------------------------------------------
-            // MEDIA KOPPELINGEN
-            // -----------------------------------------------------
-            // PortfolioItemMedia is de koppeltabel tussen
-            // PortfolioItem en Media.
-            //
-            // IsDefault:
-            // bepaalt welke afbeelding bijvoorbeeld op de card komt.
-            //
-            // SortOrder:
-            // bepaalt de volgorde in een gallery/detailpagina.
 
             Media =
             [
