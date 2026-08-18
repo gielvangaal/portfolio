@@ -8,44 +8,88 @@ public static class DatabaseSeeder
 {
     public static async Task SeedAsync(PortfolioDbContext context)
     {
-        await context.Database.MigrateAsync();
+        await SeedHeroAsync(context);
+        await SeedPortfolioAsync(context);
+    }
 
-        if (!context.Heroes.Any())
-        {
-            context.Heroes.AddRange(
-                new Hero
-                {
-                    Language = "nl",
-                    Name = "Giel van Gaal",
-                    JobTitle = "Linux Engineer & Software Developer",
-                    CatchPhrase = "Van infrastructuur tot applicatie.",
-                    Description =
-                        "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin."
-                },
-                new Hero
-                {
-                    Language = "en",
-                    Name = "Giel van Gaal",
-                    JobTitle = "Linux Engineer & Software Developer",
-                    CatchPhrase = "From infrastructure to application.",
-                    Description =
-                        "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin."
-                }
-            );
-        }
+    private static async Task SeedHeroAsync(PortfolioDbContext context)
+    {
+        if (await context.Heroes.AnyAsync())
+            return;
 
-        if (!context.PortfolioItems.Any())
-        {
-            var backendCategory = new Category
+        context.Heroes.AddRange(
+            new Hero
             {
-                Name = "Backend"
-            };
+                Language = "nl",
+                Name = "Giel van Gaal",
+                JobTitle = "Linux Engineer & Software Developer",
+                CatchPhrase = "Van infrastructuur tot applicatie.",
+                Description =
+                    "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin."
+            },
 
-            var frontendCategory = new Category
+            new Hero
             {
-                Name = "Frontend"
-            };
+                Language = "en",
+                Name = "Giel van Gaal",
+                JobTitle = "Linux Engineer & Software Developer",
+                CatchPhrase = "From infrastructure to application.",
+                Description =
+                    "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin."
+            }
+        );
 
+        await context.SaveChangesAsync();
+    }
+
+    private static async Task SeedPortfolioAsync(PortfolioDbContext context)
+    {
+        if (await context.PortfolioItems.AnyAsync())
+            return;
+
+        // Categories
+        var backend = new Category
+        {
+            Name = "Backend"
+        };
+
+        var devOps = new Category
+        {
+            Name = "DevOps"
+        };
+
+        // Technologies
+        var kotlin = new Technology
+        {
+            Name = "Kotlin",
+            Categories = [backend]
+        };
+
+        var ktor = new Technology
+        {
+            Name = "Ktor",
+            Categories = [backend]
+        };
+
+        var mysql = new Technology
+        {
+            Name = "MySQL",
+            Categories = [backend]
+        };
+
+        var docker = new Technology
+        {
+            Name = "Docker",
+            Categories = [devOps]
+        };
+
+        var github = new Technology
+        {
+            Name = "GitHub",
+            Categories = [devOps]
+        };
+
+        // Media
         var dashboard = new Media
         {
             Path = "/media/portfolio/joyride-backend-1.webp",
@@ -67,7 +111,8 @@ public static class DatabaseSeeder
             Type = MediaType.Image
         };
 
-        var joyRide = new PortfolioItem
+        // Nederlands
+        var joyRideNl = new PortfolioItem
         {
             Language = "nl",
             Slug = "joyride",
@@ -78,11 +123,7 @@ public static class DatabaseSeeder
                 "Backend-API voor een autoverhuurplatform, gebouwd met Kotlin en Ktor.",
 
             Description =
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
-                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
-                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "JoyRide is een backend-API voor een autoverhuurplatform, ontwikkeld met Kotlin, Ktor en MySQL.",
 
             GitHubUrl = "https://github.com/...",
             LiveSiteUrl = null,
@@ -111,123 +152,83 @@ public static class DatabaseSeeder
                     SortOrder = 1
                 },
 
-            var joyRideNl = new PortfolioItem
-            {
-                Language = "nl",
-                Slug = "joyride",
-                Title = "JoyRide",
+                new PortfolioItemMedia
+                {
+                    Media = classDiagram,
+                    Role = MediaRole.Secondary,
+                    SortOrder = 2
+                },
 
-                CardDescription =
-                    "Een full-stack applicatie ontwikkeld met C# en React.",
+                new PortfolioItemMedia
+                {
+                    Media = sequenceDiagram,
+                    Role = MediaRole.Secondary,
+                    SortOrder = 3
+                }
+            ]
+        };
 
-                Description =
-                    "JoyRide is een full-stack applicatie met een C#/.NET backend en een React frontend.",
+        // Engels
+        var joyRideEn = new PortfolioItem
+        {
+            Language = "en",
+            Slug = "joyride",
 
-                GitHubUrl = "https://github.com/example/joyride",
-                LiveSiteUrl = null,
+            Title = "JoyRide",
 
-                Categories =
-                [
-                    new PortfolioItemCategory
-                    {
-                        Category = backendCategory
-                    },
-                    new PortfolioItemCategory
-                    {
-                        Category = frontendCategory
-                    }
-                ],
+            CardDescription =
+                "Backend API for a car rental platform, built with Kotlin and Ktor.",
 
-                Technologies =
-                [
-                    new PortfolioItemTechnology
-                    {
-                        Technology = csharp
-                    },
-                    new PortfolioItemTechnology
-                    {
-                        Technology = dotnet
-                    },
-                    new PortfolioItemTechnology
-                    {
-                        Technology = react
-                    }
-                ],
+            Description =
+                "JoyRide is a backend API for a car rental platform, developed with Kotlin, Ktor and MySQL.",
 
-                Media =
-                [
-                    new PortfolioItemMedia
-                    {
-                        Media = joyRideBackendMedia
-                    },
-                    new PortfolioItemMedia
-                    {
-                        Media = joyRideFrontendMedia
-                    }
-                ]
-            };
+            GitHubUrl = "https://github.com/...",
+            LiveSiteUrl = null,
 
-            var joyRideEn = new PortfolioItem
-            {
-                Language = "en",
-                Slug = "joyride",
-                Title = "JoyRide",
+            Categories =
+            [
+                backend,
+                devOps
+            ],
 
-                CardDescription =
-                    "A full-stack application developed with C# and React.",
+            Technologies =
+            [
+                kotlin,
+                ktor,
+                mysql,
+                docker,
+                github
+            ],
 
-                Description =
-                    "JoyRide is a full-stack application with a C#/.NET backend and a React frontend.",
+            Media =
+            [
+                new PortfolioItemMedia
+                {
+                    Media = dashboard,
+                    Role = MediaRole.Primary,
+                    SortOrder = 1
+                },
 
-                GitHubUrl = "https://github.com/example/joyride",
-                LiveSiteUrl = null,
+                new PortfolioItemMedia
+                {
+                    Media = classDiagram,
+                    Role = MediaRole.Secondary,
+                    SortOrder = 2
+                },
 
-                Categories =
-                [
-                    new PortfolioItemCategory
-                    {
-                        Category = backendCategory
-                    },
-                    new PortfolioItemCategory
-                    {
-                        Category = frontendCategory
-                    }
-                ],
+                new PortfolioItemMedia
+                {
+                    Media = sequenceDiagram,
+                    Role = MediaRole.Secondary,
+                    SortOrder = 3
+                }
+            ]
+        };
 
-                Technologies =
-                [
-                    new PortfolioItemTechnology
-                    {
-                        Technology = csharp
-                    },
-                    new PortfolioItemTechnology
-                    {
-                        Technology = dotnet
-                    },
-                    new PortfolioItemTechnology
-                    {
-                        Technology = react
-                    }
-                ],
-
-                Media =
-                [
-                    new PortfolioItemMedia
-                    {
-                        Media = joyRideBackendMedia
-                    },
-                    new PortfolioItemMedia
-                    {
-                        Media = joyRideFrontendMedia
-                    }
-                ]
-            };
-
-            context.PortfolioItems.AddRange(
-                joyRideNl,
-                joyRideEn
-            );
-        }
+        context.PortfolioItems.AddRange(
+            joyRideNl,
+            joyRideEn
+        );
 
         await context.SaveChangesAsync();
     }
