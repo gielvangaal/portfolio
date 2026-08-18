@@ -46,37 +46,70 @@ public static class DatabaseSeeder
                 Name = "Frontend"
             };
 
-            var csharp = new Technology
-            {
-                Name = "C#",
-                Categories = [backendCategory]
-            };
+        var dashboard = new Media
+        {
+            Path = "/media/portfolio/joyride-backend-1.webp",
+            AltText = "Screenshot van het JoyRide dashboard",
+            Type = MediaType.Image
+        };
 
-            var dotnet = new Technology
-            {
-                Name = ".NET",
-                Categories = [backendCategory]
-            };
+        var classDiagram = new Media
+        {
+            Path = "/media/portfolio/joyride-backend-2.webp",
+            AltText = "Klassendiagram van JoyRide",
+            Type = MediaType.Image
+        };
 
-            var react = new Technology
-            {
-                Name = "React",
-                Categories = [frontendCategory]
-            };
+        var sequenceDiagram = new Media
+        {
+            Path = "/media/portfolio/joyride-backend-3.webp",
+            AltText = "Sequencediagram van JoyRide",
+            Type = MediaType.Image
+        };
 
-            var joyRideBackendMedia = new Media
-            {
-                Path = "/media/portfolio/joyride-backend-1.webp",
-                AltText = "JoyRide backend",
-                Type = MediaType.Image
-            };
+        var joyRide = new PortfolioItem
+        {
+            Language = "nl",
+            Slug = "joyride",
 
-            var joyRideFrontendMedia = new Media
-            {
-                Path = "/media/portfolio/joyride-frontend-1.webp",
-                AltText = "JoyRide frontend",
-                Type = MediaType.Image
-            };
+            Title = "JoyRide",
+
+            CardDescription =
+                "Backend-API voor een autoverhuurplatform, gebouwd met Kotlin en Ktor.",
+
+            Description =
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+
+            GitHubUrl = "https://github.com/...",
+            LiveSiteUrl = null,
+
+            Categories =
+            [
+                backend,
+                devOps
+            ],
+
+            Technologies =
+            [
+                kotlin,
+                ktor,
+                mysql,
+                docker,
+                github
+            ],
+
+            Media =
+            [
+                new PortfolioItemMedia
+                {
+                    Media = dashboard,
+                    Role = MediaRole.Primary,
+                    SortOrder = 1
+                },
 
             var joyRideNl = new PortfolioItem
             {
