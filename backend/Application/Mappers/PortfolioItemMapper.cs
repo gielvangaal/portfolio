@@ -17,7 +17,10 @@ public class PortfolioItemMapper : IPortfolioItemMapper
             Description = portfolioItem.Description,
 
             ProjectDate = portfolioItem.ProjectDate,
-            ProjectType = portfolioItem.ProjectType,
+            ProjectType = MapProjectType(
+                portfolioItem.ProjectType,
+                portfolioItem.Language
+            ),
             Role = portfolioItem.Role,
             TeamSize = portfolioItem.TeamSize,
             Duration = portfolioItem.Duration,
@@ -45,7 +48,7 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .ToList()
         };
     }
-    
+
     public PortfolioCardResponse MapCard(PortfolioItem item)
     {
         return new PortfolioCardResponse
@@ -54,7 +57,10 @@ public class PortfolioItemMapper : IPortfolioItemMapper
             Title = item.Title,
             CardDescription = item.CardDescription,
             ProjectDate = item.ProjectDate,
-            ProjectType = item.ProjectType,
+            ProjectType = MapProjectType(
+                item.ProjectType,
+                item.Language
+            ),
             Role = item.Role,
 
             Categories = item.Categories
@@ -70,6 +76,22 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .OrderBy(x => x.SortOrder)
                 .Select(x => x.Media.Path)
                 .FirstOrDefault()
+        };
+    }
+
+    private static string MapProjectType(ProjectType projectType, string language)
+    {
+        return (projectType, language) switch
+        {
+            (ProjectType.Personal, "nl") => "Persoonlijk",
+            (ProjectType.Education, "nl") => "Opleiding",
+            (ProjectType.Professional, "nl") => "Professioneel",
+
+            (ProjectType.Personal, _) => "Personal",
+            (ProjectType.Education, _) => "Education",
+            (ProjectType.Professional, _) => "Professional",
+
+            _ => projectType.ToString()
         };
     }
 }
