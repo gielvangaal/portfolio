@@ -1,16 +1,44 @@
-# React + Vite
+# Portfolio frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React-frontend voor een persoonlijk portfolio, gebouwd met Vite. De applicatie haalt de hero en portfolio-items op uit een aparte API via Axios en gebruikt TanStack Query voor het laden en cachen van data.
 
-Currently, two official plugins are available:
+## Huidige status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Hero-sectie met content en afbeelding uit de API.
+- Responsive portfolio-overzicht met maximaal vier projecten per pagina.
+- De taal staat momenteel vast op Engels (`en`).
+- Projectdetailpagina's en de secties **Over mij** en **Contact** moeten nog worden uitgewerkt.
 
-## React Compiler
+## Project starten
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Vereisten: Node.js 20.19+ en npm.
 
-## Expanding the Oxlint configuration
+1. Installeer de dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+   ```bash
+   npm install
+   ```
+
+2. Maak of controleer `.env` in de hoofdmap:
+
+   ```env
+   VITE_API_BASE_URL=http://localhost:<poort>
+   ```
+
+   De ingestelde backend moet de hero- en portfolio-endpoints aanbieden.
+
+3. Start de ontwikkelserver:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open de URL die Vite in de terminal toont (standaard `http://localhost:5173`).
+
+## Overige commando's
+
+```bash
+npm run build    # productiebuild maken
+npm run preview  # productiebuild lokaal bekijken
+npm run lint     # code controleren
+```

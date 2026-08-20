@@ -17,6 +17,13 @@ public static class DatabaseSeeder
         if (await context.Heroes.AnyAsync())
             return;
 
+        var heroImage = new Media
+        {
+            Path = "/media/giel.webp",
+            AltText = "Portret van Giel van Gaal",
+            Type = MediaType.Image
+        };
+
         context.Heroes.AddRange(
             new Hero
             {
@@ -25,7 +32,8 @@ public static class DatabaseSeeder
                 JobTitle = "Linux Engineer & Software Developer",
                 CatchPhrase = "Van infrastructuur tot applicatie.",
                 Description =
-                    "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin."
+                    "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin.",
+                Media = heroImage
             },
 
             new Hero
@@ -35,7 +43,8 @@ public static class DatabaseSeeder
                 JobTitle = "Linux Engineer & Software Developer",
                 CatchPhrase = "From infrastructure to application.",
                 Description =
-                    "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin."
+                    "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin.",
+                Media = heroImage
             }
         );
 

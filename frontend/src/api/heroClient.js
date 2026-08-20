@@ -1,4 +1,4 @@
-import { httpClient } from "./httpClient";
+import { httpClient, getMediaUrl } from "./httpClient";
 
 export const heroClient = {
     get: async (lang) => {
@@ -6,7 +6,7 @@ export const heroClient = {
 
         return {
             ...response.data,
-            mediaUrl: `${import.meta.env.VITE_API_BASE_URL}${response.data.mediaPath}`,
+            mediaUrl: getMediaUrl(response.data.mediaPath),
         };
     },
 };

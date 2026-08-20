@@ -9,7 +9,7 @@ public class PortfolioCardResponse
     public string CardDescription { get; set; } = string.Empty;
 
     public DateOnly ProjectDate { get; set; }
-    public ProjectType ProjectType { get; set; }
+    public string ProjectType { get; set; } = string.Empty;
 
     public string Role { get; set; } = string.Empty;
 

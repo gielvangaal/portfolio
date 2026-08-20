@@ -3,7 +3,7 @@ import HeroSection from "./features/hero/HeroSection";
 import PortfolioSection from "./features/portfolio/PortfolioSection.jsx";
 
 export default function App() {
-    const lang = "en"
+    const lang = "nl"
     return (
         <PageLayout>
             <HeroSection lang={lang} />
