@@ -1,3 +1,5 @@
+using Domain.Enums;
+
 namespace Domain.Entities;
 
 public class PortfolioItem
@@ -10,7 +12,17 @@ public class PortfolioItem
     public string Title { get; set; } = string.Empty;
     public string CardDescription { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+    
+    public DateOnly ProjectDate { get; set; }
 
+    public ProjectType ProjectType { get; set; }
+
+    public string Role { get; set; } = string.Empty;
+
+    public int? TeamSize { get; set; }
+
+    public string? Duration { get; set; }
+    
     public string? GitHubUrl { get; set; }
     public string? LiveSiteUrl { get; set; }
 

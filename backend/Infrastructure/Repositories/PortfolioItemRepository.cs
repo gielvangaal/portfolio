@@ -28,4 +28,18 @@ public class PortfolioItemRepository : IPortfolioItemRepository
                 x.Slug == slug &&
                 x.Language == language);
     }
+    
+    public async Task<IReadOnlyCollection<PortfolioItem>> GetAllAsync(
+        string language)
+    {
+        return await _context.PortfolioItems
+            .AsNoTracking()
+            .Where(x => x.Language == language)
+            .OrderByDescending(x => x.ProjectDate)
+            .Include(x => x.Categories)
+            .Include(x => x.Technologies)
+            .Include(x => x.Media)
+            .ThenInclude(x => x.Media)
+            .ToListAsync();
+    }
 }

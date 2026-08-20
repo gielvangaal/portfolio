@@ -1,6 +1,7 @@
 using Application.DTOs.Responses;
 using Application.Interfaces;
 using Domain.Entities;
+using Domain.Enums;
 
 namespace Application.Mappers;
 
@@ -14,6 +15,13 @@ public class PortfolioItemMapper : IPortfolioItemMapper
             Title = portfolioItem.Title,
             CardDescription = portfolioItem.CardDescription,
             Description = portfolioItem.Description,
+
+            ProjectDate = portfolioItem.ProjectDate,
+            ProjectType = portfolioItem.ProjectType,
+            Role = portfolioItem.Role,
+            TeamSize = portfolioItem.TeamSize,
+            Duration = portfolioItem.Duration,
+
             GitHubUrl = portfolioItem.GitHubUrl,
             LiveSiteUrl = portfolioItem.LiveSiteUrl,
 
@@ -35,6 +43,33 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                     SortOrder = x.SortOrder
                 })
                 .ToList()
+        };
+    }
+    
+    public PortfolioCardResponse MapCard(PortfolioItem item)
+    {
+        return new PortfolioCardResponse
+        {
+            Slug = item.Slug,
+            Title = item.Title,
+            CardDescription = item.CardDescription,
+            ProjectDate = item.ProjectDate,
+            ProjectType = item.ProjectType,
+            Role = item.Role,
+
+            Categories = item.Categories
+                .Select(x => x.Name)
+                .ToList(),
+
+            Technologies = item.Technologies
+                .Select(x => x.Name)
+                .ToList(),
+
+            PrimaryImageUrl = item.Media
+                .Where(x => x.Role == MediaRole.Primary)
+                .OrderBy(x => x.SortOrder)
+                .Select(x => x.Media.Path)
+                .FirstOrDefault()
         };
     }
 }

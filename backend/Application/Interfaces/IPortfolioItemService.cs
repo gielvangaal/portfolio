@@ -4,5 +4,10 @@ namespace Application.Interfaces;
 
 public interface IPortfolioItemService
 {
-    Task<PortfolioItemResponse?> GetAsync(string slug, string language);
+    Task<IReadOnlyCollection<PortfolioCardResponse>> GetCardsAsync(
+        string language);
+
+    Task<PortfolioItemResponse?> GetAsync(
+        string slug,
+        string language);
 }

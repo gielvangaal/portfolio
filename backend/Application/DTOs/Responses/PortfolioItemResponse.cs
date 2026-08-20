@@ -1,3 +1,5 @@
+using Domain.Enums;
+
 namespace Application.DTOs.Responses;
 
 public class PortfolioItemResponse
@@ -9,6 +11,16 @@ public class PortfolioItemResponse
     public string CardDescription { get; set; } = string.Empty;
 
     public string Description { get; set; } = string.Empty;
+
+    public DateOnly ProjectDate { get; set; }
+
+    public ProjectType ProjectType { get; set; }
+
+    public string Role { get; set; } = string.Empty;
+
+    public int? TeamSize { get; set; }
+
+    public string? Duration { get; set; }
 
     public string? GitHubUrl { get; set; }
 

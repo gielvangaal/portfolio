@@ -17,10 +17,42 @@ public class PortfolioItemConfiguration
             .IsRequired()
             .HasMaxLength(150);
 
+        builder.Property(x => x.Title)
+            .IsRequired()
+            .HasMaxLength(150);
+
+        builder.Property(x => x.CardDescription)
+            .IsRequired()
+            .HasMaxLength(300);
+
+        builder.Property(x => x.Description)
+            .IsRequired();
+
+        builder.Property(x => x.ProjectDate)
+            .IsRequired();
+
+        builder.Property(x => x.ProjectType)
+            .IsRequired();
+
+        builder.Property(x => x.Role)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(x => x.Duration)
+            .HasMaxLength(100);
+
+        builder.Property(x => x.GitHubUrl)
+            .HasMaxLength(500);
+
+        builder.Property(x => x.LiveSiteUrl)
+            .HasMaxLength(500);
+
         builder.HasIndex(x => new
         {
             x.Slug,
             x.Language
         }).IsUnique();
+
+        builder.HasIndex(x => x.ProjectDate);
     }
 }
