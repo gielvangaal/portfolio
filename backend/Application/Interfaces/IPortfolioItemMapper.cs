@@ -6,4 +6,6 @@ namespace Application.Interfaces;
 public interface IPortfolioItemMapper
 {
     PortfolioItemResponse Map(PortfolioItem portfolioItem);
+
+    PortfolioCardResponse MapCard(PortfolioItem portfolioItem);
 }

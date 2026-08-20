@@ -28,4 +28,15 @@ public class PortfolioItemService : IPortfolioItemService
 
         return _portfolioItemMapper.Map(portfolioItem);
     }
+
+    public async Task<IReadOnlyCollection<PortfolioCardResponse>> GetCardsAsync(
+        string language)
+    {
+        var portfolioItems =
+            await _portfolioItemRepository.GetAllAsync(language);
+
+        return portfolioItems
+            .Select(_portfolioItemMapper.MapCard)
+            .ToList();
+    }
 }

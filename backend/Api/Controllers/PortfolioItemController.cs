@@ -16,6 +16,15 @@ public class PortfolioItemController : ControllerBase
         _portfolioItemService = portfolioItemService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IReadOnlyCollection<PortfolioCardResponse>>> GetAll(
+        [FromQuery] string language)
+    {
+        var cards = await _portfolioItemService.GetCardsAsync(language);
+
+        return Ok(cards);
+    }
+
     [HttpGet("{slug}/{language}")]
     public async Task<ActionResult<PortfolioItemResponse>> Get(
         string slug,
