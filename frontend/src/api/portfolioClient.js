@@ -17,6 +17,12 @@ export const portfolioClient = {
             `/api/portfolio/${slug}/${lang}`
         );
 
-        return response.data;
+        return {
+            ...response.data,
+            media: response.data.media.map((media) => ({
+                ...media,
+                path: getMediaUrl(media.path),
+            })),
+        };
     },
 };

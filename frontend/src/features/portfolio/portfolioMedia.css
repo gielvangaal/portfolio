@@ -1,0 +1,11 @@
+.portfolio-media {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.portfolio-media img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,154 @@
+.portfolio-detail {
+    width: 60vw;
+    margin: 4rem auto;
+}
+
+
+/* --------------------------------------------------
+   HEADING
+-------------------------------------------------- */
+
+.portfolio-detail__header {
+    position: relative;
+
+    display: inline-block;
+    width: fit-content;
+
+    margin-bottom: var(--space-2xl);
+
+    z-index: 1;
+}
+
+.portfolio-detail__header h1 {
+    margin: 0;
+}
+
+.portfolio-detail__heading-highlight {
+    position: absolute;
+
+    left: 0;
+    bottom: 5px;
+
+    width: 100%;
+    height: 35%;
+
+    background-color: var(--color-yellow);
+
+    z-index: -1;
+}
+
+
+/* --------------------------------------------------
+   CONTENT
+-------------------------------------------------- */
+
+.portfolio-detail__content {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr);
+    gap: var(--space-2xl);
+
+    margin-bottom: var(--space-2xl);
+}
+
+
+/* DESCRIPTION */
+
+.portfolio-detail__description p {
+    margin: 0;
+
+    line-height: 1.7;
+}
+
+
+/* --------------------------------------------------
+   DETAILS
+-------------------------------------------------- */
+
+.portfolio-detail__details h2 {
+    margin-top: 0;
+}
+
+.portfolio-detail__details dl {
+    margin: 0;
+}
+
+.portfolio-detail__details dl div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: var(--space-md);
+
+    margin-bottom: var(--space-sm);
+}
+
+.portfolio-detail__details dt {
+    font-weight: 700;
+}
+
+.portfolio-detail__details dd {
+    margin: 0;
+}
+
+
+/* META */
+
+.portfolio-detail__meta {
+    margin-top: var(--space-xl);
+}
+
+.portfolio-detail__meta h3 {
+    margin: 0 0 var(--space-sm);
+}
+
+.portfolio-detail__meta p {
+    margin: 0;
+}
+
+.portfolio-detail__meta ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.portfolio-detail__meta li {
+    padding: var(--space-xs) var(--space-sm);
+
+    border: 1px solid var(--color-text);
+
+    font-size: 0.8rem;
+}
+
+
+/* LINKS */
+
+.portfolio-detail__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+
+    margin-top: var(--space-xl);
+}
+
+.portfolio-detail__links a {
+    font-weight: 700;
+}
+
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 575.98px) {
+    .portfolio-detail {
+        width: 85vw;
+    }
+
+    .portfolio-detail__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
