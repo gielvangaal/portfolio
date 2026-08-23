@@ -1,0 +1,6 @@
+.portfolio-back-link {
+    display: block;
+
+    width: fit-content;
+    margin-bottom: var(--space-lg);
+}

@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 import "./navigation.css";
 
 export default function Navigation() {
     return (
         <nav className="navigation" aria-label="Hoofdnavigatie">
-            <a href="#home">Home</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#about">Over mij</a>
-            <a href="#contact">Contact</a>
+            <Link to="/#home">Home</Link>
+            <Link to="/#portfolio">Portfolio</Link>
+            <Link to="/#about">Over mij</Link>
+            <Link to="/#contact">Contact</Link>
         </nav>
     );
 }

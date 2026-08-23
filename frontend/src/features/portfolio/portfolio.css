@@ -141,11 +141,6 @@
     align-self: flex-end;
 
     margin-top: auto;
-    padding: var(--space-xs) var(--space-xl);
-
-    background-color: var(--color-secondary);
-
-    font-weight: 700;
 }
 
 

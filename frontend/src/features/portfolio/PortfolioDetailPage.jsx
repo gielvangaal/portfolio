@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 
 import { usePortfolioItem } from "./usePortfolioItem";
+import PortfolioBackLink from "./PortfolioBackLink";
 import PortfolioMedia from "./PortfolioMedia";
+import "./portfolioButton.css";
 import "./portfolioDetail.css";
 
 export default function PortfolioDetailPage({ lang }) {
@@ -23,6 +25,8 @@ export default function PortfolioDetailPage({ lang }) {
 
     return (
         <main className="portfolio-detail">
+            <PortfolioBackLink />
+
             <header className="portfolio-detail__header">
                 <h1>{item.title}</h1>
                 <div
@@ -36,9 +40,10 @@ export default function PortfolioDetailPage({ lang }) {
                     <p>{item.description}</p>
                 </div>
 
-                <aside className="portfolio-detail__details">
-                    <h2>Details</h2>
-
+                <aside
+                    className="portfolio-detail__details"
+                    aria-label="Projectdetails"
+                >
                     <dl>
                         <div>
                             <dt>Project</dt>
@@ -72,7 +77,9 @@ export default function PortfolioDetailPage({ lang }) {
 
                     {item.technologies.length > 0 && (
                         <div className="portfolio-detail__meta">
-                            <h3>Technologieën</h3>
+                            <p className="portfolio-detail__meta-label">
+                                Stack
+                            </p>
 
                             <ul>
                                 {item.technologies.map((technology) => (
@@ -86,7 +93,9 @@ export default function PortfolioDetailPage({ lang }) {
 
                     {item.categories.length > 0 && (
                         <div className="portfolio-detail__meta">
-                            <h3>Categorieën</h3>
+                            <p className="portfolio-detail__meta-label">
+                                Categorieën
+                            </p>
 
                             <p>{item.categories.join(" · ")}</p>
                         </div>
@@ -96,6 +105,7 @@ export default function PortfolioDetailPage({ lang }) {
                         <div className="portfolio-detail__links">
                             {item.gitHubUrl && (
                                 <a
+                                    className="portfolio-button"
                                     href={item.gitHubUrl}
                                     target="_blank"
                                     rel="noreferrer"
@@ -106,6 +116,7 @@ export default function PortfolioDetailPage({ lang }) {
 
                             {item.liveSiteUrl && (
                                 <a
+                                    className="portfolio-button"
                                     href={item.liveSiteUrl}
                                     target="_blank"
                                     rel="noreferrer"
