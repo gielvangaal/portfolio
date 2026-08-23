@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+import "./portfolioButton.css";
+
 export default function PortfolioCard({ item }) {
     const technologies = item.technologies.slice(0, 4);
 
@@ -38,12 +42,12 @@ export default function PortfolioCard({ item }) {
                 ))}
             </ul>
 
-            <a
-                className="portfolio-card__button"
-                href={`/portfolio/${item.slug}`}
+            <Link
+                className="portfolio-button portfolio-card__button"
+                to={`/portfolio/${item.slug}`}
             >
                 Meer
-            </a>
+            </Link>
         </article>
     );
 }

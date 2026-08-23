@@ -1,0 +1,9 @@
+.portfolio-button {
+    display: inline-block;
+
+    padding: var(--space-xs) var(--space-xl);
+
+    background-color: var(--color-secondary);
+
+    font-weight: 700;
+}
