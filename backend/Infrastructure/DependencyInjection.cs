@@ -26,13 +26,16 @@ public static class DependencyInjection
         // Repositories
         services.AddScoped<IHeroRepository, HeroRepository>();
         services.AddScoped<IPortfolioItemRepository, PortfolioItemRepository>();
+        services.AddScoped<IAboutProfileRepository, AboutProfileRepository>();
 
         // Services
         services.AddScoped<IHeroService, HeroService>();
         services.AddScoped<IPortfolioItemService, PortfolioItemService>();
+        services.AddScoped<IAboutProfileService, AboutProfileService>();
 
         // Mappers
         services.AddScoped<IPortfolioItemMapper, PortfolioItemMapper>();
+        services.AddScoped<IAboutProfileMapper, AboutProfileMapper>();
 
         return services;
     }

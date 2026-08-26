@@ -1,62 +1,62 @@
 # Portfolio frontend
 
-React-frontend voor een persoonlijk portfolio, gebouwd met Vite. De applicatie haalt de hero en portfolio-items op uit een aparte API via Axios en gebruikt TanStack Query voor het laden en cachen van data.
+React frontend for a personal portfolio, built with Vite. The application retrieves the hero and portfolio items from a separate API via Axios and uses TanStack Query for loading and caching data.
 
-## Techniek
+## Technology
 
-- React 19 en Vite
-- React Router voor client-side routering
-- TanStack Query voor server-state en caching
-- Axios voor API-verzoeken
-- Gewone CSS met centrale tokens in `src/styles/tokens.css`
+- React 19 and Vite
+- React Router for client-side routing
+- TanStack Query for server-state and caching
+- Axios for API requests
+- Plain CSS with central tokens in `src/styles/tokens.css`
 
-## Structuur en datastroom
+## Structure and data flow
 
-De code is per verantwoordelijkheid verdeeld:
+The code is divided by responsibility:
 
-- `src/features` bevat de paginaonderdelen, bijbehorende hooks en CSS.
-- `src/services` vormt de laag tussen features en API-clients.
-- `src/api` verstuurt HTTP-verzoeken en bouwt media-URL's op.
-- `src/mappers` zet API-responses om naar modellen voor de UI.
-- `src/components` bevat gedeelde presentational en layout-componenten.
+- `src/features` contains the page sections, associated hooks and CSS.
+- `src/services` forms the layer between features and API clients.
+- `src/api` sends HTTP requests and builds media URLs.
+- `src/mappers` converts API responses into models for the UI.
+- `src/components` contains shared presentational and layout components.
 
-De normale datastroom is:
+The normal data flow is:
 
 ```text
 component → query-hook → service → API-client → mapper → component
 ```
 
-TanStack Query bewaart opgehaalde data vijf minuten als vers, probeert een
-mislukt verzoek één keer opnieuw en refetcht niet bij het opnieuw focussen van
-het browservenster. Deze instellingen staan in `src/main.jsx`.
+TanStack Query keeps fetched data fresh for five minutes, retries a
+failed request once and does not refetch when the browser window regains
+focus. These settings are in `src/main.jsx`.
 
-## Routering
+## Routing
 
-`BrowserRouter` wordt gestart in `src/main.jsx`. De beschikbare routes staan in
+`BrowserRouter` is started in `src/main.jsx`. The available routes are defined in
 `src/App.jsx`:
 
-- `/` toont de homepage met de hero en het portfolio-overzicht.
-- `/portfolio/:slug` toont het project waarvan de slug in de URL staat.
+- `/` shows the homepage with the hero and portfolio overview.
+- `/portfolio/:slug` shows the project whose slug is in the URL.
 
-Interne navigatie gebruikt `Link` van React Router. Daardoor wisselt React van
-pagina zonder de volledige applicatie opnieuw te laden en blijft reeds geladen
-portfolio-data in de cache. Gewone `<a>`-links blijven bedoeld voor externe
+Internal navigation uses `Link` from React Router. This allows React to switch
+pages without reloading the entire application and keeps already loaded
+portfolio data in the cache. Regular `<a>` links remain intended for external
 websites.
 
-`ScrollToHash` in `App.jsx` beheert de positie na navigatie. Een route zonder
-hash, zoals een detailpagina, opent bovenaan. Een route zoals `/#portfolio`
-wacht totdat de portfoliosectie bestaat en zet de pagina direct op die sectie.
-De routecontainer krijgt bij iedere padwijziging opnieuw de fade-in-animatie.
+`ScrollToHash` in `App.jsx` manages the position after navigation. A route without
+a hash, such as a detail page, opens at the top. A route such as `/#portfolio`
+waits until the portfolio section exists and places the page directly on that section.
+The route container gets the fade-in animation again on every path change.
 
-Omdat `BrowserRouter` gewone URL-paden gebruikt, moet de productieserver
-onbekende frontendroutes zoals `/portfolio/mijn-project` terugsturen naar
-`index.html`. Zonder deze SPA-fallback werken directe bezoeken en browser-refresh
-op een detailpagina niet.
+Because `BrowserRouter` uses regular URL paths, the production server must
+send unknown frontend routes such as `/portfolio/my-project` back to
+`index.html`. Without this SPA fallback, direct visits and browser refreshes
+on a detail page do not work.
 
-## API-configuratie
+## API configuration
 
-De frontend leest de basis-URL van de backend uit `VITE_API_BASE_URL`. De API
-moet deze endpoints aanbieden:
+The frontend reads the base URL of the backend from `VITE_API_BASE_URL`. The API
+must provide these endpoints:
 
 ```text
 GET /api/Hero/:language
@@ -64,40 +64,40 @@ GET /api/portfolio?language=:language
 GET /api/portfolio/:slug/:language
 ```
 
-Relatieve paden van afbeeldingen en andere media worden eveneens aan
-`VITE_API_BASE_URL` gekoppeld. De gebruikte taal staat voorlopig als `en` in
+Relative paths of images and other media are also linked to
+`VITE_API_BASE_URL`. The language used is currently set to `en` in
 `src/App.jsx`.
 
-## Project starten
+## Starting the project
 
-Vereisten: Node.js 20.19+ en npm.
+Requirements: Node.js 20.19+ and npm.
 
-1. Installeer de dependencies:
+1. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-2. Maak of controleer `.env` in de hoofdmap:
+2. Create or check `.env` in the root directory:
 
-   Bijvoorbeeld voor een lokale backend op poort 5000:
+   For example, for a local backend on port 5000:
 
    ```env
    VITE_API_BASE_URL=http://localhost:5000
    ```
 
-3. Start de ontwikkelserver:
+3. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-4. Open de URL die Vite in de terminal toont (standaard `http://localhost:5173`).
+4. Open the URL that Vite shows in the terminal (default `http://localhost:5173`).
 
-## Overige commando's
+## Other commands
 
 ```bash
-npm run build    # productiebuild maken
-npm run preview  # productiebuild lokaal bekijken
-npm run lint     # code controleren
+npm run build    # create production build
+npm run preview  # view production build locally
+npm run lint     # check code
 ```

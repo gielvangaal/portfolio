@@ -10,6 +10,7 @@ public static class DatabaseSeeder
     {
         await SeedHeroAsync(context);
         await SeedPortfolioAsync(context);
+        await SeedAboutProfileAsync(context);
     }
 
     private static async Task SeedHeroAsync(PortfolioDbContext context)
@@ -813,6 +814,48 @@ public static class DatabaseSeeder
         await context.SaveChangesAsync();
     }
 
+    private static async Task SeedAboutProfileAsync(PortfolioDbContext context)
+{
+    if (await context.AboutProfiles.AnyAsync())
+        return;
+
+    context.AboutProfiles.AddRange(
+        new AboutProfile
+        {
+            Language = "nl",
+            Description =
+                """
+                Mijn naam is **Giel** en ik werk als **Linux Engineer**. Na jaren met plezier in de culturele sector te hebben gewerkt, heb ik de overstap gemaakt naar de **informatica**. Daarnaast volg ik de **bachelor Informatica** aan Avans Hogeschool.
+
+                In mijn werk houd ik me bezig met **Linux**, infrastructuur en automatisering. Daarnaast ontwikkel ik software en werk ik onder andere met **C#**, **React** en **Kotlin**.
+
+                Ik werk graag vanuit duidelijke **requirements** en volgens **OTAP-principes**, met aandacht voor **CI/CD**, testen en onderhoudbaarheid. Ik geloof in de tijd nemen om iets goed op te zetten, zodat software ook op langere termijn begrijpelijk en beheersbaar blijft.
+
+                Ik ben nieuwsgierig van aard en vind het interessant om de volledige technische keten te begrijpen: van infrastructuur en deployment tot backend en frontend.
+                """,
+            ImagePath = "/media/giel2.webp"
+        },
+
+        new AboutProfile
+        {
+            Language = "en",
+            Description =
+                """
+                My name is **Giel** and I work as a **Linux Engineer**. After spending several years working in the cultural sector, I made the transition into **computer science**. I am also studying for a **Bachelor's degree in Computer Science** at Avans University of Applied Sciences.
+
+                In my work I focus on **Linux**, infrastructure and automation. Alongside that, I develop software using technologies including **C#**, **React** and **Kotlin**.
+
+                I like working from clear **requirements** and following **DTAP principles**, with attention to **CI/CD**, testing and maintainability. I believe that taking the time to build something properly saves time when software needs to be maintained or extended later.
+
+                I am naturally curious and enjoy understanding the complete technical chain: from infrastructure and deployment to backend and frontend development.
+                """,
+            ImagePath = "/media/giel2.webp"
+        }
+    );
+
+    await context.SaveChangesAsync();
+}
+    
     private static Media CreateImage(string path, string altText)
     {
         return new Media
