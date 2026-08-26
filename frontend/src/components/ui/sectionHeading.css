@@ -1,0 +1,23 @@
+.section-heading {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+
+    padding: 0 10px;
+
+    z-index: 1;
+}
+
+.section-heading__highlight {
+    position: absolute;
+
+    left: 0;
+    bottom: 6px;
+
+    width: calc(100% - 3px);
+    height: 61%;
+
+    background-color: var(--color-primary);
+
+    z-index: -1;
+}

@@ -10,9 +10,7 @@ export default function PageLayout({ children }) {
             </header>
 
             <main className="page-main">
-                <div className="container">
-                    {children}
-                </div>
+                {children}
             </main>
         </div>
     );

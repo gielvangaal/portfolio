@@ -5,6 +5,7 @@ import PageLayout from "./components/layout/PageLayout";
 import HeroSection from "./features/hero/HeroSection";
 import PortfolioSection from "./features/portfolio/PortfolioSection";
 import PortfolioDetailPage from "./features/portfolio/PortfolioDetailPage";
+import AboutProfileSection from "./features/aboutProfile/AboutProfileSection";
 
 // T.b.v. automatische scroll naar hash
 function ScrollToHash() {
@@ -61,6 +62,7 @@ export default function App() {
                                 <>
                                     <HeroSection lang={lang} />
                                     <PortfolioSection lang={lang} />
+                                    <AboutProfileSection lang={lang} />
                                 </>
                             }
                         />
