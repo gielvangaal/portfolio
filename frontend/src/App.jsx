@@ -46,7 +46,7 @@ function ScrollToHash() {
 }
 
 export default function App() {
-    const lang = "en";
+    const lang = "nl";
     const { pathname } = useLocation();
 
     return (
