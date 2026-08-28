@@ -19,13 +19,30 @@ export const educationClient = {
             sections: education.sections.map((section) => ({
                 ...section,
 
-                technologies: section.technologies.map((technology) => ({
-                    ...technology,
+                technologies: section.technologies.map(
+                    (technology) => ({
+                        ...technology,
 
-                    media: technology.media
+                        media: technology.media
+                            ? {
+                                ...technology.media,
+                                path: getMediaUrl(
+                                    technology.media.path
+                                ),
+                            }
+                            : null,
+                    })
+                ),
+
+                tooling: section.tooling.map((tool) => ({
+                    ...tool,
+
+                    media: tool.media
                         ? {
-                            ...technology.media,
-                            path: getMediaUrl(technology.media.path),
+                            ...tool.media,
+                            path: getMediaUrl(
+                                tool.media.path
+                            ),
                         }
                         : null,
                 })),

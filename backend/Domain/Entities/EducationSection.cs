@@ -14,5 +14,7 @@ public class EducationSection
 
     public ICollection<Technology> Technologies { get; set; } = [];
 
-    public ICollection<EducationTopic> Topics { get; set; } = [];
+    public ICollection<Skill> Skills { get; set; } = [];
+
+    public ICollection<Tooling> Tooling { get; set; } = [];
 }

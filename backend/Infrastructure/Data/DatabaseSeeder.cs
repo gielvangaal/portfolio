@@ -440,6 +440,26 @@ public static class DatabaseSeeder
         new Skill
         {
             Name = "Doortastend"
+        },
+        new Skill
+        {
+            Name = "UI/UX"
+        },
+        new Skill
+        {
+            Name = "Creatief ondernemen"
+        },
+        new Skill
+        {
+            Name = "Presentatievaardigheden"
+        },
+        new Skill
+        {
+            Name = "Marketing en communicatie"
+        },
+        new Skill
+        {
+            Name = "Methodisch werken"
         }
     );
 
@@ -1269,9 +1289,11 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
     var technologies = await context.Technologies
         .ToDictionaryAsync(x => x.Name);
 
-    /*
-     * Avans Hogeschool
-     */
+    var skills = await context.Skills
+        .ToDictionaryAsync(x => x.Name);
+
+    var tooling = await context.Tooling
+        .ToDictionaryAsync(x => x.Name);
 
     var avans = new Education
     {
@@ -1295,48 +1317,22 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
                 Technologies =
                 [
                     technologies["Kotlin"],
-                    technologies["Ktor"],
-                    technologies["GitHub"],
-                    technologies["Jira"]
+                    technologies["Ktor"]
                 ],
 
-                Topics =
+                Skills =
                 [
-                    new EducationTopic
-                    {
-                        Name = "Functioneel programmeren",
-                        SortOrder = 1
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Software testing",
-                        SortOrder = 2
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Agile werken",
-                        SortOrder = 3
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Scrum",
-                        SortOrder = 4
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Design patterns",
-                        SortOrder = 5
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Gradle",
-                        SortOrder = 6
-                    },
-                    new EducationTopic
-                    {
-                        Name = "GitHub Actions",
-                        SortOrder = 7
-                    }
+                    skills["Functioneel programmeren"],
+                    skills["Software testing"],
+                    skills["Agile werken"],
+                    skills["Scrum"],
+                    skills["Design patterns"]
+                ],
+
+                Tooling =
+                [
+                    tooling["Gradle"],
+                    tooling["GitHub Actions"]
                 ]
             },
 
@@ -1352,56 +1348,27 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
                     technologies["JavaScript"],
                     technologies["HTML"],
                     technologies["CSS"],
-                    technologies["UML"],
-                    technologies["GitHub"],
-                    technologies["Jira"]
+                    technologies["UML"]
                 ],
 
-                Topics =
+                Skills =
                 [
-                    new EducationTopic
-                    {
-                        Name = "Projectmatig werken",
-                        SortOrder = 1
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Systeemontwerp",
-                        SortOrder = 2
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Softwarearchitectuur",
-                        SortOrder = 3
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Databaseontwerp",
-                        SortOrder = 4
-                    },
-                    new EducationTopic
-                    {
-                        Name = "DevOps",
-                        SortOrder = 5
-                    },
-                    new EducationTopic
-                    {
-                        Name = "CI/CD-pipelines",
-                        SortOrder = 6
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Objectgeoriënteerd programmeren",
-                        SortOrder = 7
-                    }
+                    skills["Projectmatig werken"],
+                    skills["Systeemontwerp"],
+                    skills["Softwarearchitectuur"],
+                    skills["Databaseontwerp"],
+                    skills["CI/CD-pipelines"],
+                    skills["Objectgeoriënteerd programmeren"]
+                ],
+
+                Tooling =
+                [
+                    tooling["Git"],
+                    tooling["Jira"]
                 ]
             }
         ]
     };
-
-    /*
-     * Codecademy
-     */
 
     var codecademy = new Education
     {
@@ -1431,21 +1398,13 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
                     technologies["MySQL"]
                 ],
 
-                Topics =
+                Skills =
                 [
-                    new EducationTopic
-                    {
-                        Name = "UI/UX",
-                        SortOrder = 1
-                    }
+                    skills["UI/UX"]
                 ]
             }
         ]
     };
-
-    /*
-     * Albeda College
-     */
 
     var albeda = new Education
     {
@@ -1466,41 +1425,17 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
                 Title = null,
                 SortOrder = 1,
 
-                Topics =
+                Skills =
                 [
-                    new EducationTopic
-                    {
-                        Name = "Projectmatig werken",
-                        SortOrder = 1
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Creatief ondernemen",
-                        SortOrder = 2
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Samenwerken",
-                        SortOrder = 3
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Presentatievaardigheden",
-                        SortOrder = 4
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Marketing en communicatie",
-                        SortOrder = 5
-                    }
+                    skills["Projectmatig werken"],
+                    skills["Creatief ondernemen"],
+                    skills["Samenwerken"],
+                    skills["Presentatievaardigheden"],
+                    skills["Marketing en communicatie"]
                 ]
             }
         ]
     };
-
-    /*
-     * Koning Willem 1 College
-     */
 
     var koningWillem = new Education
     {
@@ -1521,33 +1456,13 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
                 Title = null,
                 SortOrder = 1,
 
-                Topics =
+                Skills =
                 [
-                    new EducationTopic
-                    {
-                        Name = "Methodisch werken",
-                        SortOrder = 1
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Sociale vaardigheden",
-                        SortOrder = 2
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Projectmatig werken",
-                        SortOrder = 3
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Samenwerken",
-                        SortOrder = 4
-                    },
-                    new EducationTopic
-                    {
-                        Name = "Presentatievaardigheden",
-                        SortOrder = 5
-                    }
+                    skills["Methodisch werken"],
+                    skills["Sociale vaardigheden"],
+                    skills["Projectmatig werken"],
+                    skills["Samenwerken"],
+                    skills["Presentatievaardigheden"]
                 ]
             }
         ]

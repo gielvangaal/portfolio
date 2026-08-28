@@ -19,11 +19,18 @@ public class EducationRepository : IEducationRepository
         return await _context.Educations
             .AsNoTracking()
             .Include(x => x.Media)
-            .Include(x => x.Sections)
-            .ThenInclude(x => x.Topics)
+
             .Include(x => x.Sections)
             .ThenInclude(x => x.Technologies)
             .ThenInclude(x => x.Media)
+
+            .Include(x => x.Sections)
+            .ThenInclude(x => x.Skills)
+
+            .Include(x => x.Sections)
+            .ThenInclude(x => x.Tooling)
+            .ThenInclude(x => x.Media)
+
             .OrderBy(x => x.SortOrder)
             .ToListAsync();
     }

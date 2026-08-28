@@ -17,12 +17,13 @@ public class EducationSectionConfiguration
         builder.Property(x => x.SortOrder)
             .IsRequired();
 
-        builder.HasMany(x => x.Topics)
-            .WithOne(x => x.EducationSection)
-            .HasForeignKey(x => x.EducationSectionId)
-            .OnDelete(DeleteBehavior.Cascade);
-
         builder.HasMany(x => x.Technologies)
+            .WithMany();
+
+        builder.HasMany(x => x.Skills)
+            .WithMany();
+
+        builder.HasMany(x => x.Tooling)
             .WithMany();
     }
 }

@@ -21,7 +21,7 @@ public class PortfolioDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<GitHubLink> GitHubLinks { get; set; }
     public DbSet<EducationSection> EducationSections { get; set; }
-    public DbSet<EducationTopic> EducationTopics { get; set; }
+    
     public DbSet<Skill> Skills { get; set; }
     public DbSet<Tooling> Tooling { get; set; }
 

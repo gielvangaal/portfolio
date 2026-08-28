@@ -9,6 +9,9 @@ public class EducationSectionResponse
     public IReadOnlyCollection<TechnologyResponse> Technologies { get; set; }
         = [];
 
-    public IReadOnlyCollection<EducationTopicResponse> Topics { get; set; }
+    public IReadOnlyCollection<SkillResponse> Skills { get; set; }
+        = [];
+
+    public IReadOnlyCollection<ToolingResponse> Tooling { get; set; }
         = [];
 }
