@@ -15,13 +15,14 @@ public class PortfolioDbContext : DbContext
     public DbSet<PortfolioItem> PortfolioItems { get; set; }
     public DbSet<AboutProfile> AboutProfiles { get; set; }
     public DbSet<Education> Educations { get; set; }
+    public DbSet<WorkExperience> WorkExperiences { get; set; }
 
     // Supporting entities
     public DbSet<Technology> Technologies { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<GitHubLink> GitHubLinks { get; set; }
     public DbSet<EducationSection> EducationSections { get; set; }
-    
+    public DbSet<WorkExperienceResponsibility> WorkExperienceResponsibilities { get; set; }
     public DbSet<Skill> Skills { get; set; }
     public DbSet<Tooling> Tooling { get; set; }
 

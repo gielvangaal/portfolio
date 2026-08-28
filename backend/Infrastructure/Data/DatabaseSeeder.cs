@@ -16,8 +16,10 @@ public static class DatabaseSeeder
         await SeedPortfolioAsync(context);
         await SeedAboutProfileAsync(context);
         await SeedEducationAsync(context);
+        await SeedWorkExperienceAsync(context);
     }
     
+    // Required
     private static async Task SeedTechnologiesAsync(PortfolioDbContext context)
 {
     if (await context.Technologies.AnyAsync())
@@ -56,6 +58,13 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/technologies/css3.webp",
                 "CSS-logo")
+        },
+        new Technology
+        {
+            Name = "SOAP",
+            Usage = TechnologyUsage.Past,
+            Categories = [backend],
+            Media = null
         },
         new Technology
         {
@@ -277,195 +286,236 @@ public static class DatabaseSeeder
 
     await context.SaveChangesAsync();
 }
-    
+
     private static async Task SeedSkillsAsync(PortfolioDbContext context)
-{
-    if (await context.Skills.AnyAsync())
-        return;
+    {
+        if (await context.Skills.AnyAsync())
+            return;
 
-    context.Skills.AddRange(
-        new Skill
-        {
-            Name = "Functioneel programmeren"
-        },
-        new Skill
-        {
-            Name = "Software testing"
-        },
-        new Skill
-        {
-            Name = "Agile werken"
-        },
-        new Skill
-        {
-            Name = "Scrum"
-        },
-        new Skill
-        {
-            Name = "Design patterns"
-        },
-        new Skill
-        {
-            Name = "Projectmatig werken"
-        },
-        new Skill
-        {
-            Name = "Systeemontwerp"
-        },
-        new Skill
-        {
-            Name = "Softwarearchitectuur"
-        },
-        new Skill
-        {
-            Name = "Databaseontwerp"
-        },
-        new Skill
-        {
-            Name = "CI/CD-pipelines"
-        },
-        new Skill
-        {
-            Name = "Objectgeoriënteerd programmeren"
-        },
+        context.Skills.AddRange(
+            new Skill
+            {
+                Name = "Functioneel programmeren",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Software testing",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Agile werken",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Scrum",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Design patterns",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Projectmatig werken",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Systeemontwerp",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Softwarearchitectuur",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Databaseontwerp",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "CI/CD-pipelines",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Objectgeoriënteerd programmeren",
+                Type = SkillType.Skill
+            },
 
-        // Softskills - vaardigheden
+            // Softskills - vaardigheden
 
-        new Skill
-        {
-            Name = "Praktische instelling"
-        },
-        new Skill
-        {
-            Name = "Sociale vaardigheden"
-        },
-        new Skill
-        {
-            Name = "Zelfstandigheid"
-        },
-        new Skill
-        {
-            Name = "Nauwkeurig en exact"
-        },
-        new Skill
-        {
-            Name = "Plannen en structureren"
-        },
-        new Skill
-        {
-            Name = "Effectief communiceren"
-        },
-        new Skill
-        {
-            Name = "Snel leren en toepassen"
-        },
-        new Skill
-        {
-            Name = "Helder documenteren"
-        },
+            new Skill
+            {
+                Name = "Praktische instelling",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Sociale vaardigheden",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Zelfstandigheid",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Nauwkeurig en exact",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Plannen en structureren",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Effectief communiceren",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Snel leren en toepassen",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Helder documenteren",
+                Type = SkillType.Skill
+            },
 
-        // Softskills - competenties
+            // Softskills - competenties
 
-        new Skill
-        {
-            Name = "Oplossingsgericht denken"
-        },
-        new Skill
-        {
-            Name = "Energie"
-        },
-        new Skill
-        {
-            Name = "Empathie"
-        },
-        new Skill
-        {
-            Name = "Creativiteit"
-        },
-        new Skill
-        {
-            Name = "Analytisch vermogen"
-        },
-        new Skill
-        {
-            Name = "Zelfstandig leren"
-        },
-        new Skill
-        {
-            Name = "Kwaliteitsbewustzijn"
-        },
-        new Skill
-        {
-            Name = "Flexibiliteit"
-        },
-        new Skill
-        {
-            Name = "Samenwerken"
-        },
+            new Skill
+            {
+                Name = "Oplossingsgericht denken",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Energie",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Empathie",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Creativiteit",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Analytisch vermogen",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Zelfstandig leren",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Kwaliteitsbewustzijn",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Flexibiliteit",
+                Type = SkillType.Competency
+            },
+            new Skill
+            {
+                Name = "Samenwerken",
+                Type = SkillType.Competency
+            },
 
-        // Softskills - karakter
+            // Softskills - karakter
 
-        new Skill
-        {
-            Name = "Nieuwsgierig"
-        },
-        new Skill
-        {
-            Name = "Realistisch"
-        },
-        new Skill
-        {
-            Name = "Klantgericht"
-        },
-        new Skill
-        {
-            Name = "Evenwichtig"
-        },
-        new Skill
-        {
-            Name = "Spontaan"
-        },
-        new Skill
-        {
-            Name = "Integer"
-        },
-        new Skill
-        {
-            Name = "Creatief"
-        },
-        new Skill
-        {
-            Name = "Betrokken"
-        },
-        new Skill
-        {
-            Name = "Doortastend"
-        },
-        new Skill
-        {
-            Name = "UI/UX"
-        },
-        new Skill
-        {
-            Name = "Creatief ondernemen"
-        },
-        new Skill
-        {
-            Name = "Presentatievaardigheden"
-        },
-        new Skill
-        {
-            Name = "Marketing en communicatie"
-        },
-        new Skill
-        {
-            Name = "Methodisch werken"
-        }
-    );
+            new Skill
+            {
+                Name = "Nieuwsgierig",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Realistisch",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Klantgericht",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Evenwichtig",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Spontaan",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Integer",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Creatief",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Betrokken",
+                Type = SkillType.Character
+            },
+            new Skill
+            {
+                Name = "Doortastend",
+                Type = SkillType.Character
+            },
 
-    await context.SaveChangesAsync();
-}
-    
+            new Skill
+            {
+                Name = "UI/UX",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Creatief ondernemen",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Presentatievaardigheden",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Marketing en communicatie",
+                Type = SkillType.Skill
+            },
+            new Skill
+            {
+                Name = "Methodisch werken",
+                Type = SkillType.Skill
+            }
+        );
+    }
+
     private static async Task SeedToolingAsync(PortfolioDbContext context)
 {
     if (await context.Tooling.AnyAsync())
@@ -541,12 +591,38 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/tooling/dynamics-365.webp",
                 "Microsoft Dynamics 365-logo")
+        },
+        new Tooling
+        {
+            Name = "Microsoft Outlook",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Microsoft Agenda",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Microsoft Excel",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Microsoft Word",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Klantbeeld",
+            Media = null
         }
     );
 
     await context.SaveChangesAsync();
 }
 
+    // Sections
     private static async Task SeedHeroAsync(PortfolioDbContext context)
     {
         if (await context.Heroes.AnyAsync())
@@ -1281,7 +1357,7 @@ public static class DatabaseSeeder
     await context.SaveChangesAsync();
 }
     
-private static async Task SeedEducationAsync(PortfolioDbContext context)
+    private static async Task SeedEducationAsync(PortfolioDbContext context)
 {
     if (await context.Educations.AnyAsync())
         return;
@@ -1477,6 +1553,156 @@ private static async Task SeedEducationAsync(PortfolioDbContext context)
     await context.SaveChangesAsync();
 }
     
+    private static async Task SeedWorkExperienceAsync(
+    PortfolioDbContext context)
+{
+    if (await context.WorkExperiences.AnyAsync())
+        return;
+
+    var technologies = await context.Technologies
+        .ToDictionaryAsync(x => x.Name);
+
+    var skills = await context.Skills
+        .ToDictionaryAsync(x => x.Name);
+
+    var tooling = await context.Tooling
+        .ToDictionaryAsync(x => x.Name);
+
+    var bcs = new WorkExperience
+    {
+        Company = "BCS HR Solutions",
+        Role = "Software Support Specialist",
+        StartYear = null,
+        EndYear = null,
+        SortOrder = 1,
+
+        Media = CreateImage(
+            "/media/work-experience/bcs.webp",
+            "BCS HR Solutions logo"),
+
+        Responsibilities =
+        [
+            new WorkExperienceResponsibility
+            {
+                Description = "Ondersteunen van gebruikers bij softwareproblemen",
+                SortOrder = 1
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Analyseren en oplossen van technische issues",
+                SortOrder = 2
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Documenteren van oplossingen en processen",
+                SortOrder = 3
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Samenwerken met ontwikkelteams voor bugfixes",
+                SortOrder = 4
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Testen van nieuwe softwareversies",
+                SortOrder = 5
+            }
+        ],
+
+        Technologies =
+        [
+            technologies["REST API"],
+            technologies["SOAP"]
+        ],
+
+        Skills =
+        [
+            skills["Software testing"],
+            skills["Helder documenteren"],
+            skills["Samenwerken"],
+            skills["Oplossingsgericht denken"]
+        ],
+
+        Tooling =
+        [
+            tooling["Jira"],
+            tooling["Confluence"],
+            tooling["Zendesk"],
+            tooling["GitLab"],
+            tooling["Postman"],
+            tooling["WinSCP"],
+            tooling["Microsoft Dynamics 365"]
+        ]
+    };
+
+    var gemeenteRotterdam = new WorkExperience
+    {
+        Company = "Gemeente Rotterdam",
+        Role = "Senior Klantcontact Centrum",
+        StartYear = null,
+        EndYear = null,
+        SortOrder = 2,
+
+        Media = CreateImage(
+            "/media/work-experience/gemeente-rotterdam.webp",
+            "Gemeente Rotterdam logo"),
+
+        Responsibilities =
+        [
+            new WorkExperienceResponsibility
+            {
+                Description = "Aanpakken van complexe klantvragen en problemen",
+                SortOrder = 1
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Begeleiden en coachen van teamleden",
+                SortOrder = 2
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Optimaliseren van werkprocessen",
+                SortOrder = 3
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Communiceren met diverse afdelingen",
+                SortOrder = 4
+            },
+            new WorkExperienceResponsibility
+            {
+                Description = "Bijdragen aan klanttevredenheid en servicekwaliteit",
+                SortOrder = 5
+            }
+        ],
+
+        Skills =
+        [
+            skills["Effectief communiceren"],
+            skills["Samenwerken"],
+            skills["Oplossingsgericht denken"],
+            skills["Klantgericht"],
+            skills["Plannen en structureren"]
+        ],
+
+        Tooling =
+        [
+            tooling["Klantbeeld"],
+            tooling["Microsoft Outlook"],
+            tooling["Microsoft Agenda"],
+            tooling["Microsoft Excel"],
+            tooling["Microsoft Word"]
+        ]
+    };
+
+    context.WorkExperiences.AddRange(
+        bcs,
+        gemeenteRotterdam);
+
+    await context.SaveChangesAsync();
+}
+    
+    // Helpers
     private static Media CreateImage(string path, string altText)
     {
         return new Media

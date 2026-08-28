@@ -31,6 +31,7 @@ public static class DependencyInjection
         services.AddScoped<IEducationRepository, EducationRepository>();
         services.AddScoped<ISkillRepository, SkillRepository>();
         services.AddScoped<IToolingRepository, ToolingRepository>();
+        services.AddScoped<IWorkExperienceRepository, WorkExperienceRepository>();
             
         // Services
         services.AddScoped<IHeroService, HeroService>();
@@ -40,6 +41,7 @@ public static class DependencyInjection
         services.AddScoped<IEducationService, EducationService>();
         services.AddScoped<ISkillService, SkillService>();
         services.AddScoped<IToolingService, ToolingService>();
+        services.AddScoped<IWorkExperienceService, WorkExperienceService>();
 
         // Mappers
         services.AddScoped<IPortfolioItemMapper, PortfolioItemMapper>();
@@ -48,6 +50,7 @@ public static class DependencyInjection
         services.AddScoped<IEducationMapper, EducationMapper>();
         services.AddScoped<ISkillMapper, SkillMapper>();
         services.AddScoped<IToolingMapper, ToolingMapper>();
+        services.AddScoped<IWorkExperienceMapper, WorkExperienceMapper>();
 
         return services;
     }
