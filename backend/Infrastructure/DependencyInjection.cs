@@ -29,6 +29,7 @@ public static class DependencyInjection
         services.AddScoped<IAboutProfileRepository, AboutProfileRepository>();
         services.AddScoped<ITechnologyRepository, TechnologyRepository>();
         services.AddScoped<IEducationRepository, EducationRepository>();
+        services.AddScoped<ISkillRepository, SkillRepository>();
             
         // Services
         services.AddScoped<IHeroService, HeroService>();
@@ -36,12 +37,14 @@ public static class DependencyInjection
         services.AddScoped<IAboutProfileService, AboutProfileService>();
         services.AddScoped<ITechnologyService, TechnologyService>();
         services.AddScoped<IEducationService, EducationService>();
+        services.AddScoped<ISkillService, SkillService>();
 
         // Mappers
         services.AddScoped<IPortfolioItemMapper, PortfolioItemMapper>();
         services.AddScoped<IAboutProfileMapper, AboutProfileMapper>();
         services.AddScoped<ITechnologyMapper, TechnologyMapper>();
         services.AddScoped<IEducationMapper, EducationMapper>();
+        services.AddScoped<ISkillMapper, SkillMapper>();
 
         return services;
     }
