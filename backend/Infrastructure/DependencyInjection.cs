@@ -33,6 +33,7 @@ public static class DependencyInjection
         services.AddScoped<IToolingRepository, ToolingRepository>();
         services.AddScoped<IWorkExperienceRepository, WorkExperienceRepository>();
         services.AddScoped<ILibraryItemRepository, LibraryItemRepository>();
+        services.AddScoped<IContactRepository, ContactRepository>();
             
         // Services
         services.AddScoped<IHeroService, HeroService>();
@@ -44,6 +45,7 @@ public static class DependencyInjection
         services.AddScoped<IToolingService, ToolingService>();
         services.AddScoped<IWorkExperienceService, WorkExperienceService>();
         services.AddScoped<ILibraryItemService, LibraryItemService>();
+        services.AddScoped<IContactService, ContactService>();
         
         // Mappers
         services.AddScoped<IPortfolioItemMapper, PortfolioItemMapper>();
@@ -54,6 +56,7 @@ public static class DependencyInjection
         services.AddScoped<IToolingMapper, ToolingMapper>();
         services.AddScoped<IWorkExperienceMapper, WorkExperienceMapper>();
         services.AddScoped<ILibraryItemMapper, LibraryItemMapper>();
+        services.AddScoped<IContactMapper, ContactMapper>();
         
         return services;
     }

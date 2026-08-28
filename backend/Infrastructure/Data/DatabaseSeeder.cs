@@ -18,6 +18,7 @@ public static class DatabaseSeeder
         await SeedEducationAsync(context);
         await SeedWorkExperienceAsync(context);
         await SeedLibraryItemsAsync(context);
+        await SeedContactAsync(context);
     }
     
     // Required
@@ -1372,13 +1373,49 @@ public static class DatabaseSeeder
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
 
+    var redhat = new Education
+    {
+        Institution = "Red Hat",
+        Program = "RHCSA",
+        StartYear = 2026,
+        EndYear = null,
+        SortOrder = 1,
+        
+        Media = CreateImage(
+            "/media/education/redhat.webp",
+            "Red Hat RHCSA"),
+        
+        Sections =
+        [
+            new EducationSection
+            {
+                Title = null,
+                SortOrder = 1,
+
+                Technologies =
+                [
+                    technologies["Python"],
+                    technologies["JavaScript"],
+                    technologies["HTML"],
+                    technologies["CSS"],
+                    technologies["MySQL"]
+                ],
+
+                Skills =
+                [
+                    skills["UI/UX"]
+                ]
+            }
+        ]
+    };
+    
     var avans = new Education
     {
         Institution = "Avans Hogeschool",
         Program = "Deeltijdopleiding Informatica",
         StartYear = 2024,
         EndYear = null,
-        SortOrder = 1,
+        SortOrder = 2,
 
         Media = CreateImage(
             "/media/education/avans.webp",
@@ -1453,7 +1490,7 @@ public static class DatabaseSeeder
         Program = "Web Development",
         StartYear = 2023,
         EndYear = null,
-        SortOrder = 2,
+        SortOrder = 3,
 
         Media = CreateImage(
             "/media/education/codecademy.webp",
@@ -1489,7 +1526,7 @@ public static class DatabaseSeeder
         Program = "Muzikant / Producer",
         StartYear = 2012,
         EndYear = 2015,
-        SortOrder = 3,
+        SortOrder = 4,
 
         Media = CreateImage(
             "/media/education/albeda.png",
@@ -1520,7 +1557,7 @@ public static class DatabaseSeeder
         Program = "Sociaal Cultureel Werk",
         StartYear = 2004,
         EndYear = 2009,
-        SortOrder = 4,
+        SortOrder = 5,
 
         Media = CreateImage(
             "/media/education/kw1c.png",
@@ -1546,6 +1583,7 @@ public static class DatabaseSeeder
     };
 
     context.Educations.AddRange(
+        redhat,
         avans,
         codecademy,
         albeda,
@@ -2047,6 +2085,51 @@ public static class DatabaseSeeder
 
     await context.SaveChangesAsync();
 }
+    
+    private static async Task SeedContactAsync(
+        PortfolioDbContext context)
+    {
+        if (await context.Contacts.AnyAsync())
+            return;
+
+        context.Contacts.AddRange(
+            new Contact
+            {
+                Language = "nl",
+
+                Name = "Giel van Gaal",
+                Phone = "06-13383313",
+                Email = "gielvangaal@gmail.com",
+                Location = "'s-Hertogenbosch",
+
+                GitHubUrl = "https://github.com/",
+                LinkedInUrl = "https://www.linkedin.com/",
+                InstagramUrl = "https://www.instagram.com/",
+                SpotifyUrl = "https://open.spotify.com/",
+
+                CreditText = "Ontwerp en realisatie: Giel van Gaal"
+            },
+
+            new Contact
+            {
+                Language = "en",
+
+                Name = "Giel van Gaal",
+                Phone = "06-13383313",
+                Email = "gielvangaal@gmail.com",
+                Location = "'s-Hertogenbosch",
+
+                GitHubUrl = "https://github.com/",
+                LinkedInUrl = "https://www.linkedin.com/",
+                InstagramUrl = "https://www.instagram.com/",
+                SpotifyUrl = "https://open.spotify.com/",
+
+                CreditText = "Design and development: Giel van Gaal"
+            }
+        );
+
+        await context.SaveChangesAsync();
+    }
     
     // Helpers
     private static Media CreateImage(string path, string altText)

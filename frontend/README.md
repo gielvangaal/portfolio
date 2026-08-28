@@ -101,3 +101,7 @@ npm run build    # create production build
 npm run preview  # view production build locally
 npm run lint     # check code
 ```
+
+
+npm install react-icons
+ook nodig
