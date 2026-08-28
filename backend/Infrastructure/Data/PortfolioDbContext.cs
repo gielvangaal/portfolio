@@ -16,6 +16,7 @@ public class PortfolioDbContext : DbContext
     public DbSet<AboutProfile> AboutProfiles { get; set; }
     public DbSet<Education> Educations { get; set; }
     public DbSet<WorkExperience> WorkExperiences { get; set; }
+    public DbSet<LibraryItem> LibraryItems { get; set; }
 
     // Supporting entities
     public DbSet<Technology> Technologies { get; set; }

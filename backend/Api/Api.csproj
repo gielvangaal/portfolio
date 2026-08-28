@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\media\library\.DS_Store" />
     <Content Include="wwwroot\media\technologies\.DS_Store" />
+    <Content Include="wwwroot\media\work-experience\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
