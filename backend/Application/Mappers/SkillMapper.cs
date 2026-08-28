@@ -11,7 +11,8 @@ public class SkillMapper : ISkillMapper
         return new SkillResponse
         {
             Id = skill.Id,
-            Name = skill.Name
+            Name = skill.Name,
+            Type = skill.Type.ToString()
         };
     }
 }
