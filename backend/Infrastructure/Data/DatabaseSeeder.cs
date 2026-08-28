@@ -17,6 +17,7 @@ public static class DatabaseSeeder
         await SeedAboutProfileAsync(context);
         await SeedEducationAsync(context);
         await SeedWorkExperienceAsync(context);
+        await SeedLibraryItemsAsync(context);
     }
     
     // Required
@@ -1698,6 +1699,351 @@ public static class DatabaseSeeder
     context.WorkExperiences.AddRange(
         bcs,
         gemeenteRotterdam);
+
+    await context.SaveChangesAsync();
+}
+    
+    private static async Task SeedLibraryItemsAsync(
+    PortfolioDbContext context)
+{
+    if (await context.LibraryItems.AnyAsync())
+        return;
+
+    var technologies = await context.Technologies
+        .ToDictionaryAsync(x => x.Name);
+
+    var skills = await context.Skills
+        .ToDictionaryAsync(x => x.Name);
+
+    var tooling = await context.Tooling
+        .ToDictionaryAsync(x => x.Name);
+
+    var htmlCss = new LibraryItem
+    {
+        Title = "HTML 5 en CSS",
+        Creator = "Peter Doolaard",
+        Type = LibraryItemType.Book,
+        SortOrder = 1,
+
+        Media = CreateImage(
+            "/media/library/htmlencss-doolaard.webp",
+            "Boekcover HTML 5 en CSS van Peter Doolaard"),
+
+        Technologies =
+        [
+            technologies["HTML"],
+            technologies["CSS"]
+        ]
+    };
+
+    var informatiemanagement = new LibraryItem
+    {
+        Title = "Informatiemanagement",
+        Creator = "Roel Grit",
+        Type = LibraryItemType.Book,
+        SortOrder = 2,
+
+        Media = CreateImage(
+            "/media/library/informatiemanagement-grit.webp",
+            "Boekcover Informatiemanagement van Roel Grit")
+    };
+
+    var inleidingDatabases = new LibraryItem
+    {
+        Title = "Inleiding databases",
+        Creator = "Ben Groenendijk",
+        Type = LibraryItemType.Book,
+        SortOrder = 3,
+
+        Media = CreateImage(
+            "/media/library/inleidingdatabases-groenendijk.webp",
+            "Boekcover Inleiding databases van Ben Groenendijk"),
+
+        Skills =
+        [
+            skills["Databaseontwerp"]
+        ]
+    };
+
+    var devOpsForTheDesperate = new LibraryItem
+    {
+        Title = "DevOps for the Desperate",
+        Creator = "Bradley Smith",
+        Type = LibraryItemType.Book,
+        SortOrder = 4,
+
+        Media = CreateImage(
+            "/media/library/devops-for-the-desperate.webp",
+            "Boekcover DevOps for the Desperate van Bradley Smith")
+    };
+
+    var javascriptJquery = new LibraryItem
+    {
+        Title = "JavaScript & jQuery",
+        Creator = "Peter Kassenaar",
+        Type = LibraryItemType.Book,
+        SortOrder = 5,
+
+        Media = CreateImage(
+            "/media/library/javascript&jquery-kassenaar.webp",
+            "Boekcover JavaScript & jQuery van Peter Kassenaar"),
+
+        Technologies =
+        [
+            technologies["JavaScript"]
+        ]
+    };
+
+    var praktischUml = new LibraryItem
+    {
+        Title = "Praktisch UML",
+        Creator = "Jos Warmer & Anneke Kleppe",
+        Type = LibraryItemType.Book,
+        SortOrder = 6,
+
+        Media = CreateImage(
+            "/media/library/praktischuml-warmer-kleppe.webp",
+            "Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe"),
+
+        Technologies =
+        [
+            technologies["UML"]
+        ],
+
+        Skills =
+        [
+            skills["Objectgeoriënteerd programmeren"],
+            skills["Systeemontwerp"]
+        ]
+    };
+
+    var pythonCrashCourse = new LibraryItem
+    {
+        Title = "Python Crash Course",
+        Creator = "Eric Matthes",
+        Type = LibraryItemType.Book,
+        SortOrder = 7,
+
+        Media = CreateImage(
+            "/media/library/pythoncrashcourse-matthes.webp",
+            "Boekcover Python Crash Course van Eric Matthes"),
+
+        Technologies =
+        [
+            technologies["Python"]
+        ]
+    };
+
+    var subliemWebdesign = new LibraryItem
+    {
+        Title = "Principes van subliem webdesign",
+        Creator = "Jason Beaird & James George",
+        Type = LibraryItemType.Book,
+        SortOrder = 8,
+
+        Media = CreateImage(
+            "/media/library/subliemwebdesign.webp",
+            "Boekcover Principes van subliem webdesign van Jason Beaird & James George"),
+
+        Skills =
+        [
+            skills["UI/UX"]
+        ]
+    };
+
+    var linuxCommandLine = new LibraryItem
+    {
+        Title = "The Linux Command Line",
+        Creator = "William Shotts",
+        Type = LibraryItemType.Book,
+        SortOrder = 9,
+
+        Media = CreateImage(
+            "/media/library/linuxcommandline.webp",
+            "Boekcover The Linux Command Line van William Shotts"),
+
+        Technologies =
+        [
+            technologies["Terminal"]
+        ]
+    };
+
+    var grafischOntwerpen = new LibraryItem
+    {
+        Title = "Grafisch Ontwerpen",
+        Creator = "David Dabner & Sandra Stewart",
+        Type = LibraryItemType.Book,
+        SortOrder = 10,
+
+        Media = CreateImage(
+            "/media/library/grafischontwerpen.webp",
+            "Boekcover Grafisch Ontwerpen van David Dabner & Sandra Stewart"),
+
+        Skills =
+        [
+            skills["UI/UX"]
+        ]
+    };
+
+    var thisIsIt = new LibraryItem
+    {
+        Title = "This is IT!",
+        Creator = "Victor Peters",
+        Type = LibraryItemType.Book,
+        SortOrder = 11,
+
+        Media = CreateImage(
+            "/media/library/thisisit.webp",
+            "Boekcover This is IT! van Victor Peters")
+    };
+
+    var wordpress6 = new LibraryItem
+    {
+        Title = "Handboek Wordpress 6",
+        Creator = "Dirkjan van Ittersum",
+        Type = LibraryItemType.Book,
+        SortOrder = 12,
+
+        Media = CreateImage(
+            "/media/library/wordpress6.webp",
+            "Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum"),
+
+        Technologies =
+        [
+            technologies["HTML"],
+            technologies["CSS"],
+            technologies["PHP"],
+            technologies["MySQL"]
+        ]
+    };
+
+    var inleidingUml = new LibraryItem
+    {
+        Title = "Inleiding UML",
+        Creator = "Hendrik Jan van Randen",
+        Type = LibraryItemType.Book,
+        SortOrder = 13,
+
+        Media = CreateImage(
+            "/media/library/inleidinguml.webp",
+            "Boekcover Inleiding UML van Hendrik Jan van Randen"),
+
+        Technologies =
+        [
+            technologies["UML"]
+        ],
+
+        Skills =
+        [
+            skills["Objectgeoriënteerd programmeren"],
+            skills["Systeemontwerp"]
+        ]
+    };
+
+    var principesVanDatabases = new LibraryItem
+    {
+        Title = "Principes van Databases",
+        Creator = "Guy Tré",
+        Type = LibraryItemType.Book,
+        SortOrder = 14,
+
+        Media = CreateImage(
+            "/media/library/principes-van-databases.webp",
+            "Boekcover Principes van Databases van Guy Tré"),
+
+        Skills =
+        [
+            skills["Databaseontwerp"]
+        ]
+    };
+
+    var creativeAct = new LibraryItem
+    {
+        Title = "The Creative Act",
+        Creator = "Rick Rubin",
+        Type = LibraryItemType.Book,
+        SortOrder = 15,
+
+        Media = CreateImage(
+            "/media/library/the-creative-act.webp",
+            "Boekcover The Creative Act van Rick Rubin"),
+
+        Skills =
+        [
+            skills["Creativiteit"]
+        ]
+    };
+
+    var kotlinInAction = new LibraryItem
+    {
+        Title = "Kotlin in Action",
+        Creator = "Dmitry Jemerov",
+        Type = LibraryItemType.Book,
+        SortOrder = 16,
+
+        Media = CreateImage(
+            "/media/library/kotlin-in-action.webp",
+            "Boekcover Kotlin in Action van Dmitry Jemerov"),
+
+        Technologies =
+        [
+            technologies["Kotlin"]
+        ],
+
+        Skills =
+        [
+            skills["Objectgeoriënteerd programmeren"]
+        ]
+    };
+
+    var shellScripting = new LibraryItem
+    {
+        Title = "Shell Scripting",
+        Creator = "Steve Parker",
+        Type = LibraryItemType.Book,
+        SortOrder = 17,
+
+        Media = CreateImage(
+            "/media/library/shell-scripting.webp",
+            "Boekcover Shell Scripting van Steve Parker"),
+
+        Technologies =
+        [
+            technologies["Terminal"]
+        ]
+    };
+
+    var krachtVanHetNu = new LibraryItem
+    {
+        Title = "De kracht van het Nu",
+        Creator = "Eckhart Tolle",
+        Type = LibraryItemType.Book,
+        SortOrder = 18,
+
+        Media = CreateImage(
+            "/media/library/de-kracht-van-het-nu.webp",
+            "Boekcover De kracht van het Nu van Eckhart Tolle")
+    };
+
+    context.LibraryItems.AddRange(
+        htmlCss,
+        informatiemanagement,
+        inleidingDatabases,
+        devOpsForTheDesperate,
+        javascriptJquery,
+        praktischUml,
+        pythonCrashCourse,
+        subliemWebdesign,
+        linuxCommandLine,
+        grafischOntwerpen,
+        thisIsIt,
+        wordpress6,
+        inleidingUml,
+        principesVanDatabases,
+        creativeAct,
+        kotlinInAction,
+        shellScripting,
+        krachtVanHetNu);
 
     await context.SaveChangesAsync();
 }

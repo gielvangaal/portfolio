@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-
 import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Accordion from "../../components/ui/Accordion.jsx";
+
 import EducationItem from "./EducationItem.jsx";
 import { useEducation } from "./useEducation.js";
 
@@ -13,17 +13,6 @@ export default function EducationSection() {
         isError,
     } = useEducation();
 
-    const [openEducationId, setOpenEducationId] = useState(undefined);
-
-    useEffect(() => {
-        if (
-            openEducationId === undefined &&
-            educations.length > 0
-        ) {
-            setOpenEducationId(educations[0].id);
-        }
-    }, [educations, openEducationId]);
-
     if (isLoading) {
         return <p>Education loading...</p>;
     }
@@ -32,13 +21,10 @@ export default function EducationSection() {
         return <p>Education could not be loaded.</p>;
     }
 
-    const handleToggle = (educationId) => {
-        setOpenEducationId((currentId) =>
-            currentId === educationId
-                ? null
-                : educationId
-        );
-    };
+    const accordionItems = educations.map((education) => ({
+        ...education,
+        title: `${education.institution} | ${education.program}`,
+    }));
 
     return (
         <section
@@ -50,14 +36,15 @@ export default function EducationSection() {
             </SectionHeading>
 
             <div className="education-list">
-                {educations.map((education) => (
-                    <EducationItem
-                        key={education.id}
-                        education={education}
-                        isOpen={openEducationId === education.id}
-                        onToggle={() => handleToggle(education.id)}
-                    />
-                ))}
+                <Accordion
+                    items={accordionItems}
+                    defaultOpenId={accordionItems[0]?.id ?? null}
+                    renderContent={(education) => (
+                        <EducationItem
+                            education={education}
+                        />
+                    )}
+                />
             </div>
         </section>
     );

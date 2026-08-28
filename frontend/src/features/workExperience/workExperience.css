@@ -1,0 +1,83 @@
+.work-experience-section {
+    padding: var(--space-2xl) var(--page-padding);
+
+    background: var(--color-grey);
+    text-align: center;
+}
+
+.work-experience-container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.work-experience-accordion {
+    margin-top: var(--space-xl);
+}
+
+.work-experience-body {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xl);
+
+    padding: var(--space-xl);
+
+    text-align: left;
+}
+
+.work-experience-logo {
+    width: 10rem;
+    max-height: 8rem;
+
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.work-experience-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.work-experience-title {
+    margin: 0 0 var(--space-sm);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.work-experience-period {
+    margin: 0 0 var(--space-md);
+
+    font-size: 0.9rem;
+}
+
+.work-experience-responsibilities {
+    margin: 0 0 var(--space-lg);
+    padding-left: var(--space-lg);
+}
+
+.work-experience-responsibilities li + li {
+    margin-top: var(--space-xs);
+}
+
+.work-experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+    .work-experience-section {
+        padding: var(--space-xl) var(--page-padding);
+    }
+
+    .work-experience-body {
+        flex-direction: column;
+        gap: var(--space-lg);
+
+        padding: var(--space-lg);
+    }
+
+    .work-experience-logo {
+        width: 8rem;
+    }
+}
