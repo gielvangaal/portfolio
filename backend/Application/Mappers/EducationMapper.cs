@@ -7,10 +7,17 @@ namespace Application.Mappers;
 public class EducationMapper : IEducationMapper
 {
     private readonly ITechnologyMapper _technologyMapper;
+    private readonly ISkillMapper _skillMapper;
+    private readonly IToolingMapper _toolingMapper;
 
-    public EducationMapper(ITechnologyMapper technologyMapper)
+    public EducationMapper(
+        ITechnologyMapper technologyMapper,
+        ISkillMapper skillMapper,
+        IToolingMapper toolingMapper)
     {
         _technologyMapper = technologyMapper;
+        _skillMapper = skillMapper;
+        _toolingMapper = toolingMapper;
     }
 
     public EducationResponse Map(Education education)
@@ -44,13 +51,14 @@ public class EducationMapper : IEducationMapper
                         .Select(_technologyMapper.Map)
                         .ToList(),
 
-                    Topics = section.Topics
-                        .OrderBy(x => x.SortOrder)
-                        .Select(topic => new EducationTopicResponse
-                        {
-                            Id = topic.Id,
-                            Name = topic.Name
-                        })
+                    Skills = section.Skills
+                        .OrderBy(x => x.Name)
+                        .Select(_skillMapper.Map)
+                        .ToList(),
+
+                    Tooling = section.Tooling
+                        .OrderBy(x => x.Name)
+                        .Select(_toolingMapper.Map)
                         .ToList()
                 })
                 .ToList()

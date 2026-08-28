@@ -1,3 +1,7 @@
+import PortfolioTag, {
+    PortfolioTagType,
+} from "../../components/ui/PortfolioTag";
+
 export default function EducationItem({
                                           education,
                                           isOpen,
@@ -49,7 +53,11 @@ export default function EducationItem({
 
                         <div className="education-item__content">
                             <h3>
-                                {education.program} | {education.institution} | {period}
+                                {education.program}
+                                {" | "}
+                                {education.institution}
+                                {" | "}
+                                {period}
                             </h3>
 
                             {education.sections.map((section) => (
@@ -67,31 +75,40 @@ export default function EducationItem({
 }
 
 function EducationSectionContent({ section }) {
-    const items = [
-        ...section.technologies.map((technology) => ({
-            key: `technology-${technology.id}`,
-            name: technology.name,
-        })),
-
-        ...section.topics.map((topic) => ({
-            key: `topic-${topic.id}`,
-            name: topic.name,
-        })),
-    ];
-
     return (
         <div className="education-item__section">
             {section.title && (
                 <h4>{section.title}</h4>
             )}
 
-            <ul className="education-item__topics">
-                {items.map((item) => (
-                    <li key={item.key}>
-                        {item.name}
-                    </li>
+            <div className="education-item__tags">
+                {section.technologies.map((technology) => (
+                    <PortfolioTag
+                        key={`technology-${technology.id}`}
+                        type={PortfolioTagType.TECHNOLOGY}
+                    >
+                        {technology.name}
+                    </PortfolioTag>
                 ))}
-            </ul>
+
+                {section.skills.map((skill) => (
+                    <PortfolioTag
+                        key={`skill-${skill.id}`}
+                        type={PortfolioTagType.SKILL}
+                    >
+                        {skill.name}
+                    </PortfolioTag>
+                ))}
+
+                {section.tooling.map((tool) => (
+                    <PortfolioTag
+                        key={`tooling-${tool.id}`}
+                        type={PortfolioTagType.TOOLING}
+                    >
+                        {tool.name}
+                    </PortfolioTag>
+                ))}
+            </div>
         </div>
     );
 }

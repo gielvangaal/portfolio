@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import SectionHeading from "../../components/ui/SectionHeading";
-import EducationItem from "./EducationItem";
-import { useEducation } from "./useEducation";
+import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import EducationItem from "./EducationItem.jsx";
+import { useEducation } from "./useEducation.js";
 
 import "./education.css";
 
@@ -13,7 +13,16 @@ export default function EducationSection() {
         isError,
     } = useEducation();
 
-    const [openEducationId, setOpenEducationId] = useState(1);
+    const [openEducationId, setOpenEducationId] = useState(undefined);
+
+    useEffect(() => {
+        if (
+            openEducationId === undefined &&
+            educations.length > 0
+        ) {
+            setOpenEducationId(educations[0].id);
+        }
+    }, [educations, openEducationId]);
 
     if (isLoading) {
         return <p>Education loading...</p>;
