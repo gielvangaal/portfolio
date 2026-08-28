@@ -10,6 +10,7 @@ public static class DatabaseSeeder
     {
         await SeedTechnologiesAsync(context);
         await SeedSkillsAsync(context);
+        await SeedToolingAsync(context);
         
         await SeedHeroAsync(context);
         await SeedPortfolioAsync(context);
@@ -439,6 +440,87 @@ public static class DatabaseSeeder
         new Skill
         {
             Name = "Doortastend"
+        }
+    );
+
+    await context.SaveChangesAsync();
+}
+    
+    private static async Task SeedToolingAsync(PortfolioDbContext context)
+{
+    if (await context.Tooling.AnyAsync())
+        return;
+
+    context.Tooling.AddRange(
+        new Tooling
+        {
+            Name = "Git",
+            Media = CreateImage(
+                "/media/tooling/git.webp",
+                "Git-logo")
+        },
+        new Tooling
+        {
+            Name = "GitHub Actions",
+            Media = CreateImage(
+                "/media/tooling/github-actions.webp",
+                "GitHub Actions-logo")
+        },
+        new Tooling
+        {
+            Name = "Gradle",
+            Media = CreateImage(
+                "/media/tooling/gradle.webp",
+                "Gradle-logo")
+        },
+        new Tooling
+        {
+            Name = "Jira",
+            Media = CreateImage(
+                "/media/tooling/jira.webp",
+                "Jira-logo")
+        },
+        new Tooling
+        {
+            Name = "Confluence",
+            Media = CreateImage(
+                "/media/tooling/confluence.webp",
+                "Confluence-logo")
+        },
+        new Tooling
+        {
+            Name = "GitLab",
+            Media = CreateImage(
+                "/media/tooling/gitlab.webp",
+                "GitLab-logo")
+        },
+        new Tooling
+        {
+            Name = "Zendesk",
+            Media = CreateImage(
+                "/media/tooling/zendesk.webp",
+                "Zendesk-logo")
+        },
+        new Tooling
+        {
+            Name = "Postman",
+            Media = CreateImage(
+                "/media/tooling/postman.webp",
+                "Postman-logo")
+        },
+        new Tooling
+        {
+            Name = "WinSCP",
+            Media = CreateImage(
+                "/media/tooling/winscp.webp",
+                "WinSCP-logo")
+        },
+        new Tooling
+        {
+            Name = "Microsoft Dynamics 365",
+            Media = CreateImage(
+                "/media/tooling/dynamics-365.webp",
+                "Microsoft Dynamics 365-logo")
         }
     );
 
