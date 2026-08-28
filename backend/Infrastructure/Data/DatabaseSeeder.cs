@@ -8,10 +8,273 @@ public static class DatabaseSeeder
 {
     public static async Task SeedAsync(PortfolioDbContext context)
     {
+        await SeedTechnologiesAsync(context);
+        
         await SeedHeroAsync(context);
         await SeedPortfolioAsync(context);
         await SeedAboutProfileAsync(context);
+        await SeedEducationAsync(context);
     }
+    
+    private static async Task SeedTechnologiesAsync(PortfolioDbContext context)
+{
+    if (await context.Technologies.AnyAsync())
+        return;
+
+    var frontend = new Category
+    {
+        Name = "Frontend"
+    };
+
+    var backend = new Category
+    {
+        Name = "Backend"
+    };
+
+    var devOps = new Category
+    {
+        Name = "DevOps"
+    };
+
+    context.Technologies.AddRange(
+        new Technology
+        {
+            Name = "HTML",
+            Usage = TechnologyUsage.Regular,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/html5.webp",
+                "HTML-logo")
+        },
+        new Technology
+        {
+            Name = "CSS",
+            Usage = TechnologyUsage.Regular,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/css3.webp",
+                "CSS-logo")
+        },
+        new Technology
+        {
+            Name = "JavaScript",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/javascript.webp",
+                "JavaScript-logo")
+        },
+        new Technology
+        {
+            Name = "Bootstrap",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/bootstrap.webp",
+                "Bootstrap-logo")
+        },
+        new Technology
+        {
+            Name = "Figma",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/figma.webp",
+                "Figma-logo")
+        },
+        new Technology
+        {
+            Name = "PHP",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/php.webp",
+                "PHP-logo")
+        },
+        new Technology
+        {
+            Name = "MySQL",
+            Usage = TechnologyUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/mysql.webp",
+                "MySQL-logo")
+        },
+        new Technology
+        {
+            Name = "phpMyAdmin",
+            Usage = TechnologyUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/phpmyadmin.webp",
+                "phpMyAdmin-logo")
+        },
+        new Technology
+        {
+            Name = "Kotlin",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/kotlin.webp",
+                "Kotlin-logo")
+        },
+        new Technology
+        {
+            Name = "Ktor",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/ktor.webp",
+                "Ktor-logo")
+        },
+        new Technology
+        {
+            Name = "Exposed",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/exposed.webp",
+                "Exposed-logo")
+        },
+        new Technology
+        {
+            Name = "Python",
+            Usage = TechnologyUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/python.webp",
+                "Python-logo")
+        },
+        new Technology
+        {
+            Name = "Django",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/django.webp",
+                "Django-logo")
+        },
+        new Technology
+        {
+            Name = "Docker",
+            Usage = TechnologyUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/docker.webp",
+                "Docker-logo")
+        },
+        new Technology
+        {
+            Name = "Nginx",
+            Usage = TechnologyUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/nginx.webp",
+                "Nginx-logo")
+        },
+        new Technology
+        {
+            Name = "Gunicorn",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/gunicorn.webp",
+                "Gunicorn-logo")
+        },
+        new Technology
+        {
+            Name = "Certbot",
+            Usage = TechnologyUsage.Regular,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/certbot.webp",
+                "Certbot-logo")
+        },
+        new Technology
+        {
+            Name = "GitHub",
+            Usage = TechnologyUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/github.webp",
+                "GitHub-logo")
+        },
+        new Technology
+        {
+            Name = "Jira",
+            Usage = TechnologyUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/jira.webp",
+                "Jira-logo")
+        },
+        new Technology
+        {
+            Name = "FFmpeg",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/ffmpeg.webp",
+                "FFmpeg-logo")
+        },
+        new Technology
+        {
+            Name = "GIMP",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/technologies/gimp.webp",
+                "GIMP-logo")
+        },
+        new Technology
+        {
+            Name = "Node.js",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/node-js.webp",
+                "Node.js-logo")
+        },
+        new Technology
+        {
+            Name = "REST API",
+            Usage = TechnologyUsage.Regular,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/rest-api.webp",
+                "REST API-logo")
+        },
+        new Technology
+        {
+            Name = "Terminal",
+            Usage = TechnologyUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/technologies/terminal.webp",
+                "Terminal-logo")
+        },
+        new Technology
+        {
+            Name = "UML",
+            Usage = TechnologyUsage.Occasional,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/technologies/uml.webp",
+                "UML-logo")
+        },
+        new Technology
+        {
+            Name = "Visual Studio Code",
+            Usage = TechnologyUsage.Regular,
+            Categories = [frontend, backend, devOps],
+            Media = CreateImage(
+                "/media/technologies/vsc.webp",
+                "Visual Studio Code-logo")
+        }
+    );
+
+    await context.SaveChangesAsync();
+}
 
     private static async Task SeedHeroAsync(PortfolioDbContext context)
     {
@@ -57,146 +320,37 @@ public static class DatabaseSeeder
         if (await context.PortfolioItems.AnyAsync())
             return;
 
-        /*
-         * Categories
-         */
+        var technologies = await context.Technologies
+            .Include(t => t.Categories)
+            .ToDictionaryAsync(t => t.Name);
 
-        var frontend = new Category
-        {
-            Name = "Frontend"
-        };
+        var html = technologies["HTML"];
+        var css = technologies["CSS"];
+        var javascript = technologies["JavaScript"];
+        var bootstrap = technologies["Bootstrap"];
+        var figma = technologies["Figma"];
 
-        var backend = new Category
-        {
-            Name = "Backend"
-        };
+        var php = technologies["PHP"];
+        var mysql = technologies["MySQL"];
+        var phpMyAdmin = technologies["phpMyAdmin"];
 
-        var devOps = new Category
-        {
-            Name = "DevOps"
-        };
+        var kotlin = technologies["Kotlin"];
+        var ktor = technologies["Ktor"];
+        var exposed = technologies["Exposed"];
 
-        /*
-         * Technologies
-         */
+        var python = technologies["Python"];
+        var django = technologies["Django"];
 
-        var html = new Technology
-        {
-            Name = "HTML",
-            Categories = [frontend]
-        };
+        var docker = technologies["Docker"];
+        var nginx = technologies["Nginx"];
+        var gunicorn = technologies["Gunicorn"];
+        var certbot = technologies["Certbot"];
+        var github = technologies["GitHub"];
+        var jira = technologies["Jira"];
 
-        var css = new Technology
-        {
-            Name = "CSS",
-            Categories = [frontend]
-        };
-
-        var javascript = new Technology
-        {
-            Name = "JavaScript",
-            Categories = [frontend]
-        };
-
-        var bootstrap = new Technology
-        {
-            Name = "Bootstrap",
-            Categories = [frontend]
-        };
-
-        var figma = new Technology
-        {
-            Name = "Figma",
-            Categories = [frontend]
-        };
-
-        var php = new Technology
-        {
-            Name = "PHP",
-            Categories = [backend]
-        };
-
-        var mysql = new Technology
-        {
-            Name = "MySQL",
-            Categories = [backend]
-        };
-
-        var phpMyAdmin = new Technology
-        {
-            Name = "phpMyAdmin",
-            Categories = [backend]
-        };
-
-        var kotlin = new Technology
-        {
-            Name = "Kotlin",
-            Categories = [backend]
-        };
-
-        var ktor = new Technology
-        {
-            Name = "Ktor",
-            Categories = [backend]
-        };
-
-        var exposed = new Technology
-        {
-            Name = "Exposed",
-            Categories = [backend]
-        };
-
-        var python = new Technology
-        {
-            Name = "Python",
-            Categories = [backend]
-        };
-
-        var django = new Technology
-        {
-            Name = "Django",
-            Categories = [backend]
-        };
-
-        var docker = new Technology
-        {
-            Name = "Docker",
-            Categories = [devOps]
-        };
-
-        var nginx = new Technology
-        {
-            Name = "Nginx",
-            Categories = [devOps]
-        };
-
-        var gunicorn = new Technology
-        {
-            Name = "Gunicorn",
-            Categories = [devOps]
-        };
-
-        var certbot = new Technology
-        {
-            Name = "Certbot",
-            Categories = [devOps]
-        };
-
-        var github = new Technology
-        {
-            Name = "GitHub",
-            Categories = [devOps]
-        };
-
-        var jira = new Technology
-        {
-            Name = "Jira",
-            Categories = [devOps]
-        };
-
-        /*
-         * Media
-         */
+        var frontend = html.Categories.Single(c => c.Name == "Frontend");
+        var backend = kotlin.Categories.Single(c => c.Name == "Backend");
+        var devOps = docker.Categories.Single(c => c.Name == "DevOps");
 
         // CareBots frontend
 
@@ -852,6 +1006,307 @@ public static class DatabaseSeeder
             ImagePath = "/media/giel2.webp"
         }
     );
+
+    await context.SaveChangesAsync();
+}
+    
+private static async Task SeedEducationAsync(PortfolioDbContext context)
+{
+    if (await context.Educations.AnyAsync())
+        return;
+
+    var technologies = await context.Technologies
+        .ToDictionaryAsync(x => x.Name);
+
+    /*
+     * Avans Hogeschool
+     */
+
+    var avans = new Education
+    {
+        Institution = "Avans Hogeschool",
+        Program = "Deeltijdopleiding Informatica",
+        StartYear = 2024,
+        EndYear = null,
+        SortOrder = 1,
+
+        Media = CreateImage(
+            "/media/education/avans.webp",
+            "Avans Hogeschool logo"),
+
+        Sections =
+        [
+            new EducationSection
+            {
+                Title = "Leerjaar 2",
+                SortOrder = 1,
+
+                Technologies =
+                [
+                    technologies["Kotlin"],
+                    technologies["Ktor"],
+                    technologies["GitHub"],
+                    technologies["Jira"]
+                ],
+
+                Topics =
+                [
+                    new EducationTopic
+                    {
+                        Name = "Functioneel programmeren",
+                        SortOrder = 1
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Software testing",
+                        SortOrder = 2
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Agile werken",
+                        SortOrder = 3
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Scrum",
+                        SortOrder = 4
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Design patterns",
+                        SortOrder = 5
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Gradle",
+                        SortOrder = 6
+                    },
+                    new EducationTopic
+                    {
+                        Name = "GitHub Actions",
+                        SortOrder = 7
+                    }
+                ]
+            },
+
+            new EducationSection
+            {
+                Title = "Leerjaar 1",
+                SortOrder = 2,
+
+                Technologies =
+                [
+                    technologies["PHP"],
+                    technologies["MySQL"],
+                    technologies["JavaScript"],
+                    technologies["HTML"],
+                    technologies["CSS"],
+                    technologies["UML"],
+                    technologies["GitHub"],
+                    technologies["Jira"]
+                ],
+
+                Topics =
+                [
+                    new EducationTopic
+                    {
+                        Name = "Projectmatig werken",
+                        SortOrder = 1
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Systeemontwerp",
+                        SortOrder = 2
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Softwarearchitectuur",
+                        SortOrder = 3
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Databaseontwerp",
+                        SortOrder = 4
+                    },
+                    new EducationTopic
+                    {
+                        Name = "DevOps",
+                        SortOrder = 5
+                    },
+                    new EducationTopic
+                    {
+                        Name = "CI/CD-pipelines",
+                        SortOrder = 6
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Objectgeoriënteerd programmeren",
+                        SortOrder = 7
+                    }
+                ]
+            }
+        ]
+    };
+
+    /*
+     * Codecademy
+     */
+
+    var codecademy = new Education
+    {
+        Institution = "Codecademy",
+        Program = "Web Development",
+        StartYear = 2023,
+        EndYear = null,
+        SortOrder = 2,
+
+        Media = CreateImage(
+            "/media/education/codecademy.webp",
+            "Codecademy logo"),
+
+        Sections =
+        [
+            new EducationSection
+            {
+                Title = null,
+                SortOrder = 1,
+
+                Technologies =
+                [
+                    technologies["Python"],
+                    technologies["JavaScript"],
+                    technologies["HTML"],
+                    technologies["CSS"],
+                    technologies["MySQL"]
+                ],
+
+                Topics =
+                [
+                    new EducationTopic
+                    {
+                        Name = "UI/UX",
+                        SortOrder = 1
+                    }
+                ]
+            }
+        ]
+    };
+
+    /*
+     * Albeda College
+     */
+
+    var albeda = new Education
+    {
+        Institution = "Albeda College",
+        Program = "Muzikant / Producer",
+        StartYear = 2012,
+        EndYear = 2015,
+        SortOrder = 3,
+
+        Media = CreateImage(
+            "/media/education/albeda.png",
+            "Albeda College logo"),
+
+        Sections =
+        [
+            new EducationSection
+            {
+                Title = null,
+                SortOrder = 1,
+
+                Topics =
+                [
+                    new EducationTopic
+                    {
+                        Name = "Projectmatig werken",
+                        SortOrder = 1
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Creatief ondernemen",
+                        SortOrder = 2
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Samenwerken",
+                        SortOrder = 3
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Presentatievaardigheden",
+                        SortOrder = 4
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Marketing en communicatie",
+                        SortOrder = 5
+                    }
+                ]
+            }
+        ]
+    };
+
+    /*
+     * Koning Willem 1 College
+     */
+
+    var koningWillem = new Education
+    {
+        Institution = "Koning Willem 1 College",
+        Program = "Sociaal Cultureel Werk",
+        StartYear = 2004,
+        EndYear = 2009,
+        SortOrder = 4,
+
+        Media = CreateImage(
+            "/media/education/kw1c.png",
+            "Koning Willem 1 College logo"),
+
+        Sections =
+        [
+            new EducationSection
+            {
+                Title = null,
+                SortOrder = 1,
+
+                Topics =
+                [
+                    new EducationTopic
+                    {
+                        Name = "Methodisch werken",
+                        SortOrder = 1
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Sociale vaardigheden",
+                        SortOrder = 2
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Projectmatig werken",
+                        SortOrder = 3
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Samenwerken",
+                        SortOrder = 4
+                    },
+                    new EducationTopic
+                    {
+                        Name = "Presentatievaardigheden",
+                        SortOrder = 5
+                    }
+                ]
+            }
+        ]
+    };
+
+    context.Educations.AddRange(
+        avans,
+        codecademy,
+        albeda,
+        koningWillem);
 
     await context.SaveChangesAsync();
 }

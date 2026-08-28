@@ -14,11 +14,14 @@ public class PortfolioDbContext : DbContext
     public DbSet<Hero> Heroes { get; set; }
     public DbSet<PortfolioItem> PortfolioItems { get; set; }
     public DbSet<AboutProfile> AboutProfiles { get; set; }
+    public DbSet<Education> Educations { get; set; }
 
     // Supporting entities
     public DbSet<Technology> Technologies { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<GitHubLink> GitHubLinks { get; set; }
+    public DbSet<EducationSection> EducationSections { get; set; }
+    public DbSet<EducationTopic> EducationTopics { get; set; }
 
     // Media and relationships
     public DbSet<Media> Media { get; set; }
