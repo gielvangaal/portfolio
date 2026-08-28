@@ -11,6 +11,7 @@ import EducationSection from "./features/education/EducationSection";
 import SoftSkillsSection from "./features/softSkills/SoftSkillsSection";
 import WorkExperienceSection from "./features/workExperience/WorkExperienceSection";
 import LibrarySection from "./features/library/LibrarySection.jsx";
+import ContactSection from "./features/contact/ContactSection.jsx";
 
 // T.b.v. automatische scroll naar hash
 function ScrollToHash() {
@@ -73,6 +74,7 @@ export default function App() {
                                     <SoftSkillsSection lang={lang} />
                                     <WorkExperienceSection lang={lang} />
                                     <LibrarySection lang={lang} />
+                                    <ContactSection lang={lang} />
                                 </>
                             }
                         />
