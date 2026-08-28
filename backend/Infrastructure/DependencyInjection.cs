@@ -27,15 +27,21 @@ public static class DependencyInjection
         services.AddScoped<IHeroRepository, HeroRepository>();
         services.AddScoped<IPortfolioItemRepository, PortfolioItemRepository>();
         services.AddScoped<IAboutProfileRepository, AboutProfileRepository>();
-
+        services.AddScoped<ITechnologyRepository, TechnologyRepository>();
+        services.AddScoped<IEducationRepository, EducationRepository>();
+            
         // Services
         services.AddScoped<IHeroService, HeroService>();
         services.AddScoped<IPortfolioItemService, PortfolioItemService>();
         services.AddScoped<IAboutProfileService, AboutProfileService>();
+        services.AddScoped<ITechnologyService, TechnologyService>();
+        services.AddScoped<IEducationService, EducationService>();
 
         // Mappers
         services.AddScoped<IPortfolioItemMapper, PortfolioItemMapper>();
         services.AddScoped<IAboutProfileMapper, AboutProfileMapper>();
+        services.AddScoped<ITechnologyMapper, TechnologyMapper>();
+        services.AddScoped<IEducationMapper, EducationMapper>();
 
         return services;
     }

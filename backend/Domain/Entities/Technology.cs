@@ -1,3 +1,5 @@
+using Domain.Enums;
+
 namespace Domain.Entities;
 
 public class Technology
@@ -6,7 +8,11 @@ public class Technology
 
     public required string Name { get; set; }
 
-    public ICollection<PortfolioItem> PortfolioItems { get; set; } = [];
+    public TechnologyUsage Usage { get; set; }
 
+    public int? MediaId { get; set; }
+    public Media? Media { get; set; }
+
+    public ICollection<PortfolioItem> PortfolioItems { get; set; } = [];
     public ICollection<Category> Categories { get; set; } = [];
 }

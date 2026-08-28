@@ -1,0 +1,108 @@
+.webstack-section {
+    width: 100%;
+    background-color: #d9d9d9;
+}
+
+.webstack-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+    text-align: center;
+}
+
+.webstack-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.webstack-header h2 {
+    margin: 0;
+
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.webstack-header h2 span {
+    display: inline-block;
+
+    padding: 0.35rem 0.65rem;
+
+    background-color: #fff45c;
+}
+
+.webstack-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(90px, 1fr)
+    );
+
+    gap: 2rem 1.5rem;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.webstack-item {
+    min-width: 0;
+}
+
+.webstack-item figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+.webstack-item img {
+    width: 2.25rem;
+    height: 2.25rem;
+
+    margin-bottom: 0.5rem;
+
+    object-fit: contain;
+
+    filter: grayscale(100%);
+}
+
+.webstack-item figcaption {
+    font-size: 0.8rem;
+}
+
+.webstack-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    margin: 1rem 0 2rem;
+}
+
+.webstack-filter {
+    padding: 0.4rem 0.8rem;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    background: transparent;
+    color: inherit;
+
+    font: inherit;
+    font-size: 0.8rem;
+
+    cursor: pointer;
+}
+
+.webstack-filter--active {
+    background-color: var(--color-primary);
+}
