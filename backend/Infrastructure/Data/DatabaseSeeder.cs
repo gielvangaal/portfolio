@@ -9,6 +9,7 @@ public static class DatabaseSeeder
     public static async Task SeedAsync(PortfolioDbContext context)
     {
         await SeedTechnologiesAsync(context);
+        await SeedSkillsAsync(context);
         
         await SeedHeroAsync(context);
         await SeedPortfolioAsync(context);
@@ -270,6 +271,174 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/technologies/vsc.webp",
                 "Visual Studio Code-logo")
+        }
+    );
+
+    await context.SaveChangesAsync();
+}
+    
+    private static async Task SeedSkillsAsync(PortfolioDbContext context)
+{
+    if (await context.Skills.AnyAsync())
+        return;
+
+    context.Skills.AddRange(
+        new Skill
+        {
+            Name = "Functioneel programmeren"
+        },
+        new Skill
+        {
+            Name = "Software testing"
+        },
+        new Skill
+        {
+            Name = "Agile werken"
+        },
+        new Skill
+        {
+            Name = "Scrum"
+        },
+        new Skill
+        {
+            Name = "Design patterns"
+        },
+        new Skill
+        {
+            Name = "Projectmatig werken"
+        },
+        new Skill
+        {
+            Name = "Systeemontwerp"
+        },
+        new Skill
+        {
+            Name = "Softwarearchitectuur"
+        },
+        new Skill
+        {
+            Name = "Databaseontwerp"
+        },
+        new Skill
+        {
+            Name = "CI/CD-pipelines"
+        },
+        new Skill
+        {
+            Name = "Objectgeoriënteerd programmeren"
+        },
+
+        // Softskills - vaardigheden
+
+        new Skill
+        {
+            Name = "Praktische instelling"
+        },
+        new Skill
+        {
+            Name = "Sociale vaardigheden"
+        },
+        new Skill
+        {
+            Name = "Zelfstandigheid"
+        },
+        new Skill
+        {
+            Name = "Nauwkeurig en exact"
+        },
+        new Skill
+        {
+            Name = "Plannen en structureren"
+        },
+        new Skill
+        {
+            Name = "Effectief communiceren"
+        },
+        new Skill
+        {
+            Name = "Snel leren en toepassen"
+        },
+        new Skill
+        {
+            Name = "Helder documenteren"
+        },
+
+        // Softskills - competenties
+
+        new Skill
+        {
+            Name = "Oplossingsgericht denken"
+        },
+        new Skill
+        {
+            Name = "Energie"
+        },
+        new Skill
+        {
+            Name = "Empathie"
+        },
+        new Skill
+        {
+            Name = "Creativiteit"
+        },
+        new Skill
+        {
+            Name = "Analytisch vermogen"
+        },
+        new Skill
+        {
+            Name = "Zelfstandig leren"
+        },
+        new Skill
+        {
+            Name = "Kwaliteitsbewustzijn"
+        },
+        new Skill
+        {
+            Name = "Flexibiliteit"
+        },
+        new Skill
+        {
+            Name = "Samenwerken"
+        },
+
+        // Softskills - karakter
+
+        new Skill
+        {
+            Name = "Nieuwsgierig"
+        },
+        new Skill
+        {
+            Name = "Realistisch"
+        },
+        new Skill
+        {
+            Name = "Klantgericht"
+        },
+        new Skill
+        {
+            Name = "Evenwichtig"
+        },
+        new Skill
+        {
+            Name = "Spontaan"
+        },
+        new Skill
+        {
+            Name = "Integer"
+        },
+        new Skill
+        {
+            Name = "Creatief"
+        },
+        new Skill
+        {
+            Name = "Betrokken"
+        },
+        new Skill
+        {
+            Name = "Doortastend"
         }
     );
 
