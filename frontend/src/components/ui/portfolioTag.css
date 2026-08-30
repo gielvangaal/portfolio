@@ -12,28 +12,28 @@
 
 /* Technology */
 .portfolio-tag--technology {
-    background-color: var(--color-lightgrey);
-    color: var(--color-black);
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
 
-    border: 1px solid var(--color-grey);
+    border: 1px solid var(--color-outline-variant);
     border-radius: 0.2rem;
 }
 
 /* Skill */
 .portfolio-tag--skill {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-inverse-surface);
+    color: var(--color-inverse-on-surface);
 
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-inverse-surface);
     border-radius: 999px;
 }
 
 /* Tooling */
 .portfolio-tag--tooling {
     background-color: transparent;
-    color: var(--color-black);
+    color: var(--color-on-surface);
 
-    border: 2px dashed var(--color-grey);
+    border: 2px dashed var(--color-outline-variant);
     border-radius: 0.2rem;
 }
 
@@ -45,15 +45,15 @@
 }
 
 .portfolio-tag--technology::before {
-    background-color: var(--color-grey);
+    background-color: var(--color-outline-variant);
 }
 
 .portfolio-tag--skill::before {
-    background-color: var(--color-white);
+    background-color: var(--color-inverse-on-surface);
     border-radius: 50%;
 }
 
 .portfolio-tag--tooling::before {
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-on-surface);
     transform: rotate(45deg);
 }

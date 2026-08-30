@@ -1,7 +1,7 @@
 .softskills-section {
     padding: var(--space-2xl) var(--page-padding);
 
-    background-color: var(--color-grey);
+    background-color: var(--color-surface-container-high);
     text-align: center;
 }
 

@@ -4,6 +4,7 @@
     padding: var(--space-xs) var(--space-xl);
 
     background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
 
     font-weight: 700;
 }

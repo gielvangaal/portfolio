@@ -1,20 +1,46 @@
 :root {
-    /* Colors */
-    --color-yellow: #fff562;
-    --color-lilac: #bdadd0;
-    --color-black: #0d0d0d;
-    --color-grey: #d9d9d9;
-    --color-lightgrey: #fafafa;
-    --color-white: #ffffff;
+    color-scheme: light;
 
-    /* Semantic colors */
-    --color-background: var(--color-lightgrey);
-    --color-surface: var(--color-white);
-    --color-text: var(--color-black);
-    --color-border: var(--color-grey);
+    /* Existing palette: these values are the only source of literal colors. */
+    --palette-yellow: #fff562;
+    --palette-yellow-highlight: #fff45c;
+    --palette-lilac: #bdadd0;
+    --palette-black: #0d0d0d;
+    --palette-grey: #d9d9d9;
+    --palette-light-grey: #fafafa;
+    --palette-white: #ffffff;
 
-    --color-primary: var(--color-yellow);
-    --color-secondary: var(--color-lilac);
+    /* Semantic scheme: components consume roles, never palette colors. */
+    --color-primary: var(--palette-yellow);
+    --color-on-primary: var(--palette-black);
+    --color-primary-container: var(--palette-yellow-highlight);
+    --color-on-primary-container: var(--palette-black);
+
+    --color-secondary: var(--palette-lilac);
+    --color-on-secondary: var(--palette-black);
+    --color-secondary-container: var(--palette-lilac);
+    --color-on-secondary-container: var(--palette-black);
+
+    /* No third brand color exists yet; grey fills the tertiary role. */
+    --color-tertiary: var(--palette-grey);
+    --color-on-tertiary: var(--palette-black);
+    --color-tertiary-container: var(--palette-light-grey);
+    --color-on-tertiary-container: var(--palette-black);
+
+    --color-background: var(--palette-light-grey);
+    --color-on-background: var(--palette-black);
+    --color-surface: var(--palette-white);
+    --color-on-surface: var(--palette-black);
+    --color-surface-container-low: rgb(217 217 217 / 20%);
+    --color-surface-container: rgb(217 217 217 / 35%);
+    --color-surface-container-high: var(--palette-grey);
+    --color-on-surface-variant: var(--palette-black);
+    --color-outline: var(--palette-black);
+    --color-outline-variant: var(--palette-grey);
+
+    --color-inverse-surface: var(--palette-black);
+    --color-inverse-on-surface: var(--palette-white);
+    --color-blend-contrast: var(--palette-light-grey);
 
     /* Typography */
     --font-family-base: "Be Vietnam Pro", sans-serif;
@@ -34,4 +60,27 @@
     /* Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
+}
+
+/*
+ * Opt-in dark scheme for a future switch. It reuses the existing palette and
+ * is never enabled automatically. Set data-theme="dark" on <html> to test it.
+ */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-background: var(--palette-black);
+    --color-on-background: var(--palette-white);
+    --color-surface: var(--palette-black);
+    --color-on-surface: var(--palette-white);
+    --color-surface-container-low: var(--palette-black);
+    --color-surface-container: var(--palette-black);
+    --color-surface-container-high: var(--palette-black);
+    --color-on-surface-variant: var(--palette-light-grey);
+    --color-outline: var(--palette-white);
+    --color-outline-variant: var(--palette-grey);
+
+    --color-inverse-surface: var(--palette-white);
+    --color-inverse-on-surface: var(--palette-black);
+    --color-blend-contrast: var(--palette-white);
 }

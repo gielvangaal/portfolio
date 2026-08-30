@@ -1,6 +1,6 @@
 .about-profile-section {
     width: 100%;
-    background-color: var(--color-grey);
+    background-color: var(--color-surface-container-high);
 
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@
     z-index: 1;
 
     mix-blend-mode: difference;
-    color: var(--color-lightgrey);
+    color: var(--color-blend-contrast);
 }
 
 .about-profile__description p {

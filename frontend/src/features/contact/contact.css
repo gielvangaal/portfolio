@@ -21,7 +21,7 @@
     margin: 0 auto 2rem;
     padding: 0 0 2rem;
 
-    background-color: var(--color-grey);
+    background-color: var(--color-surface-container-high);
 }
 
 .contact-section__content {
@@ -61,7 +61,7 @@
 
     margin: 0.2rem;
 
-    border: 1px dotted var(--color-text);
+    border: 1px dotted var(--color-on-surface);
     border-radius: 50%;
 
     font-size: 1.25rem;
@@ -103,7 +103,7 @@
     align-items: center;
     justify-content: center;
 
-    color: var(--color-text);
+    color: var(--color-on-background);
 
     font-size: 1.6rem;
 }
