@@ -1,7 +1,7 @@
 .work-experience-section {
     padding: var(--space-2xl) var(--page-padding);
 
-    background: var(--color-grey);
+    background: var(--color-surface-container-high);
     text-align: center;
 }
 

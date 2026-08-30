@@ -28,7 +28,7 @@ body {
     margin: 0;
 
     font-family: var(--font-family-base);
-    color: var(--color-text);
+    color: var(--color-on-background);
     background-color: var(--color-background);
 }
 

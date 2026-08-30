@@ -1,6 +1,6 @@
 .webstack-section {
     width: 100%;
-    background-color: #d9d9d9;
+    background-color: var(--color-surface-container-high);
 }
 
 .webstack-container {
@@ -29,7 +29,7 @@
 
     padding: 0.35rem 0.65rem;
 
-    background-color: #fff45c;
+    background-color: var(--color-primary-container);
 }
 
 .webstack-grid {
@@ -105,4 +105,5 @@
 
 .webstack-filter--active {
     background-color: var(--color-primary);
+    color: var(--color-on-primary);
 }
