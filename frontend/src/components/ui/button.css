@@ -1,0 +1,12 @@
+.button--primary {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+
+    border: 0px solid var(--color-outline);
+    border-bottom: 5px solid var(--color-secondary);
+    box-shadow: 0 3px 3px var(--color-secondary), 6px 6px 0 var(--color-primary);
+}
+
+.button--primary:hover {
+    background: var(--color-surface-container);
+}

@@ -2,7 +2,7 @@ import { useWorkExperiences } from "./useWorkExperience.js";
 
 import Accordion from "../../components/ui/Accordion.jsx";
 import SectionHeading from "../../components/ui/SectionHeading.jsx";
-import PortfolioTag from "../../components/ui/PortfolioTag.jsx";
+import Badge from "../../components/ui/Badge.jsx";
 
 import "./workExperience.css";
 
@@ -91,33 +91,31 @@ function WorkExperienceContent({ workExperience }) {
                 </ul>
 
                 <div className="work-experience-tags">
-                    {workExperience.technologies.map(
-                        (technology) => (
-                            <PortfolioTag
-                                key={`technology-${technology.id}`}
-                                type="technology"
-                            >
-                                {technology.name}
-                            </PortfolioTag>
-                        )
-                    )}
+                    {workExperience.technologies.map((technology) => (
+                        <Badge
+                            key={`technology-${technology.id}`}
+                            variant="technology"
+                        >
+                            {technology.name}
+                        </Badge>
+                    ))}
 
                     {workExperience.skills.map((skill) => (
-                        <PortfolioTag
+                        <Badge
                             key={`skill-${skill.id}`}
-                            type="skill"
+                            variant="skill"
                         >
                             {skill.name}
-                        </PortfolioTag>
+                        </Badge>
                     ))}
 
                     {workExperience.tooling.map((tool) => (
-                        <PortfolioTag
+                        <Badge
                             key={`tooling-${tool.id}`}
-                            type="tooling"
+                            variant="tooling"
                         >
                             {tool.name}
-                        </PortfolioTag>
+                        </Badge>
                     ))}
                 </div>
             </div>

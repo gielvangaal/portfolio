@@ -1,4 +1,4 @@
-.portfolio-tag {
+.badge {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -11,7 +11,7 @@
 }
 
 /* Technology */
-.portfolio-tag--technology {
+.badge--technology {
     background-color: var(--color-background);
     color: var(--color-on-surface);
 
@@ -20,16 +20,16 @@
 }
 
 /* Skill */
-.portfolio-tag--skill {
-    background-color: var(--color-inverse-surface);
-    color: var(--color-inverse-on-surface);
+.badge--skill {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
 
-    border: 1px solid var(--color-inverse-surface);
+    border: 1px solid var(--color-outline-variant);
     border-radius: 999px;
 }
 
 /* Tooling */
-.portfolio-tag--tooling {
+.badge--tooling {
     background-color: transparent;
     color: var(--color-on-surface);
 
@@ -37,23 +37,23 @@
     border-radius: 0.2rem;
 }
 
-.portfolio-tag::before {
+.badge::before {
     content: "";
     width: 0.45rem;
     height: 0.45rem;
     flex-shrink: 0;
 }
 
-.portfolio-tag--technology::before {
+.badge--technology::before {
     background-color: var(--color-outline-variant);
 }
 
-.portfolio-tag--skill::before {
-    background-color: var(--color-inverse-on-surface);
+.badge--skill::before {
+    background-color: var(--color-secondary);
     border-radius: 50%;
 }
 
-.portfolio-tag--tooling::before {
+.badge--tooling::before {
     border: 1px solid var(--color-on-surface);
     transform: rotate(45deg);
 }
