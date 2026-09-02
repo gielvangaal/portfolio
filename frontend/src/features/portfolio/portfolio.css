@@ -129,7 +129,7 @@
 .portfolio-card__technologies li {
     padding: var(--space-xs) var(--space-sm);
 
-    border: 1px solid var(--color-outline);
+    /*border: 1px solid var(--color-outline);*/
 
     font-size: 0.8rem;
 }

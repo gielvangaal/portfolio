@@ -1,10 +1,14 @@
 .button--primary {
-    background: var(--color-surface);
+    background: transparent;
     color: var(--color-on-surface);
 
-    border: 0px solid var(--color-outline);
-    border-bottom: 5px solid var(--color-secondary);
-    box-shadow: 0 3px 3px var(--color-secondary), 6px 6px 0 var(--color-primary);
+    border: 0;
+    border-bottom: 10px solid var(--color-secondary);
+    padding: var(--space-sm) 12px 1.5px;
+
+    box-shadow: 0 4px 3px -2px var(--color-secondary);
+
+    font-weight: 700;
 }
 
 .button--primary:hover {

@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 
 import { usePortfolioItem } from "./usePortfolioItem";
-import PortfolioBackLink from "./PortfolioBackLink";
 import PortfolioMedia from "./PortfolioMedia";
-import "./portfolioButton.css";
 import "./portfolioDetail.css";
+import Button from "../../components/ui/Button.jsx";
 
 export default function PortfolioDetailPage({ lang }) {
     const { slug } = useParams();
@@ -25,7 +24,13 @@ export default function PortfolioDetailPage({ lang }) {
 
     return (
         <main className="portfolio-detail">
-            <PortfolioBackLink />
+            <Button
+                variant="primary"
+                className="portfolio-back-link"
+                to="/#portfolio"
+            >
+                Terug
+            </Button>
 
             <header className="portfolio-detail__header">
                 <h1>{item.title}</h1>

@@ -1,10 +1,9 @@
 import Button from "../../components/ui/Button.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 
-import "./portfolioButton.css";
-
 export default function PortfolioCard({ item }) {
-    const technologies = item.technologies.slice(0, 4);
+    const technologies = item.technologies.slice(0, 2);
+    const tooling = item.tooling?.slice(0, 2) ?? [];
 
     return (
         <article className="portfolio-card">
@@ -43,6 +42,14 @@ export default function PortfolioCard({ item }) {
                         </Badge>
                     </li>
                 ))}
+
+                {tooling.map((tool) => (
+                    <li key={tool}>
+                        <Badge variant="tooling">
+                            {tool}
+                        </Badge>
+                    </li>
+                ))}
             </ul>
 
             <Button
@@ -50,7 +57,7 @@ export default function PortfolioCard({ item }) {
                 className="portfolio-card__button"
                 to={`/portfolio/${item.slug}`}
             >
-                Meer
+                &lt; Meer &gt;
             </Button>
         </article>
     );
