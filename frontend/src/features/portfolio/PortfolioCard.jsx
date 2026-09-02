@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Button from "../../components/ui/Button.jsx";
+import Badge from "../../components/ui/Badge.jsx";
 
 import "./portfolioButton.css";
 
@@ -37,17 +38,20 @@ export default function PortfolioCard({ item }) {
             <ul className="portfolio-card__technologies">
                 {technologies.map((technology) => (
                     <li key={technology}>
-                        {technology}
+                        <Badge variant="technology">
+                            {technology}
+                        </Badge>
                     </li>
                 ))}
             </ul>
 
-            <Link
-                className="portfolio-button portfolio-card__button"
+            <Button
+                variant="primary"
+                className="portfolio-card__button"
                 to={`/portfolio/${item.slug}`}
             >
                 Meer
-            </Link>
+            </Button>
         </article>
     );
 }

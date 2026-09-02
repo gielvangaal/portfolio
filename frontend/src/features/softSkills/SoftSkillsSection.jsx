@@ -1,9 +1,9 @@
 import { useSkills } from "../skills/useSkills.js";
 
 import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Badge from "../../components/ui/Badge.jsx";
 
 import "./softskills.css";
-import PortfolioTag from "../../components/ui/PortfolioTag.jsx";
 
 const softSkillGroups = [
     {
@@ -70,7 +70,6 @@ export default function SoftSkillsSection() {
             </SectionHeading>
 
             <div className="softskills-container">
-
                 <div className="softskills-groups">
                     {softSkillGroups.map((group) => {
                         const groupSkills = group.names
@@ -90,12 +89,12 @@ export default function SoftSkillsSection() {
 
                                 <div className="softskills-list">
                                     {groupSkills.map((skill) => (
-                                        <PortfolioTag
+                                        <Badge
                                             key={skill.id}
-                                            type="skill"
+                                            variant="skill"
                                         >
                                             {skill.name}
-                                        </PortfolioTag>
+                                        </Badge>
                                     ))}
                                 </div>
                             </div>

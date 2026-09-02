@@ -1,6 +1,6 @@
-import PortfolioTag, {
-    PortfolioTagType,
-} from "../../components/ui/PortfolioTag";
+import Badge, {
+    BadgeVariant,
+} from "../../components/ui/Badge.jsx";
 
 export default function LibraryItem({ item }) {
     return (
@@ -27,30 +27,30 @@ export default function LibraryItem({ item }) {
 
                 <div className="library-item__tags">
                     {item.technologies.map((technology) => (
-                        <PortfolioTag
+                        <Badge
                             key={`technology-${technology.id}`}
-                            type={PortfolioTagType.TECHNOLOGY}
+                            variant={BadgeVariant.TECHNOLOGY}
                         >
                             {technology.name}
-                        </PortfolioTag>
+                        </Badge>
                     ))}
 
                     {item.skills.map((skill) => (
-                        <PortfolioTag
+                        <Badge
                             key={`skill-${skill.id}`}
-                            type={PortfolioTagType.SKILL}
+                            variant={BadgeVariant.SKILL}
                         >
                             {skill.name}
-                        </PortfolioTag>
+                        </Badge>
                     ))}
 
                     {item.tooling.map((tool) => (
-                        <PortfolioTag
+                        <Badge
                             key={`tooling-${tool.id}`}
-                            type={PortfolioTagType.TOOLING}
+                            variant={BadgeVariant.TOOLING}
                         >
                             {tool.name}
-                        </PortfolioTag>
+                        </Badge>
                     ))}
                 </div>
             </div>
