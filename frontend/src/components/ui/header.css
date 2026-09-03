@@ -12,12 +12,13 @@
     position: absolute;
 
     left: 0;
-    bottom: 6px;
+    bottom: 25px;
 
     width: calc(100% - 3px);
-    height: 61%;
+    height: 35%;
 
     background-color: var(--color-primary);
+    box-shadow: var(--box-shadow);
 
     z-index: -1;
 }

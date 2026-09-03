@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { useTechnologies } from "./useTechnologies";
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 
 import "./technologies.css";
 
@@ -43,9 +43,9 @@ export default function TechnologySection() {
             className="webstack-section"
         >
             <div className="webstack-container">
-                <SectionHeading as="h3">
+                <Header as="h3">
                     Webstack
-                </SectionHeading>
+                </Header>
 
                 <div
                     className="webstack-filters"

@@ -12,7 +12,7 @@ import {
     HiOutlineUser,
 } from "react-icons/hi2";
 
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 import { useContact } from "./useContact.js";
 
 import "./contact.css";
@@ -39,9 +39,9 @@ export default function ContactSection({ language = "nl" }) {
         >
             <div className="contact-section__details">
                 <div className="contact-section__content">
-                    <SectionHeading as="h2">
+                    <Header as="h2">
                         Contact
-                    </SectionHeading>
+                    </Header>
 
                     <div className="contact-details">
                         <ContactRow

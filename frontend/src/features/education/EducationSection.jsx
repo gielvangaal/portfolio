@@ -1,4 +1,4 @@
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 import Accordion from "../../components/ui/Accordion.jsx";
 
 import EducationItem from "./EducationItem.jsx";
@@ -31,9 +31,9 @@ export default function EducationSection() {
             id="education"
             className="education-section"
         >
-            <SectionHeading as="h3">
+            <Header as="h3">
                 Onderwijs
-            </SectionHeading>
+            </Header>
 
             <div className="education-list">
                 <Accordion

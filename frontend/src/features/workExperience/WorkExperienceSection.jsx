@@ -1,7 +1,7 @@
 import { useWorkExperiences } from "./useWorkExperience.js";
 
 import Accordion from "../../components/ui/Accordion.jsx";
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 
 import "./workExperience.css";
@@ -30,9 +30,9 @@ export default function WorkExperienceSection() {
             className="work-experience-section"
         >
             <div className="work-experience-container">
-                <SectionHeading as="h3">
+                <Header as="h3">
                     Werkervaring
-                </SectionHeading>
+                </Header>
 
                 <div className="work-experience-accordion">
                     <Accordion

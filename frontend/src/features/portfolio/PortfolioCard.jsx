@@ -1,5 +1,6 @@
 import Button from "../../components/ui/Button.jsx";
 import Badge from "../../components/ui/Badge.jsx";
+import Header from "../../components/ui/Header.jsx";
 
 export default function PortfolioCard({ item }) {
     const technologies = item.technologies.slice(0, 3);
@@ -16,13 +17,9 @@ export default function PortfolioCard({ item }) {
                 />
             )}
 
-            <div className="portfolio-card__heading">
-                <h3>{item.title}</h3>
-                <div
-                    className="portfolio-card__heading-highlight"
-                    aria-hidden="true"
-                />
-            </div>
+            <Header as="h3">
+                {item.title}
+            </Header>
 
             <div className="portfolio-card__meta">
                 <span>{item.projectType}</span>

@@ -32,6 +32,10 @@ export default function PortfolioDetailPage({ lang }) {
                 Terug
             </Button>
 
+            <br />
+            <br />
+            <br />
+
             <header className="portfolio-detail__header">
                 <h1>{item.title}</h1>
                 <div

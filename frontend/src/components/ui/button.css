@@ -6,7 +6,7 @@
     border-bottom: 10px solid var(--color-secondary);
     padding: var(--space-sm) 12px 1.5px;
 
-    box-shadow: 0 4px 3px -2px var(--color-secondary);
+    box-shadow: var(--box-shadow);
 
     font-weight: 700;
 }

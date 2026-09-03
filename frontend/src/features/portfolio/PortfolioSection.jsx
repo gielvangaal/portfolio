@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./portfolio.css";
 import { usePortfolio } from "./usePortfolio";
 import PortfolioCard from "./PortfolioCard";
-import SectionHeading from "../../components/ui/SectionHeading";
+import Header from "../../components/ui/Header.jsx";
 
 const PAGE_SIZE = 4;
 
@@ -32,9 +32,9 @@ export default function PortfolioSection({ lang }) {
 
     return (
         <section id="portfolio" className="portfolio-section">
-            <SectionHeading>
+            <Header>
                 Portfolio
-            </SectionHeading>
+            </Header>
 
             <div className="portfolio-grid">
                 {visibleItems.map((item) => (

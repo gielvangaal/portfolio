@@ -1,6 +1,6 @@
-import "./sectionHeading.css";
+import "./header.css";
 
-export default function SectionHeading({ children, as = "h2" }) {
+export default function Header({ children, as = "h2" }) {
     const Heading = as;
 
     return (

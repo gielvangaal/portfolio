@@ -1,6 +1,6 @@
 import { useSkills } from "../skills/useSkills.js";
 
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 
 import "./softskills.css";
@@ -65,9 +65,9 @@ export default function SoftSkillsSection() {
             id="softskills"
             className="softskills-section"
         >
-            <SectionHeading as="h3">
+            <Header as="h3">
                 Softskills
-            </SectionHeading>
+            </Header>
 
             <div className="softskills-container">
                 <div className="softskills-groups">
