@@ -12,6 +12,8 @@ export function mapPortfolioCard(data) {
         role: data.role ?? "",
         categories: data.categories ?? [],
         technologies: data.technologies ?? [],
+        tooling: data.tooling ?? [],
+        skills: data.skills ?? [],
         primaryImageUrl: data.primaryImageUrl ?? "",
     };
 }
