@@ -22,6 +22,8 @@ public class PortfolioItemRepository : IPortfolioItemRepository
             .AsNoTracking()
             .Include(x => x.Categories)
             .Include(x => x.Technologies)
+            .Include(x => x.Skills)
+            .Include(x => x.Tooling)
             .Include(x => x.Media)
             .ThenInclude(x => x.Media)
             .FirstOrDefaultAsync(x =>
@@ -38,6 +40,8 @@ public class PortfolioItemRepository : IPortfolioItemRepository
             .OrderByDescending(x => x.ProjectDate)
             .Include(x => x.Categories)
             .Include(x => x.Technologies)
+            .Include(x => x.Skills)
+            .Include(x => x.Tooling)
             .Include(x => x.Media)
             .ThenInclude(x => x.Media)
             .ToListAsync();

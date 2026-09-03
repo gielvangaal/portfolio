@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="../css/styleguide.css" rel="stylesheet">
+    <link href="../css/stylesheet.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Styleguide</h1>
+
+    <h3>Kleurenschema</h3>
+    <section id="section-colors">
+
+        <figure>
+            <div id="color-yellow"></div>
+            <figcaption>#FFF562</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-lilac"></div>
+            <figcaption>#BDADD0</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-black"></div>
+            <figcaption>#0D0D0D</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-grey"></div>
+            <figcaption>#D9D9D9</figcaption>
+        </figure>
+
+        <figure>
+            <div id="color-lightgrey"></div>
+            <figcaption>#FAFAFA</figcaption>
+        </figure>
+
+            <ul id="greyscales">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+    </section>
+
+    <h3>Typografie</h3>
+    <section id="section-typography">
+
+        <figure>
+            <div class="H-container">
+                <h1>Over mij</h1>
+                <div class="H-visual"></div>
+            </div>
+            <figcaption>H1 - Be Vietnam Pro | 48px font-size | 1.2 line-height</figcaption>
+        </figure>
+
+        <figure>
+            <div class="H-container">
+                <h2>Problemen en oplossingen</h2>
+                <div class="H-visual H-visual-mobile"></div>
+            </div>
+            <figcaption>H2 - Be Vietnam Pro | 36px font-size | 1.3 line-height</figcaption>
+        </figure>
+
+        <figure>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. In metus vulputate eu scelerisque felis imperdiet. Accumsan tortor posuere ac ut
+                consequat semper viverra nam libero. Tincidunt praesent semper feugiat nibh sed. Lorem dolor sed viverra
+                ipsum. Sed euismod nisi porta lorem mollis. Tincidunt tortor aliquam nulla facilisi cras fermentum odio.
+
+                Consequat id porta nibh venenatis cras sed. Ut tristique et egestas quis. Sit amet massa vitae tortor
+                condimentum lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. In hendrerit gravida rutrum quisque.
+                Et egestas quis ipsum suspendisse. Et malesuada fames ac turpis. Et magnis dis parturient montes
+                nascetur ridiculus mus. Leo a diam sollicitudin tempor. Hac habitasse platea dictumst vestibulum.</p>
+            <figcaption>P - Be Vietnam Pro | 16px font-size | 1.6 line-height</figcaption>
+        </figure>
+
+    </section>
+
+    <h3>Buttons</h3>
+    <section id="section-btn">
+
+        <figure>
+            <figcaption>Button</figcaption>
+            <button class="btn-meer">Meer</button>
+        </figure>
+        <figure>
+            <figcaption>Button hover</figcaption>
+            <button class="btn-meer btn-hover">Meer</button>
+        </figure>
+        <figure>
+            <figcaption>Button active</figcaption>
+            <button class="btn-meer btn-active">Meer</button>
+        </figure>
+
+    </section>
+
+    <h3>Cards & accordion</h3>
+    <section id="section-cards">
+
+        <div class="card-container">
+            <div class="media-card-container">
+                <img class="card-img" src="../images/portfolio/nijntje-1-klein.webp" alt="screenshot van website Nijntje">
+                <video class="card-video" muted loop autoplay>
+                    <source src="./assets/video/test.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="H-container">
+                <h2>Nijntje</h2>
+                <div class="H-visual"></div>
+            </div>
+            <ul class="card-ul">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <p>Hobbyproject over pleegkitten Nijntje.</p>
+            <button class="btn-meer">Meer</button>
+        </div>
+
+        <div class="accordion">
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Avans Hogeschool | Informatica
+                    </button>
+                </header>
+                <section id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="../images/opleiding/avans.webp">
+                        <div>
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Codecademy | Web Development
+                    </button>
+                </header>
+                <section id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/codecademy.webp">
+                        <div>
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                            the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article class="accordion-item">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Albeda Collega | Muzikant/ Producer
+                    </button>
+                </header>
+                <section id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/albeda.webp">
+                        <div>
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+        </div>
+    </section>
+    </article>
+
+
+    <section id="boekenplank">
+
+        <div class="boekenplank-container">
+            <figure>
+                <img src="./assets/images/boekenplank/htmlencss-doolaard.jpg">
+                <figcaption>
+                    <ul>
+                        <li>HTML 5 en CSS</li>
+                        <li>Peter Doolaard</li>
+                        <!-- <li>Van Duuren</li> -->
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/informatiemanagement-grit.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Grit, R. (2024)</li>
+                        <li>Informatiemanagement (7e ed.)</li>
+                        <li>Noordhoff</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.jpg">
+                <figcaption>
+                    <ul>
+                        <li>Groenendijk, B. (2024)</li>
+                        <li>Inleiding databases</li>
+                        <li>Boom</li>
+                    </ul>
+                    <span>Database</span>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="collapse boekenplank-container" id="collapseExample">
+
+            <figure>
+                <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Kassenaar, P. (2024)</li>
+                        <li>JavaScript & jQuery (5e ed.)</li>
+                        <li>Van Duuren</li>
+
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Warmer, J. en Kleppe, A.(2024)</li>
+                        <li>Praktisch UML (5e ed.)</li>
+                        <li>Pearson</li>
+                    </ul>
+                    <span>OOP</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Matthes, E. (2024)</li>
+                        <li>Python Crash Course (3e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>Back-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/subliemwebdesign.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Beaird, J., George, J. & Walker, A. (2021)</li>
+                        <li>Principes van subiem webdesign</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/linuxcommandline.png">
+                <figcaption>
+                    <ul>
+                        <li>Shotts, W. (2019)</li>
+                        <li>The Linux Command Line (2e ed.)</li>
+                        <li>No Starch Press</li>
+                    </ul>
+                    <span>DevOps</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/grafischontwerpen.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Dabner, D., Stewart, S. & Vickress, A. (2018)</li>
+                        <li>Grafisch Ontwerpen</li>
+                        <li>Librero</li>
+                    </ul>
+                    <span>UX/UI Design</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/thisisit.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Peters, V. (2021)</li>
+                        <li>This is IT!</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Informatica</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/wordpress6.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Ittersum, D. (2023)</li>
+                        <li>Handboek Wordpress 6</li>
+                        <li>Van Duuren</li>
+                    </ul>
+                    <span>Front-end</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/boekenplank/inleidinguml.jpeg">
+                <figcaption>
+                    <ul>
+                        <li>Van Randen, H. J. (2019)</li>
+                        <li>Inleiding UML (3e ed.)</li>
+                        <li>AmoixA</li>
+                    </ul>
+                    <span>Softwareontwikkeling</span>
+                </figcaption>
+            </figure>
+
+        </div>
+        <button class="btn-meer" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Meer
+        </button>
+
+    </section>
+
+    <section id="webstack">
+
+
+        <ul>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/html5.webp">
+                    <figcaption>HTML5</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/css3.webp">
+                    <figcaption>CCS3</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/certbot.webp">
+                    <figcaption>Certbot</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/django.webp">
+                    <figcaption>Django</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/github.webp">
+                    <figcaption>Github</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/gunicorn.webp">
+                    <figcaption>Gunicorn</figcaption>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/javascript.webp">
+                    <figcaption>JavaScript</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/nginx.webp">
+                    <figcaption>Nginx</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/node-js.webp">
+                    <figcaption>Node JS</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/python.webp">
+                    <figcaption>Python</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/rest-api.webp">
+                    <figcaption>Rest API</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/figma.webp">
+                    <figcaption>Figma</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/php.webp">
+                    <figcaption>PHP 8.4</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/mysql.webp">
+                    <figcaption>MySQL</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/terminal.webp">
+                    <figcaption>Bash</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="./assets/images/webstack/bootstrap.webp">
+                    <figcaption>Bootstrap</figcaption>
+                </figure>
+            </li>
+        </ul>
+
+    </section>
+
+    </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
+
+
+</body>
+
+</html>

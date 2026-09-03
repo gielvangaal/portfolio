@@ -28,5 +28,7 @@ public class PortfolioItem
 
     public ICollection<Category> Categories { get; set; } = [];
     public ICollection<Technology> Technologies { get; set; } = [];
+    public ICollection<Skill> Skills { get; set; } = [];
+    public ICollection<Tooling> Tooling { get; set; } = [];
     public ICollection<PortfolioItemMedia> Media { get; set; } = [];
 }

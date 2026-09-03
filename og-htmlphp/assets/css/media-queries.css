@@ -1,0 +1,302 @@
+/* SM: portrait phones, less than 576.98px */
+@media (max-width: 575.98px) {
+/* NAV */
+nav {
+    justify-content: center;
+}
+
+    /* HERO */
+#section-hero {
+    margin: 2rem 0;
+}
+
+    #hero {
+        width: 85vw;
+        height: 70vh;
+        transform: rotate(0deg);
+        gap: 0.2rem;
+    }
+
+    #hero img {
+        grid-column: 3 / 6;
+        padding-left: 2rem;
+        padding-top: 1.5rem;
+        grid-row: 4 / 6;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #hero-purple {
+        
+        width: 50%;
+        
+    }
+
+    #hero h1 {
+        grid-column: 1 / -1;
+        grid-row: 1 / 1;
+        font-size: 10vw;
+        align-self: self-start;
+        justify-self: self-start;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+#hero-h2 {
+    grid-column: 3 / 5;
+    grid-row: 2 / -1;
+}
+
+    #hero-h2 h2 {
+        font-size: 3vh;
+    }
+
+    #hero p {
+        display:none;
+    }
+
+    #hero svg {
+        font-size: 7vw;
+    }
+
+    #hero-svg-container {
+        grid-column: 1 / 4;
+        grid-row: 4 / 6;
+        display: none;
+    }
+
+    #cards-wrapper {
+        width: 85vw;
+        
+    }
+
+    #article-overmij {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90vw;
+        margin: 0;
+    }
+
+    #article-overmij img {
+        width: 50vw;
+        margin: 1rem;
+    }
+
+    #article-overmij p {
+        margin: 1rem;
+    }
+
+    #webstack-container {
+        width: 90vw;
+    }
+
+    .accordion {
+        width: 90vw;
+    }
+
+    .accordion-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accordion img {
+        width: 75%;
+    }
+
+    #softskills-container {
+        width: 90%;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    #section-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+    }
+
+    #contact-wrapper {
+        width: 90%;
+    }
+
+    #section-contact footer {
+        margin: 8rem 0 0;
+    }
+
+    footer #footer-wrap {
+        margin: 0 2rem;
+    }
+
+    #portfolio-wrap>* {
+        width: 90vw;
+    }
+
+    #portfolio-wrap .H-container {
+        width: initial;
+    }
+
+    #portfolio-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #portfolio-card {
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    #sub-portfolio-img {
+        flex-direction: column;
+    }
+
+    #sub-portfolio-img>* {
+        width: 90%;
+        margin: 1rem;
+    }
+
+
+}
+
+/* MD: landscape phones, greater then 575.99 and less than 767.98px */
+@media screen and (min-width: 575.99px) and (max-width: 767.98px) {
+    section {
+        width: 98vw;
+    }
+
+    /* typografie */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.125rem;
+    }
+
+    /* onderwijs */
+    .accordion-body {
+        flex-direction: column;
+    }
+
+    .accordion img {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* LG: tablets, greater then 767.99 and less than 991.98px */
+@media screen and (min-width: 767.99px) and (max-width: 991.98px) {
+    #hero {
+        width: 90vw;
+        height: calc(90vw * 9 / 16);
+    }
+
+    #hero h1 {
+        justify-self: self-start;
+        padding-left: 1rem;
+    }
+
+    #hero h2 {
+        font-size: 1.3rem;
+    }
+
+    #hero p {
+        display: none;
+    }
+
+    #hero svg {
+        font-size: 3vw;
+    }
+
+    #cards-wrapper {
+        gap: 3rem;
+        width: 90vw;
+    }
+
+    #article-overmij {
+        grid-template-rows: 10vh 10vh auto;
+        width: 95vw;
+    }
+
+    #article-overmij img {
+        width: 30vw;
+    }
+
+    #webstack-container {
+        width: 80vw;
+    }
+
+    .accordion {
+        width: 80vw;
+    }
+
+    .accordion-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accordion img {
+        width: 33%;
+    }
+
+    #softskills-container {
+        width: 80vw;
+    }
+
+    #portfolio-wrap>* {
+        width: 90vw;
+    }
+
+    #portfolio-wrap .H-container {
+        width: initial;
+    }
+
+    #portfolio-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #portfolio-card {
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+}
+
+/* XL: desktops, greater then 991.99 and less than 1199.98px */
+@media screen and (min-width: 991.99px) and (max-width: 1199.98px) {}
+
+/* XXL: large desktops, greater than 1199.99px */
+@media screen and (min-width:1199.99) {}
+
+/* MOBILE LANDSCAPE: mobile phones, less then 1000px and in landscape orientation */
+@media only screen and (max-width: 1000px) and (orientation: landscape) {}
+
+/* IPHONE SE: very small smartphones, less than 378px */
+@media screen and (max-width:378px) {}

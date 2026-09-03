@@ -88,15 +88,6 @@ public static class DatabaseSeeder
         },
         new Technology
         {
-            Name = "Figma",
-            Usage = TechnologyUsage.Occasional,
-            Categories = [frontend],
-            Media = CreateImage(
-                "/media/technologies/figma.webp",
-                "Figma-logo")
-        },
-        new Technology
-        {
             Name = "PHP",
             Usage = TechnologyUsage.Occasional,
             Categories = [backend],
@@ -298,57 +289,57 @@ public static class DatabaseSeeder
             new Skill
             {
                 Name = "Functioneel programmeren",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Software testing",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Agile werken",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Scrum",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Design patterns",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Projectmatig werken",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Systeemontwerp",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Softwarearchitectuur",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Databaseontwerp",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "CI/CD-pipelines",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Objectgeoriënteerd programmeren",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
 
             // Softskills - vaardigheden
@@ -356,42 +347,42 @@ public static class DatabaseSeeder
             new Skill
             {
                 Name = "Praktische instelling",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Sociale vaardigheden",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Zelfstandigheid",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Nauwkeurig en exact",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Plannen en structureren",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Effectief communiceren",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Snel leren en toepassen",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Helder documenteren",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
 
             // Softskills - competenties
@@ -399,47 +390,47 @@ public static class DatabaseSeeder
             new Skill
             {
                 Name = "Oplossingsgericht denken",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Energie",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Empathie",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Creativiteit",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Analytisch vermogen",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Zelfstandig leren",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Kwaliteitsbewustzijn",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Flexibiliteit",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Samenwerken",
-                Type = SkillType.Competency
+                Type = SkillType.SoftSkill
             },
 
             // Softskills - karakter
@@ -493,27 +484,27 @@ public static class DatabaseSeeder
             new Skill
             {
                 Name = "UI/UX",
-                Type = SkillType.Skill
+                Type = SkillType.Technical
             },
             new Skill
             {
                 Name = "Creatief ondernemen",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Presentatievaardigheden",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Marketing en communicatie",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             },
             new Skill
             {
                 Name = "Methodisch werken",
-                Type = SkillType.Skill
+                Type = SkillType.SoftSkill
             }
         );
     }
@@ -533,10 +524,44 @@ public static class DatabaseSeeder
         },
         new Tooling
         {
+            Name = "GitHub",
+            Media = null
+        },
+        new Tooling
+        {
             Name = "GitHub Actions",
             Media = CreateImage(
                 "/media/tooling/github-actions.webp",
                 "GitHub Actions-logo")
+        },
+        new Tooling
+        {
+            Name = "VSCode",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Gimp",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Figma",
+            Media = CreateImage(
+                "/media/tooling/figma.webp",
+                "Figma-logo")
+        },
+        new Tooling
+        {
+            Name = "Docker",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "phpMyAdmin",
+            Media = CreateImage(
+                "/media/tooling/phpmyadmin.webp",
+                "phpMyAdmin-logo")
         },
         new Tooling
         {
@@ -593,6 +618,31 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/tooling/dynamics-365.webp",
                 "Microsoft Dynamics 365-logo")
+        },
+        new Tooling
+        {
+            Name = "Nginx",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Gunicorn",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "Certbot",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "SSH",
+            Media = null
+        },
+        new Tooling
+        {
+            Name = "VPS",
+            Media = null
         },
         new Tooling
         {
@@ -677,11 +727,9 @@ public static class DatabaseSeeder
         var css = technologies["CSS"];
         var javascript = technologies["JavaScript"];
         var bootstrap = technologies["Bootstrap"];
-        var figma = technologies["Figma"];
 
         var php = technologies["PHP"];
         var mysql = technologies["MySQL"];
-        var phpMyAdmin = technologies["phpMyAdmin"];
 
         var kotlin = technologies["Kotlin"];
         var ktor = technologies["Ktor"];
@@ -689,13 +737,13 @@ public static class DatabaseSeeder
 
         var python = technologies["Python"];
         var django = technologies["Django"];
-
         var docker = technologies["Docker"];
-        var nginx = technologies["Nginx"];
-        var gunicorn = technologies["Gunicorn"];
-        var certbot = technologies["Certbot"];
-        var github = technologies["GitHub"];
-        var jira = technologies["Jira"];
+
+        var skills = await context.Skills
+            .ToDictionaryAsync(x => x.Name);
+
+        var tooling = await context.Tooling
+            .ToDictionaryAsync(x => x.Name);
 
         var frontend = html.Categories.Single(c => c.Name == "Frontend");
         var backend = kotlin.Categories.Single(c => c.Name == "Backend");
@@ -818,9 +866,26 @@ public static class DatabaseSeeder
                 html,
                 css,
                 javascript,
-                bootstrap,
-                figma,
-                github
+                bootstrap
+            ],
+
+            Skills =
+            [
+                skills["UI/UX"],
+                skills["Projectmatig werken"],
+                skills["Samenwerken"],
+                skills["Effectief communiceren"],
+                skills["Creativiteit"],
+                skills["Flexibiliteit"]
+            ],
+
+            Tooling =
+            [
+                tooling["Figma"],
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["VSCode"],
+                tooling["Gimp"]
             ],
 
             Media = CreateMediaCollection(
@@ -866,9 +931,26 @@ public static class DatabaseSeeder
                 html,
                 css,
                 javascript,
-                bootstrap,
-                figma,
-                github
+                bootstrap
+            ],
+
+            Skills =
+            [
+                skills["UI/UX"],
+                skills["Projectmatig werken"],
+                skills["Samenwerken"],
+                skills["Effectief communiceren"],
+                skills["Creativiteit"],
+                skills["Flexibiliteit"]
+            ],
+
+            Tooling =
+            [
+                tooling["Figma"],
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["VSCode"],
+                tooling["Gimp"]
             ],
 
             Media = CreateMediaCollection(
@@ -920,13 +1002,34 @@ public static class DatabaseSeeder
             [
                 php,
                 mysql,
-                phpMyAdmin,
                 html,
                 css,
-                javascript,
-                docker,
-                github,
-                jira
+                javascript
+            ],
+
+            Skills =
+            [
+                skills["Functioneel programmeren"],
+                skills["Software testing"],
+                skills["Agile werken"],
+                skills["Scrum"],
+                skills["Design patterns"],
+                skills["Projectmatig werken"],
+                skills["Systeemontwerp"],
+                skills["Databaseontwerp"],
+                skills["CI/CD-pipelines"],
+                skills["Objectgeoriënteerd programmeren"],
+                skills["Helder documenteren"],
+                skills["Samenwerken"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Jira"],
+                tooling["Docker"],
+                tooling["phpMyAdmin"]
             ],
 
             Media = CreateMediaCollection(
@@ -972,13 +1075,34 @@ public static class DatabaseSeeder
             [
                 php,
                 mysql,
-                phpMyAdmin,
                 html,
                 css,
-                javascript,
-                docker,
-                github,
-                jira
+                javascript
+            ],
+
+            Skills =
+            [
+                skills["Functioneel programmeren"],
+                skills["Software testing"],
+                skills["Agile werken"],
+                skills["Scrum"],
+                skills["Design patterns"],
+                skills["Projectmatig werken"],
+                skills["Systeemontwerp"],
+                skills["Databaseontwerp"],
+                skills["CI/CD-pipelines"],
+                skills["Objectgeoriënteerd programmeren"],
+                skills["Helder documenteren"],
+                skills["Samenwerken"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Jira"],
+                tooling["Docker"],
+                tooling["phpMyAdmin"]
             ],
 
             Media = CreateMediaCollection(
@@ -1030,10 +1154,30 @@ public static class DatabaseSeeder
                 kotlin,
                 ktor,
                 exposed,
-                mysql,
-                docker,
-                github,
-                jira
+                mysql
+            ],
+
+            Skills =
+            [
+                skills["Projectmatig werken"],
+                skills["Systeemontwerp"],
+                skills["Softwarearchitectuur"],
+                skills["Databaseontwerp"],
+                skills["CI/CD-pipelines"],
+                skills["Objectgeoriënteerd programmeren"],
+                skills["Oplossingsgericht denken"],
+                skills["Effectief communiceren"],
+                skills["Helder documenteren"],
+                skills["Samenwerken"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Jira"],
+                tooling["Docker"],
+                tooling["Gradle"]
             ],
 
             Media = CreateMediaCollection(
@@ -1079,10 +1223,30 @@ public static class DatabaseSeeder
                 kotlin,
                 ktor,
                 exposed,
-                mysql,
-                docker,
-                github,
-                jira
+                mysql
+            ],
+
+            Skills =
+            [
+                skills["Projectmatig werken"],
+                skills["Systeemontwerp"],
+                skills["Softwarearchitectuur"],
+                skills["Databaseontwerp"],
+                skills["CI/CD-pipelines"],
+                skills["Objectgeoriënteerd programmeren"],
+                skills["Oplossingsgericht denken"],
+                skills["Effectief communiceren"],
+                skills["Helder documenteren"],
+                skills["Samenwerken"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Jira"],
+                tooling["Docker"],
+                tooling["Gradle"]
             ],
 
             Media = CreateMediaCollection(
@@ -1137,10 +1301,32 @@ public static class DatabaseSeeder
                 css,
                 javascript,
                 python,
-                django,
-                gunicorn,
-                nginx,
-                certbot
+                django
+            ],
+
+            Skills =
+            [
+                skills["Zelfstandig leren"],
+                skills["Snel leren en toepassen"],
+                skills["Creativiteit"],
+                skills["Analytisch vermogen"],
+                skills["Oplossingsgericht denken"],
+                skills["Zelfstandigheid"],
+                skills["Kwaliteitsbewustzijn"],
+                skills["Projectmatig werken"],
+                skills["Effectief communiceren"],
+                skills["Nieuwsgierig"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Nginx"],
+                tooling["Gunicorn"],
+                tooling["Certbot"],
+                tooling["SSH"],
+                tooling["VPS"]
             ],
 
             Media = CreateMediaCollection(
@@ -1189,10 +1375,32 @@ public static class DatabaseSeeder
                 css,
                 javascript,
                 python,
-                django,
-                gunicorn,
-                nginx,
-                certbot
+                django
+            ],
+
+            Skills =
+            [
+                skills["Zelfstandig leren"],
+                skills["Snel leren en toepassen"],
+                skills["Creativiteit"],
+                skills["Analytisch vermogen"],
+                skills["Oplossingsgericht denken"],
+                skills["Zelfstandigheid"],
+                skills["Kwaliteitsbewustzijn"],
+                skills["Projectmatig werken"],
+                skills["Effectief communiceren"],
+                skills["Nieuwsgierig"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["Nginx"],
+                tooling["Gunicorn"],
+                tooling["Certbot"],
+                tooling["SSH"],
+                tooling["VPS"]
             ],
 
             Media = CreateMediaCollection(
@@ -1245,6 +1453,24 @@ public static class DatabaseSeeder
                 bootstrap
             ],
 
+            Skills =
+            [
+                skills["Creativiteit"],
+                skills["Projectmatig werken"],
+                skills["Samenwerken"],
+                skills["Effectief communiceren"],
+                skills["Flexibiliteit"],
+                skills["Analytisch vermogen"],
+                skills["Nieuwsgierig"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["VSCode"]
+            ],
+
             Media = CreateMediaCollection(
                 gielMain,
                 gielDiscography,
@@ -1289,6 +1515,24 @@ public static class DatabaseSeeder
                 css,
                 javascript,
                 bootstrap
+            ],
+
+            Skills =
+            [
+                skills["Creativiteit"],
+                skills["Projectmatig werken"],
+                skills["Samenwerken"],
+                skills["Effectief communiceren"],
+                skills["Flexibiliteit"],
+                skills["Analytisch vermogen"],
+                skills["Nieuwsgierig"]
+            ],
+
+            Tooling =
+            [
+                tooling["Git"],
+                tooling["GitHub"],
+                tooling["VSCode"]
             ],
 
             Media = CreateMediaCollection(

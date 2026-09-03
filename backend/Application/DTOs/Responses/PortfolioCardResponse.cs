@@ -1,5 +1,3 @@
-using Domain.Enums;
-
 namespace Application.DTOs.Responses;
 
 public class PortfolioCardResponse
@@ -15,6 +13,8 @@ public class PortfolioCardResponse
 
     public IReadOnlyCollection<string> Categories { get; set; } = [];
     public IReadOnlyCollection<string> Technologies { get; set; } = [];
+    public IReadOnlyCollection<string> Skills { get; set; } = [];
+    public IReadOnlyCollection<string> Tooling { get; set; } = [];
 
     public string? PrimaryImageUrl { get; set; }
 }

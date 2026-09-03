@@ -1,5 +1,3 @@
-using Domain.Enums;
-
 namespace Application.DTOs.Responses;
 
 public class PortfolioItemResponse
@@ -29,6 +27,8 @@ public class PortfolioItemResponse
     public ICollection<string> Categories { get; set; } = [];
 
     public ICollection<string> Technologies { get; set; } = [];
+    public ICollection<string> Skills { get; set; } = [];
+    public ICollection<string> Tooling { get; set; } = [];
 
     public ICollection<PortfolioMediaResponse> Media { get; set; } = [];
 }
