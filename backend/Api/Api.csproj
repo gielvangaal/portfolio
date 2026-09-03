@@ -21,12 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\media\library\.DS_Store" />
-    <Content Include="wwwroot\media\technologies\.DS_Store" />
-    <Content Include="wwwroot\media\work-experience\.DS_Store" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\opleiding\albeda.png" />
     <_ContentIncludedByDefault Remove="wwwroot\opleiding\avans.webp" />
     <_ContentIncludedByDefault Remove="wwwroot\opleiding\codecademy.png" />
