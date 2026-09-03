@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 
-import SectionHeading from "../../components/ui/SectionHeading";
+import Header from "../../components/ui/Header.jsx";
 import { useAboutProfile } from "./useAboutProfile";
 
 import "./aboutProfile.css";
@@ -22,9 +22,9 @@ export default function AboutProfileSection({ lang }) {
 
     return (
         <section id="about" className="about-profile-section">
-            <SectionHeading>
+            <Header>
                 {lang === "nl" ? "Over mij" : "About me"}
-            </SectionHeading>
+            </Header>
 
             <article className="about-profile">
                 <img

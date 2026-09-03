@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SectionHeading from "../../components/ui/SectionHeading.jsx";
+import Header from "../../components/ui/Header.jsx";
 
 import LibraryItem from "./LibraryItem.jsx";
 import { useLibrary } from "./useLibrary.js";
@@ -35,9 +35,9 @@ export default function LibrarySection() {
             id="library"
             className="library-section"
         >
-            <SectionHeading as="h3">
+            <Header as="h3">
                 Boekenplank
-            </SectionHeading>
+            </Header>
 
             <div className="library-list">
                 {visibleItems.map((item) => (

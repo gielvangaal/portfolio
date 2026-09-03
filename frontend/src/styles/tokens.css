@@ -60,6 +60,9 @@
     /* Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
+
+    --box-shadow: 0 4px 3px -2px var(--color-secondary);
+
 }
 
 /*
