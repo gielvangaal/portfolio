@@ -2,7 +2,7 @@ import Button from "../../components/ui/Button.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 
 export default function PortfolioCard({ item }) {
-    const technologies = item.technologies.slice(0, 3port);
+    const technologies = item.technologies.slice(0, 3);
     const tooling = item.tooling.slice(0, 2);
 
     return (
