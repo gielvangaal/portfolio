@@ -53,6 +53,18 @@ public class PortfolioItemConfiguration
             x.Language
         }).IsUnique();
 
+        builder.HasMany(x => x.Categories)
+            .WithMany(x => x.PortfolioItems);
+
+        builder.HasMany(x => x.Technologies)
+            .WithMany(x => x.PortfolioItems);
+
+        builder.HasMany(x => x.Skills)
+            .WithMany();
+
+        builder.HasMany(x => x.Tooling)
+            .WithMany();
+
         builder.HasIndex(x => x.ProjectDate);
     }
 }

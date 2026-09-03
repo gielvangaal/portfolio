@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHEKEJNW73"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WHEKEJNW73');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giel van Gaal | Homepage | Junior programmeur en softwareontwikkelaar</title>
+
+    <link rel="preload" as="image" href="./assets/images/giel.webp" fetchpriority="high">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Portfolio van Giel van Gaal - Junior programmeur en softwareontwikkelaar. Bekijk mijn projecten en vaardigheden.">
+
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords"
+        content="Giel van Gaal, portfolio, softwareontwikkeling, front-end, back-end, webdesign, developer, UX/UI design">
+
+    <!-- Meta Author -->
+    <meta name="author" content="Giel van Gaal">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Besley:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Stylesheet -->
+    <link href="./assets/css/stylesheet.css" rel="stylesheet">
+    <link href="./assets/css/media-queries.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav aria-label="Hoofdnavigatie">
+        <ul>
+            <li><a href="#section-hero">Home</a></li>
+            <li><a href="#section-portfolio">Portfolio</a></li>
+            <li><a href="#section-overmij">Over mij</a></li>
+            <li><a href="#section-contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="section-hero" aria-labelledby="hero-heading">
+        <header id="hero">
+
+            <!-- visuals -->
+            <div id="hero-purple" aria-hidden="true"></div>
+            <div id="hero-yellow" aria-hidden="true"></div>
+
+            <!-- content -->
+            <h1 id="hero-heading">Giel van Gaal</h1>
+
+            <div id="hero-h2">
+                <h2>Junior programmeur & softwareontwikkelaar</h2>
+            </div>
+
+            <img src="./assets/images/giel.webp" alt="Giel kijkt alsof ie er zin in heeft" loading="eager"
+                fetchpriority="high">
+            <p>Frontend && Backend && DevOps | Sterk in projectmanagement, UX en getting-it-done</p>
+
+            <!-- svg -->
+            <div id="hero-svg-container" role="img" aria-label="Tekst in cirkel: de wereld vooruit helpen">
+                <svg width="200" height="200" viewBox="0 0 200 200" loading="eager">
+                    <defs>
+                        <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
+                    </defs>
+                    <text>
+                        <textPath href="#circlePath" textLength="500" lang="nl">de wereld vooruit helpen >>>&nbsp;
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+
+
+
+        </header>
+    </section>
+
+    <section id="section-portfolio" aria-labelledby="portfolio-heading">
+
+        <!-- header -->
+        <div class="H-container">
+            <h1 id="portfolio-heading">Portfolio</h1>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div id="cards-wrapper">
+            <!-- card -->
+            <article class="card-container" aria-labelledby="card1-title">
+                <figure class="media-card-container">
+                    <img class="card-img" src="./assets/images/portfolio/joyride-backend-2.webp"
+                        alt="Screenshot dashboard" loading="lazy">
+                </figure>
+                <div class="H-container">
+                    <h2 id="card1-title">JoyRide, backend</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <ul class="card-ul">
+                    <li>Kotlin</li>
+                    <li>Ktor</li>
+                    <li>Exposed</li>
+                </ul>
+                <p>API voor een autoverhuurplatform.</p>
+                <a href="./assets/html/joyride-backend.html" class="btn-meer" aria-controls="card1-details">Meer</a>
+                <div id="card1-details" hidden>
+                    <p>Extra informatie over dit project.</p>
+                </div>
+            </article>
+
+            <!-- card -->
+            <article class="card-container" aria-labelledby="card1-title">
+                <figure class="media-card-container">
+                    <img class="card-img" src="./assets/images/portfolio/carebots-backend-1.webp"
+                        alt="Screenshot dashboard" loading="lazy">
+                </figure>
+                <div class="H-container">
+                    <h2 id="card1-title">CareBots, backend</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <ul class="card-ul">
+                    <li>PHP</li>
+                    <li>HTML</li>
+                    <li>JavaScript</li>
+                </ul>
+                <p>Backend voor een robotbeheersysteem.</p>
+                <a href="./assets/html/carebots-backend.html" class="btn-meer" aria-controls="card1-details">Meer</a>
+                <div id="card1-details" hidden>
+                    <p>Extra informatie over dit project.</p>
+                </div>
+            </article>
+
+            <!-- card -->
+            <article class="card-container" aria-labelledby="card1-title">
+                <figure class="media-card-container">
+                    <img class="card-img" src="./assets/images/portfolio/nijntje-1-klein.webp"
+                        alt="Screenshot van de Nijntje website" loading="lazy">
+                </figure>
+                <div class="H-container">
+                    <h2 id="card1-title">Nijntje</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <ul class="card-ul">
+                    <li>Django</li>
+                    <li>Node.js</li>
+                    <li>Nginx</li>
+                </ul>
+                <p>Fullstack hobbyproject over pleegkitten Nijntje.</p>
+                <a href="./assets/html/nijntje.html" class="btn-meer" aria-controls="card1-details">Meer</a>
+                <div id="card1-details" hidden>
+                    <p>Extra informatie over dit project.</p>
+                </div>
+            </article>
+
+            <!-- card -->
+            <article class="card-container" aria-labelledby="card2-title">
+                <figure class="media-card-container">
+                    <img class="card-img" src="./assets/images/portfolio/gvg-1-klein.webp"
+                        alt="Screenshot van de Giel van Gaal website" loading="lazy">
+                </figure>
+                <div class="H-container">
+                    <h2 id="card2-title">Giel van Gaal</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <ul class="card-ul">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <p>Frontend portfolio voor m'n muzikantschap.</p>
+                <a href="./assets/html/gielvangaal.html" class="btn-meer" aria-controls="card2-details">Meer</a>
+                <div id="card2-details" hidden>
+                    <p>Extra informatie over dit project.</p>
+                </div>
+            </article>
+
+            <!-- card -->
+            <article class="card-container" aria-labelledby="card3-title">
+                <figure class="media-card-container">
+                    <img class="card-img" src="./assets/images/portfolio/carebots-1-klein.webp"
+                        alt="Screenshot van de CareBots frond-end website" loading="lazy">
+                </figure>
+                <div class="H-container">
+                    <h2 id="card3-title">CareBots, frontend</h2>
+                    <div class="H-visual" aria-hidden="true"></div>
+                </div>
+                <ul class="card-ul">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <p>Frontend voor een schoolopdracht</p>
+                <a href="assets/html/carebots-frontend.html" class="btn-meer" aria-controls="card3-details">Meer</a>
+                <div id="card3-details" hidden>
+                    <p>Extra informatie over dit project.</p>
+                </div>
+            </article>
+        </div>
+
+    </section>
+
+    <section id="section-overmij">
+
+        <!-- header -->
+        <div class="H-container">
+            <h1>Over mij</h1>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <article id="article-overmij">
+            <img src="./assets/images/giel2.webp" alt="Giel kijkt lachend in de camera" loading="lazy">
+            <p>Mijn naam is <strong>Giel</strong> en ik wil <strong>programmeren</strong>. Na jaren met plezier in de
+                culturele sector te hebben gewerkt, maak ik nu de overstap naar de <strong>informatica</strong>.
+                Programmeren heb ik altijd al gedaan omdat ik het leuk vind, en inmiddels volg ik de
+                <strong>bachelor Informatica</strong> aan Avans Hogeschool.
+                <br><br>
+                Mijn overtuiging is softwareontwikkeling via <strong>OTAP-principes</strong>. Werken vanuit
+                <strong>use-cases en requirements</strong> en plannen in <strong>Jira</strong> of
+                iets vergelijkbaars.<strong>Defensief programmeren</strong> en een <strong>CI/CD-pipeline</strong> met
+                geïntegreerde tests voor zowel acceptatie als productie. Ik geloof in de tijd nemen om het goed te doen, wat 
+                later tijd bespaart bij <strong>tickets</strong>.
+
+                De afgelopen periode heb ik me breed verdiept in verschillende <strong>technologieën</strong>. Zo heb ik
+                voor mijn opleiding een <strong>CI/CD-pipeline</strong> opgezet voor <strong>Kotlin</strong> en
+                <strong>Ktor</strong>, en heb ik dit <strong>portfolio</strong> zelf ontworpen in
+                <strong>Figma</strong> en gebouwd met plain <strong>HTML</strong>, <strong>CSS</strong> en
+                <strong>JavaScript</strong>.
+                <br><br>
+                Ik ben nieuwsgierig van aard en op zoek naar een omgeving waar ik mezelf verder kan
+                ontwikkelen als <strong>programmeur</strong>. Ik wil bijdragen aan concrete projecten,
+                samenwerken en <strong></strong>de wereld vooruit helpen</strong> met software.
+            </p>
+
+        </article>
+
+        <!-- webstack -->
+        <div class="H-container">
+            <h2>Webstack</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div id="webstack-container">
+            <ul aria-label="Webstack">
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/html5.webp" alt="HTML5 logo" loading="lazy">
+                        <figcaption>HTML5</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/css3.webp" alt="CSS3 logo" loading="lazy">
+                        <figcaption>CSS3</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/certbot.webp" alt="Certbot logo" loading="lazy">
+                        <figcaption>Certbot</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/django.webp" alt="Django logo" loading="lazy">
+                        <figcaption>Django</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/github.webp" alt="Github logo" loading="lazy">
+                        <figcaption>Github</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/gunicorn.webp" alt="Gunicorn logo" loading="lazy">
+                        <figcaption>Gunicorn</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/javascript.webp" alt="JavaScript logo" loading="lazy">
+                        <figcaption>JavaScript</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/nginx.webp" alt="Nginx logo" loading="lazy">
+                        <figcaption>Nginx</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/node-js.webp" alt="Node.js logo" loading="lazy">
+                        <figcaption>Node.js</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/python.webp" alt="Python logo" loading="lazy">
+                        <figcaption>Python</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/rest-api.webp" alt="Rest API logo" loading="lazy">
+                        <figcaption>Rest API</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/figma.webp" alt="Figma logo" loading="lazy">
+                        <figcaption>Figma</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/php.webp" alt="PHP logo" loading="lazy">
+                        <figcaption>PHP</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/mysql.webp" alt="MySQL logo" loading="lazy">
+                        <figcaption>MySQL</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/terminal.webp" alt="Terminal logo" loading="lazy">
+                        <figcaption>BASH</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/bootstrap.webp" alt="Bootstrap logo" loading="lazy">
+                        <figcaption>Bootstrap</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/jira.webp" alt="Jira logo" loading="lazy">
+                        <figcaption>Jira</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/gimp.webp" alt="Gimp logo" loading="lazy">
+                        <figcaption>Gimp</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/docker.webp" alt="Docker logo" loading="lazy">
+                        <figcaption>Docker</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/uml.webp" alt="UML logo" loading="lazy">
+                        <figcaption>UML</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/kotlin.webp" alt="Kotlin logo" loading="lazy">
+                        <figcaption>Kotlin</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./assets/images/webstack/ffmpeg.webp" alt="FFmpeg logo" loading="lazy">
+                        <figcaption>FFmpeg</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+
+        <!-- opleidingen & cursussen -->
+        <div class="H-container">
+            <h2>Onderwijs</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div class="accordion" role="tablist" aria-multiselectable="true">
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Avans Hogeschool | Informatica
+                    </button>
+                </header>
+                <div id="collapseOne" class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/avans.webp" alt="Avans Hogeschool logo" loading="lazy">
+                        <div>
+                            <h3>Deeltijdopleiding Informatica | Avans Hogeschool | 2024 - heden</h3>
+                            <h4>Leerjaar 2</h4>
+                            <ul>
+                                <li>Funtioneel programmeren</li>
+                                <li>Kotlin</li>
+                                <li>Software testing</li>
+                                <li>Agile werken</li>
+                                <li>Scrum</li>
+                                <li>Kotr</li>
+                                <li>Design patterns</li>
+                                <li>Gradle</li>
+                                <li>Github Actions</li>
+                            </ul>
+                            <h4>Leerjaar 1</h4>
+                            <ul>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                                <li>Projectmatig werken</li>
+                                <li>Systeemontwerp</li>
+                                <li>Softwarearchitectuur</li>
+                                <li>Databaseontwerp</li>
+                                <li>DevOps</li>
+                                <li>CI/CD-pipelines</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>UML</li>
+                                <li>Object georiënteerd programmeren</li>
+                                <li>Git</li>
+                                <li>Jira</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Codecademy | Web Development
+                    </button>
+                </header>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen"
+                    role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/codecademy.webp" alt="Codecademy logo" loading="lazy">
+                        <div>
+                            <h3>Codecademy | codecademy.com | 2023 - heden</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>UI/UX</li>
+                                <li>Javascript</li>
+                                <li>SQL</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Albeda College | Muzikant/ Producer
+                    </button>
+                </header>
+                <div id="collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/albeda.png" alt="Albeda College logo" loading="lazy">
+                        <div>
+                            <h3>Muzikant/ Producer | Albeda College | 2012 - 2015</h3>
+                            <ul>
+                                <li>Projectmatig werken</li>
+                                <li>Creatief ondernemen</li>
+                                <li>Samenwerken</li>
+                                <li>Presentatievaardigheden</li>
+                                <li>Marketing en communicatie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Koning Willem 1 College | Sociaal Cultureel Werk
+                    </button>
+                </header>
+                <div id="collapseFour" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/opleiding/kw1c.png" alt="Koning Willem 1 College logo" loading="lazy">
+                        <div>
+                            <h3>Sociaal Cultureel Werk | Koning Willem 1 College | 2004 - 2009</h3>
+                            <ul>
+                                <li>Methodisch werken</li>
+                                <li>Sociale vaardigheden</li>
+                                <li>Projectmatig werken</li>
+                                <li>Samenwerken</li>
+                                <li>Presentatievaardigheden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- softskills -->
+        <div class="H-container">
+            <h2>Softskills</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div id="softskills-container">
+
+            <h3>Vaardigheden</h3>
+            <ul aria-label="Vaardigheden" class="labels labels-grey">
+                <li>Praktische instelling</li>
+                <li>Sociale vaardigheden</li>
+                <li>Zelfstandigheid</li>
+                <li>Nauwkeurig en exact</li>
+                <li>Plannen en structureren</li>
+                <li>Effectief communiceren</li>
+                <li>Snel leren en toepassen</li>
+                <li>Helder documenteren</li>
+            </ul>
+
+            <h3>Competenties</h3>
+            <ul aria-label="Competenties" class="labels labels-grey">
+                <li>Oplossingsgericht denken</li>
+                <li>Energie</li>
+                <li>Empathie</li>
+                <li>Creativiteit</li>
+                <li>Analytisch vermogen</li>
+                <li>Zelfstandig leren</li>
+                <li>Kwaliteitsbewustzijn</li>
+                <li>Flexibiliteit</li>
+                <li>Samenwerken</li>
+            </ul>
+
+            <h3>Karakter</h3>
+            <ul aria-label="Karakter" class="labels labels-grey">
+                <li>Nieuwsgierig</li>
+                <li>Realistisch</li>
+                <li>Klantgericht</li>
+                <li>Evenwichtig</li>
+                <li>Spontaan</li>
+                <li>Integer</li>
+                <li>Creatief</li>
+                <li>Betrokken</li>
+                <li>Doortastend</li>
+            </ul>
+
+        </div>
+
+        <!-- werkervaring -->
+        <div class="H-container">
+            <h2>Werkervaring</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div class="accordion" role="tablist" aria-multiselectable="true">
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        BCS HR Solutions | Software Support Specialist
+                    </button>
+                </header>
+                <div id="collapseOne" class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionOpleiding&Cursussen" role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/werkervaring/bcs.webp" alt="BCS HR Solutions logo" loading="lazy">
+                        <div>
+                            <h3>BCS HR Solutions | Software Support Specialist</h3>
+                            <ul>
+                                <li>Ondersteunen van gebruikers bij softwareproblemen</li>
+                                <li>Analyseren en oplossen van technische issues</li>
+                                <li>Documenteren van oplossingen en processen</li>
+                                <li>Samenwerken met ontwikkelteams voor bugfixes</li>
+                                <li>Testen van nieuwe softwareversies</li>
+                            </ul>
+                            <ul class="labels labels-yellow">
+                                <li>SOAP / REST API'S</li>
+                                <li>Jira / Confluence</li>
+                                <li>Zendesk</li>
+                                <li>GitLab</li>
+                                <li>Postman / WinSCP</li>
+                                <li>Microsoft Dynamics 365</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="accordion-item" role="tab">
+                <header class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Gemeente Rotterdam | Senior Klantcontact Centrum
+                    </button>
+                </header>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOpleiding&Cursussen"
+                    role="tabpanel">
+                    <div class="accordion-body">
+                        <img src="./assets/images/werkervaring/gemeente-rotterdam.webp" alt="Gemeente Rotterdam logo"
+                            loading="lazy">
+                        <div>
+                            <h3>Gemeente Rotterdam | Senior Klantcontact Centrum</h3>
+
+                            <ul>
+                                <li>Aanpakken van complexe klantvragen en problemen</li>
+                                <li>Begeleiden en coachen van teamleden</li>
+                                <li>Optimaliseren van werkprocessen</li>
+                                <li>Communiceren met diverse afdelingen</li>
+                                <li>Bijdragen aan klanttevredenheid en servicekwaliteit</li>
+                            </ul>
+                            <ul class="labels labels-yellow">
+                                <li>Klantbeeld</li>
+                                <li>Microsoft Outlook</li>
+                                <li>Microsoft Agenda</li>
+                                <li>Microsoft Excel</li>
+                                <li>Microsoft Word</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- boekenplank -->
+        <div class="H-container">
+            <h2>Boekenplank</h2>
+            <div class="H-visual" aria-hidden="true"></div>
+        </div>
+
+        <div id="boekenplank-superwrap">
+            <div class="boekenplank-container">
+                <figure>
+                    <img src="./assets/images/boekenplank/htmlencss-doolaard.webp"
+                        alt="Boekcover HTML 5 en CSS van Peter Doolaard" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>HTML 5 en CSS</li>
+                            <li>Peter Doolaard</li>
+                        </ul>
+                        <span>Frontend</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/informatiemanagement-grit.webp"
+                        alt="Boekcover Informatiemanagement van Roel Grit" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Informatiemanagement</li>
+                            <li>Roel Grit</li>
+                        </ul>
+                        <span>Informatica</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/inleidingdatabases-groenendijk.webp"
+                        alt="Boekcover Inleiding databases van Ben Groenendijk" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Inleiding databases</li>
+                            <li>Ben Groenendijk</li>
+                        </ul>
+                        <span>Database</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/devops-for-the-desperate.webp" alt="DevOps for the Desperate"
+                        loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>DevOps for the Desperate</li>
+                            <li>Bradley Smith</li>
+                        </ul>
+                        <span>DevOps</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="collapse boekenplank-container" id="boekenplank">
+
+                <figure>
+                    <img src="./assets/images/boekenplank/javascript&jquery-kassenaar.webp"
+                        alt="Boekcover JavaScript & jQuery van Peter Kassenaar" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>JavaScript & jQuery</li>
+                            <li>Peter Kassenaar</li>
+                        </ul>
+                        <span>Frontend</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/praktischuml-warmer-kleppe.webp"
+                        alt="Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Praktisch UML</li>
+                            <li>Jos Warmer & Anneke Kleppe</li>
+                        </ul>
+                        <span>UML/OOP</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/pythoncrashcourse-matthes.webp"
+                        alt="Boekcover Python Crash Course van Eric Matthes" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Python Crash Course</li>
+                            <li>Eric Matthes</li>
+                        </ul>
+                        <span>Backend</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/subliemwebdesign.webp"
+                        alt="Boekcover Subliem webdesign van Jason Beaird & James George" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Principes van subliem webdesign</li>
+                            <li>Jason Beaird & James George</li>
+                        </ul>
+                        <span>UX/UI Design</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/linuxcommandline.webp"
+                        alt="Boekcover The Linux Command Line van William Shotts" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>The Linux Command Line</li>
+                            <li>William Shotts</li>
+                        </ul>
+                        <span>DevOps</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/grafischontwerpen.webp"
+                        alt="Boekcover Grafisch ontwerpen van David Dabner & Sandra Stewart" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Grafisch Ontwerpen</li>
+                            <li>David Dabner & Sandra Stewart</li>
+                        </ul>
+                        <span>UX/UI Design</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/thisisit.webp" alt="Boekcover This is IT! van Victor Peters"
+                        loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>This is IT!</li>
+                            <li>Victor Peters</li>
+                        </ul>
+                        <span>Informatica</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/wordpress6.webp"
+                        alt="Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Handboek Wordpress 6</li>
+                            <li>Dirkjan van Ittersum</li>
+                        </ul>
+                        <span>Frontend</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/inleidinguml.webp"
+                        alt="Boekcover Inleiding UML van Hendrik Jan van Randen" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Inleiding UML</li>
+                            <li>Hendrik Jan van Randen</li>
+                        </ul>
+                        <span>UML/OOP</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/principes-van-databases.webp" alt="Principes van Databases"
+                        loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Principes van Databases</li>
+                            <li>Guy Tré</li>
+                        </ul>
+                        <span>Database</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/the-creative-act.webp" alt="The Creative Act" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>The Creative Act</li>
+                            <li>Rick Rubin</li>
+                        </ul>
+                        <span>Creativiteit</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/kotlin-in-action.webp" alt="Kotlin in Action" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Kotlin in Action</li>
+                            <li>Dmitry Jemerov</li>
+                        </ul>
+                        <span>Backend</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/shell-scripting.webp" alt="Shell Scripting" loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>Shell Scripting</li>
+                            <li>Steve Parker</li>
+                        </ul>
+                        <span>Shell</span>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./assets/images/boekenplank/de-kracht-van-het-nu.webp" alt="De kracht van het Nu"
+                        loading="lazy">
+                    <figcaption>
+                        <ul>
+                            <li>De kracht van het Nu</li>
+                            <li>Eckhart Tolle</li>
+                        </ul>
+                        <span>Bewustzijn</span>
+                    </figcaption>
+                </figure>
+
+            </div>
+
+            <a class="btn-meer" data-bs-toggle="collapse" href="#boekenplank" role="button" aria-expanded="false"
+                aria-controls="boekenplank" id="boekenplank-toggle">
+                Meer
+            </a>
+        </div>
+
+    </section>
+
+    <section id="section-contact">
+
+        <div id="contact-wrapper">
+            <div class="H-container">
+                <h1 id="portfolio-heading">Contact</h1>
+                <div class="H-visual" aria-hidden="true"></div>
+            </div>
+
+            <adress>
+                <img src="./assets/images/contact/smiley.png" alt="Smiley emoji" loading="lazy">
+                <p>Giel van Gaal</p>
+                <img src="./assets/images/contact/telephone.png" alt="Telefoon icoon" loading="lazy">
+                <p>06-13383313</p>
+                <img src="./assets/images/contact/email.png" alt="E-mail icoon" loading="lazy">
+                <p>gielvangaal@gmail.com</p>
+                <img src="./assets/images/contact/location.png" alt="Locatie icoon" loading="lazy">
+                <p>'s-Hertogenbosch</p>
+            </adress>
+
+        </div>
+
+        <footer>
+            <div id="footer-wrap">
+                <!-- <a href="#">Styleguide</a> -->
+
+                <div id="socials-wrapper">
+                    <a href="https://github.com/gielvangaal" target="_blank" aria-label="Github" title="Github">
+                        <img src="./assets/images/webstack/github.webp" alt="Github logo" loading="lazy">
+                    </a>
+                    <a href="https://www.linkedin.com/in/gielvangaal" target="_blank" aria-label="LinkedIn"
+                        title="LinkedIn">
+                        <img src="./assets/images/socials/linkedin.png" alt="LinkedIn logo" loading="lazy">
+                    </a>
+                    <a href="https://www.instagram.com/gielvangaal/" target="_blank" aria-label="Instagram"
+                        title="Instagram">
+                        <img src="./assets/images/socials/instagram.png" alt="Instagram logo" loading="lazy">
+                    </a>
+                    <a href="https://open.spotify.com/artist/4OjaWwgsmjy7CBL0wrL8NI?si=PRJ5CwCATiedy6tLM2g7UQ"
+                        target="_blank" aria-label="Spotify" title="Spotify">
+                        <img src="./assets/images/socials/spotify.png" alt="Spotify logo" loading="lazy">
+                    </a>
+                </div>
+
+                <p>Ontwerp en realisatie: Giel van Gaal</p>
+
+            </div>
+        </footer>
+
+    </section>
+
+
+    <!-- Bootstrap JavaScript  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

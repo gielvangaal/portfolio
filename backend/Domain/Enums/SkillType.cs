@@ -2,7 +2,7 @@ namespace Domain.Enums;
 
 public enum SkillType
 {
-    Skill,
-    Competency,
+    Technical,
+    SoftSkill,
     Character
 }

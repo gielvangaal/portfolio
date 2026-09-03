@@ -36,6 +36,14 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .Select(x => x.Name)
                 .ToList(),
 
+            Skills = portfolioItem.Skills
+                .Select(x => x.Name)
+                .ToList(),
+
+            Tooling = portfolioItem.Tooling
+                .Select(x => x.Name)
+                .ToList(),
+
             Media = portfolioItem.Media
                 .OrderBy(x => x.SortOrder)
                 .Select(x => new PortfolioMediaResponse
@@ -68,6 +76,14 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .ToList(),
 
             Technologies = item.Technologies
+                .Select(x => x.Name)
+                .ToList(),
+
+            Skills = item.Skills
+                .Select(x => x.Name)
+                .ToList(),
+
+            Tooling = item.Tooling
                 .Select(x => x.Name)
                 .ToList(),
 
