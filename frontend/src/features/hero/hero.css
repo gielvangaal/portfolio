@@ -1,5 +1,5 @@
 .hero {
-    margin: 1rem auto;
+    margin: 1rem auto 4rem;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);

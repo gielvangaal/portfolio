@@ -37,6 +37,8 @@ export function mapPortfolioDetail(data) {
         liveSiteUrl: data.liveSiteUrl ?? null,
         categories: data.categories ?? [],
         technologies: data.technologies ?? [],
+        tooling: data.tooling ?? [],
+        skills: data.skills ?? [],
         media: data.media ?? [],
     };
 }
