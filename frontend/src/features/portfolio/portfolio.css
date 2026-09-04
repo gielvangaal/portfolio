@@ -1,6 +1,6 @@
 .portfolio-section {
     width: 60vw;
-    margin: 4rem auto 0;
+    margin: 4rem auto 2rem;
 
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@
     background: none;
     color: var(--color-on-background);
 
-    font-size: 1.5rem;
+    font-size: var(--space-md);
 
     cursor: pointer;
 }

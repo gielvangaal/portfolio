@@ -22,11 +22,12 @@ export default function AboutProfileSection({ lang }) {
 
     return (
         <section id="about" className="about-profile-section">
-            <Header>
-                {lang === "nl" ? "Over mij" : "About me"}
-            </Header>
 
             <article className="about-profile">
+                <Header>
+                    {lang === "nl" ? "Over mij" : "About me"}
+                </Header>
+
                 <img
                     className="about-profile__image"
                     src={aboutProfile.imageUrl}

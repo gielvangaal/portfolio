@@ -30,8 +30,26 @@ export default function PortfolioSection({ lang }) {
         page * PAGE_SIZE + PAGE_SIZE
     );
 
+    const handleNextPage = () => {
+        setPage((currentPage) =>
+            currentPage === pageCount - 1
+                ? 0
+                : currentPage + 1
+        );
+
+        document
+            .getElementById("portfolio")
+            ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+    };
+
     return (
-        <section id="portfolio" className="portfolio-section">
+        <section
+            id="portfolio"
+            className="portfolio-section"
+        >
             <Header>
                 Portfolio
             </Header>
@@ -49,22 +67,10 @@ export default function PortfolioSection({ lang }) {
                 <div className="portfolio-pagination">
                     <button
                         type="button"
-                        onClick={() => setPage((page) => page - 1)}
-                        disabled={page === 0}
+                        onClick={handleNextPage}
+                        aria-label="Volgende portfolio-pagina"
                     >
-                        ←
-                    </button>
-
-                    <span>
                         {page + 1} / {pageCount}
-                    </span>
-
-                    <button
-                        type="button"
-                        onClick={() => setPage((page) => page + 1)}
-                        disabled={page === pageCount - 1}
-                    >
-                        →
                     </button>
                 </div>
             )}

@@ -4,6 +4,8 @@ import { usePortfolioItem } from "./usePortfolioItem";
 import PortfolioMedia from "./PortfolioMedia";
 import "./portfolioDetail.css";
 import Button from "../../components/ui/Button.jsx";
+import Header from "../../components/ui/Header.jsx";
+import Badge from "../../components/ui/Badge.jsx";
 
 export default function PortfolioDetailPage({ lang }) {
     const { slug } = useParams();
@@ -22,6 +24,11 @@ export default function PortfolioDetailPage({ lang }) {
         return <p>Portfolio could not be loaded.</p>;
     }
 
+    const hasStack =
+        item.technologies.length > 0 ||
+        (item.tooling?.length ?? 0) > 0 ||
+        (item.skills?.length ?? 0) > 0;
+
     return (
         <main className="portfolio-detail">
             <Button
@@ -36,79 +43,69 @@ export default function PortfolioDetailPage({ lang }) {
             <br />
             <br />
 
-            <header className="portfolio-detail__header">
-                <h1>{item.title}</h1>
-                <div
-                    className="portfolio-detail__heading-highlight"
-                    aria-hidden="true"
-                />
-            </header>
+            <Header as="h1">{item.title}</Header>
 
             <section className="portfolio-detail__content">
-                <div className="portfolio-detail__description">
-                    <p>{item.description}</p>
+                <div className="portfolio-detail__main">
+                    <div className="portfolio-detail__description">
+                        <p>{item.description}</p>
+                    </div>
                 </div>
 
                 <aside
                     className="portfolio-detail__details"
                     aria-label="Projectdetails"
                 >
-                    <dl>
+
+                    <p className="portfolio-detail__details-label">
+                        <b>Projectinfo</b>
+                    </p>
+
+                    <dl className="portfolio-detail__facts">
                         <div>
-                            <dt>Project</dt>
+                            <dt aria-hidden="true">├─</dt>
                             <dd>{item.projectType}</dd>
                         </div>
 
                         <div>
-                            <dt>Rol</dt>
+                            <dt aria-hidden="true">├─</dt>
                             <dd>{item.role}</dd>
                         </div>
 
                         <div>
-                            <dt>Datum</dt>
+                            <dt aria-hidden="true">
+                                {item.duration || item.teamSize || item.categories.length > 0
+                                    ? "├─"
+                                    : "└─"}
+                            </dt>
                             <dd>{item.projectDate}</dd>
                         </div>
 
                         {item.duration && (
                             <div>
-                                <dt>Duur</dt>
+                                <dt aria-hidden="true">
+                                    {item.teamSize || item.categories.length > 0 ? "├─" : "└─"}
+                                </dt>
                                 <dd>{item.duration}</dd>
                             </div>
                         )}
 
                         {item.teamSize && (
                             <div>
-                                <dt>Team</dt>
+                                <dt aria-hidden="true">
+                                    {item.categories.length > 0 ? "├─" : "└─"}
+                                </dt>
                                 <dd>{item.teamSize}</dd>
                             </div>
                         )}
+
+                        {item.categories.length > 0 && (
+                            <div>
+                                <dt aria-hidden="true">└─</dt>
+                                <dd>{item.categories.join(" · ")}</dd>
+                            </div>
+                        )}
                     </dl>
-
-                    {item.technologies.length > 0 && (
-                        <div className="portfolio-detail__meta">
-                            <p className="portfolio-detail__meta-label">
-                                Stack
-                            </p>
-
-                            <ul>
-                                {item.technologies.map((technology) => (
-                                    <li key={technology}>
-                                        {technology}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    {item.categories.length > 0 && (
-                        <div className="portfolio-detail__meta">
-                            <p className="portfolio-detail__meta-label">
-                                Categorieën
-                            </p>
-
-                            <p>{item.categories.join(" · ")}</p>
-                        </div>
-                    )}
 
                     {(item.gitHubUrl || item.liveSiteUrl) && (
                         <div className="portfolio-detail__links">
@@ -136,7 +133,66 @@ export default function PortfolioDetailPage({ lang }) {
                         </div>
                     )}
                 </aside>
+
             </section>
+
+            {hasStack && (
+                <section className="portfolio-detail__stack">
+                    {item.technologies.length > 0 && (
+                        <div className="portfolio-detail__stack-group">
+                            <p className="portfolio-detail__stack-label">
+                                Technologie
+                            </p>
+
+                            <ul className="portfolio-detail__stack-items">
+                                {item.technologies.map((technology) => (
+                                    <li key={technology}>
+                                        <Badge variant="technology">
+                                            {technology}
+                                        </Badge>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {(item.tooling?.length ?? 0) > 0 && (
+                        <div className="portfolio-detail__stack-group">
+                            <p className="portfolio-detail__stack-label">
+                                Tooling
+                            </p>
+
+                            <ul className="portfolio-detail__stack-items">
+                                {item.tooling.map((tool) => (
+                                    <li key={tool}>
+                                        <Badge variant="tooling">
+                                            {tool}
+                                        </Badge>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {(item.skills?.length ?? 0) > 0 && (
+                        <div className="portfolio-detail__stack-group">
+                            <p className="portfolio-detail__stack-label">
+                                Vaardigheden
+                            </p>
+
+                            <ul className="portfolio-detail__stack-items">
+                                {item.skills.map((skill) => (
+                                    <li key={skill}>
+                                        <Badge variant="skill">
+                                            {skill}
+                                        </Badge>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </section>
+            )}
 
             <PortfolioMedia media={item.media} />
         </main>

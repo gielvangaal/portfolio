@@ -1,15 +1,12 @@
 .about-profile-section {
     width: 100%;
+
     background-color: var(--color-surface-container-high);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.about-profile-section > .section-heading {
-    margin: 4rem 1rem 1rem;
 }
 
 
@@ -25,7 +22,22 @@
 
     align-self: center;
 
-    margin: 1rem;
+    margin: 4rem 1rem 1rem;
+}
+
+
+/* Heading */
+
+.about-profile > .section-heading {
+    grid-column: 2 / 4;
+    grid-row: 1;
+
+    align-self: center;
+    justify-self: center;
+
+    margin: 0;
+
+    z-index: 2;
 }
 
 
@@ -69,6 +81,7 @@
     z-index: 1;
 
     mix-blend-mode: difference;
+
     color: var(--color-blend-contrast);
 }
 
@@ -95,6 +108,10 @@
         width: 90vw;
 
         margin: 0;
+    }
+
+    .about-profile > .section-heading {
+        margin: 2rem 0 1rem;
     }
 
     .about-profile__image {
