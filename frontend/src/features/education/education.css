@@ -18,6 +18,80 @@
     margin: var(--space-md) auto var(--space-2xl);
 }
 
+
+/* --------------------------------------------------
+   ACCORDION
+-------------------------------------------------- */
+
+.education-list .accordion {
+    border: 0;
+    background: transparent;
+}
+
+.education-list .accordion-item {
+    background: var(--color-surface);
+    border: 0;
+}
+
+.education-list .accordion-item + .accordion-item {
+    margin-top: var(--space-sm);
+
+    border-top: 0;
+}
+
+.education-list .accordion-header {
+    padding: var(--space-md) var(--space-lg);
+
+    border: 0;
+    border-bottom: 1px solid var(--color-outline-variant);
+
+    background: var(--color-surface);
+}
+
+.education-list .accordion-header:hover {
+    background: var(--color-surface-container-low);
+}
+
+.education-list .accordion-item--open .accordion-header {
+    border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.education-list .accordion-toggle {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 1.5rem;
+
+    color: var(--color-on-background);
+    box-shadow: var(--box-shadow);
+
+    font-weight: 700;
+    line-height: 1;
+}
+
+.education-list .accordion-toggle::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -0.3rem;
+
+    width: 100%;
+    height: 0.5rem;
+
+    background-color: var(--color-secondary);
+}
+
+
+/* --------------------------------------------------
+   EDUCATION ITEM
+-------------------------------------------------- */
+
 .education-item {
     display: grid;
     grid-template-columns: 10rem 1fr;
@@ -75,6 +149,11 @@
     gap: var(--space-sm);
 }
 
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
 @media screen and (max-width: 767.98px) {
     .education-list {
         width: 90vw;
@@ -95,6 +174,11 @@
         max-width: 8rem;
     }
 }
+
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
 
 @media screen and (min-width: 767.99px) and (max-width: 991.98px) {
     .education-list {
