@@ -73,66 +73,9 @@
    STACK
 -------------------------------------------------- */
 
-.portfolio-detail__stack {
-    display: grid;
-    gap: var(--space-lg);
-
+.portfolio-detail__tags {
     margin-top: var(--space-xl);
 }
-
-.portfolio-detail__stack-group {
-    display: grid;
-    justify-items: start;
-    gap: var(--space-sm);
-}
-
-.portfolio-detail__stack-label {
-    margin: 0;
-
-    color: var(--color-on-surface-variant);
-
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.portfolio-detail__stack-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: var(--space-sm);
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-
-/* SKILLS TOGGLE */
-
-.portfolio-detail__skills-toggle {
-    width: fit-content;
-
-    padding: 0 0 2px;
-
-    border: 0;
-    border-bottom: 2px solid currentColor;
-    background: transparent;
-
-    color: var(--color-on-background);
-
-    font: inherit;
-    font-size: 0.85rem;
-
-    cursor: pointer;
-}
-
-.portfolio-detail__skills-toggle:hover {
-    opacity: 0.7;
-}
-
 
 /* --------------------------------------------------
    SIDEBAR / DETAILS

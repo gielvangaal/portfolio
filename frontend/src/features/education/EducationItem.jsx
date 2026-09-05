@@ -1,6 +1,4 @@
-import Badge, {
-    BadgeVariant,
-} from "../../components/ui/Badge.jsx";
+import TagGroups from "../../components/ui/TagGroups.jsx";
 
 export default function EducationItem({ education }) {
     const period = education.endYear
@@ -49,34 +47,13 @@ function EducationSectionContent({ section }) {
                 </h4>
             )}
 
-            <div className="education-item__tags">
-                {section.technologies.map((technology) => (
-                    <Badge
-                        key={`technology-${technology.id}`}
-                        variant={BadgeVariant.TECHNOLOGY}
-                    >
-                        {technology.name}
-                    </Badge>
-                ))}
-
-                {section.skills.map((skill) => (
-                    <Badge
-                        key={`skill-${skill.id}`}
-                        variant={BadgeVariant.SKILL}
-                    >
-                        {skill.name}
-                    </Badge>
-                ))}
-
-                {section.tooling.map((tool) => (
-                    <Badge
-                        key={`tooling-${tool.id}`}
-                        variant={BadgeVariant.TOOLING}
-                    >
-                        {tool.name}
-                    </Badge>
-                ))}
-            </div>
+            <TagGroups
+                technologies={section.technologies}
+                tooling={section.tooling}
+                skills={section.skills}
+                skillLimit={5}
+                compact
+            />
         </div>
     );
 }
