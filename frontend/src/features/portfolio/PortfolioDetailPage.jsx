@@ -1,14 +1,18 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { usePortfolioItem } from "./usePortfolioItem";
 import PortfolioMedia from "./PortfolioMedia";
-import "./portfolioDetail.css";
+
 import Button from "../../components/ui/Button.jsx";
 import Header from "../../components/ui/Header.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 
+import "./portfolioDetail.css";
+
 export default function PortfolioDetailPage({ lang }) {
     const { slug } = useParams();
+    const [showAllSkills, setShowAllSkills] = useState(false);
 
     const {
         data: item,
@@ -24,10 +28,19 @@ export default function PortfolioDetailPage({ lang }) {
         return <p>Portfolio could not be loaded.</p>;
     }
 
+    const technologies = item.technologies ?? [];
+    const tooling = item.tooling ?? [];
+    const skills = item.skills ?? [];
+    const categories = item.categories ?? [];
+
     const hasStack =
-        item.technologies.length > 0 ||
-        (item.tooling?.length ?? 0) > 0 ||
-        (item.skills?.length ?? 0) > 0;
+        technologies.length > 0 ||
+        tooling.length > 0 ||
+        skills.length > 0;
+
+    const visibleSkills = showAllSkills
+        ? skills
+        : skills.slice(0, 5);
 
     return (
         <main className="portfolio-detail">
@@ -43,20 +56,95 @@ export default function PortfolioDetailPage({ lang }) {
             <br />
             <br />
 
-            <Header as="h1">{item.title}</Header>
+            <Header as="h1">
+                {item.title}
+            </Header>
 
             <section className="portfolio-detail__content">
                 <div className="portfolio-detail__main">
                     <div className="portfolio-detail__description">
                         <p>{item.description}</p>
                     </div>
+
+                    {hasStack && (
+                        <section className="portfolio-detail__stack">
+                            {technologies.length > 0 && (
+                                <div className="portfolio-detail__stack-group">
+                                    <p className="portfolio-detail__stack-label">
+                                        Technologie
+                                    </p>
+
+                                    <ul className="portfolio-detail__stack-items">
+                                        {technologies.map((technology) => (
+                                            <li key={technology}>
+                                                <Badge variant="technology">
+                                                    {technology}
+                                                </Badge>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {tooling.length > 0 && (
+                                <div className="portfolio-detail__stack-group">
+                                    <p className="portfolio-detail__stack-label">
+                                        Tooling
+                                    </p>
+
+                                    <ul className="portfolio-detail__stack-items">
+                                        {tooling.map((tool) => (
+                                            <li key={tool}>
+                                                <Badge variant="tooling">
+                                                    {tool}
+                                                </Badge>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {skills.length > 0 && (
+                                <div className="portfolio-detail__stack-group">
+                                    <p className="portfolio-detail__stack-label">
+                                        Vaardigheden
+                                    </p>
+
+                                    <ul className="portfolio-detail__stack-items">
+                                        {visibleSkills.map((skill) => (
+                                            <li key={skill}>
+                                                <Badge variant="skill">
+                                                    {skill}
+                                                </Badge>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {skills.length > 5 && (
+                                        <button
+                                            type="button"
+                                            className="portfolio-detail__skills-toggle"
+                                            onClick={() =>
+                                                setShowAllSkills(
+                                                    (current) => !current
+                                                )
+                                            }
+                                        >
+                                            {showAllSkills
+                                                ? "Minder tonen"
+                                                : `+ ${skills.length - 5} meer`}
+                                        </button>
+                                    )}
+                                </div>
+                            )}
+                        </section>
+                    )}
                 </div>
 
                 <aside
                     className="portfolio-detail__details"
                     aria-label="Projectdetails"
                 >
-
                     <p className="portfolio-detail__details-label">
                         <b>Projectinfo</b>
                     </p>
@@ -74,7 +162,9 @@ export default function PortfolioDetailPage({ lang }) {
 
                         <div>
                             <dt aria-hidden="true">
-                                {item.duration || item.teamSize || item.categories.length > 0
+                                {item.duration ||
+                                item.teamSize ||
+                                categories.length > 0
                                     ? "├─"
                                     : "└─"}
                             </dt>
@@ -84,7 +174,10 @@ export default function PortfolioDetailPage({ lang }) {
                         {item.duration && (
                             <div>
                                 <dt aria-hidden="true">
-                                    {item.teamSize || item.categories.length > 0 ? "├─" : "└─"}
+                                    {item.teamSize ||
+                                    categories.length > 0
+                                        ? "├─"
+                                        : "└─"}
                                 </dt>
                                 <dd>{item.duration}</dd>
                             </div>
@@ -93,16 +186,18 @@ export default function PortfolioDetailPage({ lang }) {
                         {item.teamSize && (
                             <div>
                                 <dt aria-hidden="true">
-                                    {item.categories.length > 0 ? "├─" : "└─"}
+                                    {categories.length > 0
+                                        ? "├─"
+                                        : "└─"}
                                 </dt>
                                 <dd>{item.teamSize}</dd>
                             </div>
                         )}
 
-                        {item.categories.length > 0 && (
+                        {categories.length > 0 && (
                             <div>
                                 <dt aria-hidden="true">└─</dt>
-                                <dd>{item.categories.join(" · ")}</dd>
+                                <dd>{categories.join(" · ")}</dd>
                             </div>
                         )}
                     </dl>
@@ -133,66 +228,7 @@ export default function PortfolioDetailPage({ lang }) {
                         </div>
                     )}
                 </aside>
-
             </section>
-
-            {hasStack && (
-                <section className="portfolio-detail__stack">
-                    {item.technologies.length > 0 && (
-                        <div className="portfolio-detail__stack-group">
-                            <p className="portfolio-detail__stack-label">
-                                Technologie
-                            </p>
-
-                            <ul className="portfolio-detail__stack-items">
-                                {item.technologies.map((technology) => (
-                                    <li key={technology}>
-                                        <Badge variant="technology">
-                                            {technology}
-                                        </Badge>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    {(item.tooling?.length ?? 0) > 0 && (
-                        <div className="portfolio-detail__stack-group">
-                            <p className="portfolio-detail__stack-label">
-                                Tooling
-                            </p>
-
-                            <ul className="portfolio-detail__stack-items">
-                                {item.tooling.map((tool) => (
-                                    <li key={tool}>
-                                        <Badge variant="tooling">
-                                            {tool}
-                                        </Badge>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    {(item.skills?.length ?? 0) > 0 && (
-                        <div className="portfolio-detail__stack-group">
-                            <p className="portfolio-detail__stack-label">
-                                Vaardigheden
-                            </p>
-
-                            <ul className="portfolio-detail__stack-items">
-                                {item.skills.map((skill) => (
-                                    <li key={skill}>
-                                        <Badge variant="skill">
-                                            {skill}
-                                        </Badge>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                </section>
-            )}
 
             <PortfolioMedia media={item.media} />
         </main>
