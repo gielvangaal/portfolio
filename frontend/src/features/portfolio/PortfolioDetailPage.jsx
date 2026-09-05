@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { usePortfolioItem } from "./usePortfolioItem";
@@ -6,13 +5,12 @@ import PortfolioMedia from "./PortfolioMedia";
 
 import Button from "../../components/ui/Button.jsx";
 import Header from "../../components/ui/Header.jsx";
-import Badge from "../../components/ui/Badge.jsx";
+import TagGroups from "../../components/ui/TagGroups.jsx";
 
 import "./portfolioDetail.css";
 
 export default function PortfolioDetailPage({ lang }) {
     const { slug } = useParams();
-    const [showAllSkills, setShowAllSkills] = useState(false);
 
     const {
         data: item,
@@ -33,14 +31,10 @@ export default function PortfolioDetailPage({ lang }) {
     const skills = item.skills ?? [];
     const categories = item.categories ?? [];
 
-    const hasStack =
+    const hasTags =
         technologies.length > 0 ||
         tooling.length > 0 ||
         skills.length > 0;
-
-    const visibleSkills = showAllSkills
-        ? skills
-        : skills.slice(0, 5);
 
     return (
         <main className="portfolio-detail">
@@ -66,78 +60,15 @@ export default function PortfolioDetailPage({ lang }) {
                         <p>{item.description}</p>
                     </div>
 
-                    {hasStack && (
-                        <section className="portfolio-detail__stack">
-                            {technologies.length > 0 && (
-                                <div className="portfolio-detail__stack-group">
-                                    <p className="portfolio-detail__stack-label">
-                                        Technologie
-                                    </p>
-
-                                    <ul className="portfolio-detail__stack-items">
-                                        {technologies.map((technology) => (
-                                            <li key={technology}>
-                                                <Badge variant="technology">
-                                                    {technology}
-                                                </Badge>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {tooling.length > 0 && (
-                                <div className="portfolio-detail__stack-group">
-                                    <p className="portfolio-detail__stack-label">
-                                        Tooling
-                                    </p>
-
-                                    <ul className="portfolio-detail__stack-items">
-                                        {tooling.map((tool) => (
-                                            <li key={tool}>
-                                                <Badge variant="tooling">
-                                                    {tool}
-                                                </Badge>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {skills.length > 0 && (
-                                <div className="portfolio-detail__stack-group">
-                                    <p className="portfolio-detail__stack-label">
-                                        Vaardigheden
-                                    </p>
-
-                                    <ul className="portfolio-detail__stack-items">
-                                        {visibleSkills.map((skill) => (
-                                            <li key={skill}>
-                                                <Badge variant="skill">
-                                                    {skill}
-                                                </Badge>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    {skills.length > 5 && (
-                                        <button
-                                            type="button"
-                                            className="portfolio-detail__skills-toggle"
-                                            onClick={() =>
-                                                setShowAllSkills(
-                                                    (current) => !current
-                                                )
-                                            }
-                                        >
-                                            {showAllSkills
-                                                ? "Minder tonen"
-                                                : `+ ${skills.length - 5} meer`}
-                                        </button>
-                                    )}
-                                </div>
-                            )}
-                        </section>
+                    {hasTags && (
+                        <div className="portfolio-detail__tags">
+                            <TagGroups
+                                technologies={technologies}
+                                tooling={tooling}
+                                skills={skills}
+                                skillLimit={5}
+                            />
+                        </div>
                     )}
                 </div>
 
@@ -197,7 +128,9 @@ export default function PortfolioDetailPage({ lang }) {
                         {categories.length > 0 && (
                             <div>
                                 <dt aria-hidden="true">└─</dt>
-                                <dd>{categories.join(" · ")}</dd>
+                                <dd>
+                                    {categories.join(" · ")}
+                                </dd>
                             </div>
                         )}
                     </dl>

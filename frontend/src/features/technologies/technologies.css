@@ -97,7 +97,7 @@
     color: var(--color-on-background);
 
     font: inherit;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
 
     cursor: pointer;
@@ -109,6 +109,7 @@
     display: inline-block;
 
     padding: 0.25rem 0;
+    font-weight: 600;
 }
 
 .webstack-filter__label {
@@ -121,7 +122,7 @@
     position: absolute;
 
     left: -5%;
-    bottom: -20%;
+    bottom: -25%;
 
     width: 110%;
     height: 25%;
