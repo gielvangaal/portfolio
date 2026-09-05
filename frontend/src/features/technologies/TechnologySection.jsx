@@ -62,7 +62,16 @@ export default function TechnologySection() {
                             }`}
                             onClick={() => setUsageFilter(filter.value)}
                         >
-                            {filter.label}
+    <span className="webstack-filter__content">
+        <span
+            className="webstack-filter__highlight"
+            aria-hidden="true"
+        />
+
+        <span className="webstack-filter__label">
+            [ {filter.label} ]
+        </span>
+    </span>
                         </button>
                     ))}
                 </div>
