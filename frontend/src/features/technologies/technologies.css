@@ -83,27 +83,55 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: 0.5rem;
+    gap: 1rem;
 
     margin: 1rem 0 2rem;
 }
 
 .webstack-filter {
-    padding: 0.4rem 0.8rem;
+    padding: 0;
 
-    border: 1px solid currentColor;
-    border-radius: 999px;
-
+    border: 0;
     background: transparent;
-    color: inherit;
+
+    color: var(--color-on-background);
 
     font: inherit;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
 
     cursor: pointer;
 }
 
-.webstack-filter--active {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
+.webstack-filter__content {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0.25rem 0;
+}
+
+.webstack-filter__label {
+    position: relative;
+
+    z-index: 1;
+}
+
+.webstack-filter__highlight {
+    position: absolute;
+
+    left: -5%;
+    bottom: -20%;
+
+    width: 110%;
+    height: 25%;
+
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow);
+
+    display: none;
+}
+
+.webstack-filter--active .webstack-filter__highlight {
+    display: block;
 }
