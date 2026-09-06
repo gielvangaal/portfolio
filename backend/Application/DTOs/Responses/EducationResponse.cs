@@ -4,7 +4,7 @@ public class EducationResponse
 {
     public int Id { get; set; }
 
-    public string Institution { get; set; } = string.Empty;
+    public OrganizationResponse Organization { get; set; } = null!;
 
     public string Program { get; set; } = string.Empty;
 
@@ -12,8 +12,9 @@ public class EducationResponse
 
     public int? EndYear { get; set; }
 
-    public MediaResponse? Media { get; set; }
-
     public IReadOnlyCollection<EducationSectionResponse> Sections { get; set; }
+        = [];
+
+    public IReadOnlyCollection<CredentialResponse> Credentials { get; set; }
         = [];
 }

@@ -11,7 +11,8 @@ public static class DatabaseSeeder
         await SeedTechnologiesAsync(context);
         await SeedSkillsAsync(context);
         await SeedToolingAsync(context);
-        
+        await SeedOrganizationsAsync(context);
+
         await SeedHeroAsync(context);
         await SeedPortfolioAsync(context);
         await SeedAboutProfileAsync(context);
@@ -674,6 +675,74 @@ public static class DatabaseSeeder
     await context.SaveChangesAsync();
 }
 
+    private static async Task SeedOrganizationsAsync(
+    PortfolioDbContext context)
+{
+    if (await context.Organizations.AnyAsync())
+        return;
+
+    context.Organizations.AddRange(
+        new Organization
+        {
+            Name = "Red Hat",
+            Type = OrganizationType.TrainingProvider,
+            Media = CreateImage(
+                "/media/education/redhat.webp",
+                "Red Hat logo")
+        },
+        new Organization
+        {
+            Name = "Avans Hogeschool",
+            Type = OrganizationType.EducationalInstitution,
+            Media = CreateImage(
+                "/media/education/avans.webp",
+                "Avans Hogeschool logo")
+        },
+        new Organization
+        {
+            Name = "Codecademy",
+            Type = OrganizationType.TrainingProvider,
+            Media = CreateImage(
+                "/media/education/codecademy.webp",
+                "Codecademy logo")
+        },
+        new Organization
+        {
+            Name = "Albeda College",
+            Type = OrganizationType.EducationalInstitution,
+            Media = CreateImage(
+                "/media/education/albeda.png",
+                "Albeda College logo")
+        },
+        new Organization
+        {
+            Name = "Koning Willem 1 College",
+            Type = OrganizationType.EducationalInstitution,
+            Media = CreateImage(
+                "/media/education/kw1c.png",
+                "Koning Willem 1 College logo")
+        },
+        new Organization
+        {
+            Name = "BCS HR Solutions",
+            Type = OrganizationType.Employer,
+            Media = CreateImage(
+                "/media/work-experience/bcs.webp",
+                "BCS HR Solutions logo")
+        },
+        new Organization
+        {
+            Name = "Gemeente Rotterdam",
+            Type = OrganizationType.Employer,
+            Media = CreateImage(
+                "/media/work-experience/gemeente-rotterdam.webp",
+                "Gemeente Rotterdam logo")
+        }
+    );
+
+    await context.SaveChangesAsync();
+}
+    
     // Sections
     private static async Task SeedHeroAsync(PortfolioDbContext context)
     {
@@ -1616,18 +1685,17 @@ public static class DatabaseSeeder
 
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
+    
+    var organizations = await context.Organizations
+        .ToDictionaryAsync(x => x.Name);
 
     var redhat = new Education
     {
-        Institution = "Red Hat",
+        Organization = organizations["Red Hat"],
         Program = "RHCSA",
         StartYear = 2026,
         EndYear = null,
         SortOrder = 1,
-        
-        Media = CreateImage(
-            "/media/education/redhat.webp",
-            "Red Hat RHCSA"),
         
         Sections =
         [
@@ -1655,15 +1723,11 @@ public static class DatabaseSeeder
     
     var avans = new Education
     {
-        Institution = "Avans Hogeschool",
+        Organization = organizations["Avans Hogeschool"],
         Program = "Deeltijdopleiding Informatica",
         StartYear = 2024,
         EndYear = null,
         SortOrder = 2,
-
-        Media = CreateImage(
-            "/media/education/avans.webp",
-            "Avans Hogeschool logo"),
 
         Sections =
         [
@@ -1730,15 +1794,11 @@ public static class DatabaseSeeder
 
     var codecademy = new Education
     {
-        Institution = "Codecademy",
+        Organization = organizations["Codecademy"],
         Program = "Web Development",
         StartYear = 2023,
         EndYear = null,
         SortOrder = 3,
-
-        Media = CreateImage(
-            "/media/education/codecademy.webp",
-            "Codecademy logo"),
 
         Sections =
         [
@@ -1766,15 +1826,11 @@ public static class DatabaseSeeder
 
     var albeda = new Education
     {
-        Institution = "Albeda College",
+        Organization = organizations["Albeda College"],
         Program = "Muzikant / Producer",
         StartYear = 2012,
         EndYear = 2015,
         SortOrder = 4,
-
-        Media = CreateImage(
-            "/media/education/albeda.png",
-            "Albeda College logo"),
 
         Sections =
         [
@@ -1797,15 +1853,11 @@ public static class DatabaseSeeder
 
     var koningWillem = new Education
     {
-        Institution = "Koning Willem 1 College",
+        Organization = organizations["Koning Willem 1 College"],
         Program = "Sociaal Cultureel Werk",
         StartYear = 2004,
         EndYear = 2009,
         SortOrder = 5,
-
-        Media = CreateImage(
-            "/media/education/kw1c.png",
-            "Koning Willem 1 College logo"),
 
         Sections =
         [
@@ -1850,18 +1902,17 @@ public static class DatabaseSeeder
 
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
+    
+    var organizations = await context.Organizations
+        .ToDictionaryAsync(x => x.Name);
 
     var bcs = new WorkExperience
     {
-        Company = "BCS HR Solutions",
+        Organization = organizations["BCS HR Solutions"],
         Role = "Software Support Specialist",
         StartYear = null,
         EndYear = null,
         SortOrder = 1,
-
-        Media = CreateImage(
-            "/media/work-experience/bcs.webp",
-            "BCS HR Solutions logo"),
 
         Responsibilities =
         [
@@ -1920,15 +1971,11 @@ public static class DatabaseSeeder
 
     var gemeenteRotterdam = new WorkExperience
     {
-        Company = "Gemeente Rotterdam",
+        Organization = organizations["Gemeente Rotterdam"],
         Role = "Senior Klantcontact Centrum",
         StartYear = null,
         EndYear = null,
         SortOrder = 2,
-
-        Media = CreateImage(
-            "/media/work-experience/gemeente-rotterdam.webp",
-            "Gemeente Rotterdam logo"),
 
         Responsibilities =
         [

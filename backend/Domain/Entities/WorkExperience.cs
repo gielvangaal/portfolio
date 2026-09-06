@@ -4,7 +4,9 @@ public class WorkExperience
 {
     public int Id { get; set; }
 
-    public required string Company { get; set; }
+    public int OrganizationId { get; set; }
+
+    public Organization Organization { get; set; } = null!;
 
     public required string Role { get; set; }
 
@@ -13,10 +15,6 @@ public class WorkExperience
     public int? EndYear { get; set; }
 
     public int SortOrder { get; set; }
-
-    public int? MediaId { get; set; }
-
-    public Media? Media { get; set; }
 
     public ICollection<WorkExperienceResponsibility> Responsibilities { get; set; } = [];
 
