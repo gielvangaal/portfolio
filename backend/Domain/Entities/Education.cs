@@ -4,7 +4,9 @@ public class Education
 {
     public int Id { get; set; }
 
-    public required string Institution { get; set; }
+    public int OrganizationId { get; set; }
+
+    public Organization Organization { get; set; } = null!;
 
     public required string Program { get; set; }
 
@@ -14,9 +16,7 @@ public class Education
 
     public int SortOrder { get; set; }
 
-    public int? MediaId { get; set; }
-
-    public Media? Media { get; set; }
-
     public ICollection<EducationSection> Sections { get; set; } = [];
+
+    public ICollection<Credential> Credentials { get; set; } = [];
 }

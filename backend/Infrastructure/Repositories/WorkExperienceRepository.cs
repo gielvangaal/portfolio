@@ -21,7 +21,8 @@ public class WorkExperienceRepository
         return await _context.WorkExperiences
             .AsNoTracking()
 
-            .Include(x => x.Media)
+            .Include(x => x.Organization)
+            .ThenInclude(x => x.Media)
 
             .Include(x => x.Responsibilities)
 

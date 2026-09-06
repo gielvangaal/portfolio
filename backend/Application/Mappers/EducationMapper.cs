@@ -25,19 +25,39 @@ public class EducationMapper : IEducationMapper
         return new EducationResponse
         {
             Id = education.Id,
-            Institution = education.Institution,
             Program = education.Program,
             StartYear = education.StartYear,
             EndYear = education.EndYear,
 
-            Media = education.Media is null
-                ? null
-                : new MediaResponse
+            Organization = new OrganizationResponse
+            {
+                Id = education.Organization.Id,
+                Name = education.Organization.Name,
+                Type = education.Organization.Type.ToString(),
+                WebsiteUrl = education.Organization.WebsiteUrl,
+
+                Media = education.Organization.Media is null
+                    ? null
+                    : new MediaResponse
+                    {
+                        Path = education.Organization.Media.Path,
+                        AltText = education.Organization.Media.AltText,
+                        Type = education.Organization.Media.Type
+                    }
+            },
+
+            Credentials = education.Credentials
+                .Select(x => new CredentialResponse
                 {
-                    Path = education.Media.Path,
-                    AltText = education.Media.AltText,
-                    Type = education.Media.Type
-                },
+                    Id = x.Id,
+                    Name = x.Name,
+                    Type = x.Type.ToString(),
+                    Status = x.Status.ToString(),
+                    Year = x.Year,
+                    CredentialUrl = x.CredentialUrl,
+                    DocumentUrl = x.DocumentUrl
+                })
+                .ToList(),
 
             Sections = education.Sections
                 .OrderBy(x => x.SortOrder)

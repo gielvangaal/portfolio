@@ -18,7 +18,11 @@ public class EducationRepository : IEducationRepository
     {
         return await _context.Educations
             .AsNoTracking()
-            .Include(x => x.Media)
+
+            .Include(x => x.Organization)
+            .ThenInclude(x => x.Media)
+
+            .Include(x => x.Credentials)
 
             .Include(x => x.Sections)
             .ThenInclude(x => x.Technologies)

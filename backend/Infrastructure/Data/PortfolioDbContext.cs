@@ -18,6 +18,7 @@ public class PortfolioDbContext : DbContext
     public DbSet<WorkExperience> WorkExperiences { get; set; }
     public DbSet<LibraryItem> LibraryItems { get; set; }
     public DbSet<Contact> Contacts { get; set; }
+    
 
     // Supporting entities
     public DbSet<Technology> Technologies { get; set; }
@@ -27,6 +28,8 @@ public class PortfolioDbContext : DbContext
     public DbSet<WorkExperienceResponsibility> WorkExperienceResponsibilities { get; set; }
     public DbSet<Skill> Skills { get; set; }
     public DbSet<Tooling> Tooling { get; set; }
+    public DbSet<Organization> Organizations { get; set; }
+    public DbSet<Credential> Credentials { get; set; }
 
     // Media and relationships
     public DbSet<Media> Media { get; set; }

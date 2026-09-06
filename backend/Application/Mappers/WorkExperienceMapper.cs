@@ -27,19 +27,26 @@ public class WorkExperienceMapper
         return new WorkExperienceResponse
         {
             Id = workExperience.Id,
-            Company = workExperience.Company,
             Role = workExperience.Role,
             StartYear = workExperience.StartYear,
             EndYear = workExperience.EndYear,
 
-            Media = workExperience.Media is null
-                ? null
-                : new MediaResponse
-                {
-                    Path = workExperience.Media.Path,
-                    AltText = workExperience.Media.AltText,
-                    Type = workExperience.Media.Type
-                },
+            Organization = new OrganizationResponse
+            {
+                Id = workExperience.Organization.Id,
+                Name = workExperience.Organization.Name,
+                Type = workExperience.Organization.Type.ToString(),
+                WebsiteUrl = workExperience.Organization.WebsiteUrl,
+
+                Media = workExperience.Organization.Media is null
+                    ? null
+                    : new MediaResponse
+                    {
+                        Path = workExperience.Organization.Media.Path,
+                        AltText = workExperience.Organization.Media.AltText,
+                        Type = workExperience.Organization.Media.Type
+                    }
+            },
 
             Responsibilities = workExperience.Responsibilities
                 .OrderBy(x => x.SortOrder)
