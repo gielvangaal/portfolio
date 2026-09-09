@@ -24,11 +24,13 @@ public class PortfolioItemResponse
 
     public string? LiveSiteUrl { get; set; }
 
-    public ICollection<string> Categories { get; set; } = [];
+    public IReadOnlyCollection<string> Categories { get; set; } = [];
 
-    public ICollection<string> Technologies { get; set; } = [];
-    public ICollection<string> Skills { get; set; } = [];
-    public ICollection<string> Tooling { get; set; } = [];
+    public IReadOnlyCollection<TechnologyResponse> Technologies { get; set; } = [];
 
-    public ICollection<PortfolioMediaResponse> Media { get; set; } = [];
+    public IReadOnlyCollection<SkillResponse> Skills { get; set; } = [];
+
+    public IReadOnlyCollection<ToolingResponse> Tooling { get; set; } = [];
+
+    public IReadOnlyCollection<PortfolioMediaResponse> Media { get; set; } = [];
 }

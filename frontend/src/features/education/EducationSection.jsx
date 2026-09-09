@@ -23,7 +23,7 @@ export default function EducationSection() {
 
     const accordionItems = educations.map((education) => ({
         ...education,
-        title: `${education.institution} | ${education.program}`,
+        title: `${education.organization?.name ?? ""} | ${education.program}`,
     }));
 
     return (
@@ -40,9 +40,7 @@ export default function EducationSection() {
                     items={accordionItems}
                     defaultOpenId={accordionItems[0]?.id ?? null}
                     renderContent={(education) => (
-                        <EducationItem
-                            education={education}
-                        />
+                        <EducationItem education={education} />
                     )}
                 />
             </div>

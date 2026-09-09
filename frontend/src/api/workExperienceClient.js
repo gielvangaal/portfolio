@@ -9,16 +9,22 @@ export const workExperienceClient = {
         return response.data.map((workExperience) => ({
             ...workExperience,
 
-            media: workExperience.media
+            organization: workExperience.organization
                 ? {
-                    ...workExperience.media,
-                    path: getMediaUrl(
-                        workExperience.media.path
-                    ),
+                    ...workExperience.organization,
+
+                    media: workExperience.organization.media
+                        ? {
+                            ...workExperience.organization.media,
+                            path: getMediaUrl(
+                                workExperience.organization.media.path
+                            ),
+                        }
+                        : null,
                 }
                 : null,
 
-            technologies: workExperience.technologies.map(
+            technologies: (workExperience.technologies ?? []).map(
                 (technology) => ({
                     ...technology,
 
@@ -33,7 +39,7 @@ export const workExperienceClient = {
                 })
             ),
 
-            tooling: workExperience.tooling.map((tool) => ({
+            tooling: (workExperience.tooling ?? []).map((tool) => ({
                 ...tool,
 
                 media: tool.media

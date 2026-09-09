@@ -25,7 +25,7 @@
 
 .education-item {
     display: grid;
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 10rem minmax(0, 1fr);
 
     gap: var(--space-xl);
     align-items: start;
@@ -70,14 +70,6 @@
 
     font-size: 1.2rem;
     font-weight: 700;
-}
-
-.education-item__tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-
-    gap: var(--space-sm);
 }
 
 

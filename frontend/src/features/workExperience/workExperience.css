@@ -6,7 +6,7 @@
 }
 
 .work-experience-container {
-    max-width: var(--content-width);
+    width: min(90vw, var(--content-width));
     margin: 0 auto;
 }
 
@@ -14,26 +14,41 @@
     margin-top: var(--space-xl);
 }
 
+
+/* --------------------------------------------------
+   WORK EXPERIENCE ITEM
+-------------------------------------------------- */
+
 .work-experience-body {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+
     gap: var(--space-xl);
+    align-items: start;
 
     padding: var(--space-xl);
 
+    background: var(--color-surface);
     text-align: left;
 }
 
+.work-experience-media {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .work-experience-logo {
-    width: 10rem;
+    display: block;
+
+    width: 100%;
+    max-width: 10rem;
     max-height: 8rem;
 
     object-fit: contain;
-    flex-shrink: 0;
 }
 
 .work-experience-content {
-    flex: 1;
     min-width: 0;
 }
 
@@ -59,25 +74,51 @@
     margin-top: var(--space-xs);
 }
 
-.work-experience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-}
 
-@media (max-width: 768px) {
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media screen and (max-width: 767.98px) {
     .work-experience-section {
         padding: var(--space-xl) var(--page-padding);
     }
 
-    .work-experience-body {
-        flex-direction: column;
-        gap: var(--space-lg);
+    .work-experience-container {
+        width: 90vw;
+    }
 
+    .work-experience-body {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-lg);
         padding: var(--space-lg);
     }
 
+    .work-experience-media {
+        justify-content: flex-start;
+    }
+
     .work-experience-logo {
-        width: 8rem;
+        max-width: 8rem;
+    }
+}
+
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media screen and (min-width: 767.99px) and (max-width: 991.98px) {
+    .work-experience-container {
+        width: 80vw;
+    }
+
+    .work-experience-body {
+        grid-template-columns: 8rem minmax(0, 1fr);
+    }
+
+    .work-experience-logo {
+        max-width: 8rem;
     }
 }
