@@ -5,18 +5,36 @@ export function mapEducation(data) {
 
     return {
         id: data.id,
-        institution: data.institution ?? "",
         program: data.program ?? "",
         startYear: data.startYear,
         endYear: data.endYear,
 
-        media: data.media
+        organization: data.organization
             ? {
-                path: data.media.path ?? "",
-                altText: data.media.altText ?? "",
-                type: data.media.type,
+                id: data.organization.id,
+                name: data.organization.name ?? "",
+                type: data.organization.type ?? "",
+                websiteUrl: data.organization.websiteUrl ?? null,
+
+                media: data.organization.media
+                    ? {
+                        path: data.organization.media.path ?? "",
+                        altText: data.organization.media.altText ?? "",
+                        type: data.organization.media.type,
+                    }
+                    : null,
             }
             : null,
+
+        credentials: (data.credentials ?? []).map((credential) => ({
+            id: credential.id,
+            name: credential.name ?? "",
+            type: credential.type ?? "",
+            status: credential.status ?? "",
+            year: credential.year ?? null,
+            credentialUrl: credential.credentialUrl ?? null,
+            documentUrl: credential.documentUrl ?? null,
+        })),
 
         sections: (data.sections ?? []).map((section) => ({
             id: section.id,

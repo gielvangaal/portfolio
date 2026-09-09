@@ -9,10 +9,18 @@ export const educationClient = {
         return response.data.map((education) => ({
             ...education,
 
-            media: education.media
+            organization: education.organization
                 ? {
-                    ...education.media,
-                    path: getMediaUrl(education.media.path),
+                    ...education.organization,
+
+                    media: education.organization.media
+                        ? {
+                            ...education.organization.media,
+                            path: getMediaUrl(
+                                education.organization.media.path
+                            ),
+                        }
+                        : null,
                 }
                 : null,
 

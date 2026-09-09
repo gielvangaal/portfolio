@@ -7,6 +7,20 @@ namespace Application.Mappers;
 
 public class PortfolioItemMapper : IPortfolioItemMapper
 {
+    private readonly ITechnologyMapper _technologyMapper;
+    private readonly ISkillMapper _skillMapper;
+    private readonly IToolingMapper _toolingMapper;
+
+    public PortfolioItemMapper(
+        ITechnologyMapper technologyMapper,
+        ISkillMapper skillMapper,
+        IToolingMapper toolingMapper)
+    {
+        _technologyMapper = technologyMapper;
+        _skillMapper = skillMapper;
+        _toolingMapper = toolingMapper;
+    }
+
     public PortfolioItemResponse Map(PortfolioItem portfolioItem)
     {
         return new PortfolioItemResponse
@@ -29,19 +43,23 @@ public class PortfolioItemMapper : IPortfolioItemMapper
             LiveSiteUrl = portfolioItem.LiveSiteUrl,
 
             Categories = portfolioItem.Categories
+                .OrderBy(x => x.Name)
                 .Select(x => x.Name)
                 .ToList(),
 
             Technologies = portfolioItem.Technologies
-                .Select(x => x.Name)
+                .OrderBy(x => x.Name)
+                .Select(_technologyMapper.Map)
                 .ToList(),
 
             Skills = portfolioItem.Skills
-                .Select(x => x.Name)
+                .OrderBy(x => x.Name)
+                .Select(_skillMapper.Map)
                 .ToList(),
 
             Tooling = portfolioItem.Tooling
-                .Select(x => x.Name)
+                .OrderBy(x => x.Name)
+                .Select(_toolingMapper.Map)
                 .ToList(),
 
             Media = portfolioItem.Media
@@ -57,37 +75,41 @@ public class PortfolioItemMapper : IPortfolioItemMapper
         };
     }
 
-    public PortfolioCardResponse MapCard(PortfolioItem item)
+    public PortfolioCardResponse MapCard(PortfolioItem portfolioItem)
     {
         return new PortfolioCardResponse
         {
-            Slug = item.Slug,
-            Title = item.Title,
-            CardDescription = item.CardDescription,
-            ProjectDate = item.ProjectDate,
+            Slug = portfolioItem.Slug,
+            Title = portfolioItem.Title,
+            CardDescription = portfolioItem.CardDescription,
+            ProjectDate = portfolioItem.ProjectDate,
             ProjectType = MapProjectType(
-                item.ProjectType,
-                item.Language
+                portfolioItem.ProjectType,
+                portfolioItem.Language
             ),
-            Role = item.Role,
+            Role = portfolioItem.Role,
 
-            Categories = item.Categories
+            Categories = portfolioItem.Categories
+                .OrderBy(x => x.Name)
                 .Select(x => x.Name)
                 .ToList(),
 
-            Technologies = item.Technologies
-                .Select(x => x.Name)
+            Technologies = portfolioItem.Technologies
+                .OrderBy(x => x.Name)
+                .Select(_technologyMapper.Map)
                 .ToList(),
 
-            Skills = item.Skills
-                .Select(x => x.Name)
+            Skills = portfolioItem.Skills
+                .OrderBy(x => x.Name)
+                .Select(_skillMapper.Map)
                 .ToList(),
 
-            Tooling = item.Tooling
-                .Select(x => x.Name)
+            Tooling = portfolioItem.Tooling
+                .OrderBy(x => x.Name)
+                .Select(_toolingMapper.Map)
                 .ToList(),
 
-            PrimaryImageUrl = item.Media
+            PrimaryImageUrl = portfolioItem.Media
                 .Where(x => x.Role == MediaRole.Primary)
                 .OrderBy(x => x.SortOrder)
                 .Select(x => x.Media.Path)
@@ -95,7 +117,9 @@ public class PortfolioItemMapper : IPortfolioItemMapper
         };
     }
 
-    private static string MapProjectType(ProjectType projectType, string language)
+    private static string MapProjectType(
+        ProjectType projectType,
+        string language)
     {
         return (projectType, language) switch
         {

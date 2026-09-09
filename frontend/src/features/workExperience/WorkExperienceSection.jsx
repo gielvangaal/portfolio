@@ -2,7 +2,7 @@ import { useWorkExperiences } from "./useWorkExperience.js";
 
 import Accordion from "../../components/ui/Accordion.jsx";
 import Header from "../../components/ui/Header.jsx";
-import Badge from "../../components/ui/Badge.jsx";
+import TagGroups from "../../components/ui/TagGroups.jsx";
 
 import "./workExperience.css";
 
@@ -20,7 +20,7 @@ export default function WorkExperienceSection() {
     const accordionItems = workExperiences.map(
         (workExperience) => ({
             ...workExperience,
-            title: `${workExperience.company} | ${workExperience.role}`,
+            title: `${workExperience.organization?.name ?? ""} | ${workExperience.role}`,
         })
     );
 
@@ -53,21 +53,32 @@ export default function WorkExperienceSection() {
 }
 
 function WorkExperienceContent({ workExperience }) {
+    const organization = workExperience.organization;
+    const media = organization?.media;
+
     return (
         <div className="work-experience-body">
-            {workExperience.media && (
-                <img
-                    className="work-experience-logo"
-                    src={workExperience.media.path}
-                    alt={workExperience.media.altText}
-                />
+            {media && (
+                <div className="work-experience-media">
+                    <img
+                        className="work-experience-logo"
+                        src={media.path}
+                        alt={media.altText}
+                        loading="lazy"
+                    />
+                </div>
             )}
 
             <div className="work-experience-content">
                 <h3 className="work-experience-title">
-                    {workExperience.company}
-                    {" | "}
                     {workExperience.role}
+
+                    {organization?.name && (
+                        <>
+                            {" | "}
+                            {organization.name}
+                        </>
+                    )}
                 </h3>
 
                 {(workExperience.startYear ||
@@ -80,44 +91,27 @@ function WorkExperienceContent({ workExperience }) {
                     </p>
                 )}
 
-                <ul className="work-experience-responsibilities">
-                    {workExperience.responsibilities.map(
-                        (responsibility, index) => (
-                            <li key={index}>
-                                {responsibility}
-                            </li>
-                        )
-                    )}
-                </ul>
+                {workExperience.responsibilities.length > 0 && (
+                    <ul className="work-experience-responsibilities">
+                        {workExperience.responsibilities.map(
+                            (responsibility, index) => (
+                                <li key={index}>
+                                    {responsibility}
+                                </li>
+                            )
+                        )}
+                    </ul>
+                )}
 
-                <div className="work-experience-tags">
-                    {workExperience.technologies.map((technology) => (
-                        <Badge
-                            key={`technology-${technology.id}`}
-                            variant="technology"
-                        >
-                            {technology.name}
-                        </Badge>
-                    ))}
-
-                    {workExperience.skills.map((skill) => (
-                        <Badge
-                            key={`skill-${skill.id}`}
-                            variant="skill"
-                        >
-                            {skill.name}
-                        </Badge>
-                    ))}
-
-                    {workExperience.tooling.map((tool) => (
-                        <Badge
-                            key={`tooling-${tool.id}`}
-                            variant="tooling"
-                        >
-                            {tool.name}
-                        </Badge>
-                    ))}
-                </div>
+                <TagGroups
+                    technologies={workExperience.technologies}
+                    tooling={workExperience.tooling}
+                    skills={workExperience.skills}
+                    technologyLimit={5}
+                    toolingLimit={5}
+                    skillLimit={5}
+                    compact
+                />
             </div>
         </div>
     );
