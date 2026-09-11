@@ -14,3 +14,13 @@
 .button--primary:hover {
     background: var(--color-surface-container);
 }
+
+.badge__media {
+    width: 1rem;
+    height: 1rem;
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    filter: grayscale(100%);
+}

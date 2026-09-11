@@ -33,17 +33,17 @@ export default function PortfolioCard({ item }) {
 
             <ul className="portfolio-card__technologies">
                 {technologies.map((technology) => (
-                    <li key={technology}>
+                    <li key={technology.id}>
                         <Badge variant="technology">
-                            {technology}
+                            {technology.name}
                         </Badge>
                     </li>
                 ))}
 
                 {tooling.map((tool) => (
-                    <li key={tool}>
+                    <li key={tool.id}>
                         <Badge variant="tooling">
-                            {tool}
+                            {tool.name}
                         </Badge>
                     </li>
                 ))}

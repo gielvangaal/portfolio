@@ -1,6 +1,11 @@
 import { useState } from "react";
 
 import { useTechnologies } from "./useTechnologies";
+import { useTooling } from "../tooling/useTooling";
+
+import Badge, {
+    BadgeVariant,
+} from "../../components/ui/Badge.jsx";
 import Header from "../../components/ui/Header.jsx";
 
 import "./technologies.css";
@@ -8,9 +13,15 @@ import "./technologies.css";
 export default function TechnologySection() {
     const {
         data: technologies = [],
-        isLoading,
-        isError,
+        isLoading: technologiesLoading,
+        isError: technologiesError,
     } = useTechnologies();
+
+    const {
+        data: tooling = [],
+        isLoading: toolingLoading,
+        isError: toolingError,
+    } = useTooling();
 
     const filters = [
         { value: "All", label: "Alles" },
@@ -22,19 +33,30 @@ export default function TechnologySection() {
 
     const [usageFilter, setUsageFilter] = useState("Daily");
 
-    const filteredTechnologies =
+    const items = [
+        ...technologies.map((item) => ({
+            ...item,
+            type: "technology",
+        })),
+        ...tooling.map((item) => ({
+            ...item,
+            type: "tooling",
+        })),
+    ];
+
+    const filteredItems =
         usageFilter === "All"
-            ? technologies
-            : technologies.filter(
-                (technology) => technology.usage === usageFilter
+            ? items
+            : items.filter(
+                (item) => item.usage === usageFilter
             );
 
-    if (isLoading) {
-        return <p>Technologies loading...</p>;
+    if (technologiesLoading || toolingLoading) {
+        return <p>Stack loading...</p>;
     }
 
-    if (isError) {
-        return <p>Technologies could not be loaded.</p>;
+    if (technologiesError || toolingError) {
+        return <p>Stack could not be loaded.</p>;
     }
 
     return (
@@ -49,7 +71,7 @@ export default function TechnologySection() {
 
                 <div
                     className="webstack-filters"
-                    aria-label="Filter technologieën"
+                    aria-label="Filter stack"
                 >
                     {filters.map((filter) => (
                         <button
@@ -60,18 +82,20 @@ export default function TechnologySection() {
                                     ? "webstack-filter--active"
                                     : ""
                             }`}
-                            onClick={() => setUsageFilter(filter.value)}
+                            onClick={() =>
+                                setUsageFilter(filter.value)
+                            }
                         >
-    <span className="webstack-filter__content">
-        <span
-            className="webstack-filter__highlight"
-            aria-hidden="true"
-        />
+                            <span className="webstack-filter__content">
+                                <span
+                                    className="webstack-filter__highlight"
+                                    aria-hidden="true"
+                                />
 
-        <span className="webstack-filter__label">
-            [ {filter.label} ]
-        </span>
-    </span>
+                                <span className="webstack-filter__label">
+                                    [ {filter.label} ]
+                                </span>
+                            </span>
                         </button>
                     ))}
                 </div>
@@ -80,24 +104,21 @@ export default function TechnologySection() {
                     className="webstack-grid"
                     aria-label="Webstack"
                 >
-                    {filteredTechnologies.map((technology) => (
+                    {filteredItems.map((item) => (
                         <li
-                            key={technology.id}
+                            key={`${item.type}-${item.id}`}
                             className="webstack-item"
                         >
-                            <figure>
-                                {technology.media && (
-                                    <img
-                                        src={technology.media.path}
-                                        alt={technology.media.altText}
-                                        loading="lazy"
-                                    />
-                                )}
-
-                                <figcaption>
-                                    {technology.name}
-                                </figcaption>
-                            </figure>
+                            <Badge
+                                variant={
+                                    item.type === "technology"
+                                        ? BadgeVariant.TECHNOLOGY
+                                        : BadgeVariant.TOOLING
+                                }
+                                media={item.media}
+                            >
+                                {item.name}
+                            </Badge>
                         </li>
                     ))}
                 </ul>
