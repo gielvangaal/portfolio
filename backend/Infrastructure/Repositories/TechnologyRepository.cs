@@ -16,7 +16,7 @@ public class TechnologyRepository : ITechnologyRepository
     }
 
     public async Task<IReadOnlyCollection<Technology>> GetAllAsync(
-        TechnologyUsage? usage)
+        CapabilityUsage? usage)
     {
         var query = _context.Technologies
             .AsNoTracking()

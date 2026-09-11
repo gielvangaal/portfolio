@@ -12,6 +12,7 @@ public class ToolingMapper : IToolingMapper
         {
             Id = tooling.Id,
             Name = tooling.Name,
+            Usage = tooling.Usage.ToString(),
 
             Media = tooling.Media is null
                 ? null

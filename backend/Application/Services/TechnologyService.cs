@@ -18,7 +18,7 @@ public class TechnologyService : ITechnologyService
     }
 
     public async Task<IReadOnlyCollection<TechnologyResponse>> GetAllAsync(
-        TechnologyUsage? usage)
+        CapabilityUsage? usage)
     {
         var technologies =
             await _technologyRepository.GetAllAsync(usage);
