@@ -19,7 +19,7 @@ public class TechnologyController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<IReadOnlyCollection<TechnologyResponse>>> GetAll(
-        [FromQuery] TechnologyUsage? usage)
+        [FromQuery] CapabilityUsage? usage)
     {
         var technologies =
             await _technologyService.GetAllAsync(usage);

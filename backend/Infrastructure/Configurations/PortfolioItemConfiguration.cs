@@ -63,7 +63,7 @@ public class PortfolioItemConfiguration
             .WithMany();
 
         builder.HasMany(x => x.Tooling)
-            .WithMany();
+            .WithMany(x => x.PortfolioItems);
 
         builder.HasIndex(x => x.ProjectDate);
     }

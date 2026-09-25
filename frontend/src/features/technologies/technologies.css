@@ -10,87 +10,22 @@
     text-align: center;
 }
 
-.webstack-header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5rem;
-}
-
-.webstack-header h2 {
-    margin: 0;
-
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.webstack-header h2 span {
-    display: inline-block;
-
-    padding: 0.35rem 0.65rem;
-
-    background-color: var(--color-primary-container);
-}
-
-.webstack-grid {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(90px, 1fr)
-    );
-
-    gap: 2rem 1.5rem;
-
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.webstack-item {
-    min-width: 0;
-}
-
-.webstack-item figure {
+.webstack-filter-groups {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    margin: 0;
-
-    text-align: center;
-}
-
-.webstack-item img {
-    width: 2.25rem;
-    height: 2.25rem;
-
-    margin-bottom: 0.5rem;
-
-    object-fit: contain;
-
-    filter: grayscale(100%);
-}
-
-.webstack-item figcaption {
-    font-size: 0.8rem;
+    gap: 0.35rem;
+    margin: 1rem 0 1.5rem;
 }
 
 .webstack-filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 1rem;
-
-    margin: 1rem 0 2rem;
 }
 
 .webstack-filter {
     padding: 0;
-
     border: 0;
     background: transparent;
 
@@ -105,25 +40,20 @@
 
 .webstack-filter__content {
     position: relative;
-
     display: inline-block;
-
     padding: 0.25rem 0;
     font-weight: 600;
 }
 
 .webstack-filter__label {
     position: relative;
-
     z-index: 1;
 }
 
 .webstack-filter__highlight {
     position: absolute;
-
     left: -5%;
     bottom: -25%;
-
     width: 110%;
     height: 25%;
 
@@ -135,4 +65,57 @@
 
 .webstack-filter--active .webstack-filter__highlight {
     display: block;
+}
+
+.webstack-filter:focus-visible {
+    outline: 2px solid var(--color-on-background);
+    outline-offset: 4px;
+}
+
+.webstack-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+
+    color: var(--color-on-surface);
+    font-size: 0.7rem;
+}
+
+.webstack-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.webstack-legend__marker {
+    width: 0.35rem;
+    height: 0.35rem;
+    box-sizing: border-box;
+}
+
+.webstack-legend__marker--technology {
+    background-color: var(--color-on-surface);
+}
+
+.webstack-legend__marker--tooling {
+    border: 1px solid var(--color-on-surface);
+    transform: rotate(45deg);
+}
+
+.webstack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem 1.5rem;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.webstack-grid__item {
+    display: flex;
+    justify-content: center;
 }

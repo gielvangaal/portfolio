@@ -8,7 +8,7 @@ public class Technology
 
     public required string Name { get; set; }
 
-    public TechnologyUsage Usage { get; set; }
+    public CapabilityUsage Usage { get; set; }
 
     public int? MediaId { get; set; }
     public Media? Media { get; set; }

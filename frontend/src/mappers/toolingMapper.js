@@ -6,6 +6,7 @@ export function mapTooling(data) {
     return {
         id: data.id,
         name: data.name ?? "",
+        usage: data.usage ?? "",
         media: data.media
             ? {
                 path: data.media.path ?? "",

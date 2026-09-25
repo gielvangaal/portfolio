@@ -6,5 +6,5 @@ namespace Application.Interfaces;
 public interface ITechnologyService
 {
     Task<IReadOnlyCollection<TechnologyResponse>> GetAllAsync(
-        TechnologyUsage? usage);
+        CapabilityUsage? usage);
 }

@@ -1,6 +1,6 @@
 namespace Domain.Enums;
 
-public enum TechnologyUsage
+public enum CapabilityUsage
 {
     Daily,
     Regular,

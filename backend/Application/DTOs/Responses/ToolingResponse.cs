@@ -6,5 +6,7 @@ public class ToolingResponse
 
     public string Name { get; set; } = string.Empty;
 
+    public string Usage { get; set; } = string.Empty;
+
     public MediaResponse? Media { get; set; }
 }

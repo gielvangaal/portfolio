@@ -14,6 +14,9 @@ public class ToolingConfiguration : IEntityTypeConfiguration<Tooling>
             .IsRequired()
             .HasMaxLength(150);
 
+        builder.Property(x => x.Usage)
+            .IsRequired();
+
         builder.HasIndex(x => x.Name)
             .IsUnique();
 
