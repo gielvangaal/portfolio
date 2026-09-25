@@ -9,6 +9,7 @@ import Badge, {
 import Header from "../../components/ui/Header.jsx";
 
 import "./technologies.css";
+import WebstackItem from "../../components/ui/WebstackItem.jsx";
 
 export default function TechnologySection() {
     const {
@@ -23,6 +24,8 @@ export default function TechnologySection() {
         isError: toolingError,
     } = useTooling();
 
+    const [usageFilter, setUsageFilter] = useState("Daily");
+
     const filters = [
         { value: "All", label: "Alles" },
         { value: "Daily", label: "Dagelijks" },
@@ -31,15 +34,13 @@ export default function TechnologySection() {
         { value: "Past", label: "Lang geleden" },
     ];
 
-    const [usageFilter, setUsageFilter] = useState("Daily");
-
     const items = [
-        ...technologies.map((item) => ({
-            ...item,
+        ...technologies.map((technology) => ({
+            ...technology,
             type: "technology",
         })),
-        ...tooling.map((item) => ({
-            ...item,
+        ...tooling.map((tool) => ({
+            ...tool,
             type: "tooling",
         })),
     ];
@@ -107,18 +108,9 @@ export default function TechnologySection() {
                     {filteredItems.map((item) => (
                         <li
                             key={`${item.type}-${item.id}`}
-                            className="webstack-item"
+                            className="webstack-grid__item"
                         >
-                            <Badge
-                                variant={
-                                    item.type === "technology"
-                                        ? BadgeVariant.TECHNOLOGY
-                                        : BadgeVariant.TOOLING
-                                }
-                                media={item.media}
-                            >
-                                {item.name}
-                            </Badge>
+                            <WebstackItem item={item} />
                         </li>
                     ))}
                 </ul>
