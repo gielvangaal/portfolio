@@ -22,37 +22,25 @@ const usageFilters = [
     { value: "Past", label: "Lang geleden" },
 ];
 
-function FilterGroup({ label, filters, selected, onSelect }) {
+function FilterSelect({ label, filters, selected, onSelect }) {
     return (
-        <div
-            className="webstack-filters"
-            role="group"
-            aria-label={label}
-        >
-            {filters.map((filter) => (
-                <button
-                    key={filter.value}
-                    type="button"
-                    className={`webstack-filter ${
-                        selected === filter.value
-                            ? "webstack-filter--active"
-                            : ""
-                    }`}
-                    aria-pressed={selected === filter.value}
-                    onClick={() => onSelect(filter.value)}
-                >
-                    <span className="webstack-filter__content">
-                        <span
-                            className="webstack-filter__highlight"
-                            aria-hidden="true"
-                        />
-                        <span className="webstack-filter__label">
-                            [ {filter.label} ]
-                        </span>
-                    </span>
-                </button>
-            ))}
-        </div>
+        <label className="webstack-select">
+
+            <select
+                className="webstack-select__control"
+                value={selected}
+                onChange={(event) => onSelect(event.target.value)}
+            >
+                {filters.map((filter) => (
+                    <option
+                        key={filter.value}
+                        value={filter.value}
+                    >
+                        {filter.label}
+                    </option>
+                ))}
+            </select>
+        </label>
     );
 }
 
@@ -103,39 +91,20 @@ export default function TechnologySection() {
                 <Header as="h3">Webstack</Header>
 
                 <div className="webstack-filter-groups">
-                    <FilterGroup
-                        label="Filter op type"
+                    <FilterSelect
+                        label="Type"
                         filters={typeFilters}
                         selected={typeFilter}
                         onSelect={setTypeFilter}
                     />
 
-                    <FilterGroup
-                        label="Filter op gebruik"
+                    <FilterSelect
+                        label="Gebruik"
                         filters={usageFilters}
                         selected={usageFilter}
                         onSelect={setUsageFilter}
                     />
                 </div>
-
-                {typeFilter === "All" && (
-                    <div className="webstack-legend" aria-label="Legenda">
-                        <span>
-                            <span
-                                className="webstack-legend__marker webstack-legend__marker--technology"
-                                aria-hidden="true"
-                            />
-                            Tech
-                        </span>
-                        <span>
-                            <span
-                                className="webstack-legend__marker webstack-legend__marker--tooling"
-                                aria-hidden="true"
-                            />
-                            Tool
-                        </span>
-                    </div>
-                )}
 
                 {filteredItems.length > 0 ? (
                     <ul className="webstack-grid" aria-label="Webstack">
