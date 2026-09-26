@@ -1,6 +1,5 @@
 .softskills-section {
     padding: var(--space-2xl) var(--page-padding);
-
     background-color: var(--color-surface-container-high);
     text-align: center;
 }
@@ -8,34 +7,45 @@
 .softskills-container {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: var(--space-2xl);
-
-    background: var(--color-surface);
-    border: 1px solid var(--color-primary);
+    padding: var(--space-lg) 0;
 }
 
 .softskills-groups {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
     gap: var(--space-xl);
 
-    margin-top: var(--space-xl);
+    margin-top: var(--space-lg);
 }
 
 .softskills-group {
-    text-align: center;
+    padding: var(--space-xl);
+    background-color: var(--color-surface);
+    border-top: 3px solid var(--color-secondary);
+    text-align: left;
+
+    align-self: start;
 }
 
 .softskills-title {
     margin: 0 0 var(--space-lg);
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .softskills-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
     gap: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+    .softskills-groups {
+        grid-template-columns: 1fr;
+    }
 }

@@ -50,7 +50,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Regular,
             Categories = [frontend],
             Media = CreateImage(
-                "/media/technologies/html5.webp",
+                "/media/webstack/html5.webp",
                 "HTML-logo")
         },
         new Technology
@@ -59,7 +59,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Regular,
             Categories = [frontend],
             Media = CreateImage(
-                "/media/technologies/css3.webp",
+                "/media/webstack/css3.webp",
                 "CSS-logo")
         },
         new Technology
@@ -67,7 +67,9 @@ public static class DatabaseSeeder
             Name = "SOAP",
             Usage = CapabilityUsage.Past,
             Categories = [backend],
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/soap-api.webp",
+            "SOAP API-logo")
         },
         new Technology
         {
@@ -75,7 +77,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [frontend],
             Media = CreateImage(
-                "/media/technologies/javascript.webp",
+                "/media/webstack/javascript.webp",
                 "JavaScript-logo")
         },
         new Technology
@@ -84,7 +86,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [frontend],
             Media = CreateImage(
-                "/media/technologies/bootstrap.webp",
+                "/media/webstack/bootstrap.webp",
                 "Bootstrap-logo")
         },
         new Technology
@@ -93,7 +95,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/php.webp",
+                "/media/webstack/php.webp",
                 "PHP-logo")
         },
         new Technology
@@ -102,7 +104,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Daily,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/mysql.webp",
+                "/media/webstack/mysql.webp",
                 "MySQL-logo")
         },
         new Technology
@@ -111,7 +113,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/kotlin.webp",
+                "/media/webstack/kotlin.webp",
                 "Kotlin-logo")
         },
         new Technology
@@ -120,7 +122,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/ktor.webp",
+                "/media/webstack/ktor.webp",
                 "Ktor-logo")
         },
         new Technology
@@ -129,7 +131,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/exposed.webp",
+                "/media/webstack/exposed.webp",
                 "Exposed-logo")
         },
         new Technology
@@ -138,7 +140,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Daily,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/python.webp",
+                "/media/webstack/python.webp",
                 "Python-logo")
         },
         new Technology
@@ -147,7 +149,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/django.webp",
+                "/media/webstack/django.webp",
                 "Django-logo")
         },
         new Technology
@@ -156,7 +158,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Daily,
             Categories = [devOps],
             Media = CreateImage(
-                "/media/technologies/docker.webp",
+                "/media/webstack/docker.webp",
                 "Docker-logo")
         },
         new Technology
@@ -165,7 +167,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/ffmpeg.webp",
+                "/media/webstack/ffmpeg.webp",
                 "FFmpeg-logo")
         },
         new Technology
@@ -174,7 +176,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/node-js.webp",
+                "/media/webstack/node-js.webp",
                 "Node.js-logo")
         },
         new Technology
@@ -183,7 +185,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Regular,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/rest-api.webp",
+                "/media/webstack/rest-api.webp",
                 "REST API-logo")
         },
         new Technology
@@ -192,7 +194,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Daily,
             Categories = [devOps],
             Media = CreateImage(
-                "/media/technologies/terminal.webp",
+                "/media/webstack/terminal.webp",
                 "Terminal-logo")
         },
         new Technology
@@ -201,7 +203,7 @@ public static class DatabaseSeeder
             Usage = CapabilityUsage.Occasional,
             Categories = [backend],
             Media = CreateImage(
-                "/media/technologies/uml.webp",
+                "/media/webstack/uml.webp",
                 "UML-logo")
         }
     );
@@ -449,7 +451,7 @@ public static class DatabaseSeeder
             Name = "Git",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
-                "/media/tooling/git.webp",
+                "/media/webstack/git.webp",
                 "Git-logo")
         },
         new Tooling
@@ -457,7 +459,7 @@ public static class DatabaseSeeder
             Name = "GitHub",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
-                "/media/technologies/github.webp",
+                "/media/webstack/github.webp",
                 "GitHub-logo")
         },
         new Tooling
@@ -465,7 +467,7 @@ public static class DatabaseSeeder
             Name = "GitHub Actions",
             Usage = CapabilityUsage.Regular,
             Media = CreateImage(
-                "/media/tooling/github-actions.webp",
+                "/media/webstack/github-actions.webp",
                 "GitHub Actions-logo")
         },
         new Tooling
@@ -473,7 +475,7 @@ public static class DatabaseSeeder
             Name = "VSCode",
             Usage = CapabilityUsage.Regular,
             Media = CreateImage(
-                "/media/technologies/vsc.webp",
+                "/media/webstack/vsc.webp",
                 "Visual Studio Code-logo")
         },
         new Tooling
@@ -481,7 +483,7 @@ public static class DatabaseSeeder
             Name = "Gimp",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/technologies/gimp.webp",
+                "/media/webstack/gimp.webp",
                 "GIMP-logo")
         },
         new Tooling
@@ -489,7 +491,7 @@ public static class DatabaseSeeder
             Name = "Figma",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/tooling/figma.webp",
+                "/media/webstack/figma.webp",
                 "Figma-logo")
         },
         new Tooling
@@ -497,7 +499,7 @@ public static class DatabaseSeeder
             Name = "phpMyAdmin",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
-                "/media/tooling/phpmyadmin.webp",
+                "/media/webstack/phpmyadmin.webp",
                 "phpMyAdmin-logo")
         },
         new Tooling
@@ -505,7 +507,7 @@ public static class DatabaseSeeder
             Name = "Gradle",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/tooling/gradle.webp",
+                "/media/webstack/gradle.webp",
                 "Gradle-logo")
         },
         new Tooling
@@ -513,7 +515,7 @@ public static class DatabaseSeeder
             Name = "Jira",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
-                "/media/tooling/jira.webp",
+                "/media/webstack/jira.webp",
                 "Jira-logo")
         },
         new Tooling
@@ -521,7 +523,7 @@ public static class DatabaseSeeder
             Name = "Confluence",
             Usage = CapabilityUsage.Regular,
             Media = CreateImage(
-                "/media/tooling/confluence.webp",
+                "/media/webstack/confluence.webp",
                 "Confluence-logo")
         },
         new Tooling
@@ -529,7 +531,7 @@ public static class DatabaseSeeder
             Name = "GitLab",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/tooling/gitlab.webp",
+                "/media/webstack/gitlab.webp",
                 "GitLab-logo")
         },
         new Tooling
@@ -537,7 +539,7 @@ public static class DatabaseSeeder
             Name = "Zendesk",
             Usage = CapabilityUsage.Past,
             Media = CreateImage(
-                "/media/tooling/zendesk.webp",
+                "/media/webstack/zendesk.webp",
                 "Zendesk-logo")
         },
         new Tooling
@@ -545,7 +547,7 @@ public static class DatabaseSeeder
             Name = "Postman",
             Usage = CapabilityUsage.Regular,
             Media = CreateImage(
-                "/media/tooling/postman.webp",
+                "/media/webstack/postman.webp",
                 "Postman-logo")
         },
         new Tooling
@@ -553,7 +555,7 @@ public static class DatabaseSeeder
             Name = "WinSCP",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/tooling/winscp.webp",
+                "/media/webstack/winscp.webp",
                 "WinSCP-logo")
         },
         new Tooling
@@ -561,7 +563,7 @@ public static class DatabaseSeeder
             Name = "Microsoft Dynamics 365",
             Usage = CapabilityUsage.Past,
             Media = CreateImage(
-                "/media/tooling/dynamics-365.webp",
+                "/media/webstack/microsoft-dynamics.webp",
                 "Microsoft Dynamics 365-logo")
         },
         new Tooling
@@ -569,7 +571,7 @@ public static class DatabaseSeeder
             Name = "Nginx",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
-                "/media/technologies/nginx.webp",
+                "/media/webstack/nginx.webp",
                 "Nginx-logo")
         },
         new Tooling
@@ -577,7 +579,7 @@ public static class DatabaseSeeder
             Name = "Gunicorn",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
-                "/media/technologies/gunicorn.webp",
+                "/media/webstack/gunicorn.webp",
                 "Gunicorn-logo")
         },
         new Tooling
@@ -585,50 +587,64 @@ public static class DatabaseSeeder
             Name = "Certbot",
             Usage = CapabilityUsage.Regular,
             Media = CreateImage(
-                "/media/technologies/certbot.webp",
+                "/media/webstack/certbot.webp",
                 "Certbot-logo")
         },
         new Tooling
         {
             Name = "SSH",
             Usage = CapabilityUsage.Daily,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/ssh.webp",
+                "SSH logo")
         },
         new Tooling
         {
             Name = "VPS",
             Usage = CapabilityUsage.Regular,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/vps.webp",
+                "VPS logo")
         },
         new Tooling
         {
             Name = "Microsoft Outlook",
             Usage = CapabilityUsage.Regular,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/microsoft-outlook.webp",
+                "Microsoft Outlook logo")
         },
         new Tooling
         {
             Name = "Microsoft Agenda",
             Usage = CapabilityUsage.Regular,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/microsoft-agenda.webp",
+                "Microsoft Agenda logo")
         },
         new Tooling
         {
             Name = "Microsoft Excel",
             Usage = CapabilityUsage.Regular,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/microsoft-excel.webp",
+                "Microsoft Excel logo")
         },
         new Tooling
         {
             Name = "Microsoft Word",
             Usage = CapabilityUsage.Regular,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/microsoft-word.webp",
+                "Microsoft Word logo")
         },
         new Tooling
         {
             Name = "Klantbeeld",
             Usage = CapabilityUsage.Past,
-            Media = null
+            Media = CreateImage(
+                "/media/webstack/placeholder.webp",
+                "Klantbeeld logo")
         }
     );
 
