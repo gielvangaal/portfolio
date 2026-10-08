@@ -7,19 +7,6 @@ import "./softskills.css";
 
 const softSkillGroups = [
     {
-        title: "Vaardigheden",
-        names: [
-            "Praktische instelling",
-            "Sociale vaardigheden",
-            "Zelfstandigheid",
-            "Nauwkeurig en exact",
-            "Plannen en structureren",
-            "Effectief communiceren",
-            "Snel leren en toepassen",
-            "Helder documenteren",
-        ],
-    },
-    {
         title: "Competenties",
         names: [
             "Oplossingsgericht denken",
@@ -31,6 +18,19 @@ const softSkillGroups = [
             "Kwaliteitsbewustzijn",
             "Flexibiliteit",
             "Samenwerken",
+        ],
+    },
+    {
+        title: "Vaardigheden",
+        names: [
+            "Praktische instelling",
+            "Sociale vaardigheden",
+            "Zelfstandigheid",
+            "Nauwkeurig en exact",
+            "Plannen en structureren",
+            "Effectief communiceren",
+            "Snel leren en toepassen",
+            "Helder documenteren",
         ],
     },
     {
