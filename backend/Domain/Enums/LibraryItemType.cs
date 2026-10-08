@@ -2,6 +2,7 @@ namespace Domain.Enums;
 
 public enum LibraryItemType
 {
-    Book,
-    Video
+    Book = 0,
+    Video = 1,
+    Music = 2
 }
