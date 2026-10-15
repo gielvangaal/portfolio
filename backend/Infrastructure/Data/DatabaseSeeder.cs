@@ -74,7 +74,7 @@ public static class DatabaseSeeder
         new Technology
         {
             Name = "JavaScript",
-            Usage = CapabilityUsage.Occasional,
+            Usage = CapabilityUsage.Regular,
             Categories = [frontend],
             Media = CreateImage(
                 "/media/webstack/javascript.webp",
@@ -190,12 +190,147 @@ public static class DatabaseSeeder
         },
         new Technology
         {
-            Name = "Terminal",
+            Name = "C#",
+            Usage = CapabilityUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/webstack/csharp.webp",
+                "C# logo")
+        },
+        new Technology
+        {
+            Name = ".NET",
+            Usage = CapabilityUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/webstack/dotnet.webp",
+                ".NET-logo")
+        },
+        new Technology
+        {
+            Name = "Blazor",
+            Usage = CapabilityUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/webstack/blazor.webp",
+                "Blazor-logo")
+        },
+        new Technology
+        {
+            Name = "MudBlazor",
+            Usage = CapabilityUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/webstack/mudblazor.webp",
+                "MudBlazor-logo")
+        },
+        new Technology
+        {
+            Name = ".NET MAUI",
+            Usage = CapabilityUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/webstack/dotnet-maui.webp",
+                ".NET-logo")
+        },
+        new Technology
+        {
+            Name = "ASP.NET Core",
+            Usage = CapabilityUsage.Regular,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/webstack/asp-dotnet-core.webp",
+                "ASP.NET-logo")
+        },
+        new Technology
+        {
+            Name = "Jetpack Compose",
+            Usage = CapabilityUsage.Occasional,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/webstack/jetpack-compose.webp",
+                "Jetpack-compose-logo")
+        },
+        new Technology
+        {
+            Name = "Linux",
             Usage = CapabilityUsage.Daily,
             Categories = [devOps],
             Media = CreateImage(
-                "/media/webstack/terminal.webp",
-                "Terminal-logo")
+                "/media/webstack/linux.webp",
+                "Linux-logo")
+        },
+        new Technology
+        {
+            Name = "RHEL",
+            Usage = CapabilityUsage.Regular,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/rhel.webp",
+                "Rhel-logo")
+        },
+        new Technology
+        {
+            Name = "Ansible",
+            Usage = CapabilityUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/ansible.webp",
+                "Ansible-logo")
+        },
+        new Technology
+        {
+            Name = "Kubernetes",
+            Usage = CapabilityUsage.Regular,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/kubernetes.webp",
+                "Kubernetes-logo")
+        },
+        new Technology
+        {
+            Name = "K3s",
+            Usage = CapabilityUsage.Regular,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/k3s.webp",
+                "K3s-logo")
+        },
+        new Technology
+        {
+            Name = "Cilium",
+            Usage = CapabilityUsage.Regular,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/cilium.webp",
+                "Cilium-logo")
+        },
+        new Technology
+        {
+            Name = "Elasticsearch",
+            Usage = CapabilityUsage.Daily,
+            Categories = [backend],
+            Media = CreateImage(
+                "/media/webstack/elasticsearch.webp",
+                "Elasticsearch-logo")
+        },
+        new Technology
+        {
+            Name = "Bash",
+            Usage = CapabilityUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/bash.webp",
+                "Bash-logo")
+        },
+        new Technology
+        {
+            Name = "Selinux",
+            Usage = CapabilityUsage.Occasional,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/selinux.webp",
+                "Selinux-logo")
         },
         new Technology
         {
@@ -205,6 +340,15 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/webstack/uml.webp",
                 "UML-logo")
+        },
+        new Technology
+        {
+            Name = "React",
+            Usage = CapabilityUsage.Regular,
+            Categories = [frontend],
+            Media = CreateImage(
+                "/media/webstack/react.webp",
+                "React-logo")
         }
     );
 
@@ -448,6 +592,86 @@ public static class DatabaseSeeder
     context.Tooling.AddRange(
         new Tooling
         {
+            Name = "ChatGPT",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/chatgpt.webp",
+                "ChatGPT logo")
+        },
+        new Tooling
+        {
+            Name = "Terminal",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/terminal.webp",
+                "Terminal-logo")
+        },
+        new Tooling
+        {
+            Name = "Android Studio",
+            Usage = CapabilityUsage.Occasional,
+            Media = CreateImage(
+                "/media/webstack/android-studio.webp",
+                "Android Studio logo")
+        },
+        new Tooling
+        {
+            Name = "JetBrains Rider",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/jetbrains-rider.webp",
+                "JetBrains Rider logo")
+        },
+        new Tooling
+        {
+            Name = "JetBrains WebStorm",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/jetbrains-webstorm.webp",
+                "JetBrains WebStorm logo")
+        },
+        new Tooling
+        {
+            Name = "LazyVim",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/lazyvim.webp",
+                "LazyVim logo")
+        },
+        new Tooling
+        {
+            Name = "AWX",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/awx.webp",
+                "AWX logo")
+        },
+        new Tooling
+        {
+            Name = "Azure DevOps",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/azure-devops.webp",
+                "Azure DevOps logo")
+        },
+        new Tooling
+        {
+            Name = "Harbor",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/harbor.webp",
+                "Harbor logo")
+        },
+        new Tooling
+        {
+            Name = "Zabbix",
+            Usage = CapabilityUsage.Daily,
+            Media = CreateImage(
+                "/media/webstack/zabbix.webp",
+                "Zabbix logo")
+        },
+        new Tooling
+        {
             Name = "Git",
             Usage = CapabilityUsage.Daily,
             Media = CreateImage(
@@ -473,7 +697,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "VSCode",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
                 "/media/webstack/vsc.webp",
                 "Visual Studio Code-logo")
@@ -488,6 +712,14 @@ public static class DatabaseSeeder
         },
         new Tooling
         {
+            Name = "Photopea",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/photopea.webp",
+                "Photopea-logo")
+        },
+        new Tooling
+        {
             Name = "Figma",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
@@ -497,7 +729,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "phpMyAdmin",
-            Usage = CapabilityUsage.Daily,
+            Usage = CapabilityUsage.Regular,
             Media = CreateImage(
                 "/media/webstack/phpmyadmin.webp",
                 "phpMyAdmin-logo")
@@ -553,7 +785,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "WinSCP",
-            Usage = CapabilityUsage.Occasional,
+            Usage = CapabilityUsage.Past,
             Media = CreateImage(
                 "/media/webstack/winscp.webp",
                 "WinSCP-logo")
@@ -569,7 +801,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Nginx",
-            Usage = CapabilityUsage.Daily,
+            Usage = CapabilityUsage.Regular,
             Media = CreateImage(
                 "/media/webstack/nginx.webp",
                 "Nginx-logo")
@@ -577,7 +809,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Gunicorn",
-            Usage = CapabilityUsage.Occasional,
+            Usage = CapabilityUsage.Past,
             Media = CreateImage(
                 "/media/webstack/gunicorn.webp",
                 "Gunicorn-logo")
@@ -585,7 +817,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Certbot",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
                 "/media/webstack/certbot.webp",
                 "Certbot-logo")
@@ -609,7 +841,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Microsoft Outlook",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Daily,
             Media = CreateImage(
                 "/media/webstack/microsoft-outlook.webp",
                 "Microsoft Outlook logo")
@@ -617,7 +849,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Microsoft Agenda",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Daily,
             Media = CreateImage(
                 "/media/webstack/microsoft-agenda.webp",
                 "Microsoft Agenda logo")
@@ -625,7 +857,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Microsoft Excel",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Daily,
             Media = CreateImage(
                 "/media/webstack/microsoft-excel.webp",
                 "Microsoft Excel logo")
@@ -633,7 +865,7 @@ public static class DatabaseSeeder
         new Tooling
         {
             Name = "Microsoft Word",
-            Usage = CapabilityUsage.Regular,
+            Usage = CapabilityUsage.Daily,
             Media = CreateImage(
                 "/media/webstack/microsoft-word.webp",
                 "Microsoft Word logo")
@@ -645,6 +877,14 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/webstack/placeholder.webp",
                 "Klantbeeld logo")
+        },
+        new Tooling
+        {
+            Name = "PowerBI",
+            Usage = CapabilityUsage.Occasional,
+            Media = CreateImage(
+                "/media/webstack/powerbi.webp",
+                "PowerBI logo")
         }
     );
 
@@ -663,7 +903,7 @@ public static class DatabaseSeeder
             Name = "Red Hat",
             Type = OrganizationType.TrainingProvider,
             Media = CreateImage(
-                "/media/education/redhat.webp",
+                "/media/education/rhel.webp",
                 "Red Hat logo")
         },
         new Organization
@@ -705,6 +945,11 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/work-experience/bcs.webp",
                 "BCS HR Solutions logo")
+        },
+        new Organization
+        {
+            Name = "Gemeente Den Haag",
+            Type = OrganizationType.Employer
         },
         new Organization
         {
@@ -877,24 +1122,22 @@ public static class DatabaseSeeder
     var careBotsFrontendNl = new PortfolioItem
     {
         Language = "nl",
-        Slug = "carebots-frontend",
+        Slug = "carebots",
 
-        Title = "CareBots Frontend",
+        Title = "CareBots",
 
         CardDescription =
-            "Responsive website voor een concept rond zorgrobots, ontwikkeld met HTML, CSS en JavaScript.",
+            "Webapplicatie en beheersysteem voor zorgrobots, gebouwd met HTML, CSS, PHP en MySQL.",
 
         Description =
-            "CareBots ontstond tijdens het eerste project van mijn opleiding Informatica. " +
-            "Binnen een team ontwikkelden we een concept voor robots die zorgmedewerkers ondersteunen en werkten we " +
-            "dit uit van ondernemingsplan en functioneel ontwerp tot een werkende website. " +
-            "Mijn focus lag op het vertalen van het ontwerp naar een responsive frontend, waarbij ik werkte met " +
-            "HTML, CSS, JavaScript en Bootstrap. Tijdens het project leerde ik veel over samenwerken, requirements, " +
-            "Git-workflows en het maken van technische keuzes binnen een gezamenlijk product.",
+            "CareBots begon als een teamproject rond zorgrobots. We ontwikkelden eerst een responsive website " +
+            "en bouwden later een beheersysteem met gebruikersrollen en databasefunctionaliteit. " +
+            "Ik werkte aan de frontend, PHP/MySQL-backend en herbruikbare componenten, " +
+            "met aandacht voor ontwerp, samenwerking, testing en CI/CD.",
 
         ProjectDate = new DateOnly(2024, 9, 1),
         ProjectType = ProjectType.Education,
-        Role = "Frontend Developer",
+        Role = "Full-stack Developer",
         TeamSize = null,
         Duration = null,
 
@@ -903,254 +1146,128 @@ public static class DatabaseSeeder
 
         Categories =
         [
-            frontend
-        ],
-
-        Technologies =
-        [
-            html,
-            css,
-            javascript,
-            bootstrap
-        ],
-
-        Skills =
-        [
-            skills["UI/UX"],
-            skills["Projectmatig werken"],
-            skills["Samenwerken"],
-            skills["Effectief communiceren"],
-            skills["Creativiteit"],
-            skills["Flexibiliteit"]
-        ],
-
-        Tooling =
-        [
-            tooling["Figma"],
-            tooling["Git"],
-            tooling["GitHub"],
-            tooling["VSCode"],
-            tooling["Gimp"]
-        ],
-
-        Media = CreateMediaCollection(
-            careBotsFrontendMain,
-            careBotsFrontendAbout,
-            careBotsFrontendFaq)
-    };
-
-    var careBotsFrontendEn = new PortfolioItem
-    {
-        Language = "en",
-        Slug = "carebots-frontend",
-
-        Title = "CareBots Frontend",
-
-        CardDescription =
-            "Responsive website for a healthcare robotics concept, built with HTML, CSS and JavaScript.",
-
-        Description =
-            "CareBots was created during the first project of my Computer Science degree. " +
-            "As a team, we developed a concept for robots designed to support healthcare professionals and transformed " +
-            "the idea from a business plan and functional design into a working website. " +
-            "My focus was on translating the design into a responsive frontend using HTML, CSS, JavaScript and Bootstrap. " +
-            "The project taught me a great deal about collaboration, requirements, Git workflows and making technical " +
-            "decisions within a shared software project.",
-
-        ProjectDate = new DateOnly(2024, 9, 1),
-        ProjectType = ProjectType.Education,
-        Role = "Frontend Developer",
-        TeamSize = null,
-        Duration = null,
-
-        GitHubUrl = null,
-        LiveSiteUrl = "https://fdd.infra.iantiemann.nl",
-
-        Categories =
-        [
-            frontend
-        ],
-
-        Technologies =
-        [
-            html,
-            css,
-            javascript,
-            bootstrap
-        ],
-
-        Skills =
-        [
-            skills["UI/UX"],
-            skills["Projectmatig werken"],
-            skills["Samenwerken"],
-            skills["Effectief communiceren"],
-            skills["Creativiteit"],
-            skills["Flexibiliteit"]
-        ],
-
-        Tooling =
-        [
-            tooling["Figma"],
-            tooling["Git"],
-            tooling["GitHub"],
-            tooling["VSCode"],
-            tooling["Gimp"]
-        ],
-
-        Media = CreateMediaCollection(
-            careBotsFrontendMain,
-            careBotsFrontendAbout,
-            careBotsFrontendFaq)
-    };
-
-    /*
-     * CareBots backend
-     *
-     * TODO: exacte projectmaand controleren.
-     */
-
-    var careBotsBackendNl = new PortfolioItem
-    {
-        Language = "nl",
-        Slug = "carebots-backend",
-
-        Title = "CareBots Backend",
-
-        CardDescription =
-            "Backend voor een robotbeheersysteem met PHP, MySQL, CI/CD en role-based functionaliteit.",
-
-        Description =
-            "In een vervolgproject op CareBots ontwikkelden we een backend voor het beheren van robots en gebruikers. " +
-            "Gebruikers konden afhankelijk van hun rol verschillende gegevens bekijken en beheren. " +
-            "Tijdens dit project werkte ik met PHP, MySQL en JavaScript, ontwierp en implementeerde ik databasefunctionaliteit " +
-            "en werkte ik objectgeoriënteerd. Daarnaast ontwikkelde ik een herbruikbare componentlibrary en werkten we " +
-            "volgens Agile Scrum met Jira en een CI/CD-pipeline. Het project leerde me vooral hoe belangrijk heldere " +
-            "requirements, betrouwbare functies en goede samenwerking zijn wanneer meerdere ontwikkelaars aan hetzelfde systeem werken.",
-
-        ProjectDate = new DateOnly(2025, 5, 1),
-        ProjectType = ProjectType.Education,
-        Role = "Backend Developer",
-        TeamSize = null,
-        Duration = null,
-
-        GitHubUrl = null,
-        LiveSiteUrl = null,
-
-        Categories =
-        [
+            frontend,
             backend,
             devOps
         ],
 
         Technologies =
         [
-            php,
-            mysql,
             html,
             css,
             javascript,
+            bootstrap,
+            php,
+            mysql,
             docker
         ],
 
         Skills =
         [
-            skills["Functioneel programmeren"],
-            skills["Software testing"],
-            skills["Agile werken"],
-            skills["Scrum"],
-            skills["Design patterns"],
+            skills["UI/UX"],
             skills["Projectmatig werken"],
-            skills["Systeemontwerp"],
+            skills["Samenwerken"],
+            skills["Effectief communiceren"],
+            skills["Creativiteit"],
+            skills["Flexibiliteit"],
             skills["Databaseontwerp"],
-            skills["CI/CD-pipelines"],
-            skills["Objectgeoriënteerd programmeren"],
-            skills["Helder documenteren"],
-            skills["Samenwerken"]
+            skills["Software testing"],
+            skills["Scrum"]
         ],
 
         Tooling =
         [
+            tooling["Figma"],
             tooling["Git"],
             tooling["GitHub"],
+            tooling["VSCode"],
+            tooling["Gimp"],
             tooling["Jira"],
-            tooling["phpMyAdmin"]
+            tooling["phpMyAdmin"],
+            tooling["ChatGPT"]
         ],
 
         Media = CreateMediaCollection(
+            careBotsFrontendMain,
+            careBotsFrontendAbout,
+            careBotsFrontendFaq,
             careBotsBackendDashboard,
             careBotsBackendUsers,
             careBotsBackendContact)
     };
 
-    var careBotsBackendEn = new PortfolioItem
+    var careBotsFrontendEn = new PortfolioItem
     {
         Language = "en",
-        Slug = "carebots-backend",
+        Slug = "carebots",
 
-        Title = "CareBots Backend",
+        Title = "CareBots",
 
         CardDescription =
-            "Backend for a robot management system using PHP, MySQL, CI/CD and role-based functionality.",
+            "Website and management system for healthcare robots, built with HTML, CSS, PHP and MySQL.",
 
         Description =
-            "In a follow-up CareBots project, we developed a backend for managing robots and users. " +
-            "Depending on their role, users could view and manage different parts of the system. " +
-            "I worked with PHP, MySQL and JavaScript, designed and implemented database functionality and applied " +
-            "object-oriented programming principles. I also developed a reusable component library while the team " +
-            "worked with Agile Scrum, Jira and a CI/CD pipeline. The project taught me the importance of clear " +
-            "requirements, reliable reusable code and good communication when several developers work on the same system.",
+            "CareBots started as a team project focused on healthcare robots. We first developed a responsive website " +
+            "and later added a management system with user roles and database functionality. " +
+            "I worked on the frontend, PHP/MySQL backend and reusable components, " +
+            "with a focus on design, collaboration, testing and CI/CD.",
 
-        ProjectDate = new DateOnly(2025, 5, 1),
+        ProjectDate = new DateOnly(2024, 9, 1),
         ProjectType = ProjectType.Education,
-        Role = "Backend Developer",
+        Role = "Full-stack Developer",
         TeamSize = null,
         Duration = null,
 
         GitHubUrl = null,
-        LiveSiteUrl = null,
+        LiveSiteUrl = "https://fdd.infra.iantiemann.nl",
 
         Categories =
         [
+            frontend,
             backend,
             devOps
         ],
 
         Technologies =
         [
-            php,
-            mysql,
             html,
             css,
             javascript,
+            bootstrap,
+            php,
+            mysql,
             docker
         ],
 
         Skills =
         [
-            skills["Functioneel programmeren"],
-            skills["Software testing"],
-            skills["Agile werken"],
-            skills["Scrum"],
-            skills["Design patterns"],
+            skills["UI/UX"],
             skills["Projectmatig werken"],
-            skills["Systeemontwerp"],
+            skills["Samenwerken"],
+            skills["Effectief communiceren"],
+            skills["Creativiteit"],
+            skills["Flexibiliteit"],
             skills["Databaseontwerp"],
-            skills["CI/CD-pipelines"],
-            skills["Objectgeoriënteerd programmeren"],
-            skills["Helder documenteren"],
-            skills["Samenwerken"]
+            skills["Software testing"],
+            skills["Scrum"]
         ],
 
         Tooling =
         [
+            tooling["Figma"],
             tooling["Git"],
             tooling["GitHub"],
+            tooling["VSCode"],
+            tooling["Gimp"],
             tooling["Jira"],
-            tooling["phpMyAdmin"]
+            tooling["phpMyAdmin"],
+            tooling["ChatGPT"]
         ],
 
         Media = CreateMediaCollection(
+            careBotsFrontendMain,
+            careBotsFrontendAbout,
+            careBotsFrontendFaq,
             careBotsBackendDashboard,
             careBotsBackendUsers,
             careBotsBackendContact)
@@ -1170,18 +1287,17 @@ public static class DatabaseSeeder
         Title = "JoyRide",
 
         CardDescription =
-            "REST-API voor een autoverhuurplatform, ontwikkeld met Kotlin, Ktor en MySQL.",
+            "Autoverhuurapp met Android-frontend en Kotlin/Ktor REST API.",
 
         Description =
-            "JoyRide is een backend-API voor een autoverhuurplatform die ik ontwikkelde met Kotlin en Ktor. " +
-            "De applicatie is opgebouwd rond controllers, services, repositories en mappers en gebruikt Exposed als ORM " +
-            "voor de communicatie met MySQL. We werkten in wekelijkse sprints en gebruikten een OTAP-werkwijze met " +
-            "staging, acceptatie en productie. Tijdens het project lag veel nadruk op foutafhandeling, duidelijke API-responses, " +
-            "architectuur en het maken van pragmatische keuzes om binnen de beschikbare tijd een betrouwbaar systeem op te leveren.",
+            "JoyRide is een autoverhuurapp met een Android-frontend in Kotlin en Jetpack Compose " +
+            "en een REST API in Kotlin/Ktor. De backend gebruikt Exposed en MySQL en is opgebouwd " +
+            "in controllers, services en repositories. Binnen het team werkten we in sprints aan " +
+            "de integratie, foutafhandeling en een overzichtelijke softwarearchitectuur.",
 
         ProjectDate = new DateOnly(2025, 11, 1),
         ProjectType = ProjectType.Education,
-        Role = "Backend Developer",
+        Role = "Software Developer",
         TeamSize = null,
         Duration = null,
 
@@ -1190,6 +1306,7 @@ public static class DatabaseSeeder
 
         Categories =
         [
+            frontend,
             backend,
             devOps
         ],
@@ -1200,7 +1317,9 @@ public static class DatabaseSeeder
             ktor,
             exposed,
             mysql,
-            docker
+            docker,
+            technologies["Jetpack Compose"],
+            technologies["REST API"]
         ],
 
         Skills =
@@ -1222,7 +1341,9 @@ public static class DatabaseSeeder
             tooling["Git"],
             tooling["GitHub"],
             tooling["Jira"],
-            tooling["Gradle"]
+            tooling["Gradle"],
+            tooling["Android Studio"],
+            tooling["ChatGPT"]
         ],
 
         Media = CreateMediaCollection(
@@ -1239,18 +1360,17 @@ public static class DatabaseSeeder
         Title = "JoyRide",
 
         CardDescription =
-            "REST API for a car rental platform, developed with Kotlin, Ktor and MySQL.",
+            "Car rental application with an Android frontend and Kotlin/Ktor REST API.",
 
         Description =
-            "JoyRide is a backend API for a car rental platform developed with Kotlin and Ktor. " +
-            "The application is structured around controllers, services, repositories and mappers and uses Exposed " +
-            "as its ORM for communication with MySQL. We worked in weekly sprints and followed a DTAP workflow with " +
-            "staging, acceptance and production environments. The project focused strongly on error handling, clear API responses, " +
-            "software architecture and making pragmatic decisions to deliver a reliable system within a fixed deadline.",
+            "JoyRide is a car rental application with an Android frontend in Kotlin and Jetpack Compose " +
+            "and a Kotlin/Ktor REST API. The backend uses Exposed and MySQL, organized into controllers, " +
+            "services and repositories. Working in sprints, our team focused on integration, " +
+            "error handling and maintainable software architecture.",
 
         ProjectDate = new DateOnly(2025, 11, 1),
         ProjectType = ProjectType.Education,
-        Role = "Backend Developer",
+        Role = "Software Developer",
         TeamSize = null,
         Duration = null,
 
@@ -1259,6 +1379,7 @@ public static class DatabaseSeeder
 
         Categories =
         [
+            frontend,
             backend,
             devOps
         ],
@@ -1269,7 +1390,9 @@ public static class DatabaseSeeder
             ktor,
             exposed,
             mysql,
-            docker
+            docker,
+            technologies["Jetpack Compose"],
+            technologies["REST API"]
         ],
 
         Skills =
@@ -1291,7 +1414,9 @@ public static class DatabaseSeeder
             tooling["Git"],
             tooling["GitHub"],
             tooling["Jira"],
-            tooling["Gradle"]
+            tooling["Gradle"],
+            tooling["Android Studio"],
+            tooling["ChatGPT"]
         ],
 
         Media = CreateMediaCollection(
@@ -1586,15 +1711,82 @@ public static class DatabaseSeeder
             gielNews)
     };
 
+    // Recent school projects (dates are approximate and should be confirmed).
+    var cinenetNl = new PortfolioItem
+    {
+        Language = "nl",
+        Slug = "cinenet",
+        Title = "Cine.NET",
+        CardDescription = "Bioscoopapplicatie met C#, Blazor en MudBlazor.",
+        Description = "Cine.NET is een bioscoopapplicatie met films, voorstellingen, stoelkeuze en een beheeromgeving. Binnen een team werkte ik aan de frontend in Blazor en MudBlazor en de koppeling met een .NET API. We organiseerden het werk met Scrum en Jira.",
+        ProjectDate = new DateOnly(2026, 2, 1),
+        ProjectType = ProjectType.Education,
+        Role = "Full-stack Developer",
+        Categories = [frontend, backend],
+        Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies["ASP.NET Core"], technologies["REST API"]],
+        Skills = [skills["Software testing"], skills["Scrum"], skills["Samenwerken"], skills["Softwarearchitectuur"]],
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+    };
+
+    var cinenetEn = new PortfolioItem
+    {
+        Language = "en",
+        Slug = "cinenet",
+        Title = "Cine.NET",
+        CardDescription = "Cinema booking application built with C#, Blazor and MudBlazor.",
+        Description = "Cine.NET is a cinema booking application featuring movies, screenings, seat selection and an administration interface. As part of a team I worked on a Blazor/MudBlazor frontend and its integration with a .NET API, using Scrum and Jira.",
+        ProjectDate = new DateOnly(2026, 2, 1),
+        ProjectType = ProjectType.Education,
+        Role = "Full-stack Developer",
+        Categories = [frontend, backend],
+        Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies["ASP.NET Core"], technologies["REST API"]],
+        Skills = [skills["Software testing"], skills["Scrum"], skills["Samenwerken"], skills["Softwarearchitectuur"]],
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+    };
+
+    var soulsearchNl = new PortfolioItem
+    {
+        Language = "nl",
+        Slug = "soulsearch",
+        Title = "SoulSearch",
+        CardDescription = "Cross-platform applicatie met .NET MAUI Blazor Hybrid en een API.",
+        Description = "SoulSearch is een cross-platform applicatie ontwikkeld met C#, .NET MAUI Blazor Hybrid en een afzonderlijke API. De gedeelde Blazor-interface combineert webtechnologie met een native app. Tijdens dit project lag de nadruk op softwarearchitectuur, API-integratie en het testen van functionaliteit.",
+        ProjectDate = new DateOnly(2026, 5, 1),
+        ProjectType = ProjectType.Education,
+        Role = "Software Developer",
+        Categories = [frontend, backend],
+        Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies[".NET MAUI"], technologies["ASP.NET Core"], technologies["REST API"]],
+        Skills = [skills["Software testing"], skills["Softwarearchitectuur"], skills["Samenwerken"]],
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+    };
+
+    var soulsearchEn = new PortfolioItem
+    {
+        Language = "en",
+        Slug = "soulsearch",
+        Title = "SoulSearch",
+        CardDescription = "Cross-platform application using .NET MAUI Blazor Hybrid and an API.",
+        Description = "SoulSearch is a cross-platform application developed using C#, .NET MAUI Blazor Hybrid and a separate API. Its shared Blazor interface combines web technology with a native application, with a focus on software architecture, API integration and functional testing.",
+        ProjectDate = new DateOnly(2026, 5, 1),
+        ProjectType = ProjectType.Education,
+        Role = "Software Developer",
+        Categories = [frontend, backend],
+        Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies[".NET MAUI"], technologies["ASP.NET Core"], technologies["REST API"]],
+        Skills = [skills["Software testing"], skills["Softwarearchitectuur"], skills["Samenwerken"]],
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+    };
+
     context.PortfolioItems.AddRange(
         careBotsFrontendNl,
         careBotsFrontendEn,
 
-        careBotsBackendNl,
-        careBotsBackendEn,
-
         joyRideNl,
         joyRideEn,
+
+        cinenetNl,
+        cinenetEn,
+        soulsearchNl,
+        soulsearchEn,
 
         nijntjeNl,
         nijntjeEn,
@@ -1682,16 +1874,20 @@ public static class DatabaseSeeder
 
                 Technologies =
                 [
-                    technologies["Python"],
-                    technologies["JavaScript"],
-                    technologies["HTML"],
-                    technologies["CSS"],
-                    technologies["MySQL"]
+                    technologies["Linux"],
+                    technologies["RHEL"],
+                    technologies["Bash"],
+                    technologies["Selinux"]
                 ],
-
                 Skills =
                 [
-                    skills["UI/UX"]
+                    skills["Systeemontwerp"],
+                    skills["Oplossingsgericht denken"]
+                ],
+                Tooling =
+                [
+                    tooling["SSH"],
+                    tooling["LazyVim"]
                 ]
             }
         ]
@@ -1709,13 +1905,39 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
+                Title = "Leerjaar 3",
+                SortOrder = 0,
+                
+                Technologies = 
+                [
+                    technologies["Python"],
+                    technologies["MySQL"]
+                    
+                ],
+                
+                Skills = [skills["Databaseontwerp"], skills["Analytisch vermogen"]],
+                
+                Tooling = [tooling["Microsoft Excel"]]
+            },
+            new EducationSection
+            {
                 Title = "Leerjaar 2",
                 SortOrder = 1,
 
                 Technologies =
                 [
                     technologies["Kotlin"],
-                    technologies["Ktor"]
+                    technologies["Ktor"],
+                    technologies["Exposed"],
+                    technologies["Jetpack Compose"],
+                    technologies["C#"],
+                    technologies[".NET"],
+                    technologies[".NET MAUI"],
+                    technologies["ASP.NET Core"],
+                    technologies["Blazor"],
+                    technologies["MudBlazor"],
+                    technologies[".NET"],
+                    technologies["Docker"],
                 ],
 
                 Skills =
@@ -1730,7 +1952,18 @@ public static class DatabaseSeeder
                 Tooling =
                 [
                     tooling["Gradle"],
-                    tooling["GitHub Actions"]
+                    tooling["GitHub Actions"],
+                    tooling["Git"],
+                    tooling["GitHub"],
+                    tooling["Android Studio"],
+                    tooling["JetBrains Rider"],
+                    tooling["Jira"],
+                    tooling["Microsoft Word"],
+                    tooling["phpMyAdmin"],
+                    tooling["Postman"],
+                    tooling["SSH"],
+                    tooling["Terminal"],
+                    tooling["VPS"],
                 ]
             },
 
@@ -2001,7 +2234,40 @@ public static class DatabaseSeeder
         ]
     };
 
+    var denHaag = new WorkExperience
+    {
+        Organization = organizations["Gemeente Den Haag"],
+        Role = "Linux Engineer",
+        StartYear = 2026,
+        EndYear = null,
+        SortOrder = 0,
+        Responsibilities =
+        [
+            new WorkExperienceResponsibility { Description = "Beheren en troubleshooten van Linux-servers en enterprise-applicaties", SortOrder = 1 },
+            new WorkExperienceResponsibility { Description = "Automatiseren van configuratie en deployments met Ansible en AWX", SortOrder = 2 },
+            new WorkExperienceResponsibility { Description = "Werken aan containerplatformen en Kubernetes-proof-of-concepts", SortOrder = 3 },
+            new WorkExperienceResponsibility { Description = "Onderzoeken van incidenten, logging en monitoring", SortOrder = 4 }
+        ],
+        Technologies =
+        [
+            technologies["Linux"], technologies["RHEL"], technologies["Ansible"],
+            technologies["K3s"], technologies["Kubernetes"], technologies["Cilium"], 
+            technologies["Elasticsearch"], technologies["Bash"]
+        ],
+        Skills =
+        [
+            skills["Oplossingsgericht denken"], skills["Helder documenteren"],
+            skills["Softwarearchitectuur"], skills["Samenwerken"]
+        ],
+        Tooling =
+        [
+            tooling["Git"], tooling["AWX"], tooling["Azure DevOps"],
+            tooling["LazyVim"], tooling["Harbor"], tooling["Zabbix"]
+        ]
+    };
+
     context.WorkExperiences.AddRange(
+        denHaag,
         bcs,
         gemeenteRotterdam);
 
@@ -2169,7 +2435,7 @@ public static class DatabaseSeeder
 
         Technologies =
         [
-            technologies["Terminal"]
+            technologies["Bash"]
         ]
     };
 
@@ -2314,7 +2580,7 @@ public static class DatabaseSeeder
 
         Technologies =
         [
-            technologies["Terminal"]
+            technologies["Bash"]
         ]
     };
 
