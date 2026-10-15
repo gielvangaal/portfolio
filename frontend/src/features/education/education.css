@@ -38,8 +38,9 @@
 
 .education-item__media {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    align-self: stretch;
 }
 
 .education-item__image {
@@ -48,6 +49,7 @@
     max-height: 8rem;
 
     object-fit: contain;
+    filter: grayscale(100%);
 }
 
 .education-item__content {

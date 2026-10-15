@@ -38,7 +38,7 @@ export default function EducationSection() {
             <div className="education-list">
                 <Accordion
                     items={accordionItems}
-                    defaultOpenId={accordionItems[0]?.id ?? null}
+                    defaultOpenId={accordionItems[1]?.id ?? null}
                     renderContent={(education) => (
                         <EducationItem education={education} />
                     )}
