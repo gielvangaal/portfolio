@@ -67,7 +67,9 @@ function EducationSectionContent({ section }) {
 
             <TagGroups
                 technologies={section.technologies}
+                technologyLimit={5}
                 tooling={section.tooling}
+                toolingLimit={5}
                 skills={section.skills}
                 skillLimit={5}
                 compact

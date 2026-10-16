@@ -349,6 +349,24 @@ public static class DatabaseSeeder
             Media = CreateImage(
                 "/media/webstack/react.webp",
                 "React-logo")
+        },
+        new Technology
+        {
+            Name = "SUSE Linux Enterprise",
+            Usage = CapabilityUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/opensuse.webp",
+                "SUSE Linux Enterprise logo")
+        },
+        new Technology
+        {
+            Name = "openSUSE Tumbleweed",
+            Usage = CapabilityUsage.Daily,
+            Categories = [devOps],
+            Media = CreateImage(
+                "/media/webstack/opensuse-tumbleweed.webp",
+                "openSUSE Tumbleweed logo")
         }
     );
 
@@ -880,11 +898,35 @@ public static class DatabaseSeeder
         },
         new Tooling
         {
-            Name = "PowerBI",
+            Name = "Microsoft Power BI",
             Usage = CapabilityUsage.Occasional,
             Media = CreateImage(
                 "/media/webstack/powerbi.webp",
-                "PowerBI logo")
+                "Microsoft Power BI logo")
+        },
+        new Tooling
+        {
+            Name = "Adeptia",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/adeptia.webp",
+                "Adeptia logo")
+        },
+        new Tooling
+        {
+            Name = "Red Hat AMQ",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/rhel.webp",
+                "Red Hat AMQ logo")
+        },
+        new Tooling
+        {
+            Name = "Kitodo",
+            Usage = CapabilityUsage.Regular,
+            Media = CreateImage(
+                "/media/webstack/kitodo.webp",
+                "Kitodo logo")
         }
     );
 
@@ -949,7 +991,10 @@ public static class DatabaseSeeder
         new Organization
         {
             Name = "Gemeente Den Haag",
-            Type = OrganizationType.Employer
+            Type = OrganizationType.Employer,
+            Media = CreateImage(
+                "/media/work-experience/gemeente-denhaag.webp",
+                "Gemeente Den Haag logo")
         },
         new Organization
         {
@@ -1912,12 +1957,17 @@ public static class DatabaseSeeder
                 [
                     technologies["Python"],
                     technologies["MySQL"]
-                    
                 ],
-                
-                Skills = [skills["Databaseontwerp"], skills["Analytisch vermogen"]],
-                
-                Tooling = [tooling["Microsoft Excel"]]
+                Skills =
+                [
+                    skills["Databaseontwerp"], 
+                    skills["Analytisch vermogen"]
+                ],
+                Tooling = 
+                [
+                    tooling["Microsoft Excel"],
+                    tooling["Microsoft Power BI"]
+                ]
             },
             new EducationSection
             {
@@ -2245,14 +2295,21 @@ public static class DatabaseSeeder
         [
             new WorkExperienceResponsibility { Description = "Beheren en troubleshooten van Linux-servers en enterprise-applicaties", SortOrder = 1 },
             new WorkExperienceResponsibility { Description = "Automatiseren van configuratie en deployments met Ansible en AWX", SortOrder = 2 },
-            new WorkExperienceResponsibility { Description = "Werken aan containerplatformen en Kubernetes-proof-of-concepts", SortOrder = 3 },
+            new WorkExperienceResponsibility { Description = "Werken met onder andere Kubernetes en Elasticsearch", SortOrder = 3 },
             new WorkExperienceResponsibility { Description = "Onderzoeken van incidenten, logging en monitoring", SortOrder = 4 }
         ],
         Technologies =
         [
-            technologies["Linux"], technologies["RHEL"], technologies["Ansible"],
-            technologies["K3s"], technologies["Kubernetes"], technologies["Cilium"], 
-            technologies["Elasticsearch"], technologies["Bash"]
+            technologies["Linux"],
+            technologies["RHEL"],
+            technologies["SUSE Linux Enterprise"],
+            technologies["openSUSE Tumbleweed"],
+            technologies["Ansible"],
+            technologies["K3s"],
+            technologies["Kubernetes"],
+            technologies["Cilium"],
+            technologies["Elasticsearch"],
+            technologies["Bash"]
         ],
         Skills =
         [
@@ -2261,8 +2318,15 @@ public static class DatabaseSeeder
         ],
         Tooling =
         [
-            tooling["Git"], tooling["AWX"], tooling["Azure DevOps"],
-            tooling["LazyVim"], tooling["Harbor"], tooling["Zabbix"]
+            tooling["Git"],
+            tooling["AWX"],
+            tooling["Azure DevOps"],
+            tooling["LazyVim"],
+            tooling["Harbor"],
+            tooling["Zabbix"],
+            tooling["Adeptia"],
+            tooling["Red Hat AMQ"],
+            tooling["Kitodo"]
         ]
     };
 
