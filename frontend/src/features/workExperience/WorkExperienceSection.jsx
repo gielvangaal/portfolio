@@ -105,10 +105,10 @@ function WorkExperienceContent({ workExperience }) {
 
                 <TagGroups
                     technologies={workExperience.technologies}
-                    tooling={workExperience.tooling}
-                    skills={workExperience.skills}
                     technologyLimit={5}
+                    tooling={workExperience.tooling}
                     toolingLimit={5}
+                    skills={workExperience.skills}
                     skillLimit={5}
                     compact
                 />

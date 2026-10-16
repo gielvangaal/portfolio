@@ -49,7 +49,7 @@
     max-height: 8rem;
 
     object-fit: contain;
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
 }
 
 .education-item__content {
