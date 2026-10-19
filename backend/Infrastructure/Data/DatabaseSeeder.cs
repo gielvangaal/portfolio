@@ -2659,6 +2659,94 @@ public static class DatabaseSeeder
             "/media/library/de-kracht-van-het-nu.webp",
             "Boekcover De kracht van het Nu van Eckhart Tolle")
     };
+    
+    var chungkingExpress = new LibraryItem
+{
+    Title = "Chungking Express",
+    Creator = "Wong Kar-wai",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/chungkingexpress.webp",
+        "Filmposter Chungking Express")
+};
+
+var graveOfTheFireflies = new LibraryItem
+{
+    Title = "Grave of the Fireflies",
+    Creator = "Isao Takahata",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/graveofthefireflies.webp",
+        "Filmposter Grave of the Fireflies")
+};
+
+var bootstrapCrashCourse = new LibraryItem
+{
+    Title = "Bootstrap 5 Tutorial",
+    Creator = "The Net Ninja",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/netninja-bootstrapcrashcourse.webp",
+        "Bootstrap 5 tutorial van The Net Ninja")
+};
+
+var dockerCrashCourse = new LibraryItem
+{
+    Title = "Docker Crash Course",
+    Creator = "The Net Ninja",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/netninja-dockercrashcource.webp",
+        "Docker Crash Course van The Net Ninja")
+};
+
+var phpCrashCourse = new LibraryItem
+{
+    Title = "PHP & MySQL Tutorial",
+    Creator = "The Net Ninja",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/netninja-phpcrashcourse.webp",
+        "PHP en MySQL tutorial van The Net Ninja")
+};
+
+var freeCcna = new LibraryItem
+{
+    Title = "Free CCNA Complete Course",
+    Creator = "NetworkChuck",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/networkchuck-freeccna.webp",
+        "Free CCNA Complete Course van NetworkChuck")
+};
+
+var rockers = new LibraryItem
+{
+    Title = "Rockers",
+    Creator = "Theodoros Bafaloukos",
+    Type = LibraryItemType.Video,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/rockers.webp",
+        "Filmposter Rockers")
+};
+
+var plingelyPlang = new LibraryItem
+{
+    Title = "Plingely Plang",
+    Creator = "Spotify",
+    Type = LibraryItemType.Music,
+    SortOrder = 0,
+    Media = CreateImage(
+        "/media/library/spotify-plingelyplang.webp",
+        "Spotify playlist Plingely Plang")
+};
 
     context.LibraryItems.AddRange(
         htmlCss,
