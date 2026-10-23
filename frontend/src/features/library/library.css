@@ -38,7 +38,8 @@
     min-width: 100px;
     height: 130px;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 
 .library-item__content {

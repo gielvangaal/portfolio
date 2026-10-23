@@ -2338,7 +2338,8 @@ public static class DatabaseSeeder
     await context.SaveChangesAsync();
 }
     
-    private static async Task SeedLibraryItemsAsync(
+    
+private static async Task SeedLibraryItemsAsync(
     PortfolioDbContext context)
 {
     if (await context.LibraryItems.AnyAsync())
@@ -2350,8 +2351,7 @@ public static class DatabaseSeeder
     var skills = await context.Skills
         .ToDictionaryAsync(x => x.Name);
 
-    var tooling = await context.Tooling
-        .ToDictionaryAsync(x => x.Name);
+    // Books
 
     var htmlCss = new LibraryItem
     {
@@ -2359,16 +2359,10 @@ public static class DatabaseSeeder
         Creator = "Peter Doolaard",
         Type = LibraryItemType.Book,
         SortOrder = 1,
-
         Media = CreateImage(
-            "/media/library/htmlencss-doolaard.webp",
+            "/media/library/book-htmlencss-doolaard.webp",
             "Boekcover HTML 5 en CSS van Peter Doolaard"),
-
-        Technologies =
-        [
-            technologies["HTML"],
-            technologies["CSS"]
-        ]
+        Technologies = [technologies["HTML"], technologies["CSS"]]
     };
 
     var informatiemanagement = new LibraryItem
@@ -2377,9 +2371,8 @@ public static class DatabaseSeeder
         Creator = "Roel Grit",
         Type = LibraryItemType.Book,
         SortOrder = 2,
-
         Media = CreateImage(
-            "/media/library/informatiemanagement-grit.webp",
+            "/media/library/book-informatiemanagement-grit.webp",
             "Boekcover Informatiemanagement van Roel Grit")
     };
 
@@ -2389,15 +2382,10 @@ public static class DatabaseSeeder
         Creator = "Ben Groenendijk",
         Type = LibraryItemType.Book,
         SortOrder = 3,
-
         Media = CreateImage(
-            "/media/library/inleidingdatabases-groenendijk.webp",
+            "/media/library/book-inleidingdatabases-groenendijk.webp",
             "Boekcover Inleiding databases van Ben Groenendijk"),
-
-        Skills =
-        [
-            skills["Databaseontwerp"]
-        ]
+        Skills = [skills["Databaseontwerp"]]
     };
 
     var devOpsForTheDesperate = new LibraryItem
@@ -2406,9 +2394,8 @@ public static class DatabaseSeeder
         Creator = "Bradley Smith",
         Type = LibraryItemType.Book,
         SortOrder = 4,
-
         Media = CreateImage(
-            "/media/library/devops-for-the-desperate.webp",
+            "/media/library/book-devops-for-the-desperate.webp",
             "Boekcover DevOps for the Desperate van Bradley Smith")
     };
 
@@ -2418,15 +2405,10 @@ public static class DatabaseSeeder
         Creator = "Peter Kassenaar",
         Type = LibraryItemType.Book,
         SortOrder = 5,
-
         Media = CreateImage(
-            "/media/library/javascript&jquery-kassenaar.webp",
+            "/media/library/book-javascript&jquery-kassenaar.webp",
             "Boekcover JavaScript & jQuery van Peter Kassenaar"),
-
-        Technologies =
-        [
-            technologies["JavaScript"]
-        ]
+        Technologies = [technologies["JavaScript"]]
     };
 
     var praktischUml = new LibraryItem
@@ -2435,16 +2417,10 @@ public static class DatabaseSeeder
         Creator = "Jos Warmer & Anneke Kleppe",
         Type = LibraryItemType.Book,
         SortOrder = 6,
-
         Media = CreateImage(
-            "/media/library/praktischuml-warmer-kleppe.webp",
+            "/media/library/book-praktischuml-warmer-kleppe.webp",
             "Boekcover Praktisch UML van Jos Warmer & Anneke Kleppe"),
-
-        Technologies =
-        [
-            technologies["UML"]
-        ],
-
+        Technologies = [technologies["UML"]],
         Skills =
         [
             skills["Objectgeoriënteerd programmeren"],
@@ -2458,15 +2434,10 @@ public static class DatabaseSeeder
         Creator = "Eric Matthes",
         Type = LibraryItemType.Book,
         SortOrder = 7,
-
         Media = CreateImage(
-            "/media/library/pythoncrashcourse-matthes.webp",
+            "/media/library/book-pythoncrashcourse-matthes.webp",
             "Boekcover Python Crash Course van Eric Matthes"),
-
-        Technologies =
-        [
-            technologies["Python"]
-        ]
+        Technologies = [technologies["Python"]]
     };
 
     var subliemWebdesign = new LibraryItem
@@ -2475,15 +2446,10 @@ public static class DatabaseSeeder
         Creator = "Jason Beaird & James George",
         Type = LibraryItemType.Book,
         SortOrder = 8,
-
         Media = CreateImage(
-            "/media/library/subliemwebdesign.webp",
-            "Boekcover Principes van subliem webdesign van Jason Beaird & James George"),
-
-        Skills =
-        [
-            skills["UI/UX"]
-        ]
+            "/media/library/book-subliemwebdesign.webp",
+            "Boekcover Principes van subliem webdesign"),
+        Skills = [skills["UI/UX"]]
     };
 
     var linuxCommandLine = new LibraryItem
@@ -2492,15 +2458,10 @@ public static class DatabaseSeeder
         Creator = "William Shotts",
         Type = LibraryItemType.Book,
         SortOrder = 9,
-
         Media = CreateImage(
-            "/media/library/linuxcommandline.webp",
+            "/media/library/book-linuxcommandline.webp",
             "Boekcover The Linux Command Line van William Shotts"),
-
-        Technologies =
-        [
-            technologies["Bash"]
-        ]
+        Technologies = [technologies["Bash"]]
     };
 
     var grafischOntwerpen = new LibraryItem
@@ -2509,15 +2470,10 @@ public static class DatabaseSeeder
         Creator = "David Dabner & Sandra Stewart",
         Type = LibraryItemType.Book,
         SortOrder = 10,
-
         Media = CreateImage(
-            "/media/library/grafischontwerpen.webp",
-            "Boekcover Grafisch Ontwerpen van David Dabner & Sandra Stewart"),
-
-        Skills =
-        [
-            skills["UI/UX"]
-        ]
+            "/media/library/book-grafischontwerpen.webp",
+            "Boekcover Grafisch Ontwerpen"),
+        Skills = [skills["UI/UX"]]
     };
 
     var thisIsIt = new LibraryItem
@@ -2526,9 +2482,8 @@ public static class DatabaseSeeder
         Creator = "Victor Peters",
         Type = LibraryItemType.Book,
         SortOrder = 11,
-
         Media = CreateImage(
-            "/media/library/thisisit.webp",
+            "/media/library/book-thisisit.webp",
             "Boekcover This is IT! van Victor Peters")
     };
 
@@ -2538,11 +2493,9 @@ public static class DatabaseSeeder
         Creator = "Dirkjan van Ittersum",
         Type = LibraryItemType.Book,
         SortOrder = 12,
-
         Media = CreateImage(
-            "/media/library/wordpress6.webp",
-            "Boekcover Handboek Wordpress 6 van Dirkjan van Ittersum"),
-
+            "/media/library/book-wordpress6.webp",
+            "Boekcover Handboek Wordpress 6"),
         Technologies =
         [
             technologies["HTML"],
@@ -2558,16 +2511,10 @@ public static class DatabaseSeeder
         Creator = "Hendrik Jan van Randen",
         Type = LibraryItemType.Book,
         SortOrder = 13,
-
         Media = CreateImage(
-            "/media/library/inleidinguml.webp",
-            "Boekcover Inleiding UML van Hendrik Jan van Randen"),
-
-        Technologies =
-        [
-            technologies["UML"]
-        ],
-
+            "/media/library/book-inleidinguml.webp",
+            "Boekcover Inleiding UML"),
+        Technologies = [technologies["UML"]],
         Skills =
         [
             skills["Objectgeoriënteerd programmeren"],
@@ -2581,15 +2528,10 @@ public static class DatabaseSeeder
         Creator = "Guy Tré",
         Type = LibraryItemType.Book,
         SortOrder = 14,
-
         Media = CreateImage(
-            "/media/library/principes-van-databases.webp",
-            "Boekcover Principes van Databases van Guy Tré"),
-
-        Skills =
-        [
-            skills["Databaseontwerp"]
-        ]
+            "/media/library/book-principes-van-databases.webp",
+            "Boekcover Principes van Databases"),
+        Skills = [skills["Databaseontwerp"]]
     };
 
     var creativeAct = new LibraryItem
@@ -2598,15 +2540,10 @@ public static class DatabaseSeeder
         Creator = "Rick Rubin",
         Type = LibraryItemType.Book,
         SortOrder = 15,
-
         Media = CreateImage(
-            "/media/library/the-creative-act.webp",
-            "Boekcover The Creative Act van Rick Rubin"),
-
-        Skills =
-        [
-            skills["Creativiteit"]
-        ]
+            "/media/library/book-the-creative-act.webp",
+            "Boekcover The Creative Act"),
+        Skills = [skills["Creativiteit"]]
     };
 
     var kotlinInAction = new LibraryItem
@@ -2615,20 +2552,11 @@ public static class DatabaseSeeder
         Creator = "Dmitry Jemerov",
         Type = LibraryItemType.Book,
         SortOrder = 16,
-
         Media = CreateImage(
-            "/media/library/kotlin-in-action.webp",
-            "Boekcover Kotlin in Action van Dmitry Jemerov"),
-
-        Technologies =
-        [
-            technologies["Kotlin"]
-        ],
-
-        Skills =
-        [
-            skills["Objectgeoriënteerd programmeren"]
-        ]
+            "/media/library/book-kotlin-in-action.webp",
+            "Boekcover Kotlin in Action"),
+        Technologies = [technologies["Kotlin"]],
+        Skills = [skills["Objectgeoriënteerd programmeren"]]
     };
 
     var shellScripting = new LibraryItem
@@ -2637,15 +2565,10 @@ public static class DatabaseSeeder
         Creator = "Steve Parker",
         Type = LibraryItemType.Book,
         SortOrder = 17,
-
         Media = CreateImage(
-            "/media/library/shell-scripting.webp",
-            "Boekcover Shell Scripting van Steve Parker"),
-
-        Technologies =
-        [
-            technologies["Bash"]
-        ]
+            "/media/library/book-shell-scripting.webp",
+            "Boekcover Shell Scripting"),
+        Technologies = [technologies["Bash"]]
     };
 
     var krachtVanHetNu = new LibraryItem
@@ -2654,101 +2577,160 @@ public static class DatabaseSeeder
         Creator = "Eckhart Tolle",
         Type = LibraryItemType.Book,
         SortOrder = 18,
-
         Media = CreateImage(
-            "/media/library/de-kracht-van-het-nu.webp",
-            "Boekcover De kracht van het Nu van Eckhart Tolle")
+            "/media/library/book-de-kracht-van-het-nu.webp",
+            "Boekcover De kracht van het Nu")
     };
-    
+
+    // Video
+
     var chungkingExpress = new LibraryItem
-{
-    Title = "Chungking Express",
-    Creator = "Wong Kar-wai",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/chungkingexpress.webp",
-        "Filmposter Chungking Express")
-};
+    {
+        Title = "Chungking Express",
+        Creator = "Wong Kar-wai",
+        Type = LibraryItemType.Video,
+        SortOrder = 1,
+        Media = CreateImage(
+            "/media/library/movie-chungkingexpress.webp",
+            "Filmposter Chungking Express")
+    };
 
-var graveOfTheFireflies = new LibraryItem
-{
-    Title = "Grave of the Fireflies",
-    Creator = "Isao Takahata",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/graveofthefireflies.webp",
-        "Filmposter Grave of the Fireflies")
-};
+    var graveOfTheFireflies = new LibraryItem
+    {
+        Title = "Grave of the Fireflies",
+        Creator = "Isao Takahata",
+        Type = LibraryItemType.Video,
+        SortOrder = 2,
+        Media = CreateImage(
+            "/media/library/movie-graveofthefireflies.webp",
+            "Filmposter Grave of the Fireflies")
+    };
 
-var bootstrapCrashCourse = new LibraryItem
-{
-    Title = "Bootstrap 5 Tutorial",
-    Creator = "The Net Ninja",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/netninja-bootstrapcrashcourse.webp",
-        "Bootstrap 5 tutorial van The Net Ninja")
-};
+    var bootstrapCrashCourse = new LibraryItem
+    {
+        Title = "Bootstrap 5 Tutorial",
+        Creator = "The Net Ninja",
+        Type = LibraryItemType.Video,
+        SortOrder = 3,
+        Media = CreateImage(
+            "/media/library/movie-netninja-bootstrapcrashcourse.webp",
+            "Bootstrap 5 tutorial van The Net Ninja")
+    };
 
-var dockerCrashCourse = new LibraryItem
-{
-    Title = "Docker Crash Course",
-    Creator = "The Net Ninja",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/netninja-dockercrashcource.webp",
-        "Docker Crash Course van The Net Ninja")
-};
+    var dockerCrashCourse = new LibraryItem
+    {
+        Title = "Docker Crash Course",
+        Creator = "The Net Ninja",
+        Type = LibraryItemType.Video,
+        SortOrder = 4,
+        Media = CreateImage(
+            "/media/library/movie-netninja-dockercrashcource.webp",
+            "Docker Crash Course van The Net Ninja")
+    };
 
-var phpCrashCourse = new LibraryItem
-{
-    Title = "PHP & MySQL Tutorial",
-    Creator = "The Net Ninja",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/netninja-phpcrashcourse.webp",
-        "PHP en MySQL tutorial van The Net Ninja")
-};
+    var phpCrashCourse = new LibraryItem
+    {
+        Title = "PHP & MySQL Tutorial",
+        Creator = "The Net Ninja",
+        Type = LibraryItemType.Video,
+        SortOrder = 5,
+        Media = CreateImage(
+            "/media/library/movie-netninja-phpcrashcourse.webp",
+            "PHP en MySQL tutorial van The Net Ninja")
+    };
 
-var freeCcna = new LibraryItem
-{
-    Title = "Free CCNA Complete Course",
-    Creator = "NetworkChuck",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/networkchuck-freeccna.webp",
-        "Free CCNA Complete Course van NetworkChuck")
-};
+    var freeCcna = new LibraryItem
+    {
+        Title = "Free CCNA Complete Course",
+        Creator = "NetworkChuck",
+        Type = LibraryItemType.Video,
+        SortOrder = 6,
+        Media = CreateImage(
+            "/media/library/movie-networkchuck-freeccna.webp",
+            "Free CCNA Complete Course van NetworkChuck")
+    };
 
-var rockers = new LibraryItem
-{
-    Title = "Rockers",
-    Creator = "Theodoros Bafaloukos",
-    Type = LibraryItemType.Video,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/rockers.webp",
-        "Filmposter Rockers")
-};
+    var rockers = new LibraryItem
+    {
+        Title = "Rockers",
+        Creator = "Theodoros Bafaloukos",
+        Type = LibraryItemType.Video,
+        SortOrder = 7,
+        Media = CreateImage(
+            "/media/library/movie-rockers.webp",
+            "Filmposter Rockers")
+    };
 
-var plingelyPlang = new LibraryItem
-{
-    Title = "Plingely Plang",
-    Creator = "Spotify",
-    Type = LibraryItemType.Music,
-    SortOrder = 0,
-    Media = CreateImage(
-        "/media/library/spotify-plingelyplang.webp",
-        "Spotify playlist Plingely Plang")
-};
+    // Music
+
+    var plingelyPlang = new LibraryItem
+    {
+        Title = "Plingely Plang",
+        Creator = "Spotify",
+        Type = LibraryItemType.Music,
+        SortOrder = 1,
+        Media = CreateImage(
+            "/media/library/music-spotify-plingelyplang.webp",
+            "Spotify playlist Plingely Plang")
+    };
+
+    var freewheelin = new LibraryItem
+    {
+        Title = "The Freewheelin' Bob Dylan",
+        Creator = "Bob Dylan",
+        Type = LibraryItemType.Music,
+        SortOrder = 2,
+        Media = CreateImage(
+            "/media/library/music-bobdylan-thefreewheelin.webp",
+            "Albumcover The Freewheelin' Bob Dylan")
+    };
+
+    var jazzImpressions = new LibraryItem
+    {
+        Title = "Jazz Impressions of Japan",
+        Creator = "The Dave Brubeck Quartet",
+        Type = LibraryItemType.Music,
+        SortOrder = 3,
+        Media = CreateImage(
+            "/media/library/music-davebrubeck-jazzimpressionsofjapan.webp",
+            "Albumcover Jazz Impressions of Japan")
+    };
+
+    var blonde = new LibraryItem
+    {
+        Title = "Blonde",
+        Creator = "Frank Ocean",
+        Type = LibraryItemType.Music,
+        SortOrder = 4,
+        Media = CreateImage(
+            "/media/library/music-frankocean-blonde.webp",
+            "Albumcover Blonde")
+    };
+
+    var onYourOwnLoveAgain = new LibraryItem
+    {
+        Title = "On Your Own Love Again",
+        Creator = "Jessica Pratt",
+        Type = LibraryItemType.Music,
+        SortOrder = 5,
+        Media = CreateImage(
+            "/media/library/music-jessicapratt-onyourownloveagain.webp",
+            "Albumcover On Your Own Love Again")
+    };
+
+    var whatsGoingOn = new LibraryItem
+    {
+        Title = "What's Going On",
+        Creator = "Marvin Gaye",
+        Type = LibraryItemType.Music,
+        SortOrder = 6,
+        Media = CreateImage(
+            "/media/library/music-marvingaye-whatsgoingon.webp",
+            "Albumcover What's Going On")
+    };
 
     context.LibraryItems.AddRange(
+        // Books
         htmlCss,
         informatiemanagement,
         inleidingDatabases,
@@ -2766,7 +2748,25 @@ var plingelyPlang = new LibraryItem
         creativeAct,
         kotlinInAction,
         shellScripting,
-        krachtVanHetNu);
+        krachtVanHetNu,
+
+        // Video
+        chungkingExpress,
+        graveOfTheFireflies,
+        bootstrapCrashCourse,
+        dockerCrashCourse,
+        phpCrashCourse,
+        freeCcna,
+        rockers,
+
+        // Music
+        plingelyPlang,
+        freewheelin,
+        jazzImpressions,
+        blonde,
+        onYourOwnLoveAgain,
+        whatsGoingOn
+    );
 
     await context.SaveChangesAsync();
 }
