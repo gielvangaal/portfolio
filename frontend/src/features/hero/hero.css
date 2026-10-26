@@ -88,7 +88,13 @@
 }
 
 .hero__jobTitle h2 {
+    color: var(--color-on-secondary);
     font-size: 2vw;
+}
+
+/* Keep the vertical title legible across the dark and yellow planes. */
+:root[data-theme="dark"] .hero__jobTitle h2 {
+    background-color: var(--color-secondary);
 }
 
 /* DESCRIPTION */
@@ -138,6 +144,7 @@
     font-family: Besley, Georgia, "Times New Roman", Times, serif;
     font-size: 1.5rem;
 
+    fill: currentColor;
     color: var(--color-on-surface);
 
     animation: rotate 25s linear infinite;
@@ -209,6 +216,7 @@
     }
 
     .hero__jobTitle h2 {
+    color: var(--color-on-secondary);
         font-size: 3vh;
     }
 

@@ -9,6 +9,12 @@
     --palette-grey: #d9d9d9;
     --palette-light-grey: #fafafa;
     --palette-white: #ffffff;
+    --palette-charcoal: #17171b;
+    --palette-dark-surface: #202025;
+    --palette-dark-container: #28282f;
+    --palette-dark-raised: #303038;
+    --palette-dark-outline: #666673;
+    --palette-dark-highlight: #625f21;
 
     /* Semantic scheme: components consume roles, never palette colors. */
     --color-primary: var(--palette-yellow);
@@ -41,6 +47,7 @@
     --color-inverse-surface: var(--palette-black);
     --color-inverse-on-surface: var(--palette-white);
     --color-blend-contrast: var(--palette-light-grey);
+    --color-heading-highlight: var(--color-primary);
 
     /* Typography */
     --font-family-base: "Be Vietnam Pro", sans-serif;
@@ -65,23 +72,21 @@
 
 }
 
-/*
- * Opt-in dark scheme for a future switch. It reuses the existing palette and
- * is never enabled automatically. Set data-theme="dark" on <html> to test it.
- */
+/* Dark surfaces retain the yellow and lilac brand accents. */
 :root[data-theme="dark"] {
     color-scheme: dark;
 
     --color-background: var(--palette-black);
     --color-on-background: var(--palette-white);
-    --color-surface: var(--palette-black);
+    --color-surface: var(--palette-dark-surface);
     --color-on-surface: var(--palette-white);
-    --color-surface-container-low: var(--palette-black);
-    --color-surface-container: var(--palette-black);
-    --color-surface-container-high: var(--palette-black);
+    --color-surface-container-low: var(--palette-charcoal);
+    --color-surface-container: var(--palette-dark-container);
+    --color-surface-container-high: var(--palette-dark-raised);
     --color-on-surface-variant: var(--palette-light-grey);
     --color-outline: var(--palette-white);
-    --color-outline-variant: var(--palette-grey);
+    --color-outline-variant: var(--palette-dark-outline);
+    --color-heading-highlight: var(--palette-dark-highlight);
 
     --color-inverse-surface: var(--palette-white);
     --color-inverse-on-surface: var(--palette-black);
