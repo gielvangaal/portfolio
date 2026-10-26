@@ -2,6 +2,8 @@
 import { useLayoutEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
+import { useTheme } from "./hooks/useTheme";
+
 import PageLayout from "./components/layout/PageLayout";
 import HeroSection from "./features/hero/HeroSection";
 import PortfolioSection from "./features/portfolio/PortfolioSection";
@@ -53,6 +55,7 @@ function ScrollToHash() {
 }
 
 export default function App() {
+    const { theme, toggleTheme } = useTheme();
     const [lang, setLang] = useState("nl");
     const { pathname } = useLocation();
 
@@ -65,7 +68,7 @@ export default function App() {
             <ScrollToHash />
 
             <div key={pathname} className="page-fade-in">
-                <PageLayout lang={lang} setLang={setLang}>
+                <PageLayout lang={lang} setLang={setLang} theme={theme} toggleTheme={toggleTheme}>
                     <Routes>
                         <Route
                             path="/"

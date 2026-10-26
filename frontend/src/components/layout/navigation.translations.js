@@ -5,7 +5,9 @@ export const translations = {
         portfolio: "Portfolio",
         about: "Over mij",
         contact: "Contact",
-        languageLabel: "Taal selecteren"
+        languageLabel: "Taal selecteren",
+        switchToLight: "Licht thema inschakelen",
+        switchToDark: "Donker thema inschakelen"
     },
     en: {
         navigationLabel: "Main navigation",
@@ -13,6 +15,8 @@ export const translations = {
         portfolio: "Portfolio",
         about: "About me",
         contact: "Contact",
-        languageLabel: "Select language"
+        languageLabel: "Select language",
+        switchToLight: "Switch to light theme",
+        switchToDark: "Switch to dark theme"
     },
 };
