@@ -92,11 +92,6 @@
     font-size: 2vw;
 }
 
-/* Keep the vertical title legible across the dark and yellow planes. */
-:root[data-theme="dark"] .hero__jobTitle h2 {
-    background-color: var(--color-secondary);
-}
-
 /* DESCRIPTION */
 
 .hero__description {
