@@ -134,3 +134,16 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 Coverage includes NL → EN → NL with cached responses, language parameters for
 translated endpoints, all three populated softskill groups, and changing language
 on a project detail page before navigating back to the homepage.
+
+## Color theme
+
+The sun/moon control beside **NL / EN** toggles light and dark mode. On a first
+visit, the theme follows the system preference, including live system changes.
+A manual choice is stored as `portfolio-theme` in localStorage and takes priority
+on later visits. Remove that key to return to the system preference. When storage
+is unavailable the toggle still works for the current session.
+
+The initial theme is applied in `index.html` before the app renders to avoid a
+flash of the wrong scheme. `useTheme` manages subsequent changes; all scheme
+colors are defined in `src/styles/tokens.css`. Theme behavior and mobile controls
+are covered by `npm run test:e2e`.
