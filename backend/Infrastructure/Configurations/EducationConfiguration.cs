@@ -10,10 +10,6 @@ public class EducationConfiguration : IEntityTypeConfiguration<Education>
     {
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Program)
-            .IsRequired()
-            .HasMaxLength(150);
-
         builder.Property(x => x.StartYear)
             .IsRequired();
 
@@ -24,6 +20,11 @@ public class EducationConfiguration : IEntityTypeConfiguration<Education>
             .WithMany(x => x.Educations)
             .HasForeignKey(x => x.OrganizationId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasMany(x => x.Translations)
+            .WithOne(x => x.Education)
+            .HasForeignKey(x => x.EducationId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(x => x.Sections)
             .WithOne(x => x.Education)

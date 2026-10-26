@@ -17,13 +17,13 @@ public class LibraryItemService
         _libraryItemMapper = libraryItemMapper;
     }
 
-    public async Task<IReadOnlyCollection<LibraryItemResponse>> GetAllAsync()
+    public async Task<IReadOnlyCollection<LibraryItemResponse>> GetAllAsync(string language)
     {
         var libraryItems =
             await _libraryItemRepository.GetAllAsync();
 
         return libraryItems
-            .Select(_libraryItemMapper.Map)
+            .Select(x => _libraryItemMapper.Map(x, language))
             .ToList();
     }
 }

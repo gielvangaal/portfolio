@@ -381,57 +381,112 @@ public static class DatabaseSeeder
         context.Skills.AddRange(
             new Skill
             {
-                Name = "Functioneel programmeren",
+                Key = "functional-programming",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Functioneel programmeren" },
+                    new SkillTranslation { Language = "en", Name = "Functional programming" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Software testing",
+                Key = "software-testing",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Software testing" },
+                    new SkillTranslation { Language = "en", Name = "Software testing" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Agile werken",
+                Key = "agile-working",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Agile werken" },
+                    new SkillTranslation { Language = "en", Name = "Agile working" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Scrum",
+                Key = "scrum",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Scrum" },
+                    new SkillTranslation { Language = "en", Name = "Scrum" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Design patterns",
+                Key = "design-patterns",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Design patterns" },
+                    new SkillTranslation { Language = "en", Name = "Design patterns" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Projectmatig werken",
+                Key = "project-based-working",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Projectmatig werken" },
+                    new SkillTranslation { Language = "en", Name = "Project-based working" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Systeemontwerp",
+                Key = "system-design",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Systeemontwerp" },
+                    new SkillTranslation { Language = "en", Name = "System design" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Softwarearchitectuur",
+                Key = "software-architecture",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Softwarearchitectuur" },
+                    new SkillTranslation { Language = "en", Name = "Software architecture" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Databaseontwerp",
+                Key = "database-design",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Databaseontwerp" },
+                    new SkillTranslation { Language = "en", Name = "Database design" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "CI/CD-pipelines",
+                Key = "ci-cd-pipelines",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "CI/CD-pipelines" },
+                    new SkillTranslation { Language = "en", Name = "CI/CD pipelines" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Objectgeoriënteerd programmeren",
+                Key = "object-oriented-programming",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Objectgeoriënteerd programmeren" },
+                    new SkillTranslation { Language = "en", Name = "Object-oriented programming" }
+                ],
                 Type = SkillType.Technical
             },
 
@@ -439,42 +494,82 @@ public static class DatabaseSeeder
 
             new Skill
             {
-                Name = "Praktische instelling",
+                Key = "practical-mindset",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Praktische instelling" },
+                    new SkillTranslation { Language = "en", Name = "Practical mindset" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Sociale vaardigheden",
+                Key = "interpersonal-skills",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Sociale vaardigheden" },
+                    new SkillTranslation { Language = "en", Name = "Interpersonal skills" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Zelfstandigheid",
+                Key = "independence",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Zelfstandigheid" },
+                    new SkillTranslation { Language = "en", Name = "Independence" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Nauwkeurig en exact",
+                Key = "accuracy-and-precision",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Nauwkeurig en exact" },
+                    new SkillTranslation { Language = "en", Name = "Accuracy and precision" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Plannen en structureren",
+                Key = "planning-and-organization",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Plannen en structureren" },
+                    new SkillTranslation { Language = "en", Name = "Planning and organization" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Effectief communiceren",
+                Key = "effective-communication",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Effectief communiceren" },
+                    new SkillTranslation { Language = "en", Name = "Effective communication" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Snel leren en toepassen",
+                Key = "quick-learning-and-application",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Snel leren en toepassen" },
+                    new SkillTranslation { Language = "en", Name = "Quick learning and application" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Helder documenteren",
+                Key = "clear-documentation",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Helder documenteren" },
+                    new SkillTranslation { Language = "en", Name = "Clear documentation" }
+                ],
                 Type = SkillType.SoftSkill
             },
 
@@ -482,47 +577,92 @@ public static class DatabaseSeeder
 
             new Skill
             {
-                Name = "Oplossingsgericht denken",
+                Key = "solution-oriented-thinking",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Oplossingsgericht denken" },
+                    new SkillTranslation { Language = "en", Name = "Solution-oriented thinking" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Energie",
+                Key = "energy",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Energie" },
+                    new SkillTranslation { Language = "en", Name = "Energy" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Empathie",
+                Key = "empathy",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Empathie" },
+                    new SkillTranslation { Language = "en", Name = "Empathy" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Creativiteit",
+                Key = "creativity",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Creativiteit" },
+                    new SkillTranslation { Language = "en", Name = "Creativity" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Analytisch vermogen",
+                Key = "analytical-thinking",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Analytisch vermogen" },
+                    new SkillTranslation { Language = "en", Name = "Analytical thinking" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Zelfstandig leren",
+                Key = "independent-learning",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Zelfstandig leren" },
+                    new SkillTranslation { Language = "en", Name = "Independent learning" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Kwaliteitsbewustzijn",
+                Key = "quality-awareness",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Kwaliteitsbewustzijn" },
+                    new SkillTranslation { Language = "en", Name = "Quality awareness" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Flexibiliteit",
+                Key = "adaptability",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Flexibiliteit" },
+                    new SkillTranslation { Language = "en", Name = "Adaptability" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Samenwerken",
+                Key = "collaboration",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Samenwerken" },
+                    new SkillTranslation { Language = "en", Name = "Collaboration" }
+                ],
                 Type = SkillType.SoftSkill
             },
 
@@ -530,76 +670,148 @@ public static class DatabaseSeeder
 
             new Skill
             {
-                Name = "Nieuwsgierig",
+                Key = "curious",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Nieuwsgierig" },
+                    new SkillTranslation { Language = "en", Name = "Curious" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Realistisch",
+                Key = "realistic",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Realistisch" },
+                    new SkillTranslation { Language = "en", Name = "Realistic" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Klantgericht",
+                Key = "customer-focused",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Klantgericht" },
+                    new SkillTranslation { Language = "en", Name = "Customer-focused" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Evenwichtig",
+                Key = "balanced",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Evenwichtig" },
+                    new SkillTranslation { Language = "en", Name = "Balanced" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Spontaan",
+                Key = "spontaneous",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Spontaan" },
+                    new SkillTranslation { Language = "en", Name = "Spontaneous" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Integer",
+                Key = "integrity",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Integer" },
+                    new SkillTranslation { Language = "en", Name = "Integrity" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Creatief",
+                Key = "creative",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Creatief" },
+                    new SkillTranslation { Language = "en", Name = "Creative" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Betrokken",
+                Key = "committed",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Betrokken" },
+                    new SkillTranslation { Language = "en", Name = "Committed" }
+                ],
                 Type = SkillType.Character
             },
             new Skill
             {
-                Name = "Doortastend",
+                Key = "decisive",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Doortastend" },
+                    new SkillTranslation { Language = "en", Name = "Decisive" }
+                ],
                 Type = SkillType.Character
             },
 
             new Skill
             {
-                Name = "UI/UX",
+                Key = "ui-ux",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "UI/UX" },
+                    new SkillTranslation { Language = "en", Name = "UI/UX" }
+                ],
                 Type = SkillType.Technical
             },
             new Skill
             {
-                Name = "Creatief ondernemen",
+                Key = "creative-entrepreneurship",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Creatief ondernemen" },
+                    new SkillTranslation { Language = "en", Name = "Creative entrepreneurship" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Presentatievaardigheden",
+                Key = "presentation-skills",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Presentatievaardigheden" },
+                    new SkillTranslation { Language = "en", Name = "Presentation skills" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Marketing en communicatie",
+                Key = "marketing-and-communication",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Marketing en communicatie" },
+                    new SkillTranslation { Language = "en", Name = "Marketing and communication" }
+                ],
                 Type = SkillType.SoftSkill
             },
             new Skill
             {
-                Name = "Methodisch werken",
+                Key = "methodical-working",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Methodisch werken" },
+                    new SkillTranslation { Language = "en", Name = "Methodical working" }
+                ],
                 Type = SkillType.SoftSkill
             }
         );
+        
+        await context.SaveChangesAsync();
     }
 
     private static async Task SeedToolingAsync(PortfolioDbContext context)
@@ -1075,7 +1287,8 @@ public static class DatabaseSeeder
     var docker = technologies["Docker"];
 
     var skills = await context.Skills
-        .ToDictionaryAsync(x => x.Name);
+        .Include(x => x.Translations)
+        .ToDictionaryAsync(x => x.Translations.Single(t => t.Language == "nl").Name);
 
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
@@ -1894,7 +2107,8 @@ public static class DatabaseSeeder
         .ToDictionaryAsync(x => x.Name);
 
     var skills = await context.Skills
-        .ToDictionaryAsync(x => x.Name);
+        .Include(x => x.Translations)
+        .ToDictionaryAsync(x => x.Translations.Single(t => t.Language == "nl").Name);
 
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
@@ -1905,7 +2119,15 @@ public static class DatabaseSeeder
     var redhat = new Education
     {
         Organization = organizations["Red Hat"],
-        Program = "RHCSA",
+        Translations =
+
+        [
+
+            new EducationTranslation { Language = "nl", Program = "RHCSA" },
+
+            new EducationTranslation { Language = "en", Program = "RHCSA" }
+
+        ],
         StartYear = 2026,
         EndYear = null,
         SortOrder = 1,
@@ -1914,7 +2136,7 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
-                Title = null,
+                
                 SortOrder = 1,
 
                 Technologies =
@@ -1941,7 +2163,15 @@ public static class DatabaseSeeder
     var avans = new Education
     {
         Organization = organizations["Avans Hogeschool"],
-        Program = "Deeltijdopleiding Informatica",
+        Translations =
+
+        [
+
+            new EducationTranslation { Language = "nl", Program = "Deeltijdopleiding Informatica" },
+
+            new EducationTranslation { Language = "en", Program = "Part-time Bachelor of Computer Science" }
+
+        ],
         StartYear = 2024,
         EndYear = null,
         SortOrder = 2,
@@ -1950,7 +2180,15 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
-                Title = "Leerjaar 3",
+                Translations =
+
+                [
+
+                    new EducationSectionTranslation { Language = "nl", Title = "Leerjaar 3" },
+
+                    new EducationSectionTranslation { Language = "en", Title = "Year 3" }
+
+                ],
                 SortOrder = 0,
                 
                 Technologies = 
@@ -1971,7 +2209,15 @@ public static class DatabaseSeeder
             },
             new EducationSection
             {
-                Title = "Leerjaar 2",
+                Translations =
+
+                [
+
+                    new EducationSectionTranslation { Language = "nl", Title = "Leerjaar 2" },
+
+                    new EducationSectionTranslation { Language = "en", Title = "Year 2" }
+
+                ],
                 SortOrder = 1,
 
                 Technologies =
@@ -2019,7 +2265,15 @@ public static class DatabaseSeeder
 
             new EducationSection
             {
-                Title = "Leerjaar 1",
+                Translations =
+
+                [
+
+                    new EducationSectionTranslation { Language = "nl", Title = "Leerjaar 1" },
+
+                    new EducationSectionTranslation { Language = "en", Title = "Year 1" }
+
+                ],
                 SortOrder = 2,
 
                 Technologies =
@@ -2054,7 +2308,15 @@ public static class DatabaseSeeder
     var codecademy = new Education
     {
         Organization = organizations["Codecademy"],
-        Program = "Web Development",
+        Translations =
+
+        [
+
+            new EducationTranslation { Language = "nl", Program = "Web Development" },
+
+            new EducationTranslation { Language = "en", Program = "Web Development" }
+
+        ],
         StartYear = 2023,
         EndYear = null,
         SortOrder = 3,
@@ -2063,7 +2325,7 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
-                Title = null,
+                
                 SortOrder = 1,
 
                 Technologies =
@@ -2086,7 +2348,15 @@ public static class DatabaseSeeder
     var albeda = new Education
     {
         Organization = organizations["Albeda College"],
-        Program = "Muzikant / Producer",
+        Translations =
+
+        [
+
+            new EducationTranslation { Language = "nl", Program = "Muzikant / Producer" },
+
+            new EducationTranslation { Language = "en", Program = "Musician / Producer" }
+
+        ],
         StartYear = 2012,
         EndYear = 2015,
         SortOrder = 4,
@@ -2095,7 +2365,7 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
-                Title = null,
+                
                 SortOrder = 1,
 
                 Skills =
@@ -2113,7 +2383,15 @@ public static class DatabaseSeeder
     var koningWillem = new Education
     {
         Organization = organizations["Koning Willem 1 College"],
-        Program = "Sociaal Cultureel Werk",
+        Translations =
+
+        [
+
+            new EducationTranslation { Language = "nl", Program = "Sociaal Cultureel Werk" },
+
+            new EducationTranslation { Language = "en", Program = "Social and Cultural Work" }
+
+        ],
         StartYear = 2004,
         EndYear = 2009,
         SortOrder = 5,
@@ -2122,7 +2400,7 @@ public static class DatabaseSeeder
         [
             new EducationSection
             {
-                Title = null,
+                
                 SortOrder = 1,
 
                 Skills =
@@ -2157,7 +2435,8 @@ public static class DatabaseSeeder
         .ToDictionaryAsync(x => x.Name);
 
     var skills = await context.Skills
-        .ToDictionaryAsync(x => x.Name);
+        .Include(x => x.Translations)
+        .ToDictionaryAsync(x => x.Translations.Single(t => t.Language == "nl").Name);
 
     var tooling = await context.Tooling
         .ToDictionaryAsync(x => x.Name);
@@ -2168,7 +2447,15 @@ public static class DatabaseSeeder
     var bcs = new WorkExperience
     {
         Organization = organizations["BCS HR Solutions"],
-        Role = "Software Support Specialist",
+        Translations =
+
+        [
+
+            new WorkExperienceTranslation { Language = "nl", Role = "Software Support Specialist" },
+
+            new WorkExperienceTranslation { Language = "en", Role = "Software Support Specialist" }
+
+        ],
         StartYear = null,
         EndYear = null,
         SortOrder = 1,
@@ -2177,27 +2464,67 @@ public static class DatabaseSeeder
         [
             new WorkExperienceResponsibility
             {
-                Description = "Ondersteunen van gebruikers bij softwareproblemen",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Ondersteunen van gebruikers bij softwareproblemen" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Supporting users with software issues" }
+
+                ],
                 SortOrder = 1
             },
             new WorkExperienceResponsibility
             {
-                Description = "Analyseren en oplossen van technische issues",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Analyseren en oplossen van technische issues" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Analyzing and resolving technical issues" }
+
+                ],
                 SortOrder = 2
             },
             new WorkExperienceResponsibility
             {
-                Description = "Documenteren van oplossingen en processen",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Documenteren van oplossingen en processen" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Documenting solutions and processes" }
+
+                ],
                 SortOrder = 3
             },
             new WorkExperienceResponsibility
             {
-                Description = "Samenwerken met ontwikkelteams voor bugfixes",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Samenwerken met ontwikkelteams voor bugfixes" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Collaborating with development teams on bug fixes" }
+
+                ],
                 SortOrder = 4
             },
             new WorkExperienceResponsibility
             {
-                Description = "Testen van nieuwe softwareversies",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Testen van nieuwe softwareversies" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Testing new software releases" }
+
+                ],
                 SortOrder = 5
             }
         ],
@@ -2231,7 +2558,15 @@ public static class DatabaseSeeder
     var gemeenteRotterdam = new WorkExperience
     {
         Organization = organizations["Gemeente Rotterdam"],
-        Role = "Senior Klantcontact Centrum",
+        Translations =
+
+        [
+
+            new WorkExperienceTranslation { Language = "nl", Role = "Senior Klantcontact Centrum" },
+
+            new WorkExperienceTranslation { Language = "en", Role = "Senior Customer Contact Center" }
+
+        ],
         StartYear = null,
         EndYear = null,
         SortOrder = 2,
@@ -2240,27 +2575,67 @@ public static class DatabaseSeeder
         [
             new WorkExperienceResponsibility
             {
-                Description = "Aanpakken van complexe klantvragen en problemen",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Aanpakken van complexe klantvragen en problemen" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Handling complex customer questions and issues" }
+
+                ],
                 SortOrder = 1
             },
             new WorkExperienceResponsibility
             {
-                Description = "Begeleiden en coachen van teamleden",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Begeleiden en coachen van teamleden" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Mentoring and coaching team members" }
+
+                ],
                 SortOrder = 2
             },
             new WorkExperienceResponsibility
             {
-                Description = "Optimaliseren van werkprocessen",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Optimaliseren van werkprocessen" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Optimizing workflows" }
+
+                ],
                 SortOrder = 3
             },
             new WorkExperienceResponsibility
             {
-                Description = "Communiceren met diverse afdelingen",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Communiceren met diverse afdelingen" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Communicating across departments" }
+
+                ],
                 SortOrder = 4
             },
             new WorkExperienceResponsibility
             {
-                Description = "Bijdragen aan klanttevredenheid en servicekwaliteit",
+                Translations =
+
+                [
+
+                    new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Bijdragen aan klanttevredenheid en servicekwaliteit" },
+
+                    new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Contributing to customer satisfaction and service quality" }
+
+                ],
                 SortOrder = 5
             }
         ],
@@ -2287,16 +2662,40 @@ public static class DatabaseSeeder
     var denHaag = new WorkExperience
     {
         Organization = organizations["Gemeente Den Haag"],
-        Role = "Linux Engineer",
+        Translations =
+
+        [
+
+            new WorkExperienceTranslation { Language = "nl", Role = "Linux Engineer" },
+
+            new WorkExperienceTranslation { Language = "en", Role = "Linux Engineer" }
+
+        ],
         StartYear = 2026,
         EndYear = null,
         SortOrder = 0,
         Responsibilities =
         [
-            new WorkExperienceResponsibility { Description = "Beheren en troubleshooten van Linux-servers en enterprise-applicaties", SortOrder = 1 },
-            new WorkExperienceResponsibility { Description = "Automatiseren van configuratie en deployments met Ansible en AWX", SortOrder = 2 },
-            new WorkExperienceResponsibility { Description = "Werken met onder andere Kubernetes en Elasticsearch", SortOrder = 3 },
-            new WorkExperienceResponsibility { Description = "Onderzoeken van incidenten, logging en monitoring", SortOrder = 4 }
+            new WorkExperienceResponsibility { Translations =
+ [
+     new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Beheren en troubleshooten van Linux-servers en enterprise-applicaties" },
+     new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Managing and troubleshooting Linux servers and enterprise applications" }
+ ], SortOrder = 1 },
+            new WorkExperienceResponsibility { Translations =
+ [
+     new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Automatiseren van configuratie en deployments met Ansible en AWX" },
+     new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Automating configuration and deployments with Ansible and AWX" }
+ ], SortOrder = 2 },
+            new WorkExperienceResponsibility { Translations =
+ [
+     new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Werken met onder andere Kubernetes en Elasticsearch" },
+     new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Working with Kubernetes, Elasticsearch and other technologies" }
+ ], SortOrder = 3 },
+            new WorkExperienceResponsibility { Translations =
+ [
+     new WorkExperienceResponsibilityTranslation { Language = "nl", Description = "Onderzoeken van incidenten, logging en monitoring" },
+     new WorkExperienceResponsibilityTranslation { Language = "en", Description = "Investigating incidents, logging and monitoring" }
+ ], SortOrder = 4 }
         ],
         Technologies =
         [
@@ -2349,7 +2748,8 @@ private static async Task SeedLibraryItemsAsync(
         .ToDictionaryAsync(x => x.Name);
 
     var skills = await context.Skills
-        .ToDictionaryAsync(x => x.Name);
+        .Include(x => x.Translations)
+        .ToDictionaryAsync(x => x.Translations.Single(t => t.Language == "nl").Name);
 
     // Books
 

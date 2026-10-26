@@ -1,8 +1,12 @@
+
 import Button from "../../components/ui/Button.jsx";
 import Badge from "../../components/ui/Badge.jsx";
 import Header from "../../components/ui/Header.jsx";
+import { translations } from "./portfolio.translations";
 
-export default function PortfolioCard({ item }) {
+export default function PortfolioCard({ item, lang }) {
+    const t = translations[lang] ?? translations.nl;
+
     const technologies = item.technologies.slice(0, 3);
     const tooling = item.tooling.slice(0, 2);
 
@@ -54,7 +58,7 @@ export default function PortfolioCard({ item }) {
                 className="portfolio-card__button"
                 to={`/portfolio/${item.slug}`}
             >
-                Meer
+                {t.more}
             </Button>
         </article>
     );

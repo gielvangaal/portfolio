@@ -5,7 +5,7 @@ namespace Application.Interfaces;
 
 public interface IPortfolioItemMapper
 {
-    PortfolioItemResponse Map(PortfolioItem portfolioItem);
+    PortfolioItemResponse Map(PortfolioItem portfolioItem, string language);
 
-    PortfolioCardResponse MapCard(PortfolioItem portfolioItem);
+    PortfolioCardResponse MapCard(PortfolioItem portfolioItem, string language);
 }

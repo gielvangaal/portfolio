@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import { useTechnologies } from "./useTechnologies";
@@ -6,25 +7,13 @@ import { useTooling } from "../tooling/useTooling";
 import Header from "../../components/ui/Header.jsx";
 import WebstackItem from "../../components/ui/WebstackItem.jsx";
 
+import { translations } from "./technologies.translations";
 import "./technologies.css";
-
-const typeFilters = [
-    { value: "All", label: "Alles" },
-    { value: "technology", label: "Tech" },
-    { value: "tooling", label: "Tools" },
-];
-
-const usageFilters = [
-    { value: "All", label: "Alles" },
-    { value: "Daily", label: "Dagelijks" },
-    { value: "Regular", label: "Regelmatig" },
-    { value: "Occasional", label: "Soms" },
-    { value: "Past", label: "Lang geleden" },
-];
 
 function FilterSelect({ label, filters, selected, onSelect }) {
     return (
         <label className="webstack-select">
+            <span className="visually-hidden">{label}</span>
 
             <select
                 className="webstack-select__control"
@@ -44,7 +33,9 @@ function FilterSelect({ label, filters, selected, onSelect }) {
     );
 }
 
-export default function TechnologySection() {
+export default function TechnologySection({ lang = "nl" }) {
+    const t = translations[lang] ?? translations.nl;
+
     const {
         data: technologies = [],
         isLoading: technologiesLoading,
@@ -78,36 +69,39 @@ export default function TechnologySection() {
     );
 
     if (technologiesLoading || toolingLoading) {
-        return <p>Stack loading...</p>;
+        return <p>{t.loading}</p>;
     }
 
     if (technologiesError || toolingError) {
-        return <p>Stack could not be loaded.</p>;
+        return <p>{t.error}</p>;
     }
 
     return (
         <section id="webstack" className="webstack-section">
             <div className="webstack-container">
-                <Header as="h3">Webstack</Header>
+                <Header as="h3">{t.title}</Header>
 
                 <div className="webstack-filter-groups">
                     <FilterSelect
-                        label="Type"
-                        filters={typeFilters}
+                        label={t.typeLabel}
+                        filters={t.typeFilters}
                         selected={typeFilter}
                         onSelect={setTypeFilter}
                     />
 
                     <FilterSelect
-                        label="Gebruik"
-                        filters={usageFilters}
+                        label={t.usageLabel}
+                        filters={t.usageFilters}
                         selected={usageFilter}
                         onSelect={setUsageFilter}
                     />
                 </div>
 
                 {filteredItems.length > 0 ? (
-                    <ul className="webstack-grid" aria-label="Webstack">
+                    <ul
+                        className="webstack-grid"
+                        aria-label={t.title}
+                    >
                         {filteredItems.map((item) => (
                             <li
                                 key={`${item.type}-${item.id}`}
@@ -118,7 +112,7 @@ export default function TechnologySection() {
                         ))}
                     </ul>
                 ) : (
-                    <p>Geen resultaten voor deze filters.</p>
+                    <p>{t.noResults}</p>
                 )}
             </div>
         </section>

@@ -5,5 +5,5 @@ namespace Application.Interfaces;
 
 public interface ILibraryItemMapper
 {
-    LibraryItemResponse Map(LibraryItem libraryItem);
+    LibraryItemResponse Map(LibraryItem libraryItem, string language);
 }

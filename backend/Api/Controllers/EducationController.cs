@@ -17,10 +17,11 @@ public class EducationController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyCollection<EducationResponse>>> GetAll()
+    public async Task<ActionResult<IReadOnlyCollection<EducationResponse>>> GetAll(
+        [FromQuery] string language = "nl")
     {
         var educations =
-            await _educationService.GetAllAsync();
+            await _educationService.GetAllAsync(language);
 
         return Ok(educations);
     }

@@ -11,11 +11,13 @@ public class EducationSectionConfiguration
     {
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Title)
-            .HasMaxLength(150);
-
         builder.Property(x => x.SortOrder)
             .IsRequired();
+
+        builder.HasMany(x => x.Translations)
+            .WithOne(x => x.EducationSection)
+            .HasForeignKey(x => x.EducationSectionId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(x => x.Technologies)
             .WithMany();

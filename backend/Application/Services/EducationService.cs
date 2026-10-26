@@ -16,13 +16,13 @@ public class EducationService : IEducationService
         _educationMapper = educationMapper;
     }
 
-    public async Task<IReadOnlyCollection<EducationResponse>> GetAllAsync()
+    public async Task<IReadOnlyCollection<EducationResponse>> GetAllAsync(string language)
     {
         var educations =
             await _educationRepository.GetAllAsync();
 
         return educations
-            .Select(_educationMapper.Map)
+            .Select(x => _educationMapper.Map(x, language))
             .ToList();
     }
 }

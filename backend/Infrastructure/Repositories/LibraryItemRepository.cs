@@ -20,6 +20,7 @@ public class LibraryItemRepository
     {
         return await _context.LibraryItems
             .AsNoTracking()
+            .AsSplitQuery()
 
             .Include(x => x.Media)
 
@@ -27,6 +28,7 @@ public class LibraryItemRepository
             .ThenInclude(x => x.Media)
 
             .Include(x => x.Skills)
+            .ThenInclude(x => x.Translations)
 
             .Include(x => x.Tooling)
             .ThenInclude(x => x.Media)

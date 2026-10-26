@@ -26,7 +26,7 @@ public class PortfolioItemService : IPortfolioItemService
         if (portfolioItem is null)
             return null;
 
-        return _portfolioItemMapper.Map(portfolioItem);
+        return _portfolioItemMapper.Map(portfolioItem, language);
     }
 
     public async Task<IReadOnlyCollection<PortfolioCardResponse>> GetCardsAsync(
@@ -36,7 +36,7 @@ public class PortfolioItemService : IPortfolioItemService
             await _portfolioItemRepository.GetAllAsync(language);
 
         return portfolioItems
-            .Select(_portfolioItemMapper.MapCard)
+            .Select(x => _portfolioItemMapper.MapCard(x, language))
             .ToList();
     }
 }

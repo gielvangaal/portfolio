@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface IWorkExperienceService
 {
-    Task<IReadOnlyCollection<WorkExperienceResponse>> GetAllAsync();
+    Task<IReadOnlyCollection<WorkExperienceResponse>> GetAllAsync(string language);
 }

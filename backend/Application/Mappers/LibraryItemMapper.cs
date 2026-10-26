@@ -22,7 +22,7 @@ public class LibraryItemMapper
     }
 
     public LibraryItemResponse Map(
-        LibraryItem libraryItem)
+        LibraryItem libraryItem, string language)
     {
         return new LibraryItemResponse
         {
@@ -46,8 +46,8 @@ public class LibraryItemMapper
                 .ToList(),
 
             Skills = libraryItem.Skills
-                .OrderBy(x => x.Name)
-                .Select(_skillMapper.Map)
+                .OrderBy(x => x.Key)
+                .Select(x => _skillMapper.Map(x, language))
                 .ToList(),
 
             Tooling = libraryItem.Tooling

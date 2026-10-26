@@ -18,11 +18,17 @@ public class EducationRepository : IEducationRepository
     {
         return await _context.Educations
             .AsNoTracking()
+            .AsSplitQuery()
 
             .Include(x => x.Organization)
             .ThenInclude(x => x.Media)
 
+            .Include(x => x.Translations)
+
             .Include(x => x.Credentials)
+
+            .Include(x => x.Sections)
+            .ThenInclude(x => x.Translations)
 
             .Include(x => x.Sections)
             .ThenInclude(x => x.Technologies)
@@ -30,6 +36,7 @@ public class EducationRepository : IEducationRepository
 
             .Include(x => x.Sections)
             .ThenInclude(x => x.Skills)
+            .ThenInclude(x => x.Translations)
 
             .Include(x => x.Sections)
             .ThenInclude(x => x.Tooling)

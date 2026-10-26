@@ -8,13 +8,13 @@ public class Education
 
     public Organization Organization { get; set; } = null!;
 
-    public required string Program { get; set; }
-
     public int StartYear { get; set; }
 
     public int? EndYear { get; set; }
 
     public int SortOrder { get; set; }
+
+    public ICollection<EducationTranslation> Translations { get; set; } = [];
 
     public ICollection<EducationSection> Sections { get; set; } = [];
 

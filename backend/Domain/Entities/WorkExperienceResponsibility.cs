@@ -8,7 +8,7 @@ public class WorkExperienceResponsibility
 
     public WorkExperience WorkExperience { get; set; } = null!;
 
-    public required string Description { get; set; }
-
     public int SortOrder { get; set; }
+
+    public ICollection<WorkExperienceResponsibilityTranslation> Translations { get; set; } = [];
 }

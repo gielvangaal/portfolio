@@ -21,7 +21,7 @@ public class PortfolioItemMapper : IPortfolioItemMapper
         _toolingMapper = toolingMapper;
     }
 
-    public PortfolioItemResponse Map(PortfolioItem portfolioItem)
+    public PortfolioItemResponse Map(PortfolioItem portfolioItem, string language)
     {
         return new PortfolioItemResponse
         {
@@ -53,8 +53,8 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .ToList(),
 
             Skills = portfolioItem.Skills
-                .OrderBy(x => x.Name)
-                .Select(_skillMapper.Map)
+                .OrderBy(x => x.Key)
+                .Select(x => _skillMapper.Map(x, language))
                 .ToList(),
 
             Tooling = portfolioItem.Tooling
@@ -75,7 +75,7 @@ public class PortfolioItemMapper : IPortfolioItemMapper
         };
     }
 
-    public PortfolioCardResponse MapCard(PortfolioItem portfolioItem)
+    public PortfolioCardResponse MapCard(PortfolioItem portfolioItem, string language)
     {
         return new PortfolioCardResponse
         {
@@ -100,8 +100,8 @@ public class PortfolioItemMapper : IPortfolioItemMapper
                 .ToList(),
 
             Skills = portfolioItem.Skills
-                .OrderBy(x => x.Name)
-                .Select(_skillMapper.Map)
+                .OrderBy(x => x.Key)
+                .Select(x => _skillMapper.Map(x, language))
                 .ToList(),
 
             Tooling = portfolioItem.Tooling

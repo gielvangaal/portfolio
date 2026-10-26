@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 
 import Badge, {
     BadgeVariant,
 } from "./Badge.jsx";
 
+import { translations } from "./tagGroups.translations";
 import "./tagGroups.css";
 
 export default function TagGroups({
@@ -16,7 +18,10 @@ export default function TagGroups({
                                       skillLimit = 5,
 
                                       compact = false,
+                                      lang = "nl",
                                   }) {
+    const t = translations[lang] ?? translations.nl;
+
     if (compact) {
         return (
             <CompactTagGroups
@@ -26,6 +31,7 @@ export default function TagGroups({
                 technologyLimit={technologyLimit}
                 toolingLimit={toolingLimit}
                 skillLimit={skillLimit}
+                t={t}
             />
         );
     }
@@ -33,24 +39,27 @@ export default function TagGroups({
     return (
         <div className="tag-groups">
             <TagGroup
-                label="Technologie"
+                label={t.technologies}
                 items={technologies}
                 variant={BadgeVariant.TECHNOLOGY}
                 limit={technologyLimit}
+                t={t}
             />
 
             <TagGroup
-                label="Tooling"
+                label={t.tooling}
                 items={tooling}
                 variant={BadgeVariant.TOOLING}
                 limit={toolingLimit}
+                t={t}
             />
 
             <TagGroup
-                label="Vaardigheden"
+                label={t.skills}
                 items={skills}
                 variant={BadgeVariant.SKILL}
                 limit={skillLimit}
+                t={t}
             />
         </div>
     );
@@ -63,6 +72,7 @@ function CompactTagGroups({
                               technologyLimit,
                               toolingLimit,
                               skillLimit,
+                              t,
                           }) {
     const [showAll, setShowAll] = useState(false);
 
@@ -126,8 +136,8 @@ function CompactTagGroups({
                     onClick={() => setShowAll((current) => !current)}
                 >
                     {showAll
-                        ? "Minder tonen"
-                        : `+ ${hiddenCount} meer`}
+                        ? t.showLess
+                        : t.showMore(hiddenCount)}
                 </button>
             )}
         </div>
@@ -139,6 +149,7 @@ function TagGroup({
                       items = [],
                       variant,
                       limit,
+                      t,
                   }) {
     const [showAll, setShowAll] = useState(false);
 
@@ -183,8 +194,8 @@ function TagGroup({
                     }
                 >
                     {showAll
-                        ? "Minder tonen"
-                        : `+ ${hiddenCount} meer`}
+                        ? t.showLess
+                        : t.showMore(hiddenCount)}
                 </button>
             )}
         </div>
@@ -218,7 +229,7 @@ function getVisibleItems(items, limit, showAll) {
     return items.slice(0, limit);
 }
 
-function getHiddenCount(items, limit, showAll) {
+function getHiddenCount(items, limit, showAll = false) {
     if (
         showAll ||
         limit === null ||

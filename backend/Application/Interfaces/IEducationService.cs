@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface IEducationService
 {
-    Task<IReadOnlyCollection<EducationResponse>> GetAllAsync();
+    Task<IReadOnlyCollection<EducationResponse>> GetAllAsync(string language);
 }

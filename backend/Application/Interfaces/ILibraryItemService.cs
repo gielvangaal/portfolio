@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface ILibraryItemService
 {
-    Task<IReadOnlyCollection<LibraryItemResponse>> GetAllAsync();
+    Task<IReadOnlyCollection<LibraryItemResponse>> GetAllAsync(string language);
 }

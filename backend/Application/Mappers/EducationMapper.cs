@@ -20,12 +20,14 @@ public class EducationMapper : IEducationMapper
         _toolingMapper = toolingMapper;
     }
 
-    public EducationResponse Map(Education education)
+    public EducationResponse Map(Education education, string language)
     {
         return new EducationResponse
         {
             Id = education.Id,
-            Program = education.Program,
+            Program = education.Translations.FirstOrDefault(x => x.Language == language)?.Program
+                ?? education.Translations.FirstOrDefault(x => x.Language == "nl")?.Program
+                ?? string.Empty,
             StartYear = education.StartYear,
             EndYear = education.EndYear,
 
@@ -64,7 +66,8 @@ public class EducationMapper : IEducationMapper
                 .Select(section => new EducationSectionResponse
                 {
                     Id = section.Id,
-                    Title = section.Title,
+                    Title = section.Translations.FirstOrDefault(x => x.Language == language)?.Title
+                        ?? section.Translations.FirstOrDefault(x => x.Language == "nl")?.Title,
 
                     Technologies = section.Technologies
                         .OrderBy(x => x.Name)
@@ -72,8 +75,8 @@ public class EducationMapper : IEducationMapper
                         .ToList(),
 
                     Skills = section.Skills
-                        .OrderBy(x => x.Name)
-                        .Select(_skillMapper.Map)
+                        .OrderBy(x => x.Key)
+                        .Select(x => _skillMapper.Map(x, language))
                         .ToList(),
 
                     Tooling = section.Tooling

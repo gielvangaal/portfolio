@@ -18,10 +18,11 @@ public class LibraryItemController
     }
 
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyCollection<LibraryItemResponse>>> GetAll()
+    public async Task<ActionResult<IReadOnlyCollection<LibraryItemResponse>>> GetAll(
+        [FromQuery] string language = "nl")
     {
         var libraryItems =
-            await _libraryItemService.GetAllAsync();
+            await _libraryItemService.GetAllAsync(language);
 
         return Ok(libraryItems);
     }

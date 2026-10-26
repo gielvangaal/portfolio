@@ -1,7 +1,9 @@
+
 import { useParams } from "react-router-dom";
 
 import { usePortfolioItem } from "./usePortfolioItem";
 import PortfolioMedia from "./PortfolioMedia";
+import { translations } from "./portfolio.translations";
 
 import Button from "../../components/ui/Button.jsx";
 import Header from "../../components/ui/Header.jsx";
@@ -11,6 +13,7 @@ import "./portfolioDetail.css";
 
 export default function PortfolioDetailPage({ lang }) {
     const { slug } = useParams();
+    const t = translations[lang] ?? translations.nl;
 
     const {
         data: item,
@@ -19,11 +22,11 @@ export default function PortfolioDetailPage({ lang }) {
     } = usePortfolioItem(slug, lang);
 
     if (isLoading) {
-        return <p>Portfolio loading...</p>;
+        return <p>{t.loading}</p>;
     }
 
     if (isError || !item) {
-        return <p>Portfolio could not be loaded.</p>;
+        return <p>{t.error}</p>;
     }
 
     const technologies = item.technologies ?? [];
@@ -43,7 +46,7 @@ export default function PortfolioDetailPage({ lang }) {
                 className="portfolio-back-link"
                 to="/#portfolio"
             >
-                Terug
+                {t.back}
             </Button>
 
             <br />
@@ -67,6 +70,7 @@ export default function PortfolioDetailPage({ lang }) {
                                 tooling={tooling}
                                 skills={skills}
                                 skillLimit={5}
+                                lang={lang}
                             />
                         </div>
                     )}
@@ -74,10 +78,10 @@ export default function PortfolioDetailPage({ lang }) {
 
                 <aside
                     className="portfolio-detail__details"
-                    aria-label="Projectdetails"
+                    aria-label={t.projectDetails}
                 >
                     <p className="portfolio-detail__details-label">
-                        <b>Projectinfo</b>
+                        <b>{t.projectInfo}</b>
                     </p>
 
                     <dl className="portfolio-detail__facts">
@@ -155,7 +159,7 @@ export default function PortfolioDetailPage({ lang }) {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Live site ↗
+                                    {t.liveSite} ↗
                                 </a>
                             )}
                         </div>

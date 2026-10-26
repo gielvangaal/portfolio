@@ -20,30 +20,47 @@ public class PortfolioItemRepository : IPortfolioItemRepository
     {
         return await _context.PortfolioItems
             .AsNoTracking()
+            .AsSplitQuery()
+
             .Include(x => x.Categories)
+
             .Include(x => x.Technologies)
+
             .Include(x => x.Skills)
+            .ThenInclude(x => x.Translations)
+
             .Include(x => x.Tooling)
+
             .Include(x => x.Media)
             .ThenInclude(x => x.Media)
+
             .FirstOrDefaultAsync(x =>
                 x.Slug == slug &&
                 x.Language == language);
     }
-    
+
     public async Task<IReadOnlyCollection<PortfolioItem>> GetAllAsync(
         string language)
     {
         return await _context.PortfolioItems
             .AsNoTracking()
+            .AsSplitQuery()
+
             .Where(x => x.Language == language)
             .OrderByDescending(x => x.ProjectDate)
+
             .Include(x => x.Categories)
+
             .Include(x => x.Technologies)
+
             .Include(x => x.Skills)
+            .ThenInclude(x => x.Translations)
+
             .Include(x => x.Tooling)
+
             .Include(x => x.Media)
             .ThenInclude(x => x.Media)
+
             .ToListAsync();
     }
 }

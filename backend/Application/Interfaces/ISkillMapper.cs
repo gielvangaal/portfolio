@@ -5,5 +5,5 @@ namespace Application.Interfaces;
 
 public interface ISkillMapper
 {
-    SkillResponse Map(Skill skill);
+    SkillResponse Map(Skill skill, string language);
 }
