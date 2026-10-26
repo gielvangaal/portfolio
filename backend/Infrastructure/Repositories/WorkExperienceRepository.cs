@@ -20,16 +20,21 @@ public class WorkExperienceRepository
     {
         return await _context.WorkExperiences
             .AsNoTracking()
+            .AsSplitQuery()
 
             .Include(x => x.Organization)
             .ThenInclude(x => x.Media)
 
+            .Include(x => x.Translations)
+
             .Include(x => x.Responsibilities)
+            .ThenInclude(x => x.Translations)
 
             .Include(x => x.Technologies)
             .ThenInclude(x => x.Media)
 
             .Include(x => x.Skills)
+            .ThenInclude(x => x.Translations)
 
             .Include(x => x.Tooling)
             .ThenInclude(x => x.Media)

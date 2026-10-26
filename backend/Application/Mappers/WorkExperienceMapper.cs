@@ -22,12 +22,14 @@ public class WorkExperienceMapper
     }
 
     public WorkExperienceResponse Map(
-        WorkExperience workExperience)
+        WorkExperience workExperience, string language)
     {
         return new WorkExperienceResponse
         {
             Id = workExperience.Id,
-            Role = workExperience.Role,
+            Role = workExperience.Translations.FirstOrDefault(x => x.Language == language)?.Role
+                ?? workExperience.Translations.FirstOrDefault(x => x.Language == "nl")?.Role
+                ?? string.Empty,
             StartYear = workExperience.StartYear,
             EndYear = workExperience.EndYear,
 
@@ -50,7 +52,9 @@ public class WorkExperienceMapper
 
             Responsibilities = workExperience.Responsibilities
                 .OrderBy(x => x.SortOrder)
-                .Select(x => x.Description)
+                .Select(x => x.Translations.FirstOrDefault(t => t.Language == language)?.Description
+                    ?? x.Translations.FirstOrDefault(t => t.Language == "nl")?.Description
+                    ?? string.Empty)
                 .ToList(),
 
             Technologies = workExperience.Technologies
@@ -59,8 +63,8 @@ public class WorkExperienceMapper
                 .ToList(),
 
             Skills = workExperience.Skills
-                .OrderBy(x => x.Name)
-                .Select(_skillMapper.Map)
+                .OrderBy(x => x.Key)
+                .Select(x => _skillMapper.Map(x, language))
                 .ToList(),
 
             Tooling = workExperience.Tooling

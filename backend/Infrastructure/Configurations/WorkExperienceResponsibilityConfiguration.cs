@@ -12,11 +12,12 @@ public class WorkExperienceResponsibilityConfiguration
     {
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Description)
-            .IsRequired()
-            .HasMaxLength(500);
-
         builder.Property(x => x.SortOrder)
             .IsRequired();
+
+        builder.HasMany(x => x.Translations)
+            .WithOne(x => x.WorkExperienceResponsibility)
+            .HasForeignKey(x => x.WorkExperienceResponsibilityId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -1,11 +1,11 @@
 import Navigation from "./Navigation";
 
-export default function PageLayout({ children }) {
+export default function PageLayout({ children, lang, setLang }) {
     return (
         <div className="page-layout">
             <header>
                 <div className="container">
-                    <Navigation />
+                    <Navigation lang={lang} setLang={setLang} />
                 </div>
             </header>
 

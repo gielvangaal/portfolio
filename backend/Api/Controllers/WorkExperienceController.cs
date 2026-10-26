@@ -18,10 +18,11 @@ public class WorkExperienceController
     }
 
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyCollection<WorkExperienceResponse>>> GetAll()
+    public async Task<ActionResult<IReadOnlyCollection<WorkExperienceResponse>>> GetAll(
+        [FromQuery] string language = "nl")
     {
         var workExperiences =
-            await _workExperienceService.GetAllAsync();
+            await _workExperienceService.GetAllAsync(language);
 
         return Ok(workExperiences);
     }

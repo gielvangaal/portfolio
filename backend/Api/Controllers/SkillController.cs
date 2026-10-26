@@ -16,9 +16,10 @@ public class SkillController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyCollection<SkillResponse>>> GetAll()
+    public async Task<ActionResult<IReadOnlyCollection<SkillResponse>>> GetAll(
+        [FromQuery] string language = "nl")
     {
-        var skills = await _skillService.GetAllAsync();
+        var skills = await _skillService.GetAllAsync(language);
 
         return Ok(skills);
     }

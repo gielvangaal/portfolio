@@ -5,6 +5,7 @@ export function mapSkill(data) {
 
     return {
         id: data.id,
+        key: data.key ?? "",
         name: data.name ?? "",
         type: data.type ?? "",
     };

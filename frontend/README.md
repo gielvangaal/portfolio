@@ -105,3 +105,32 @@ npm run lint     # check code
 
 npm install react-icons
 ook nodig
+## Language switching regression tests
+
+The UI supports Dutch (`nl`, the default) and English (`en`). Translated queries
+include the language in both the API request and TanStack Query cache key.
+Softskill groups use the stable `key` returned by the API rather than a translated
+name. Run frontend and backend from the same branch for this response field.
+
+The browser integration tests require the seeded API running at
+`http://localhost:5000`, backed by a **disposable local MySQL database**. The API
+recreates its database on startup. Start it using your local connection string
+(`ConnectionStrings__DefaultConnection`) and `ASPNETCORE_URLS=http://localhost:5000`.
+From this directory:
+
+```bash
+npm ci
+npx playwright install chromium
+npm run test:e2e
+```
+
+The test runner starts Vite automatically. To use an existing Chromium installation
+instead of downloading one:
+
+```bash
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
+```
+
+Coverage includes NL → EN → NL with cached responses, language parameters for
+translated endpoints, all three populated softskill groups, and changing language
+on a project detail page before navigating back to the homepage.

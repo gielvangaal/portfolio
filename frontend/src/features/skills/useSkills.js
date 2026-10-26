@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { skillService } from "../../services/skillService";
 
-export function useSkills() {
+export function useSkills(lang = "nl") {
     return useQuery({
-        queryKey: ["skills"],
-        queryFn: skillService.getAll,
+        queryKey: ["skills", lang],
+        queryFn: () => skillService.getAll(lang),
     });
 }

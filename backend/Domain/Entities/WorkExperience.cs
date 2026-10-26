@@ -8,13 +8,13 @@ public class WorkExperience
 
     public Organization Organization { get; set; } = null!;
 
-    public required string Role { get; set; }
-
     public int? StartYear { get; set; }
 
     public int? EndYear { get; set; }
 
     public int SortOrder { get; set; }
+
+    public ICollection<WorkExperienceTranslation> Translations { get; set; } = [];
 
     public ICollection<WorkExperienceResponsibility> Responsibilities { get; set; } = [];
 

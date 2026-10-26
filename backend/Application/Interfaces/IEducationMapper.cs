@@ -5,5 +5,5 @@ namespace Application.Interfaces;
 
 public interface IEducationMapper
 {
-    EducationResponse Map(Education education);
+    EducationResponse Map(Education education, string language);
 }

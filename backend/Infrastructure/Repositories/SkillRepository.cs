@@ -18,7 +18,8 @@ public class SkillRepository : ISkillRepository
     {
         return await _context.Skills
             .AsNoTracking()
-            .OrderBy(x => x.Name)
+            .Include(x => x.Translations)
+            .OrderBy(x => x.Key)
             .ToListAsync();
     }
 }

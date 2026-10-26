@@ -12,10 +12,6 @@ public class WorkExperienceConfiguration
     {
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Role)
-            .IsRequired()
-            .HasMaxLength(150);
-
         builder.Property(x => x.SortOrder)
             .IsRequired();
 
@@ -23,6 +19,11 @@ public class WorkExperienceConfiguration
             .WithMany(x => x.WorkExperiences)
             .HasForeignKey(x => x.OrganizationId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasMany(x => x.Translations)
+            .WithOne(x => x.WorkExperience)
+            .HasForeignKey(x => x.WorkExperienceId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(x => x.Responsibilities)
             .WithOne(x => x.WorkExperience)

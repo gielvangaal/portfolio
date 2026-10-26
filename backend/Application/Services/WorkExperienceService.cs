@@ -17,13 +17,13 @@ public class WorkExperienceService
         _workExperienceMapper = workExperienceMapper;
     }
 
-    public async Task<IReadOnlyCollection<WorkExperienceResponse>> GetAllAsync()
+    public async Task<IReadOnlyCollection<WorkExperienceResponse>> GetAllAsync(string language)
     {
         var workExperiences =
             await _workExperienceRepository.GetAllAsync();
 
         return workExperiences
-            .Select(_workExperienceMapper.Map)
+            .Select(x => _workExperienceMapper.Map(x, language))
             .ToList();
     }
 }

@@ -5,5 +5,5 @@ namespace Application.Interfaces;
 
 public interface IWorkExperienceMapper
 {
-    WorkExperienceResponse Map(WorkExperience workExperience);
+    WorkExperienceResponse Map(WorkExperience workExperience, string language);
 }

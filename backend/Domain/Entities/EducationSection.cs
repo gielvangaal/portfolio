@@ -8,9 +8,9 @@ public class EducationSection
 
     public Education Education { get; set; } = null!;
 
-    public string? Title { get; set; }
-
     public int SortOrder { get; set; }
+
+    public ICollection<EducationSectionTranslation> Translations { get; set; } = [];
 
     public ICollection<Technology> Technologies { get; set; } = [];
 

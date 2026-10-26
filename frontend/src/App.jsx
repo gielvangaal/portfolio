@@ -1,4 +1,5 @@
-import { useLayoutEffect } from "react";
+
+import { useLayoutEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import PageLayout from "./components/layout/PageLayout";
@@ -52,15 +53,19 @@ function ScrollToHash() {
 }
 
 export default function App() {
-    const lang = "en";
+    const [lang, setLang] = useState("nl");
     const { pathname } = useLocation();
+
+    useLayoutEffect(() => {
+        document.documentElement.lang = lang;
+    }, [lang]);
 
     return (
         <>
             <ScrollToHash />
 
             <div key={pathname} className="page-fade-in">
-                <PageLayout>
+                <PageLayout lang={lang} setLang={setLang}>
                     <Routes>
                         <Route
                             path="/"
@@ -69,7 +74,7 @@ export default function App() {
                                     <HeroSection lang={lang} />
                                     <PortfolioSection lang={lang} />
                                     <AboutProfileSection lang={lang} />
-                                    <TechnologySection />
+                                    <TechnologySection lang={lang} />
                                     <EducationSection lang={lang} />
                                     <SoftSkillsSection lang={lang} />
                                     <WorkExperienceSection lang={lang} />

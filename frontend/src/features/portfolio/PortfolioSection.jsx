@@ -1,13 +1,16 @@
+
 import { useState } from "react";
 import "./portfolio.css";
 import { usePortfolio } from "./usePortfolio";
 import PortfolioCard from "./PortfolioCard";
 import Header from "../../components/ui/Header.jsx";
+import { translations } from "./portfolio.translations";
 
 const PAGE_SIZE = 4;
 
 export default function PortfolioSection({ lang }) {
     const [page, setPage] = useState(0);
+    const t = translations[lang] ?? translations.nl;
 
     const {
         data: portfolio = [],
@@ -16,11 +19,11 @@ export default function PortfolioSection({ lang }) {
     } = usePortfolio(lang);
 
     if (isLoading) {
-        return <p>Portfolio loading...</p>;
+        return <p>{t.loading}</p>;
     }
 
     if (isError) {
-        return <p>Portfolio could not be loaded.</p>;
+        return <p>{t.error}</p>;
     }
 
     const pageCount = Math.ceil(portfolio.length / PAGE_SIZE);
@@ -51,7 +54,7 @@ export default function PortfolioSection({ lang }) {
             className="portfolio-section"
         >
             <Header>
-                Portfolio
+                {t.title}
             </Header>
 
             <div className="portfolio-grid">
@@ -59,6 +62,7 @@ export default function PortfolioSection({ lang }) {
                     <PortfolioCard
                         key={item.slug}
                         item={item}
+                        lang={lang}
                     />
                 ))}
             </div>
@@ -68,7 +72,7 @@ export default function PortfolioSection({ lang }) {
                     <button
                         type="button"
                         onClick={handleNextPage}
-                        aria-label="Volgende portfolio-pagina"
+                        aria-label={t.nextPage}
                     >
                         {page + 1} / {pageCount}
                     </button>

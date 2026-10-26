@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface ISkillService
 {
-    Task<IReadOnlyCollection<SkillResponse>> GetAllAsync();
+    Task<IReadOnlyCollection<SkillResponse>> GetAllAsync(string language);
 }

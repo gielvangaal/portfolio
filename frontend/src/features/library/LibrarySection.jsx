@@ -10,28 +10,28 @@ import Button from "../../components/ui/Button.jsx";
 
 const INITIAL_VISIBLE_ITEMS = 4;
 const FILTERS = [
-    { value: "all", label: "Alles" },
-    { value: "Book", label: "Boeken" },
-    { value: "Video", label: "Video" },
-    { value: "Music", label: "Muziek" },
+    { value: "all", label: { nl: "Alles", en: "All" } },
+    { value: "Book", label: { nl: "Boeken", en: "Books" } },
+    { value: "Video", label: { nl: "Video", en: "Video" } },
+    { value: "Music", label: { nl: "Muziek", en: "Music" } },
 ];
 
-export default function LibrarySection() {
+export default function LibrarySection({ lang = "nl" }) {
     const {
         data: libraryItems = [],
         isLoading,
         isError,
-    } = useLibrary();
+    } = useLibrary(lang);
 
     const [showAll, setShowAll] = useState(false);
     const [activeType, setActiveType] = useState("all");
 
     if (isLoading) {
-        return <p>Library loading...</p>;
+        return <p>{lang === "en" ? "Loading bookshelf..." : "Boekenplank laden..."}</p>;
     }
 
     if (isError) {
-        return <p>Library could not be loaded.</p>;
+        return <p>{lang === "en" ? "Bookshelf could not be loaded." : "Boekenplank kon niet worden geladen."}</p>;
     }
 
     const filteredItems = activeType === "all"
@@ -47,10 +47,10 @@ export default function LibrarySection() {
             className="library-section"
         >
             <Header as="h3">
-                Boekenplank
+                {lang === "en" ? "Bookshelf" : "Boekenplank"}
             </Header>
 
-            <div className="library-filters" role="group" aria-label="Filter boekenplank op categorie">
+            <div className="library-filters" role="group" aria-label={lang === "en" ? "Filter bookshelf by category" : "Filter boekenplank op categorie"}>
                 {FILTERS.map((filter) => (
                     <button
                         key={filter.value}
@@ -63,14 +63,14 @@ export default function LibrarySection() {
                             setShowAll(false);
                         }}
                     >
-                        {filter.label}
+                        {filter.label[lang] ?? filter.label.nl}
                     </button>
                 ))}
             </div>
 
             <div id="library-items" className="library-list" aria-live="polite">
                 {filteredItems.length === 0 && (
-                    <p className="library-empty">Nog geen items in deze categorie.</p>
+                    <p className="library-empty">{lang === "en" ? "No items in this category yet." : "Nog geen items in deze categorie."}</p>
                 )}
                 {visibleItems.map((item) => (
                     <LibraryItem
@@ -90,7 +90,7 @@ export default function LibrarySection() {
                     aria-expanded={showAll}
                     aria-controls="library-items"
                 >
-                    {showAll ? "Minder" : "Meer"}
+                    {showAll ? (lang === "en" ? "Less" : "Minder") : (lang === "en" ? "More" : "Meer")}
                 </Button>
             )}
         </section>

@@ -16,12 +16,12 @@ public class SkillService : ISkillService
         _skillMapper = skillMapper;
     }
 
-    public async Task<IReadOnlyCollection<SkillResponse>> GetAllAsync()
+    public async Task<IReadOnlyCollection<SkillResponse>> GetAllAsync(string language)
     {
         var skills = await _skillRepository.GetAllAsync();
 
         return skills
-            .Select(_skillMapper.Map)
+            .Select(x => _skillMapper.Map(x, language))
             .ToList();
     }
 }
