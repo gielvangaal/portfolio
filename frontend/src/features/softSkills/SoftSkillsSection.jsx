@@ -7,54 +7,54 @@ import "./softskills.css";
 
 const softSkillGroups = [
     {
-        title: "Competenties",
-        names: [
-            "Oplossingsgericht denken",
-            "Energie",
-            "Empathie",
-            "Creativiteit",
-            "Analytisch vermogen",
-            "Zelfstandig leren",
-            "Kwaliteitsbewustzijn",
-            "Flexibiliteit",
-            "Samenwerken",
+        title: { nl: "Competenties", en: "Competencies" },
+        keys: [
+            "solution-oriented-thinking",
+            "energy",
+            "empathy",
+            "creativity",
+            "analytical-thinking",
+            "independent-learning",
+            "quality-awareness",
+            "adaptability",
+            "collaboration",
         ],
     },
     {
-        title: "Vaardigheden",
-        names: [
-            "Praktische instelling",
-            "Sociale vaardigheden",
-            "Zelfstandigheid",
-            "Nauwkeurig en exact",
-            "Plannen en structureren",
-            "Effectief communiceren",
-            "Snel leren en toepassen",
-            "Helder documenteren",
+        title: { nl: "Vaardigheden", en: "Skills" },
+        keys: [
+            "practical-mindset",
+            "interpersonal-skills",
+            "independence",
+            "accuracy-and-precision",
+            "planning-and-organization",
+            "effective-communication",
+            "quick-learning-and-application",
+            "clear-documentation",
         ],
     },
     {
-        title: "Karakter",
-        names: [
-            "Nieuwsgierig",
-            "Realistisch",
-            "Klantgericht",
-            "Evenwichtig",
-            "Spontaan",
-            "Integer",
-            "Creatief",
-            "Betrokken",
-            "Doortastend",
+        title: { nl: "Karakter", en: "Character" },
+        keys: [
+            "curious",
+            "realistic",
+            "customer-focused",
+            "balanced",
+            "spontaneous",
+            "integrity",
+            "creative",
+            "committed",
+            "decisive",
         ],
     },
 ];
 
-export default function SoftSkillsSection() {
+export default function SoftSkillsSection({ lang = "nl" }) {
     const {
         data: skills = [],
         isLoading,
         isError,
-    } = useSkills();
+    } = useSkills(lang);
 
     if (isLoading || isError) {
         return null;
@@ -72,19 +72,19 @@ export default function SoftSkillsSection() {
             <div className="softskills-container">
                 <div className="softskills-groups">
                     {softSkillGroups.map((group) => {
-                        const groupSkills = group.names
-                            .map((name) =>
-                                skills.find((skill) => skill.name === name)
+                        const groupSkills = group.keys
+                            .map((key) =>
+                                skills.find((skill) => skill.key === key)
                             )
                             .filter(Boolean);
 
                         return (
                             <div
-                                key={group.title}
+                                key={group.keys[0]}
                                 className="softskills-group"
                             >
                                 <h3 className="softskills-title">
-                                    {group.title}
+                                    {group.title[lang] ?? group.title.nl}
                                 </h3>
 
                                 <div className="softskills-list">

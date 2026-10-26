@@ -6,19 +6,19 @@ import { useEducation } from "./useEducation.js";
 
 import "./education.css";
 
-export default function EducationSection() {
+export default function EducationSection({ lang = "nl" }) {
     const {
         data: educations = [],
         isLoading,
         isError,
-    } = useEducation();
+    } = useEducation(lang);
 
     if (isLoading) {
-        return <p>Education loading...</p>;
+        return <p>{lang === "en" ? "Loading education..." : "Opleidingen laden..."}</p>;
     }
 
     if (isError) {
-        return <p>Education could not be loaded.</p>;
+        return <p>{lang === "en" ? "Education could not be loaded." : "Opleidingen konden niet worden geladen."}</p>;
     }
 
     const accordionItems = educations.map((education) => ({
@@ -32,7 +32,7 @@ export default function EducationSection() {
             className="education-section"
         >
             <Header as="h3">
-                Onderwijs
+                {lang === "en" ? "Education" : "Onderwijs"}
             </Header>
 
             <div className="education-list">
@@ -40,7 +40,7 @@ export default function EducationSection() {
                     items={accordionItems}
                     defaultOpenId={accordionItems[1]?.id ?? null}
                     renderContent={(education) => (
-                        <EducationItem education={education} />
+                        <EducationItem education={education} lang={lang} />
                     )}
                 />
             </div>

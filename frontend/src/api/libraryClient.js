@@ -1,9 +1,9 @@
 import { httpClient, getMediaUrl } from "./httpClient";
 
 export const libraryClient = {
-    getAll: async () => {
+    getAll: async (lang = "nl") => {
         const response = await httpClient.get(
-            "/api/library"
+            `/api/library?language=${lang}`
         );
 
         return response.data.map((item) => ({

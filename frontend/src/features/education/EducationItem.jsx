@@ -1,9 +1,9 @@
 import TagGroups from "../../components/ui/TagGroups.jsx";
 
-export default function EducationItem({ education }) {
+export default function EducationItem({ education, lang = "nl" }) {
     const period = education.endYear
         ? `${education.startYear} - ${education.endYear}`
-        : `${education.startYear} - heden`;
+        : `${education.startYear} - ${lang === "en" ? "present" : "heden"}`;
 
     const organization = education.organization;
     const media = organization?.media;
@@ -38,6 +38,7 @@ export default function EducationItem({ education }) {
                     <EducationSectionContent
                         key={section.id}
                         section={section}
+                        lang={lang}
                     />
                 ))}
 
@@ -47,6 +48,7 @@ export default function EducationItem({ education }) {
                             <CredentialItem
                                 key={credential.id}
                                 credential={credential}
+                                lang={lang}
                             />
                         ))}
                     </div>
@@ -56,7 +58,7 @@ export default function EducationItem({ education }) {
     );
 }
 
-function EducationSectionContent({ section }) {
+function EducationSectionContent({ section, lang }) {
     return (
         <div className="education-item__section">
             {section.title && (
@@ -72,13 +74,14 @@ function EducationSectionContent({ section }) {
                 toolingLimit={5}
                 skills={section.skills}
                 skillLimit={5}
+                lang={lang}
                 compact
             />
         </div>
     );
 }
 
-function CredentialItem({ credential }) {
+function CredentialItem({ credential, lang }) {
     const url =
         credential.credentialUrl ??
         credential.documentUrl;
@@ -106,7 +109,7 @@ function CredentialItem({ credential }) {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    Bekijk ↗
+                    {lang === "en" ? "View ↗" : "Bekijk ↗"}
                 </a>
             )}
         </div>

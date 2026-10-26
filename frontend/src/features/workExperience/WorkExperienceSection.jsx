@@ -6,12 +6,12 @@ import TagGroups from "../../components/ui/TagGroups.jsx";
 
 import "./workExperience.css";
 
-export default function WorkExperienceSection() {
+export default function WorkExperienceSection({ lang = "nl" }) {
     const {
         data: workExperiences = [],
         isLoading,
         isError,
-    } = useWorkExperiences();
+    } = useWorkExperiences(lang);
 
     if (isLoading || isError) {
         return null;
@@ -31,7 +31,7 @@ export default function WorkExperienceSection() {
         >
             <div className="work-experience-container">
                 <Header as="h3">
-                    Werkervaring
+                    {lang === "en" ? "Work experience" : "Werkervaring"}
                 </Header>
 
                 <div className="work-experience-accordion">
@@ -43,6 +43,7 @@ export default function WorkExperienceSection() {
                         renderContent={(workExperience) => (
                             <WorkExperienceContent
                                 workExperience={workExperience}
+                                lang={lang}
                             />
                         )}
                     />
@@ -52,7 +53,7 @@ export default function WorkExperienceSection() {
     );
 }
 
-function WorkExperienceContent({ workExperience }) {
+function WorkExperienceContent({ workExperience, lang }) {
     const organization = workExperience.organization;
     const media = organization?.media;
 
@@ -86,7 +87,8 @@ function WorkExperienceContent({ workExperience }) {
                     <p className="work-experience-period">
                         {formatPeriod(
                             workExperience.startYear,
-                            workExperience.endYear
+                            workExperience.endYear,
+                            lang
                         )}
                     </p>
                 )}
@@ -110,6 +112,7 @@ function WorkExperienceContent({ workExperience }) {
                     toolingLimit={5}
                     skills={workExperience.skills}
                     skillLimit={5}
+                    lang={lang}
                     compact
                 />
             </div>
@@ -117,13 +120,13 @@ function WorkExperienceContent({ workExperience }) {
     );
 }
 
-function formatPeriod(startYear, endYear) {
+function formatPeriod(startYear, endYear, lang) {
     if (startYear && endYear) {
         return `${startYear} – ${endYear}`;
     }
 
     if (startYear) {
-        return `${startYear} – heden`;
+        return `${startYear} – ${lang === "en" ? "present" : "heden"}`;
     }
 
     return endYear?.toString() ?? "";

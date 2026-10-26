@@ -1,9 +1,9 @@
 import { httpClient, getMediaUrl } from "./httpClient";
 
 export const educationClient = {
-    getAll: async () => {
+    getAll: async (lang = "nl") => {
         const response = await httpClient.get(
-            "/api/education"
+            `/api/education?language=${lang}`
         );
 
         return response.data.map((education) => ({

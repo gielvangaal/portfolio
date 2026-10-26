@@ -17,19 +17,19 @@ import { useContact } from "./useContact.js";
 
 import "./contact.css";
 
-export default function ContactSection({ language = "nl" }) {
+export default function ContactSection({ lang = "nl" }) {
     const {
         data: contact,
         isLoading,
         isError,
-    } = useContact(language);
+    } = useContact(lang);
 
     if (isLoading) {
-        return <p>Contact loading...</p>;
+        return <p>{lang === "en" ? "Loading contact..." : "Contact laden..."}</p>;
     }
 
     if (isError || !contact) {
-        return <p>Contact could not be loaded.</p>;
+        return <p>{lang === "en" ? "Contact could not be loaded." : "Contact kon niet worden geladen."}</p>;
     }
 
     return (
