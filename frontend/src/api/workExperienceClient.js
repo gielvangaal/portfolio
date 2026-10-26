@@ -1,9 +1,9 @@
 import { httpClient, getMediaUrl } from "./httpClient";
 
 export const workExperienceClient = {
-    getAll: async () => {
+    getAll: async (lang = "nl") => {
         const response = await httpClient.get(
-            "/api/work-experience"
+            `/api/work-experience?language=${lang}`
         );
 
         return response.data.map((workExperience) => ({

@@ -15,11 +15,11 @@ export default function HeroSection({ lang }) {
     // QUERY STATE
     // --------------------------------------------------
     if (isLoading) {
-        return <p>Hero loading 1-2-3...</p>;
+        return <p>{lang === "en" ? "Loading introduction..." : "Introductie laden..."}</p>;
     }
 
     if (isError) {
-        return <p>Whoops, something went wrong I'm afraid.</p>;
+        return <p>{lang === "en" ? "Introduction could not be loaded." : "Introductie kon niet worden geladen."}</p>;
     }
 
     // --------------------------------------------------

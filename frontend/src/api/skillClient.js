@@ -1,9 +1,9 @@
 import { httpClient } from "./httpClient";
 
 export const skillClient = {
-    getAll: async () => {
+    getAll: async (lang = "nl") => {
         const response = await httpClient.get(
-            "/api/skills"
+            `/api/skills?language=${lang}`
         );
 
         return response.data;

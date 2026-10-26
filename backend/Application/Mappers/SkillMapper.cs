@@ -11,6 +11,7 @@ public class SkillMapper : ISkillMapper
         return new SkillResponse
         {
             Id = skill.Id,
+            Key = skill.Key,
             Name = skill.Translations.FirstOrDefault(x => x.Language == language)?.Name
                 ?? skill.Translations.FirstOrDefault(x => x.Language == "nl")?.Name
                 ?? skill.Key,

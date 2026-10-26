@@ -13,11 +13,11 @@ export default function AboutProfileSection({ lang }) {
     } = useAboutProfile(lang);
 
     if (isLoading) {
-        return <p>About profile loading...</p>;
+        return <p>{lang === "en" ? "Loading profile..." : "Profiel laden..."}</p>;
     }
 
     if (isError) {
-        return <p>About profile could not be loaded.</p>;
+        return <p>{lang === "en" ? "Profile could not be loaded." : "Profiel kon niet worden geladen."}</p>;
     }
 
     return (
