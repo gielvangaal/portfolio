@@ -1,0 +1,17 @@
+# Docker builds use the repository root as context.
+.git
+.github
+**/node_modules
+**/dist
+**/dist-ssr
+**/bin
+**/obj
+**/TestResults
+**/test-results
+**/playwright-report
+**/.env
+**/.env.*
+**/!.env.example
+**/.idea
+**/.vscode
+og-htmlphp
