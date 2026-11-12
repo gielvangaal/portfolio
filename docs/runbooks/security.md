@@ -1,10 +1,29 @@
-# Portfolio security: snelle check
+# Portfolio security: alleen alerts en Trivy
 
-GitHub doet het werk. Er draait niets extra op K3s.
+**Doel:** ernstige kwetsbaarheden signaleren zonder een stroom automatische update-PR's. Geen extra software op K3s.
 
-- **Dependabot** controleert elke week npm, NuGet, Docker-base-images en GitHub Actions. Bekijk meldingen onder **GitHub → Security → Dependabot alerts** en update-PR's onder **Pull requests**.
-- **Trivy** scant iedere dag de gepubliceerde frontend- en API-images van de nieuwste commit op `main`. Bekijk de resultaten onder **Actions → Scan portfolio container images**. **Run workflow** start direct een controle.
-- **Bij een urgente CVE:** zoek de software/versie in Dependabot-alerts en Trivy-joblogs. Controleer daarna in `platform-gitops` of de getroffen image-tag echt wordt gebruikt; de scan van `main` bewijst **niet** wat productie draait. Update de dependency/base-image, bouw opnieuw en rol de nieuwe image via GitOps uit. Bij acute blootstelling: beperk tijdelijk toegang.
-- **Let op:** een groene scan sluit een nieuwe zero-day niet uit. Check bij een net gepubliceerde kwetsbaarheid ook het leveranciersadvies. Trivy meldt HIGH/CRITICAL als een gefaalde job; een ontbrekende image-tag geeft eveneens een fout.
+## GitHub-instellingen (eenmalig)
 
-Deze eerste versie scant de meest recente images van `main`, **niet automatisch de image-digests in K3s**. Koppeling met daadwerkelijk gedeployde images is vervolgwerk onder PAHP platform-infra issue #41.
+In **Settings → Advanced Security** (benaming kan afwijken):
+- Dependency graph: **aan**
+- Dependabot alerts: **aan**
+- Dependabot security updates: **uit**
+
+**Geen `.github/dependabot.yml`:** daardoor geen geplande Dependabot versie-update-PR's. De security-update-PR's moet je los daarvan uitzetten via GitHub Settings. GitHub kan ook alerts voor LOW/MODERATE aanmaken; geef vooral prioriteit aan Critical en aantoonbaar exploiteerbare High. De alertlijst kun je op ernst filteren.
+
+## Trivy
+
+**Actions → Scan portfolio container images** draait dagelijks en kan ook handmatig met **Run workflow** worden gestart. De workflow scant de gepubliceerde frontend- en API-image van de huidige `main` commit op HIGH/CRITICAL. Rode jobs kunnen ook komen door een ontbrekende image-tag; controleer het log.
+
+**Let op:** de `main`-image is niet noodzakelijk de daadwerkelijk uitgerolde productie-image. Verifieer bij een urgente CVE de image-tag/digest in `platform-gitops` en K3s.
+
+## Bij ernstige CVE
+
+1. Lees het leveranciersadvies en bepaal of de kwetsbare versie/functionele route werkelijk aanwezig is.
+2. Controleer de blootstelling: publieke frontend, interne API en paden voor onbetrouwbare input zijn niet hetzelfde risico.
+3. Controleer bij voorkeur de exact gedeployde image; gebruik Dependabot Alerts en Trivy als signalering, niet als bewijs van exploitbaarheid.
+4. Alleen bij reëel risico: dependency/base-image aanpassen, image opnieuw bouwen, via GitOps uitrollen en opnieuw controleren.
+
+Ondersteunde runtimeversies blijven wenselijk. Geen directe publieke API-route verlaagt het risico, maar maakt verouderde runtimes niet automatisch veilig.
+
+Vervolg: scanning van daadwerkelijk gedeployde image-digests (platform-infra issue #41).
