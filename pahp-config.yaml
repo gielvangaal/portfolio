@@ -1,0 +1,49 @@
+# PAHP application metadata. Descriptive only: not an active deployment policy.
+# Deployment image tags/digests and routing remain authoritative in platform-gitops.
+schema_version: 1
+
+application:
+  name: portfolio
+  domain: gielvangaal.dev
+  repository: gielvangaal/portfolio
+  environment: production
+  namespace: pahp-gielvangaal-dev-prod
+
+  lifecycle:
+    disposable: false
+    allow_data_reset: false
+    allow_automatic_deletion: false
+
+  components:
+    frontend:
+      framework: react
+      framework_version: "19"
+      build_tool: vite
+      build_runtime: node
+      build_runtime_version: "22"
+      runtime: nginx
+      exposure: public
+      dockerfile: docker/frontend/Dockerfile
+
+    api:
+      framework: aspnetcore
+      runtime: dotnet
+      runtime_version: "9"
+      target_framework: net9.0
+      exposure: public_via_gateway
+      public_paths:
+        - /api
+        - /media
+      dockerfile: docker/backend/api/Dockerfile
+
+    database:
+      engine: mysql
+      version: "8.4"
+      exposure: internal
+      persistent_storage: true
+
+  deployment:
+    repository: gielvangaal/platform-gitops
+    path: apps/gielvangaal-dev/prod
+    # Exact deployed image references belong to the GitOps manifests above,
+    # not to this metadata file. Check K3s to confirm actual runtime state.
