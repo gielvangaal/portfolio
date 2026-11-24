@@ -1,19 +1,63 @@
 name: Container images
-# Publish stable release tags; branch and PR builds validate without publishing.
+# Allocate one release version per main commit and publish both images.
 
 on:
   pull_request:
     branches: [main]
   push:
     branches: [main]
-    tags: ['v*']
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: container-images-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.version.outputs.release }}
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Allocate release version
+        id: version
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          git fetch --tags
+          existing=$(git tag --points-at HEAD | grep -E '^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$' | sort -V | tail -1 || true)
+          if [[ -n "$existing" ]]; then
+            echo "release=${existing#v}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          latest=$(git tag --list | grep -E '^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$' | sort -V | tail -1 || true)
+          title=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/pulls" --jq '[.[] | select(.merged_at != null and .base.ref == "main")][0].title // ""')
+          if [[ -z "$latest" ]]; then
+            version=1.0.0
+          else
+            IFS=. read -r major minor patch <<< "${latest#v}"
+            case "$title" in
+              *!:*) version="$((major+1)).0.0" ;;
+              feat:*|feat\(*\):*) version="$major.$((minor+1)).0" ;;
+              *) version="$major.$minor.$((patch+1))" ;;
+            esac
+          fi
+          git tag "v$version"
+          git push origin "refs/tags/v$version"
+          echo "release=$version" >> "$GITHUB_OUTPUT"
+
   images:
+    needs: version
     name: Build ${{ matrix.component }}
     runs-on: ubuntu-latest
     permissions:
@@ -27,37 +71,23 @@ jobs:
             dockerfile: docker/frontend/Dockerfile
           - component: api
             dockerfile: docker/backend/api/Dockerfile
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Validate release version
-        if: startsWith(github.ref, 'refs/tags/')
-        shell: bash
-        run: |
-          [[ "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
-          echo "RELEASE_VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
+      - uses: actions/checkout@v6
+      - uses: docker/setup-buildx-action@v3
       - name: Log in to GHCR
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: needs.version.outputs.release != ''
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build and optionally publish image
         uses: docker/build-push-action@0a97817b6ade9f46837855d676c4cca3a2471fc9
         with:
           context: .
           file: ${{ matrix.dockerfile }}
-          push: ${{ startsWith(github.ref, 'refs/tags/v') }}
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/portfolio-${{ matrix.component }}:${{ env.RELEASE_VERSION || 'ci' }}
+          push: ${{ needs.version.outputs.release != '' }}
+          tags: ghcr.io/${{ github.repository_owner }}/portfolio-${{ matrix.component }}:${{ needs.version.outputs.release || 'ci' }}
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.revision=${{ github.sha }}
