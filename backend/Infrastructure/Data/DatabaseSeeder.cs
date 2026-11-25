@@ -1301,9 +1301,9 @@ public static class DatabaseSeeder
                 Language = "nl",
                 Name = "Giel van Gaal",
                 JobTitle = "Linux Engineer & Software Developer",
-                CatchPhrase = "Van infrastructuur tot applicatie.",
+                CatchPhrase = "De wereld vooruit helpen.",
                 Description =
-                    "Ik werk als Linux Engineer en ontwikkel daarnaast software met onder andere C#, React en Kotlin.",
+                    "Ik houd me als Linux Engineer bezig met het automatiseren van infra, software en agentic systemen.",
                 Media = heroImage
             },
 
@@ -1312,9 +1312,9 @@ public static class DatabaseSeeder
                 Language = "en",
                 Name = "Giel van Gaal",
                 JobTitle = "Linux Engineer & Software Developer",
-                CatchPhrase = "From infrastructure to application.",
+                CatchPhrase = "Helping move the world forward.",
                 Description =
-                    "I work as a Linux Engineer and develop software using technologies such as C#, React and Kotlin.",
+                    "I work as a Linux Engineer, building and automating infrastructure, software and agentic systems.",
                 Media = heroImage
             }
         );
@@ -1449,11 +1449,14 @@ public static class DatabaseSeeder
             "Webapplicatie en beheersysteem voor zorgrobots, gebouwd met HTML, CSS, PHP en MySQL.",
 
         Description =
-            "CareBots begon als een teamproject rond zorgrobots. We ontwikkelden eerst een responsive website " +
-            "en bouwden later een beheersysteem met gebruikersrollen en databasefunctionaliteit. " +
-            "Ik werkte aan de frontend, PHP/MySQL-backend en herbruikbare componenten, " +
-            "met aandacht voor ontwerp, samenwerking, testing en CI/CD.",
-
+            "CareBots begon als een teamproject rond zorgrobots. Hiermee doorliepen we als eerstejaars de volledige " +
+            "development lifecycle: van functioneel naar technisch ontwerp en van frontend naar backend, " +
+            "met alle architectuur- en UML-diagrammetjes van dien. Ook maakten we voor het eerst kennis met de wondere wereld van OOP. " +
+            "We werkten onder andere met PHP en MySQL en bouwden onze eigen componentenlibrary. " +
+            "Hier deed ik ook mijn eerste ervaring op met containers, om het bekende 'bij mij werkt het wel'-probleem te ondervangen. " +
+            "Ik was eigenlijk meteen verkocht. " +
+            "Onder de bezielende leiding van Ian Tiemann en samen met Ruben Leenknegt en Ivar Visser " +
+            "rondde ik het eerste leerjaar cum laude af.",
         ProjectDate = new DateOnly(2024, 9, 1),
         ProjectType = ProjectType.Education,
         Role = "Full-stack Developer",
@@ -1526,10 +1529,14 @@ public static class DatabaseSeeder
             "Website and management system for healthcare robots, built with HTML, CSS, PHP and MySQL.",
 
         Description =
-            "CareBots started as a team project focused on healthcare robots. We first developed a responsive website " +
-            "and later added a management system with user roles and database functionality. " +
-            "I worked on the frontend, PHP/MySQL backend and reusable components, " +
-            "with a focus on design, collaboration, testing and CI/CD.",
+            "CareBots started as a team project centred around healthcare robots. As first-year students, we went through " +
+            "the entire development lifecycle: from functional to technical design and from frontend to backend, " +
+            "with all the architecture and UML diagrams that come with it. We also got our first taste of the wonderful world of OOP. " +
+            "We worked with PHP and MySQL and built our own component library. " +
+            "This was also my first experience with containers, tackling the familiar 'it works on my machine' problem. " +
+            "I was pretty much hooked from the start. " +
+            "Under the inspiring guidance of Ian Tiemann and alongside Ruben Leenknegt and Ivar Visser, " +
+            "I completed my first year cum laude.",
 
         ProjectDate = new DateOnly(2024, 9, 1),
         ProjectType = ProjectType.Education,
@@ -1609,10 +1616,12 @@ public static class DatabaseSeeder
             "Autoverhuurapp met Android-frontend en Kotlin/Ktor REST API.",
 
         Description =
-            "JoyRide is een autoverhuurapp met een Android-frontend in Kotlin en Jetpack Compose " +
-            "en een REST API in Kotlin/Ktor. De backend gebruikt Exposed en MySQL en is opgebouwd " +
-            "in controllers, services en repositories. Binnen het team werkten we in sprints aan " +
-            "de integratie, foutafhandeling en een overzichtelijke softwarearchitectuur.",
+            "JoyRide besloeg de eerste twee periodes van leerjaar 2 en was een deep dive in de wereld van gecompileerde programmeertalen. " +
+            "Voor aanvang van het schooljaar had ik een CI/CD-pipeline ontwikkeld waarmee we onze API via een (OT)AP-straat live konden brengen. " +
+            "Dat kwam goed van pas, aangezien we met Kotlin en Jetpack Compose een native Android-app ontwikkelden. " +
+            "Voor de backend maakten we gebruik van Ktor, Exposed en MySQL. " +
+            "We leerden werken volgens het Layered Architecture-principe en verdiepten ons verder in de nodige basics, " +
+            "zoals foutafhandeling, debugging en het samenwerken aan een gezamenlijke codebase.",
 
         ProjectDate = new DateOnly(2025, 11, 1),
         ProjectType = ProjectType.Education,
@@ -1680,12 +1689,13 @@ public static class DatabaseSeeder
 
         CardDescription =
             "Car rental application with an Android frontend and Kotlin/Ktor REST API.",
-
         Description =
-            "JoyRide is a car rental application with an Android frontend in Kotlin and Jetpack Compose " +
-            "and a Kotlin/Ktor REST API. The backend uses Exposed and MySQL, organized into controllers, " +
-            "services and repositories. Working in sprints, our team focused on integration, " +
-            "error handling and maintainable software architecture.",
+            "JoyRide covered the first two periods of my second year and was a deep dive into the world of compiled programming languages. " +
+            "Before the academic year started, I had developed a CI/CD pipeline that allowed us to deploy our API across multiple environments. " +
+            "This came in handy as we were developing a native Android app using Kotlin and Jetpack Compose. " +
+            "For the backend, we used Ktor, Exposed and MySQL. " +
+            "We learned to work with Layered Architecture and further explored the essentials of software development, " +
+            "such as error handling, debugging and collaborating on a shared codebase.",
 
         ProjectDate = new DateOnly(2025, 11, 1),
         ProjectType = ProjectType.Education,
@@ -1761,12 +1771,13 @@ public static class DatabaseSeeder
             "Persoonlijk full-stack experiment met Django, CSS Grid, Nginx en een eigen VPS.",
 
         Description =
-            "Nijntje begon als hobbyproject om zonder vast framework of bestaande architectuur verschillende technieken " +
-            "zelf te ontdekken. Ik experimenteerde met CSS Grid en bouwde met Django een messageboard. " +
-            "Daarvoor zette ik mijn eigen VPS op, configureerde ik Gunicorn als WSGI-server en Nginx als reverse proxy " +
-            "en gebruikte ik Certbot voor TLS. Berichten worden vanuit de frontend via JavaScript opgehaald. " +
-            "Het project was vooral een technische speeltuin waarin ik veel leerde over Linux-servers, poorten, " +
-            "reverse proxies, SSH-sleutels en het zelfstandig uitzoeken en implementeren van nieuwe technologie.",
+            "Nijntje begon als hobbyproject waarin ik zonder vast framework of vooraf uitgedachte architectuur verschillende technieken wilde onderzoeken. " +
+            "Dit deed ik voor aanvang van het eerste leerjaar, om mijn kennis alvast enigszins op peil te brengen. " +
+            "Ik experimenteerde met CSS Grid en bouwde met Django een messageboard. " +
+            "Daarvoor zette ik mijn eigen VPS op, configureerde ik Gunicorn als WSGI-server en Nginx als reverse proxy, " +
+            "en gebruikte ik Certbot voor TLS. Vanuit de frontend worden de berichten opgehaald met JavaScript. " +
+            "Het was vooral een technische speeltuin waarin ik veel leerde over Linux-servers, poorten, reverse proxies en SSH-sleutels. " +
+            "Gewoon lekker zelf uitzoeken hoe alles werkt en hoe je de verschillende onderdelen met elkaar laat samenwerken.",
 
         ProjectDate = new DateOnly(2024, 1, 1),
         ProjectType = ProjectType.Personal,
@@ -1835,12 +1846,13 @@ public static class DatabaseSeeder
             "Personal full-stack experiment using Django, CSS Grid, Nginx and a self-managed VPS.",
 
         Description =
-            "Nijntje started as a personal project to explore different technologies without relying on an existing " +
-            "architecture or predefined solution. I experimented with CSS Grid and built a message board using Django. " +
-            "To run it, I set up my own VPS, configured Gunicorn as the WSGI server and Nginx as a reverse proxy, " +
+            "Nijntje started as a hobby project in which I wanted to explore different technologies without a predefined framework or architecture. " +
+            "I did this before starting my first year to get my technical knowledge up to scratch. " +
+            "I experimented with CSS Grid and built a message board using Django. " +
+            "I set up my own VPS, configured Gunicorn as a WSGI server and Nginx as a reverse proxy, " +
             "and used Certbot for TLS. Messages are retrieved from the frontend using JavaScript. " +
-            "The project became a technical playground in which I learned a great deal about Linux servers, ports, " +
-            "reverse proxies, SSH keys and independently researching and implementing unfamiliar technology.",
+            "It was mainly a technical playground where I learned a lot about Linux servers, ports, reverse proxies and SSH keys. " +
+            "Just enjoying the process of figuring out how things work and getting all the different pieces to work together.",
 
         ProjectDate = new DateOnly(2024, 1, 1),
         ProjectType = ProjectType.Personal,
@@ -1914,11 +1926,10 @@ public static class DatabaseSeeder
 
         Description =
             "In 2018 bouwde ik een website voor mijn werk als muzikant. De website brengt mijn discografie, nieuws, " +
-            "achtergrondinformatie en contactgegevens samen in één responsive omgeving. " +
+            "achtergrondinformatie en contactgegevens samen op één responsive website. " +
             "Ik gebruikte een bestaande template als uitgangspunt en paste de vormgeving, structuur en functionaliteit " +
-            "aan mijn eigen wensen aan met HTML, CSS, JavaScript en Bootstrap. Het project laat goed zien hoe ik al " +
-            "voor mijn opleiding Informatica zelfstandig experimenteerde met webontwikkeling en bestaande software " +
-            "analyseerde en aanpaste om tot een bruikbaar eindproduct te komen.",
+            "met HTML, CSS, JavaScript en Bootstrap aan mijn eigen wensen aan. " +
+            "Een leuk project waar ik veel plezier aan heb beleefd. Inmiddels wat achterhaald wellicht, maar dat mag de pret niet drukken.",
 
         ProjectDate = new DateOnly(2018, 1, 1),
         ProjectType = ProjectType.Personal,
@@ -1977,12 +1988,11 @@ public static class DatabaseSeeder
             "Responsive artist website for my music, discography, news and contact information.",
 
         Description =
-            "In 2018 I built a website for my work as a musician. The site brings together my discography, news, " +
-            "background information and contact details in a single responsive environment. " +
-            "I used an existing template as a starting point and adapted its styling, structure and functionality " +
-            "to my own requirements using HTML, CSS, JavaScript and Bootstrap. The project shows how I was already " +
-            "experimenting independently with web development before starting my Computer Science degree, analysing " +
-            "and adapting existing software to create a useful finished product.",
+            "In 2018, I built a website for my work as a musician. The website brings together my discography, news, " +
+            "background information and contact details in one responsive website. " +
+            "I used an existing template as a starting point and adapted its design, structure and functionality " +
+            "to my own liking using HTML, CSS, JavaScript and Bootstrap. " +
+            "A fun project that I really enjoyed working on. Perhaps a little outdated by now, but that doesn't take away from the fun I had building it.",
 
         ProjectDate = new DateOnly(2018, 1, 1),
         ProjectType = ProjectType.Personal,
@@ -2037,7 +2047,17 @@ public static class DatabaseSeeder
         Slug = "cinenet",
         Title = "Cine.NET",
         CardDescription = "Bioscoopapplicatie met C#, Blazor en MudBlazor.",
-        Description = "Cine.NET is een bioscoopapplicatie met films, voorstellingen, stoelkeuze en een beheeromgeving. Binnen een team werkte ik aan de frontend in Blazor en MudBlazor en de koppeling met een .NET API. We organiseerden het werk met Scrum en Jira.",
+ 
+        Description =
+            "Cine.NET betreft periode 3 van leerjaar 2. De opdracht was om met C# en .NET een bioscoopapplicatie " +
+            "te ontwikkelen met films, voorstellingen, stoelkeuze en een beheeromgeving. " +
+            "Voor aanvang van de periode had ik een CI/CD-pipeline gebouwd waarmee we zowel de API als de frontend live konden benaderen. " +
+            "Na wat vooronderzoek heb ik voorgesteld om voor de frontend gebruik te maken van Blazor en MudBlazor, " +
+            "met het oog op schaalbaarheid, uniformiteit, herbruikbaarheid van componenten en ontwikkelgemak. " +
+            "Mijn bevindingen heb ik in een document gegoten en vervolgens gepitcht bij de groep. " +
+            "Deze periode stond ook nadrukkelijk in het teken van Agile en Scrum. " +
+            "We verdeelden het werk over sprints en hielden refinements, sprint reviews en retrospectives.",
+
         ProjectDate = new DateOnly(2026, 2, 1),
         ProjectType = ProjectType.Education,
         Role = "Full-stack Developer",
@@ -2053,7 +2073,17 @@ public static class DatabaseSeeder
         Slug = "cinenet",
         Title = "Cine.NET",
         CardDescription = "Cinema booking application built with C#, Blazor and MudBlazor.",
-        Description = "Cine.NET is a cinema booking application featuring movies, screenings, seat selection and an administration interface. As part of a team I worked on a Blazor/MudBlazor frontend and its integration with a .NET API, using Scrum and Jira.",
+
+        Description =
+            "Cine.NET was the project for the third period of my second year. The assignment was to develop a cinema application " +
+            "using C# and .NET, featuring movies, screenings, seat selection and an administration interface. " +
+            "Before the period started, I had built a CI/CD pipeline that allowed us to access both the API and the frontend online. " +
+            "After some initial research, I proposed using Blazor and MudBlazor for the frontend, " +
+            "with scalability, consistency, component reusability and ease of development in mind. " +
+            "I documented my findings and pitched the proposal to the team. " +
+            "This period also placed a strong emphasis on Agile and Scrum. " +
+            "We organised our work into sprints and held refinement sessions, sprint reviews and retrospectives.",
+
         ProjectDate = new DateOnly(2026, 2, 1),
         ProjectType = ProjectType.Education,
         Role = "Full-stack Developer",
@@ -2069,7 +2099,19 @@ public static class DatabaseSeeder
         Slug = "soulsearch",
         Title = "SoulSearch",
         CardDescription = "Cross-platform applicatie met .NET MAUI Blazor Hybrid en een API.",
-        Description = "SoulSearch is een cross-platform applicatie ontwikkeld met C#, .NET MAUI Blazor Hybrid en een afzonderlijke API. De gedeelde Blazor-interface combineert webtechnologie met een native app. Tijdens dit project lag de nadruk op softwarearchitectuur, API-integratie en het testen van functionaliteit.",
+        
+        Description =
+            "SoulSearch is mijn afstudeeropdracht waarmee ik ditmaal zelfstandig mijn Associate Degree cum laude heb weten af te ronden. " +
+            "Een ambitieus project: een soort Instagram voor aggressive inline skaters, met een API in C# en .NET " +
+            "en een cross-platform frontend gebouwd met .NET MAUI, Blazor en MudBlazor. " +
+            "Hierbij heb ik gebruikgemaakt van native device features, zoals locatiebepaling en de camera. " +
+            "Daarnaast heb ik authenticatie en autorisatie met JWT, de opslag en verwerking van gebruikersmedia " +
+            "en het delen van componenten tussen de web- en native applicatie gerealiseerd. " +
+            "Van projectplanning en softwarearchitectuur tot realisatie en het opzetten van de CI/CD-pipeline, ditmaal lag de verantwoordelijkheid volledig bij mij. " +
+            "Gedurende het hele ontwikkelproces heb ik dankbaar gebruikgemaakt van AI als sparringpartner en hulpmiddel bij de realisatie. " +
+            "De versie die momenteel live staat is een demo die je gerust zelf kunt uitproberen. " +
+            "De data wordt iedere nacht gereset om de boel een beetje schoon te houden.",
+
         ProjectDate = new DateOnly(2026, 5, 1),
         ProjectType = ProjectType.Education,
         Role = "Software Developer",
@@ -2085,7 +2127,19 @@ public static class DatabaseSeeder
         Slug = "soulsearch",
         Title = "SoulSearch",
         CardDescription = "Cross-platform application using .NET MAUI Blazor Hybrid and an API.",
-        Description = "SoulSearch is a cross-platform application developed using C#, .NET MAUI Blazor Hybrid and a separate API. Its shared Blazor interface combines web technology with a native application, with a focus on software architecture, API integration and functional testing.",
+        
+        Description =
+            "SoulSearch is my graduation project, through which I independently completed my Associate Degree cum laude. " +
+            "An ambitious project: something like Instagram for aggressive inline skaters, with an API built using C# and .NET " +
+            "and a cross-platform frontend using .NET MAUI, Blazor and MudBlazor. " +
+            "I made use of native device features such as geolocation and the camera. " +
+            "I also implemented JWT-based authentication and authorisation, user media storage and processing, " +
+            "and shared components between the web and native applications. " +
+            "From project planning and software architecture to development and setting up the CI/CD pipeline, this time the responsibility was entirely mine. " +
+            "Throughout the development process, I made extensive use of AI as a sparring partner and development tool. " +
+            "The version currently online is a demo that you're welcome to try out yourself. " +
+            "The data is reset every night to keep things nice and tidy.",
+
         ProjectDate = new DateOnly(2026, 5, 1),
         ProjectType = ProjectType.Education,
         Role = "Software Developer",
@@ -2098,10 +2152,19 @@ public static class DatabaseSeeder
     var contosoNl = new PortfolioItem
     {
         Language = "nl",
-        Slug = "contoso-data-engineering",
-        Title = "Data Engineering – Contoso",
-        CardDescription = "Van verkoop- en weerdata naar dashboards met Power BI en Python.",
-        Description = "Wat gebeurt er eigenlijk met de verkoopcijfers als het buiten warmer wordt? Voor deze schoolopdracht combineerde ik verkoopgegevens van Contoso met historische en geschatte temperatuurgegevens. In Power BI bouwde ik twee dashboards, voor een CEO en een filiaalmanager, met een Galaxy Schema en DAX-measures als basis. Vooral bij het Python-gedeelte ging ik aan: een modulaire ETL-pipeline bouwen waarin alle data stapsgewijs wordt verwerkt en gecontroleerd, om uiteindelijk tot tien verschillende visualisaties te komen. Een duidelijk verband tussen temperatuur en omzet kon ik niet ontdekken, maar juist het bouwen van de hele dataflow vond ik ontzettend leuk.",
+        Slug = "business intelligence",
+        Title = "Business Inteligence",
+        CardDescription = "Business Intelligence fundamentals met Power BI en Python.",
+        
+        Description =
+            "In periode 1 van leerjaar 3 heb ik kennisgemaakt met de fundamenten van Business Intelligence. " +
+            "Veel theorie deze periode: de BI-lifecycle, supervised en unsupervised learning, maturity levels, data governance " +
+            "en natuurlijk architectuur. Ook het verschil tussen OLAP en OLTP en de achterliggende gedachte van een datawarehouse vond ik interessant. " +
+            "Naast het functioneel en technisch ontwerp was de realisatie tweeledig: eenmaal in Power BI en eenmaal in Python. " +
+            "Mijn casus betrof een Contoso-dataset met verkoopgegevens, die ik heb aangevuld met een weerdataset om te kijken of er een verband was tussen temperatuur en omzet (niet dus, althans niet zichtbaar). " +
+            "Vooral bij het Python-gedeelte ging ik aan. Ik heb met veel plezier een modulaire ETL-pipeline opgezet waarin alle data stapsgewijs wordt verwerkt, " +
+            "om uiteindelijk tot tien verschillende visualisaties te komen.",
+
         ProjectDate = new DateOnly(2026, 10, 25),
         ProjectType = ProjectType.Education,
         Role = "Data Engineer",
@@ -2121,8 +2184,17 @@ public static class DatabaseSeeder
         Language = "en",
         Slug = "contoso-data-engineering",
         Title = "Data Engineering – Contoso",
-        CardDescription = "Turning sales and weather data into dashboards with Power BI and Python.",
-        Description = "What happens to sales when it gets warmer outside? For this school project I combined Contoso sales data with historical and estimated temperature data. In Power BI I built two dashboards, one for a CEO and one for a store manager, using a Galaxy Schema and DAX measures. The Python part was where I really got into it: building a modular ETL pipeline that processes and checks the data step by step, eventually producing ten different visualizations. I couldn't find a clear relationship between temperature and revenue, but putting the entire data flow together was what I enjoyed most.",
+        CardDescription = "Business Intelligence fundamentals with Power BI en Python.",
+
+        Description =
+              "During the first period of my third year, I was introduced to the fundamentals of Business Intelligence. " +
+              "Quite a bit of theory this time around: the BI lifecycle, supervised and unsupervised learning, maturity levels, data governance " +
+              "and, of course, architecture. I also found the differences between OLAP and OLTP and the reasoning behind data warehouses particularly interesting. " +
+              "Alongside the functional and technical design, the implementation was twofold: once in Power BI and once in Python. " +
+              "My case involved a Contoso sales dataset, which I supplemented with weather data to see whether there was a relationship between temperature and revenue (apparently not, at least not a visible one). " +
+              "The Python part was where I really got into it. I thoroughly enjoyed building a modular ETL pipeline that processes all the data step by step, " +
+              "ultimately producing ten different visualisations.",
+
         ProjectDate = new DateOnly(2026, 10, 25),
         ProjectType = ProjectType.Education,
         Role = "Data Engineer",
@@ -2172,13 +2244,13 @@ public static class DatabaseSeeder
             Language = "nl",
             Description =
                 """
-                Mijn naam is **Giel** en ik werk als **Linux Engineer**. Na jaren met plezier in de culturele sector te hebben gewerkt, heb ik de overstap gemaakt naar de **informatica**. Daarnaast volg ik de **bachelor Informatica** aan Avans Hogeschool.
-
-                In mijn werk houd ik me bezig met **Linux**, infrastructuur en automatisering. Daarnaast ontwikkel ik software en werk ik onder andere met **C#**, **React** en **Kotlin**.
-
-                Ik werk graag vanuit duidelijke **requirements** en volgens **OTAP-principes**, met aandacht voor **CI/CD**, testen en onderhoudbaarheid. Ik geloof in de tijd nemen om iets goed op te zetten, zodat software ook op langere termijn begrijpelijk en beheersbaar blijft.
-
-                Ik ben nieuwsgierig van aard en vind het interessant om de volledige technische keten te begrijpen: van infrastructuur en deployment tot backend en frontend.
+                Mijn naam is **Giel** en ik werk als **Linux Engineer** bij de Gemeente Den Haag. Van oorsprong ben ik muzikant en inmiddels volg ik naast mijn werk de **bachelor Informatica** aan Avans Hogeschool.
+              
+                In mijn werk houd ik me bezig met Linux, infrastructuur en automatisering. In mijn schaarse vrije tijd bouw ik mijn eigen hostingplatform met **Kubernetes, Ansible en GitOps**, ontwikkel ik software en experimenteer ik met **agentic AI**.
+              
+                Voor mij is het simpel: als je niet weet waar je naartoe gaat, ga je er ook niet komen. Ik werk vanuit duidelijke requirements en een goed doordacht ontwerp, zodat alles begrijpelijk en beheersbaar blijft.
+            
+                Ik ben nieuwsgierig van aard en altijd wel bezig met een projectje, zoals je als het goed is ook terugziet in mijn portfolio. Uiteindelijk wil ik mooie, zinvolle dingen bouwen en daarmee de wereld een klein stukje vooruithelpen.
                 """,
             ImagePath = "/media/giel2.webp"
         },
@@ -2188,13 +2260,13 @@ public static class DatabaseSeeder
             Language = "en",
             Description =
                 """
-                My name is **Giel** and I work as a **Linux Engineer**. After spending several years working in the cultural sector, I made the transition into **computer science**. I am also studying for a **Bachelor's degree in Computer Science** at Avans University of Applied Sciences.
-
-                In my work I focus on **Linux**, infrastructure and automation. Alongside that, I develop software using technologies including **C#**, **React** and **Kotlin**.
-
-                I like working from clear **requirements** and following **DTAP principles**, with attention to **CI/CD**, testing and maintainability. I believe that taking the time to build something properly saves time when software needs to be maintained or extended later.
-
-                I am naturally curious and enjoy understanding the complete technical chain: from infrastructure and deployment to backend and frontend development.
+                My name is **Giel** and I work as a **Linux Engineer** at the Municipality of The Hague. Originally a musician, I'm now pursuing a **Bachelor's degree in Computer Science** at Avans University of Applied Sciences alongside my work.
+            
+                At work, I focus on Linux, infrastructure and automation. In what little spare time I have, I build my own hosting platform using **Kubernetes, Ansible and GitOps**, develop software and experiment with **agentic AI**.
+            
+                To me, it's simple: if you don't know where you're going, you won't get there. I like working with clear requirements and well-thought-out designs, keeping things understandable and manageable.
+            
+                I'm naturally curious and always working on some little project, as you'll hopefully notice throughout my portfolio. Ultimately, I want to build beautiful, meaningful things and help move the world forward, even if only a little.
                 """,
             ImagePath = "/media/giel2.webp"
         }
