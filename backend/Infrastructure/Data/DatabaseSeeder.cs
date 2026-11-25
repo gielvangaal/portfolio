@@ -2299,17 +2299,37 @@ public static class DatabaseSeeder
                 Technologies = 
                 [
                     technologies["Python"],
-                    technologies["MySQL"]
+                    technologies["MySQL"],
+                    technologies["pandas"],
+                    technologies["NumPy"],
+                    technologies["DAX"],
+                    technologies["Power Query"],
+                    technologies["Matplotlib"],
+                    technologies["Seaborn"],
+                    technologies["Plotly"],
+                    technologies["Altair"],
+                    technologies["Folium"]
                 ],
                 Skills =
                 [
                     skills["Databaseontwerp"], 
-                    skills["Analytisch vermogen"]
+                    skills["Analytisch vermogen"],
+                    skills["ETL"],
+                    skills["Business Intelligence"],
+                    skills["Datamodellering"],
+                    skills["Datavisualisatie"],
+                    skills["Datavalidatie"],
+                    skills["Softwarearchitectuur"]
                 ],
                 Tooling = 
                 [
                     tooling["Microsoft Excel"],
-                    tooling["Microsoft Power BI"]
+                    tooling["Microsoft Power BI"],
+                    tooling["JetBrains PyCharm"],
+                    tooling["Draw.io"],
+                    tooling["Git"],
+                    tooling["GitHub"],
+                    tooling["ChatGPT"]
                 ]
             },
             new EducationSection
