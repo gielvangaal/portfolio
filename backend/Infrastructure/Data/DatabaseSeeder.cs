@@ -44,6 +44,15 @@ public static class DatabaseSeeder
     };
 
     context.Technologies.AddRange(
+        new Technology { Name = "pandas", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "pandas logo") },
+        new Technology { Name = "NumPy", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "NumPy logo") },
+        new Technology { Name = "DAX", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "DAX logo") },
+        new Technology { Name = "Power Query", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Power Query logo") },
+        new Technology { Name = "Matplotlib", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Matplotlib logo") },
+        new Technology { Name = "Seaborn", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Seaborn logo") },
+        new Technology { Name = "Plotly", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Plotly logo") },
+        new Technology { Name = "Altair", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Altair logo") },
+        new Technology { Name = "Folium", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "Folium logo") },
         new Technology
         {
             Name = "HTML",
@@ -379,6 +388,56 @@ public static class DatabaseSeeder
             return;
 
         context.Skills.AddRange(
+            new Skill
+            {
+                Key = "etl",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "ETL" },
+                    new SkillTranslation { Language = "en", Name = "ETL" }
+                ],
+                Type = SkillType.Technical
+            },
+            new Skill
+            {
+                Key = "business-intelligence",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Business Intelligence" },
+                    new SkillTranslation { Language = "en", Name = "Business Intelligence" }
+                ],
+                Type = SkillType.Technical
+            },
+            new Skill
+            {
+                Key = "data-modeling",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Datamodellering" },
+                    new SkillTranslation { Language = "en", Name = "Data modeling" }
+                ],
+                Type = SkillType.Technical
+            },
+            new Skill
+            {
+                Key = "data-visualization",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Datavisualisatie" },
+                    new SkillTranslation { Language = "en", Name = "Data visualization" }
+                ],
+                Type = SkillType.Technical
+            },
+            new Skill
+            {
+                Key = "data-validation",
+                Translations =
+                [
+                    new SkillTranslation { Language = "nl", Name = "Datavalidatie" },
+                    new SkillTranslation { Language = "en", Name = "Data validation" }
+                ],
+                Type = SkillType.Technical
+            },
             new Skill
             {
                 Key = "functional-programming",
@@ -820,6 +879,8 @@ public static class DatabaseSeeder
         return;
 
     context.Tooling.AddRange(
+        new Tooling { Name = "JetBrains PyCharm", Usage = CapabilityUsage.Occasional, Media = CreateImage("/media/webstack/placeholder.webp", "JetBrains PyCharm logo") },
+        new Tooling { Name = "Draw.io", Usage = CapabilityUsage.Occasional, Media = CreateImage("/media/webstack/placeholder.webp", "Draw.io logo") },
         new Tooling
         {
             Name = "ChatGPT",
@@ -2034,7 +2095,51 @@ public static class DatabaseSeeder
         Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
     };
 
+    var contosoNl = new PortfolioItem
+    {
+        Language = "nl",
+        Slug = "contoso-data-engineering",
+        Title = "Data Engineering – Contoso",
+        CardDescription = "Van verkoop- en weerdata naar dashboards met Power BI en Python.",
+        Description = "Wat gebeurt er eigenlijk met de verkoopcijfers als het buiten warmer wordt? Voor deze schoolopdracht combineerde ik verkoopgegevens van Contoso met historische en geschatte temperatuurgegevens. In Power BI bouwde ik twee dashboards, voor een CEO en een filiaalmanager, met een Galaxy Schema en DAX-measures als basis. Vooral bij het Python-gedeelte ging ik aan: een modulaire ETL-pipeline bouwen waarin alle data stapsgewijs wordt verwerkt en gecontroleerd, om uiteindelijk tot tien verschillende visualisaties te komen. Een duidelijk verband tussen temperatuur en omzet kon ik niet ontdekken, maar juist het bouwen van de hele dataflow vond ik ontzettend leuk.",
+        ProjectDate = new DateOnly(2026, 10, 25),
+        ProjectType = ProjectType.Education,
+        Role = "Data Engineer",
+        TeamSize = 1,
+        GitHubUrl = "https://github.com/gielvangaal/L3P1",
+        Categories = [backend],
+        Technologies = [technologies["Python"], technologies["pandas"], technologies["NumPy"], technologies["DAX"], technologies["Power Query"], technologies["Matplotlib"], technologies["Seaborn"], technologies["Plotly"], technologies["Altair"], technologies["Folium"]],
+        Skills = [skills["ETL"], skills["Business Intelligence"], skills["Datamodellering"], skills["Datavisualisatie"], skills["Datavalidatie"], skills["Softwarearchitectuur"], skills["Analytisch vermogen"]],
+        Tooling = [tooling["Microsoft Power BI"], tooling["JetBrains PyCharm"], tooling["Draw.io"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/contoso-ceo.webp", "Power BI – CEO"),
+            CreateImage("/media/portfolio/contoso-store-manager.webp", "Power BI – Store manager"))
+    };
+
+    var contosoEn = new PortfolioItem
+    {
+        Language = "en",
+        Slug = "contoso-data-engineering",
+        Title = "Data Engineering – Contoso",
+        CardDescription = "Turning sales and weather data into dashboards with Power BI and Python.",
+        Description = "What happens to sales when it gets warmer outside? For this school project I combined Contoso sales data with historical and estimated temperature data. In Power BI I built two dashboards, one for a CEO and one for a store manager, using a Galaxy Schema and DAX measures. The Python part was where I really got into it: building a modular ETL pipeline that processes and checks the data step by step, eventually producing ten different visualizations. I couldn't find a clear relationship between temperature and revenue, but putting the entire data flow together was what I enjoyed most.",
+        ProjectDate = new DateOnly(2026, 10, 25),
+        ProjectType = ProjectType.Education,
+        Role = "Data Engineer",
+        TeamSize = 1,
+        GitHubUrl = "https://github.com/gielvangaal/L3P1",
+        Categories = [backend],
+        Technologies = [technologies["Python"], technologies["pandas"], technologies["NumPy"], technologies["DAX"], technologies["Power Query"], technologies["Matplotlib"], technologies["Seaborn"], technologies["Plotly"], technologies["Altair"], technologies["Folium"]],
+        Skills = [skills["ETL"], skills["Business Intelligence"], skills["Datamodellering"], skills["Datavisualisatie"], skills["Datavalidatie"], skills["Softwarearchitectuur"], skills["Analytisch vermogen"]],
+        Tooling = [tooling["Microsoft Power BI"], tooling["JetBrains PyCharm"], tooling["Draw.io"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/contoso-ceo.webp", "Power BI – CEO"),
+            CreateImage("/media/portfolio/contoso-store-manager.webp", "Power BI – Store manager"))
+    };
+
     context.PortfolioItems.AddRange(
+        contosoNl,
+        contosoEn,
         careBotsFrontendNl,
         careBotsFrontendEn,
 
