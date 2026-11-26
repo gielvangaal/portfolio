@@ -2124,7 +2124,11 @@ public static class DatabaseSeeder
         Categories = [frontend, backend],
         Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies[".NET MAUI"], technologies["ASP.NET Core"], technologies["REST API"]],
         Skills = [skills["Software testing"], skills["Softwarearchitectuur"], skills["Samenwerken"]],
-        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/soulsearch-1.webp", "Mobile view 1"),
+            CreateImage("/media/portfolio/soulsearch-2.webp", "Mobile view 2"),
+            CreateImage("/media/portfolio/soulsearch-3.webp", "Mobile view 3"))
     };
 
     var soulsearchEn = new PortfolioItem
@@ -2153,7 +2157,11 @@ public static class DatabaseSeeder
         Categories = [frontend, backend],
         Technologies = [technologies["C#"], technologies[".NET"], technologies["Blazor"], technologies["MudBlazor"], technologies[".NET MAUI"], technologies["ASP.NET Core"], technologies["REST API"]],
         Skills = [skills["Software testing"], skills["Softwarearchitectuur"], skills["Samenwerken"]],
-        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]]
+        Tooling = [tooling["Git"], tooling["Jira"], tooling["JetBrains Rider"], tooling["ChatGPT"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/soulsearch-1.webp", "Mobile view 1"),
+            CreateImage("/media/portfolio/soulsearch-2.webp", "Mobile view 2"),
+            CreateImage("/media/portfolio/soulsearch-3.webp", "Mobile view 3"))
     };
 
     var contosoNl = new PortfolioItem
