@@ -2154,8 +2154,8 @@ public static class DatabaseSeeder
     var contosoNl = new PortfolioItem
     {
         Language = "nl",
-        Slug = "business intelligence",
-        Title = "Business Inteligence",
+        Slug = "business-intelligence",
+        Title = "Business Intelligence",
         CardDescription = "Business Intelligence fundamentals met Power BI en Python.",
         
         Description =
@@ -2184,9 +2184,9 @@ public static class DatabaseSeeder
     var contosoEn = new PortfolioItem
     {
         Language = "en",
-        Slug = "contoso-data-engineering",
-        Title = "Data Engineering – Contoso",
-        CardDescription = "Business Intelligence fundamentals with Power BI en Python.",
+        Slug = "business-intelligence",
+        Title = "Business Intelligence",
+        CardDescription = "Business Intelligence fundamentals with Power BI and Python.",
 
         Description =
               "During the first period of my third year, I was introduced to the fundamentals of Business Intelligence. " +
