@@ -2211,7 +2211,53 @@ public static class DatabaseSeeder
             CreateImage("/media/portfolio/contoso-store-manager.webp", "Power BI – Store manager"))
     };
 
+    var portfolioNl = new PortfolioItem
+    {
+        Language = "nl",
+        Slug = "portfolio-v2",
+        Title = "Portfolio 2.0",
+        CardDescription = "Mijn eigen portfolio, opnieuw gebouwd met React, C# en MySQL.",
+        Description = "Dit is eigenlijk versie 2 van mijn portfolio. De eerste versie heb ik zelf ontworpen in Figma en vervolgens gebouwd met HTML en CSS. Met mijn nieuw verworven kennis van API's, mijn wens om agentic te leren werken en de nieuwsgierigheid om eens iets met React te doen, ben ik deze gaan herschrijven. Stap voor stap heb ik met behulp van Codex mijn oude portfolio omgebouwd naar een React-variant, met een API in C# en een MySQL-database. Daarbij heb ik ook een klein datamodel bedacht waarin skills, tools en technologieën gekoppeld kunnen worden aan projecten, opleidingen en werkervaring. Was dat per se nodig? Nee, maar ik vond het wel leuk om te bouwen.",
+        ProjectDate = new DateOnly(2026, 9, 1),
+        ProjectType = ProjectType.Personal,
+        Role = "Full-stack Developer",
+        TeamSize = 1,
+        GitHubUrl = "https://github.com/gielvangaal/portfolio",
+        LiveSiteUrl = "https://gielvangaal.dev",
+        Categories = [frontend, backend, devOps],
+        Technologies = [html, css, javascript, mysql, docker, technologies["React"], technologies["C#"], technologies[".NET"], technologies["ASP.NET Core"], technologies["REST API"], technologies["Kubernetes"], technologies["K3s"]],
+        Skills = [skills["UI/UX"], skills["Datamodellering"], skills["Databaseontwerp"], skills["Softwarearchitectuur"], skills["Zelfstandig leren"], skills["Creativiteit"]],
+        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/portfolio-1.webp", "Portfolio screenshot 1"),
+            CreateImage("/media/portfolio/portfolio-2.webp", "Portfolio screenshot 2"))
+    };
+
+    var portfolioEn = new PortfolioItem
+    {
+        Language = "en",
+        Slug = "portfolio-v2",
+        Title = "Portfolio 2.0",
+        CardDescription = "My own portfolio, rebuilt with React, C# and MySQL.",
+        Description = "This is actually version 2 of my portfolio. I designed the first version myself in Figma and built it with HTML and CSS. With my newfound knowledge of APIs, a desire to learn agentic workflows and a curiosity about React, I decided to rewrite it. Step by step, with the help of Codex, I turned my old portfolio into a React application with a C# API and a MySQL database. Along the way, I came up with a little data model that lets me link skills, tools and technologies to projects, education and work experience. Was that strictly necessary? No, but I had fun building it.",
+        ProjectDate = new DateOnly(2026, 9, 1),
+        ProjectType = ProjectType.Personal,
+        Role = "Full-stack Developer",
+        TeamSize = 1,
+        GitHubUrl = "https://github.com/gielvangaal/portfolio",
+        LiveSiteUrl = "https://gielvangaal.dev",
+        Categories = [frontend, backend, devOps],
+        Technologies = [html, css, javascript, mysql, docker, technologies["React"], technologies["C#"], technologies[".NET"], technologies["ASP.NET Core"], technologies["REST API"], technologies["Kubernetes"], technologies["K3s"]],
+        Skills = [skills["UI/UX"], skills["Datamodellering"], skills["Databaseontwerp"], skills["Softwarearchitectuur"], skills["Zelfstandig leren"], skills["Creativiteit"]],
+        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/portfolio-1.webp", "Portfolio screenshot 1"),
+            CreateImage("/media/portfolio/portfolio-2.webp", "Portfolio screenshot 2"))
+    };
+
     context.PortfolioItems.AddRange(
+        portfolioNl,
+        portfolioEn,
         contosoNl,
         contosoEn,
         careBotsFrontendNl,
