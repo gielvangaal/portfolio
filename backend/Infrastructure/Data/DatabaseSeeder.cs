@@ -44,6 +44,11 @@ public static class DatabaseSeeder
     };
 
     context.Technologies.AddRange(
+        new Technology { Name = "Argo CD", Usage = CapabilityUsage.Regular, Categories = [devOps], Media = CreateImage("/media/webstack/placeholder.webp", "Argo CD logo") },
+        new Technology { Name = "Helm", Usage = CapabilityUsage.Regular, Categories = [devOps], Media = CreateImage("/media/webstack/placeholder.webp", "Helm logo") },
+        new Technology { Name = "Prometheus", Usage = CapabilityUsage.Regular, Categories = [devOps], Media = CreateImage("/media/webstack/placeholder.webp", "Prometheus logo") },
+        new Technology { Name = "Grafana", Usage = CapabilityUsage.Regular, Categories = [devOps], Media = CreateImage("/media/webstack/placeholder.webp", "Grafana logo") },
+        new Technology { Name = "Restic", Usage = CapabilityUsage.Regular, Categories = [devOps], Media = CreateImage("/media/webstack/placeholder.webp", "Restic logo") },
         new Technology { Name = "pandas", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "pandas logo") },
         new Technology { Name = "NumPy", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "NumPy logo") },
         new Technology { Name = "DAX", Usage = CapabilityUsage.Occasional, Categories = [backend], Media = CreateImage("/media/webstack/placeholder.webp", "DAX logo") },
@@ -2255,7 +2260,49 @@ public static class DatabaseSeeder
             CreateImage("/media/portfolio/portfolio-2.webp", "Portfolio screenshot 2"))
     };
 
+    var pahpNl = new PortfolioItem
+    {
+        Language = "nl",
+        Slug = "pahp",
+        Title = "PAHP",
+        CardDescription = "Zelfontwikkeld hostingplatform op basis van K3s, Ansible en GitOps.",
+        Description = "Om mijn eigen projecten, maar ook websites van anderen te kunnen hosten, heb ik PAHP ontwikkeld: een acroniem voor Persoonlijk Applicatie Hosting Platform. Maar ook vanuit technische interesse en omdat het me een mooie uitdaging leek.\n\nHet platform bestaat uit een single-node K3s-cluster op een RHEL VPS, met Cilium voor networking, Ansible voor provisioning en Argo CD voor GitOps. Het werkt met SemVer, waarbij nieuwe applicatieversies via Argo CD Image Updater automagisch worden gedeployed. Ook is nagedacht over onder andere SSH-hardening, monitoring, een back-upstrategie en lifecycle management.\n\nHet project is volledig agentic tot stand gekomen. Vanuit mijn functioneel en technisch ontwerp heb ik GitHub-issues opgesteld die vervolgens door AI-agents zijn uitgewerkt. De branches review ik, waarbij ik waar nodig itereer voordat ik ze merge. Zo verschuift mijn rol steeds meer van uitvoerend ontwikkelaar naar het bewaken van de architectuur.",
+        ProjectDate = new DateOnly(2026, 11, 1),
+        ProjectType = ProjectType.Personal,
+        Role = "Platform Engineer",
+        TeamSize = 1,
+        Categories = [devOps],
+        Technologies = [technologies["Linux"], technologies["RHEL"], technologies["Ansible"], technologies["Kubernetes"], technologies["K3s"], technologies["Cilium"], technologies["Bash"], technologies["Docker"], technologies["Argo CD"], technologies["Helm"], technologies["Prometheus"], technologies["Grafana"], technologies["Restic"]],
+        Skills = [skills["Systeemontwerp"], skills["Softwarearchitectuur"], skills["CI/CD-pipelines"], skills["Helder documenteren"], skills["Projectmatig werken"], skills["Kwaliteitsbewustzijn"], skills["Zelfstandig leren"]],
+        Tooling = [tooling["Git"], tooling["GitHub"], tooling["GitHub Actions"], tooling["ChatGPT"], tooling["SSH"], tooling["VPS"], tooling["Terminal"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/argocd-1.webp", "Argo CD dashboard"),
+            CreateImage("/media/portfolio/grafana-1.webp", "Grafana dashboard"))
+    };
+
+    var pahpEn = new PortfolioItem
+    {
+        Language = "en",
+        Slug = "pahp",
+        Title = "PAHP",
+        CardDescription = "Self-developed hosting platform based on K3s, Ansible and GitOps.",
+        Description = "To host my own projects, as well as websites for others, I developed PAHP, short for Personal Application Hosting Platform. But also out of technical curiosity and because it seemed like a nice challenge.\n\nThe platform consists of a single-node K3s cluster on a RHEL VPS, with Cilium for networking, Ansible for provisioning and Argo CD for GitOps. It uses SemVer, with new application versions being deployed automagically through Argo CD Image Updater. I also considered SSH hardening, monitoring, a backup strategy and lifecycle management, among other things.\n\nThe project was developed entirely through an agentic workflow. Based on my functional and technical designs, I created GitHub issues that were then implemented by AI agents. I review the branches and iterate where necessary before merging them. This increasingly shifts my role from implementing code to overseeing the architecture.",
+        ProjectDate = new DateOnly(2026, 11, 1),
+        ProjectType = ProjectType.Personal,
+        Role = "Platform Engineer",
+        TeamSize = 1,
+        Categories = [devOps],
+        Technologies = [technologies["Linux"], technologies["RHEL"], technologies["Ansible"], technologies["Kubernetes"], technologies["K3s"], technologies["Cilium"], technologies["Bash"], technologies["Docker"], technologies["Argo CD"], technologies["Helm"], technologies["Prometheus"], technologies["Grafana"], technologies["Restic"]],
+        Skills = [skills["Systeemontwerp"], skills["Softwarearchitectuur"], skills["CI/CD-pipelines"], skills["Helder documenteren"], skills["Projectmatig werken"], skills["Kwaliteitsbewustzijn"], skills["Zelfstandig leren"]],
+        Tooling = [tooling["Git"], tooling["GitHub"], tooling["GitHub Actions"], tooling["ChatGPT"], tooling["SSH"], tooling["VPS"], tooling["Terminal"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/argocd-1.webp", "Argo CD dashboard"),
+            CreateImage("/media/portfolio/grafana-1.webp", "Grafana dashboard"))
+    };
+
     context.PortfolioItems.AddRange(
+        pahpNl,
+        pahpEn,
         portfolioNl,
         portfolioEn,
         contosoNl,
