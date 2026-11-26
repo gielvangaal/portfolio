@@ -2227,7 +2227,10 @@ public static class DatabaseSeeder
         Categories = [frontend, backend, devOps],
         Technologies = [html, css, javascript, mysql, docker, technologies["React"], technologies["C#"], technologies[".NET"], technologies["ASP.NET Core"], technologies["REST API"], technologies["Kubernetes"], technologies["K3s"]],
         Skills = [skills["UI/UX"], skills["Datamodellering"], skills["Databaseontwerp"], skills["Softwarearchitectuur"], skills["Zelfstandig leren"], skills["Creativiteit"]],
-        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]]
+        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/portfolio-1.webp", "Portfolio screenshot 1"),
+            CreateImage("/media/portfolio/portfolio-2.webp", "Portfolio screenshot 2"))
     };
 
     var portfolioEn = new PortfolioItem
@@ -2246,7 +2249,10 @@ public static class DatabaseSeeder
         Categories = [frontend, backend, devOps],
         Technologies = [html, css, javascript, mysql, docker, technologies["React"], technologies["C#"], technologies[".NET"], technologies["ASP.NET Core"], technologies["REST API"], technologies["Kubernetes"], technologies["K3s"]],
         Skills = [skills["UI/UX"], skills["Datamodellering"], skills["Databaseontwerp"], skills["Softwarearchitectuur"], skills["Zelfstandig leren"], skills["Creativiteit"]],
-        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]]
+        Tooling = [tooling["Figma"], tooling["Git"], tooling["GitHub"], tooling["ChatGPT"], tooling["GitHub Actions"]],
+        Media = CreateMediaCollection(
+            CreateImage("/media/portfolio/portfolio-1.webp", "Portfolio screenshot 1"),
+            CreateImage("/media/portfolio/portfolio-2.webp", "Portfolio screenshot 2"))
     };
 
     context.PortfolioItems.AddRange(
